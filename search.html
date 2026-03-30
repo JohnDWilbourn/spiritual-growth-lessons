@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — Spiritual Growth Lessons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1410;
+      --parchment: #f7f3ec;
+      --gold: #b8860b;
+      --rule: #c8b89a;
+      --muted: #6b5f52;
+      --bar-bg: #1a1410;
+      --bar-text: #f7f3ec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .top-bar {
+      background: var(--bar-bg);
+      color: var(--bar-text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-bar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+    .top-bar-links a {
+      color: var(--bar-text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+    .search-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .search-header {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1rem;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .search-row input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--rule);
+      background: white;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .search-row input:focus { border-color: var(--gold); }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-gold { background: var(--gold); color: white; }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .result-count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .result-item {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.1rem 0;
+    }
+
+    .result-item a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .result-item a:hover { color: var(--gold); }
+
+    .result-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .result-snippet {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 0.25rem;
+    }
+
+    mark {
+      background: #fef3c7;
+      color: var(--ink);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .no-results {
+      color: var(--muted);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a class="top-bar-brand" href="index.html">Spiritual Growth Lessons</a>
+    <ul class="top-bar-links">
+      <li><a href="index.html">Lessons</a></li>
+      <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-wrap">
+    <div class="search-header">Search Lessons</div>
+
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="Search by topic, reference, keyword…">
+      <button class="btn btn-gold" onclick="runSearch()">Search</button>
+      <a class="btn btn-outline" href="https://commentary.intelligencereport.info/search.html" target="_blank">Search Commentary</a>
+    </div>
+
+    <div id="resultCount" class="result-count"></div>
+    <div id="results"></div>
+  </div>
+
+  <footer>
+    Spiritual Growth Lessons &nbsp;·&nbsp; <a href="https://commentary.intelligencereport.info">Romans Road Commentary</a>
+  </footer>
+
+  <script>
+    let index = [];
+
+    // Load search index
+    fetch('search-index.json')
+      .then(r => r.json())
+      .then(data => {
+        index = data;
+        // Auto-run if query param present
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('q');
+        if (q) {
+          document.getElementById('searchInput').value = q;
+          runSearch();
+        }
+      })
+      .catch(() => {
+        document.getElementById('results').innerHTML =
+          '<p class="no-results">Search index not found. Add lessons to generate it.</p>';
+      });
+
+    function runSearch() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!q) return;
+
+      const terms = q.split(/\s+/);
+      const scored = index.map(entry => {
+        const haystack = (entry.title + ' ' + entry.text + ' ' + (entry.refs || '')).toLowerCase();
+        const hits = terms.filter(t => haystack.includes(t)).length;
+        return { ...entry, hits };
+      }).filter(e => e.hits > 0).sort((a, b) => b.hits - a.hits);
+
+      const countEl = document.getElementById('resultCount');
+      const resultsEl = document.getElementById('results');
+
+      if (scored.length === 0) {
+        countEl.textContent = '';
+        resultsEl.innerHTML = '<p class="no-results">No results found for "' + escHtml(q) + '".</p>';
+        return;
+      }
+
+      countEl.textContent = scored.length + ' result' + (scored.length !== 1 ? 's' : '') + ' for "' + q + '"';
+
+      resultsEl.innerHTML = scored.map(entry => {
+        const snippet = highlight(entry.snippet || entry.text.slice(0, 180), terms);
+        return `
+          <div class="result-item">
+            <div class="result-meta">${escHtml(entry.date || '')} &nbsp;·&nbsp; Lesson ${escHtml(entry.id || '')}</div>
+            <a href="${escHtml(entry.url)}">${highlight(entry.title, terms)}</a>
+            <div class="result-snippet">${snippet}…</div>
+          </div>`;
+      }).join('');
+    }
+
+    function highlight(text, terms) {
+      let out = escHtml(text);
+      terms.forEach(t => {
+        const re = new RegExp('(' + escRe(t) + ')', 'gi');
+        out = out.replace(re, '<mark>$1</mark>');
+      });
+      return out;
+    }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function escRe(s) {
+      return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    document.getElementById('searchInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') runSearch();
+    });
+  </script>
+
+</body>
+</html>
