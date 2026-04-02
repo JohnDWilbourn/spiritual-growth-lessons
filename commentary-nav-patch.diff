@@ -1,0 +1,14 @@
+--- a/index.html
++++ b/index.html
+@@ nav change — add Spiritual Growth Lessons tab @@
+
+BEFORE:
+      <li class="hide-mobile"><a href="greek-guide.html">Greek Guide</a></li>
+    </ul>
+  </nav>
+
+AFTER:
+      <li class="hide-mobile"><a href="greek-guide.html">Greek Guide</a></li>
+      <li class="hide-mobile"><a href="https://lessons.intelligencereport.info" target="_blank">Growth Lessons</a></li>
+    </ul>
+  </nav>

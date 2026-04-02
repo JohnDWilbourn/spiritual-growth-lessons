@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Reality — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .thesis-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .thesis-block .t-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .thesis-block .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--bar-text);
+  }
+
+  .thesis-block .t-text span { color: var(--gold-light); }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 004</div>
+    <h1>Kingdom Reality</h1>
+    <div class="subtitle">The Territory Purchased by the Blood of Christ</div>
+  </header>
+
+  <p class="intro">
+    Most believers are waiting for the Kingdom. They sing about it, pray for it, and look forward to it as a future event. But the New Testament declares something more immediate and more radical — the Kingdom is not coming. It has already arrived. It was purchased at the cross, and every believer has already been transferred into it. The question is not when the Kingdom comes. The question is whether the believer knows what reality he is already living in.
+  </p>
+
+  <div class="thesis-block">
+    <div class="t-label">The Governing Reality of This Lesson</div>
+    <div class="t-text">
+      The Kingdom is not within you.<br>
+      <span>The Kingdom is around you — and the King purchased every inch of it with His blood.</span>
+    </div>
+  </div>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Kingdom Is Already Present</span>
+    </div>
+    <p class="phase-desc">When the Pharisees asked Jesus when the Kingdom of God was coming, they expected a political answer — a date, a sign, a military event. Jesus gave them something they could not process. The Kingdom was not coming on a schedule they could observe. It was already standing in their midst, and they were blind to it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 17:20–21</div>
+      <div class="verse">"Being asked by the Pharisees when the kingdom of God would come, he answered them, 'The kingdom of God is not coming with signs to be observed, nor will they say, Look, here it is! or There! for behold, the kingdom of God is in the midst of you.'"</div>
+      <div class="note">The Greek word is ἐντός — in the midst of, among. Jesus is speaking to the Pharisees — unregenerate men who had rejected Him. He is not telling them the Kingdom is an interior psychological experience within them. That reading is contextually impossible. The King is standing in front of them. The Kingdom is present because the King is present. They are looking for signs while the fulfillment is in their midst and they cannot see it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 1:13</div>
+      <div class="verse">"He has delivered us from the domain of darkness and transferred us to the kingdom of his beloved Son."</div>
+      <div class="note">Transferred — past tense, accomplished fact. This is not a future promise. At the moment of salvation every believer is relocated from one jurisdiction to another. The domain of darkness is Satan's world system — the cosmos diabolicus, the sin-captured order that fell with Adam. The Kingdom of the beloved Son is the new jurisdiction. The transfer is complete. The believer is already there whether he knows it or not.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 14:17</div>
+      <div class="verse">"For the kingdom of God is not a matter of eating and drinking but of righteousness and peace and joy in the Holy Spirit."</div>
+      <div class="note">Paul describes the Kingdom in present operational terms — righteousness, peace, joy in the Holy Spirit. Not future conditions to be hoped for. Present realities to be inhabited. The Kingdom has a character, and that character is available to the believer now through the indwelling Spirit.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The Kingdom is present — but it was not always accessible. It had to be purchased.</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Purchase Price</span>
+    </div>
+    <p class="phase-desc">The world did not belong to God by default after the fall. Adam was given dominion over creation. When Adam fell, that dominion was forfeited to the one who engineered the fall. Satan became the ruler of this world's system — not by right but by conquest. The cross was God's counter-move. The Kingdom was not declared back into existence by divine fiat. It was purchased at an infinite price.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 13:44</div>
+      <div class="verse">"The kingdom of heaven is like treasure hidden in a field, which a man found and covered up. Then in his joy he goes and sells all that he has and buys that field."</div>
+      <div class="note">The man is not the believer. The believer has nothing to sell that could purchase a field of this magnitude. The man is Christ. The field is the cosmos — the sin-captured world system, Satan's domain. The treasure hidden in the field is His people — the redeemed, buried in a world that does not know them for what they are. In His joy — Hebrews 12:2, for the joy set before him — He sold everything He had and bought the field. The incarnation, the suffering, the cross. Everything. To purchase the field where His treasure was hidden.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 13:45–46</div>
+      <div class="verse">"Again, the kingdom of heaven is like a merchant in search of fine pearls, who, on finding one pearl of great value, went and sold all that he had and bought it."</div>
+      <div class="note">The merchant is Christ. The pearl of great price is the Church — one body of incomparable value, drawn from every tribe and tongue and people and nation, formed by the Spirit into something the King found worth everything He possessed. He sold all that He had. Philippians 2:7 — He emptied Himself. The price of the pearl was total. The purchase was complete at the cross.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 1:19–20</div>
+      <div class="verse">"For in him all the fullness of God was pleased to dwell, and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross."</div>
+      <div class="note">All things reconciled. The purchase was not limited to the souls of the redeemed. The entire created order — on earth and in heaven — was addressed by the blood of the cross. The field was bought whole. Not just the treasure hidden in it. The cosmos diabolicus, the contested territory, the sin-damaged creation — all of it was covered by the transaction at Calvary.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 12:31</div>
+      <div class="verse">"Now is the judgment of this world; now will the ruler of this world be cast out."</div>
+      <div class="note">Jesus speaks this on the eve of the cross. The ruler of this world — Satan, the usurper who held the title deed through Adam's forfeiture — is cast out by the transaction at the cross. The legal basis for his authority over the fallen creation is destroyed. The field changes hands.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The field was purchased — now the King places His Spirit in the treasure He found</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Spirit Within — The Kingdom Around</span>
+    </div>
+    <p class="phase-desc">The Kingdom is the purchased territory the believer inhabits. The Holy Spirit is what inhabits the believer. These are two distinct realities that must not be confused. The Kingdom is not within the believer — the Spirit is. The Kingdom is the operational reality around the believer — the jurisdiction into which he has been transferred and within which the Spirit empowers him to function.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:13–14</div>
+      <div class="verse">"In him you also, when you heard the word of truth, the gospel of your salvation, and believed in him, were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory."</div>
+      <div class="note">The Greek word is ἀρραβών — a down payment, a first installment that legally guarantees the full amount to follow. The Spirit within the believer is not the Kingdom itself. He is the guarantee of the full Kingdom inheritance to come. The presence of the Spirit now is God's binding commitment that everything purchased at the cross will be fully delivered. The down payment is already in hand. The full inheritance is certain.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 6:19–20</div>
+      <div class="verse">"Or do you not know that your body is a temple of the Holy Spirit within you, whom you have from God? You are not your own, for you were bought with a price. So glorify God in your body."</div>
+      <div class="note">The Spirit is within — in the temple of the believer's body. The believer himself was bought with a price — the same purchase price that bought the field. The two realities are distinct but inseparable. The Spirit within is the personal indwelling of the King's presence. The Kingdom around is the purchased territory within which that indwelling operates. You cannot separate them — but you must not confuse them.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:9–11</div>
+      <div class="verse">"You, however, are not in the flesh but in the Spirit, if in fact the Spirit of God dwells in you… But if the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you."</div>
+      <div class="note">The same Spirit who raised Christ from the dead dwells in the believer. The power resident within the believer is resurrection power. This is not metaphor. The Spirit of the living God — the one who defeated death itself — has taken up residence in mortal human flesh. The Kingdom operates through that indwelling in a world that does not yet fully know it has been purchased.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The believer inhabits purchased territory — but the enemy has not vacated it</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Operating in Contested Territory</span>
+    </div>
+    <p class="phase-desc">The purchase was complete at the cross. The legal title changed hands. But the former occupant has not left voluntarily. Satan knows the verdict. He knows the territory no longer belongs to him by any legal right. But between the cross and the full consummation of the Kingdom, the believer operates in a world where the purchased territory is still contested by a defeated but not yet removed enemy.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 16:11</div>
+      <div class="verse">"…concerning judgment, because the ruler of this world is judged."</div>
+      <div class="note">Judged — perfect passive participle. The judgment has already been rendered and the result stands. Satan is not awaiting trial. He has been tried, convicted, and sentenced. He operates in the world not as its rightful ruler but as a condemned criminal who has not yet been removed. The believer lives and operates in the interval between the verdict and the execution of the sentence.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 6:12</div>
+      <div class="verse">"For we do not wrestle against flesh and blood, but against the rulers, against the authorities, against the cosmic powers over this present darkness, against the spiritual forces of evil in the heavenly places."</div>
+      <div class="note">The contest is real. The territory is purchased but not yet fully cleared. The believer who understands Kingdom Reality does not pretend the enemy is gone. He knows the legal status of the territory — purchased, transferred, guaranteed. And he knows the tactical reality — a convicted enemy taking prisoners on his way out. Both are true simultaneously. The legal victory is certain. The tactical engagement is active.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 John 5:19</div>
+      <div class="verse">"We know that we are from God, and the whole world lies in the power of the evil one."</div>
+      <div class="note">John holds both realities in a single verse. We are from God — transferred, purchased, sealed. The whole world lies in the power of the evil one — the cosmos diabolicus is still the operating environment. The Kingdom is the believer's jurisdiction. The world system is still the enemy's domain of influence. The believer lives at the intersection of both. Kingdom reality is not escapism. It is clarity about the nature of the ground you are standing on.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The Kingdom is present, purchased, and contested — and it is heading somewhere</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Kingdom Is Not What You Build — It Is What You Inhabit</span>
+    </div>
+    <p class="phase-desc">One of the most persistent distortions of Kingdom theology is the idea that the believer builds the Kingdom — that through social action, political engagement, or moral reform, the Church advances the Kingdom toward its consummation. Scripture does not teach this. The Kingdom is not constructed by human effort. It was purchased by divine initiative. The believer does not build it. He inhabits it, represents it, and awaits its full manifestation.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Daniel 2:44</div>
+      <div class="verse">"And in the days of those kings the God of heaven will set up a kingdom that shall never be destroyed, nor shall the kingdom be left to another people. It shall break in pieces all these kingdoms and bring them to an end, and it shall stand forever."</div>
+      <div class="note">God sets up the Kingdom. Not the Church. Not a political movement. Not a social reform agenda. God himself establishes it — and when He does, it shatters every human kingdom that preceded it. The Kingdom of God is not the best version of human civilization. It is its replacement. The believer's role is not to build toward that replacement. It is to represent the King who will bring it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 11:15</div>
+      <div class="verse">"Then the seventh angel blew his trumpet, and there were loud voices in heaven, saying, 'The kingdom of the world has become the kingdom of our Lord and of his Christ, and he shall reign forever and ever.'"</div>
+      <div class="note">Become — future, singular, decisive event. The kingdom of the world does not gradually transform into the Kingdom of Christ through human effort. It becomes His Kingdom at a specific moment by divine action. The consummation is not the result of the Church's progressive improvement of world conditions. It is the result of the King's return to claim what His blood already purchased.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Luke 19:11–13</div>
+      <div class="verse">"As they heard these things, he proceeded to tell a parable, because he was near to Jerusalem, and because they supposed that the kingdom of God was to appear immediately. He said therefore, 'A nobleman went into a far country to receive for himself a kingdom and then return… Engage in business until I come.'"</div>
+      <div class="note">The nobleman — Christ — goes to a far country to receive the kingdom and return. The servants are left with resources and a command: engage in business until I come. The task of the believer in the interval is not to build the kingdom in the nobleman's absence. It is to be faithful with what he left — the Word, the Spirit, the royal commissions — until the King returns to reign over what His blood already purchased.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The Kingdom is the reality the believer operates in now and will fully inhabit forever</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Kingdom Coming in Full</span>
+    </div>
+    <p class="phase-desc">The Kingdom that was purchased at the cross, entered at regeneration, and inhabited through the Spirit will one day be consummated in full. The interval between the purchase and the full possession ends at the return of the King. What the believer inhabits now in part — by faith, through the Spirit, in contested territory — he will inhabit in full in the millennium and into eternity. The down payment will become the full inheritance.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:14</div>
+      <div class="verse">"…who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory."</div>
+      <div class="note">Until we acquire possession of it. The ἀρραβών — the Spirit as down payment — points forward to the full possession. What is now a guaranteed deposit will become complete ownership. The Kingdom reality the believer inhabits by faith in this age will be the Kingdom reality he inhabits by sight in the age to come. Nothing is lost. Everything is escalated.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 5:9–10</div>
+      <div class="verse">"And they sang a new song, saying, 'Worthy are you to take the scroll and to open its seals, for you were slain, and by your blood you ransomed people for God from every tribe and language and people and nation, and you have made them a kingdom and priests to our God, and they shall reign on the earth.'"</div>
+      <div class="note">The redeemed reign on the earth. The earth — the field that was purchased. The territory that the King bought with everything He had is the territory His people will govern with Him. The treasure hidden in the field ends up administering the field. That is the full arc of the Kingdom — from purchase to possession to reign.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 21:3–5</div>
+      <div class="verse">"And I heard a loud voice from the throne saying, 'Behold, the dwelling place of God is with man. He will dwell with them, and they will be his people, and God himself will be with them as their God. He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away.' And he who was seated on the throne said, 'Behold, I am making all things new.'"</div>
+      <div class="note">The dwelling place of God is with man. Not in a temple. Not behind a curtain. Not mediated through a priesthood. God himself with His people — the original design of Eden fully restored and infinitely surpassed. The cosmos diabolicus, the sin-captured and contested territory, gives way entirely to the Kingdom in its final form. All things new. The purchase complete. The field fully possessed. The treasure home.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Isaiah 11:6–9</div>
+      <div class="verse">"The wolf shall dwell with the lamb, and the leopard shall lie down with the young goat… They shall not hurt or destroy in all my holy mountain; for the earth shall be full of the knowledge of the LORD as the waters cover the sea."</div>
+      <div class="note">This is not poetry. This is the restoration of pre-fall conditions in the purchased territory. The hostility of nature toward man — the groaning of creation that Romans 8 describes — is reversed. The field restored to what it was before the forfeiture. Life and creation are not the enemy. Sin is. And when sin is finally and fully removed from the purchased territory, creation returns to what God always intended it to be.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">What Kingdom Reality Changes</div>
+    <div class="hinge-text">
+      You are not waiting to enter the Kingdom. You have already been transferred into it.<br><br>
+      You are not building the Kingdom. The King purchased it with His blood and will consummate it at His return.<br><br>
+      You are not carrying the Kingdom within you. The Spirit within you is the guarantee of the full Kingdom inheritance that surrounds you and awaits its final manifestation.<br><br>
+      You are a royal priest and a royal ambassador operating in purchased territory, on behalf of the King who bought it, until He returns to reign over what His blood already secured.<br><br>
+      Next: the tools that keep you operational in that territory.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
