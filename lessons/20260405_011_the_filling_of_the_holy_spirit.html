@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Filling of the Holy Spirit — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 011</div>
+    <h1>The Filling of the Holy Spirit</h1>
+    <div class="subtitle">The Second Problem-Solving Device — The Operating Environment of the Christian Life</div>
+  </header>
+
+  <p class="intro">
+    The Holy Spirit is not a background theological concept. He is the third Person of the Trinity — actively present, actively working, actively making the believer's entire spiritual life possible. Getting to know the Spirit is getting to know God. And understanding His role in the believer's life deepens both the relationship and the reliance. This lesson is about one of His ministries — the filling — and why without it, nothing else in the Christian life actually works.
+  </p>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Before Pentecost — Given and Withdrawn</span>
+    </div>
+    <p class="phase-desc">To understand what Pentecost changed, you have to understand what came before it. In the Old Testament and through the Gospels, the Spirit was given selectively — for a specific commission, to a specific person, for a specific task. He was not a permanent resident. He came for the work and could be withdrawn when the vessel disqualified itself. This was not a flaw in the pre-Pentecost economy. It was the appropriate provision for the dispensation before the cross had been accomplished. What the cross made possible — the permanent indwelling of a holy God inside a sinful human being — had not yet been secured. The Spirit operated accordingly.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Samuel 16:14</div>
+      <div class="verse">"Now the Spirit of the LORD departed from Saul, and a harmful spirit from the LORD tormented him."</div>
+      <div class="note">Saul is the most documented case of the pre-Pentecost economy operating as designed. He had been given the Spirit for his commission as king. When he consulted the necromancer at Endor — seeking guidance from the dead rather than from God — the Spirit departed. Not as punishment inflicted from outside but as the natural consequence of a vessel that had disqualified itself from the commission it had been given. The Spirit was task-specific. The task forfeited, the Spirit withdrawn. This was the reality David knew when he prayed what he prayed in Psalm 51.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 51:11</div>
+      <div class="verse">"Cast me not away from your presence, and take not your Holy Spirit from me."</div>
+      <div class="note">David had watched what happened to Saul. He knew the pre-Pentecost economy precisely. The prayer is not neurotic anxiety — it is the prayer of a man who understood exactly what was at stake. The Spirit could leave. David had seen it. He was not praying against a hypothetical. He was praying against the same possibility he had witnessed destroy the man who held his office before him. After Bathsheba and Uriah, after the worst failure of his life, he comes to God with this prayer on his lips. The Spirit's presence was not guaranteed in the old economy. It had to be sought and kept.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Numbers 11:25</div>
+      <div class="verse">"Then the LORD came down in the cloud and spoke to him, and took some of the Spirit that was on him and put it on the seventy elders. And as soon as the Spirit rested on them, they prophesied. But they did not continue doing it."</div>
+      <div class="note">The Spirit distributed for the commission, operative for the task, withdrawn when the task was complete. They prophesied — and then they did not continue. This was the normal pattern of the pre-Pentecost economy. The Spirit moved through the prophets, the judges, the kings for the duration of their commission. The filling was not a permanent residential condition. It was a sovereign assignment for a sovereign purpose. Pentecost changed everything.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The old economy understood — now what the cross made possible</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Pentecost — The Permanent Indwelling Inaugurated</span>
+    </div>
+    <p class="phase-desc">After the work of Christ was completed on the cross, after death and the one who held its power were defeated, after the angels witnessed the victory and the Son was seated at the right hand of the Father in heaven, after the Lord of heavenly hosts was crowned and given the name above every name — the Holy Spirit was poured out upon all the purchased earth to indwell the Church Age believer from the moment of salvation to everlasting. The economy changed completely. What the cross secured made possible what no prior dispensation could accommodate — the permanent indwelling of a holy God inside a sinful human vessel, legally grounded in the finished work of Christ.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Acts 2:1–4</div>
+      <div class="verse">"When the day of Pentecost arrived, they were all together in one place. And suddenly there came from heaven a sound like a mighty rushing wind, and it filled the entire house where they were sitting. And divided tongues as of fire appeared to them and rested on each one of them. And they were all filled with the Holy Spirit…"</div>
+      <div class="note">The sound of a mighty rushing wind. The divided tongues of fire resting on each one. Not on the qualified, not on the commissioned few — on each one. The inauguration of the Church Age economy of the Spirit. The permanent indwelling available to every believer from this moment forward, not as a task-specific assignment but as the normal condition of every member of the royal family of God. What David prayed to keep, the Church Age believer receives at the moment of salvation and retains to everlasting.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 14:16–17</div>
+      <div class="verse">"And I will ask the Father, and he will give you another Helper, to be with you forever, even the Spirit of truth, whom the world cannot receive, because it neither sees him nor knows him. You know him, for he dwells with you and will be in you."</div>
+      <div class="note">Forever — this is the word that marks the dispensational change. Not for the duration of the commission. Not until the vessel disqualifies itself. Forever. With you and in you — the transition Jesus is describing is from the pre-Pentecost economy of the Spirit alongside to the Church Age economy of the Spirit within. The world cannot receive Him. The believer has Him permanently. The Helper who was given for a season to the prophets and kings is now given forever to every member of the body of Christ.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 1:13–14</div>
+      <div class="verse">"In him you also, when you heard the word of truth, the gospel of your salvation, and believed in him, were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory."</div>
+      <div class="note">Five ministries of the Spirit operate in the Church Age believer — indwelling, baptism into the body of Christ, sealing, distribution of gifts, and filling. Four of these are irrevocable from the moment of salvation. The sealing is the guarantee — ἀρραβών, the down payment that legally obligates the full delivery. Saul lost the Spirit because the pre-Pentecost economy permitted it. The Church Age believer is sealed. The indwelling cannot be lost. What can be interrupted is the filling — the one revocable ministry, restored only by confession.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The permanent indwelling secured — now the prototype of the filled life</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Jesus — The Prototype Life in the Spirit Operating Environment</span>
+    </div>
+    <p class="phase-desc">Jesus did not live His earthly life from the independent exercise of omnipotence. He emptied Himself — Philippians 2 — took the form of a servant, lived as a man in the Holy Spirit operating environment. Every miracle performed, every word spoken, every temptation resisted — in the power of the Spirit. He made it by living it first and best. He cut the path so we could walk it. Then He gave it to us. The filling of the Spirit is not a spiritual upgrade for advanced believers. It is the normal operating condition that Jesus modeled and that He poured out on the Church at Pentecost for every believer to inhabit.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 61:1 / Luke 4:18</div>
+      <div class="verse">"The Spirit of the Lord GOD is upon me, because the LORD has anointed me to bring good news to the poor…" / "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor…"</div>
+      <div class="note">Jesus stands in the synagogue at Nazareth, reads Isaiah 61:1, and says today this Scripture is fulfilled in your hearing. He is identifying Himself as the one living in the fullness of the Spirit's anointing — not the independent exercise of deity but the human life fully yielded to the Spirit. The Spirit of the Lord upon me. This is how He lived. This is the operating environment He demonstrated for three and a half years of public ministry before handing it to the Church.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 4:1</div>
+      <div class="verse">"And Jesus, full of the Holy Spirit, returned from the Jordan and was led by the Spirit in the wilderness for forty days, being tempted by the devil."</div>
+      <div class="note">Full of the Holy Spirit going into the wilderness. Led by the Spirit through forty days of direct confrontation with Satan. The temptations were real — the devil had calculated them for maximum effect against a hungry, isolated, physically depleted man. Jesus resisted not by calling down divine power independently but by the Spirit operating through a man walking in complete submission to the Father's will. He showed what the filled life looks like under maximum pressure. He cut the path through the wilderness so that every believer facing their own wilderness has a prototype to follow.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Acts 10:38</div>
+      <div class="verse">"…how God anointed Jesus of Nazareth with the Holy Spirit and with power. He went about doing good and healing all who were oppressed by the devil, for God was with him."</div>
+      <div class="note">God anointed Jesus of Nazareth with the Holy Spirit and with power. Peter is summarizing the entire earthly ministry of Christ in one sentence. The Spirit was not a backup resource called on when human resources ran short. The Spirit was the operating environment of everything Jesus did. He went about doing good — the ambassadorial life in full expression, the royal priest at the throne and the royal ambassador in the world, all of it in the power of the Spirit. This is the life He gave to us to live. We are called to glorify Christ in our members by living that same unique spiritual life.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 20:22</div>
+      <div class="verse">"And when he had said this, he breathed on them and said to them, 'Receive the Holy Spirit.'"</div>
+      <div class="note">The breath of Jesus giving the Spirit to the disciples — the intimate transfer of what He had lived to those who would carry it forward. Pentecost poured it out on the Church. Every believer now has access to the same operating environment in which Jesus lived His entire earthly life. He did not model the Spirit-filled life as an unreachable standard. He modeled it as the path He was handing to everyone who would follow Him.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The prototype lived — now the filling defined and the mechanism named</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Filling Defined — The One Revocable Ministry</span>
+    </div>
+    <p class="phase-desc">Of the five ministries of the Spirit in the Church Age believer — indwelling, baptism, sealing, distribution of gifts, and filling — four are irrevocable from the moment of salvation. The filling is the one that is not. A person is either carnal or spiritual. These are mutually exclusive states. The carnal believer has sinned and not confessed. The spiritual believer is walking in the filling. Sin interrupts the filling. Confession is the only mechanism that restores it. Nothing else accomplishes this — not sincerity, not remorse, not religious activity, not time. The command is precise: be filled with the Spirit. Present passive imperative. Continuously being filled. Confession is what keeps it continuous.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 5:18</div>
+      <div class="verse">"And do not get drunk with wine, for that is debauchery, but be filled with the Spirit."</div>
+      <div class="note">The contrast is exact. The drunk man is controlled by what he has consumed — his judgment, perception, and behavior altered by what has taken over. Paul's contrast is not wine versus sobriety. It is wine versus the Spirit. The Spirit-filled believer is controlled by the Spirit — his judgment, perception, and behavior operating under divine influence rather than under the flesh. Be filled — not a one-time experience, not a crisis event, not the exclusive possession of the spiritually advanced. The normal operating condition of every believer who has confessed and returned to the filled state.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 2:12–14</div>
+      <div class="verse">"Now we have received not the spirit of the world, but the Spirit who is from God, that we might understand the things freely given us by God. And we impart this in words not taught by human wisdom but taught by the Spirit, interpreting spiritual truths to those who are spiritual. The natural person does not accept the things of the Spirit of God, for they are folly to him, and he is not able to understand them because they are spiritually discerned."</div>
+      <div class="note">The Spirit who is from God — given so that we might understand what God has freely given us. The pastor-teacher passes doctrine into the left lobe of the natural mind during teaching. The Holy Spirit transfers that doctrine into the right lobe of the soul for metabolization. The natural mind can receive the content, hold it, and discuss it. But it cannot metabolize it — that requires the Spirit. The carnal believer can sit in teaching and receive words into his left lobe and walk away unchanged. The Spirit-filled believer receives the same words and the Spirit carries them into the καρδία where they become the deposited doctrine that active faith draws from. The filling is not incidental to spiritual growth. It is the mechanism of it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 16:13</div>
+      <div class="verse">"When the Spirit of truth comes, he will guide you into all truth, for he will not speak on his own authority, but whatever he hears he will speak, and he will declare to you the things that are to come."</div>
+      <div class="note">He will guide you into all truth — this is the function Jesus is pointing to. The Spirit as the active guide taking the believer deeper into what the Word contains. Not a passive presence waiting to be activated by sufficient faith or sufficient emotion. An active Person moving the Spirit-filled believer into the truth that the natural mind alone cannot reach. Doctrine, the bread of life, can only be metabolized under the filling of the Holy Spirit. The guide is personal. The guidance is active. The filling is the condition that makes it operative.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The filling defined — now what it looks like when it is operating</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Filling in Operation — Intentional, Continuous, Everywhere</span>
+    </div>
+    <p class="phase-desc">When the believer knows that the filling of the Spirit is the operating environment of the entire Christian life — that prayer is heard, doctrine is metabolized, worship is genuine, and the soul grows only under the filling — he can approach confession intentionally. Not as a guilt transaction. As the door to everything that matters. Confess. Receive the filling. Pray. Give thanks. Study the Word and receive it into the καρδία through the Spirit's metabolizing work. Sing to the Lord from a soul that is actually filled rather than performing an empty ritual. And carry that operating environment into every hour of the day — the mundane as much as the sacred. The throne is not a location. It is the condition of the Spirit-filled καρδία wherever the believer happens to be.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 5:19–20</div>
+      <div class="verse">"…addressing one another in psalms and hymns and spiritual songs, singing and making melody to the Lord with your heart, giving thanks always and for everything to God the Father in the name of our Lord Jesus Christ."</div>
+      <div class="note">Paul lists what the Spirit-filled life produces — psalms, hymns, spiritual songs, melody made to the Lord with the heart, thanksgiving always and for everything. These are not the activities that produce the filling. They are what the filling produces. The carnal believer can sing the same words and they are performance. The Spirit-filled believer sings from a καρδία that is actually engaged with the God it is addressing. Thanksgiving always and for everything — this is only possible from the filled state. It requires a soul that is receiving from the pipeline and knows it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 3:16–17</div>
+      <div class="verse">"Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God. And whatever you do, in word or deed, do everything in the name of the Lord Jesus, giving thanks to God the Father through him."</div>
+      <div class="note">Whatever you do. The Spirit-filled operating environment is not confined to the sanctuary or the study. Whatever you do — in word or deed — in the name of the Lord Jesus. The Word dwelling richly in the καρδία through the Spirit's metabolizing work is active wherever the believer is. The mundane becomes priestly. The ordinary hour becomes the throne room. The filling does not require a specific location. It requires a specific condition.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:26–27</div>
+      <div class="verse">"Likewise the Spirit helps us in our weakness. For we do not know what to pray for as we ought, but the Spirit himself intercedes for us with groanings too deep for words. And he who searches hearts knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God."</div>
+      <div class="note">The Spirit helps in weakness — He does not wait for the believer to become strong enough to pray correctly on his own. He intercedes with groanings too deep for words. This is the hand-off point — where the natural mind has done everything it can do and the Spirit takes the believer's intention into the presence of the Father in a form that exceeds what language can carry. The filled believer's prayer is heard not only because of what he says but because the Spirit is interceding according to the will of God beneath and beyond the words. The filling makes prayer what it cannot be in the carnal state.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The filling in operation — now the life that glorifies Christ in the believer's members</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Glorifying Christ in Our Members — The Unique Spiritual Life of the Church Age</span>
+    </div>
+    <p class="phase-desc">Jesus lived the prototype life in the Holy Spirit operating environment. He made it by living it first and best. He cut the path. Then He gave it to us to live. The Church Age believer is called to glorify Christ in his members by inhabiting the same operating environment in which the Son walked the earth — the royal priest before the Father, the royal ambassador before men, the Word being metabolized into the καρδία through the Spirit's active guidance, the mundane made priestly, the ordinary life carrying the weight of eternity. This is the unique spiritual life that no prior dispensation could produce. It is available to every believer. It is maintained by confession. It glorifies Christ because it is Christ's own operating environment lived in a human life that has yielded to it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:22–25</div>
+      <div class="verse">"But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law. And those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also keep in step with the Spirit."</div>
+      <div class="note">The fruit of the Spirit is singular — καρπός, one fruit with nine expressions. It is not produced by the believer's effort. It is the natural output of the Spirit-filled life. Love, joy, peace — the motivational virtues of the royal priest operating at the throne. Patience, kindness, goodness, faithfulness, gentleness, self-control — the functional virtues of the royal ambassador operating in the world. The Orpheus principle: a song so superior that the competing attractions lose their pull. Keep in step with the Spirit — walk in the same operating environment in which Jesus walked. The prototype life lived again in every Spirit-filled believer.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 3:17–18</div>
+      <div class="verse">"Now the Lord is the Spirit, and where the Spirit of the Lord is, there is freedom. And we all, with unveiled face, beholding the glory of the Lord, are being transformed into the same image from one degree of glory to another. For this comes from the Lord who is the Spirit."</div>
+      <div class="note">Transformed from one degree of glory to another — this is the soul-growth that the Spirit-filled life produces over time. Not the carnal believer accumulating information. The Spirit-filled believer being conformed to the image of Christ degree by degree as doctrine is metabolized, prayer is answered, worship is genuine, and the operating environment of Jesus becomes the operating environment of the life that is yielded to Him. The veil lifted. The glory beheld. The transformation ongoing. This is what the filling makes possible. This is what confession keeps accessible.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 6:19–20</div>
+      <div class="verse">"Or do you not know that your body is a temple of the Holy Spirit within you, whom you have from God? You are not your own, for you were bought with a price. So glorify God in your body."</div>
+      <div class="note">The body as the temple of the Holy Spirit. What happens in a temple? Sacrifice — confession, the broken spirit laid on the altar, the self-serving narrative set aside. The presence of the Lord — the filling of the Spirit restored, the carnal state ended, the spiritual state resumed. Then prayer, praise, hymns, petition, thanksgiving — the full priestly activity of a believer operating in the temple of his own body under the filling of the Spirit who indwells it. Progressive sanctification begins here — with the knowledge of what the filling is, what it makes possible, and how to return to it when sin interrupts it. Glorify God in your body is not a vague moral exhortation. It is the instruction to use the temple for what temples are built for.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Filling of the Holy Spirit</div>
+    <div class="hinge-text">
+      Before Pentecost the Spirit was given and withdrawn.<br>
+      David prayed to keep Him. Saul lost Him.<br>
+      The prophets received Him for their commission.<br><br>
+      After the cross — after death was defeated,<br>
+      after the Son was seated and crowned,<br>
+      after the name above every name was given —<br>
+      the Spirit was poured out on all the purchased earth.<br>
+      Permanently. Irrevocably indwelling every believer.<br><br>
+      Jesus lived the prototype life in this operating environment.<br>
+      He made it by living it first and best.<br>
+      He cut the path. Then He gave it to us.<br><br>
+      The filling is the one revocable ministry.<br>
+      Sin interrupts it. Confession restores it.<br>
+      Nothing else does.<br><br>
+      Under the filling — prayer is heard,<br>
+      doctrine is metabolized from left lobe to right lobe,<br>
+      worship is genuine, the soul grows,<br>
+      and Christ is glorified in the believer's members.<br><br>
+      Confess. Be filled. Approach the throne.<br>
+      Whether in a sanctuary or in the middle of an ordinary day —<br>
+      the operating environment of Jesus<br>
+      is available to you right now.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
