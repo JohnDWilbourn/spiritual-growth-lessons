@@ -1,0 +1,7 @@
+Paste this push command in the terminal for chages to lessons pages. Change the descript of the changes
+
+cd "/home/johndavid/Projects/Websites/Lessons_Website/lessons-git"
+cp /path/to/20260403_019_lessons_index.html index.html
+git add index.html
+git commit -m "Reorder lesson cards 000-006"
+git push

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace and Love — Part 2 — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  header .series-note {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.85;
+    margin-bottom: 3rem;
+  }
+
+  .intro p { margin-bottom: 1.25rem; }
+
+  .thesis-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .thesis-block .t-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .thesis-block .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  .thesis-block .t-text span { color: var(--gold-light); }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 009</div>
+    <h1>Grace and Love</h1>
+    <div class="subtitle">Part 2 — The Noon Meeting: Efficacious Grace and Personal Love</div>
+    <div class="series-note">Part 2 of 2 &nbsp;·&nbsp; John 4 — The Samaritan Woman</div>
+  </header>
+
+  <div class="intro">
+    <p>Efficacious grace is for the royal family of God. Adopted and redeemed heirs with Christ. The reconciled. It is the functionality of the priesthood. The inspiration of the ambassadorship. The grace pipeline extends from God through His righteousness judicially imputed to the believer — all blessings and discipline flowing unimpeded by Satan, the world, and the flesh from the Father to the indwelling Spirit in the Spirit-filled, fellowshipped believer. The living water that produces soul-growth.</p>
+
+    <p>Knowing the distinctions and mechanism details of common and efficacious grace isn't critical for salvation. But knowing this about God lets us know that God recognizes His own integrity — and His integrity is so powerful that He became a man to suffer and die to redeem us from the slave market of sin and ransom us away from a supernaturally powerful and evil enemy.</p>
+
+    <p>The Samaritan woman's life is precious to God. Your existence isn't trivial. Knowing God is not a philosophical or esoteric pursuit. It is a personal relationship with everlasting implications. Efficacious grace and personal love are the root and ground of that relationship. This is where your new life starts. And it never ends from this moment forward.</p>
+  </div>
+
+  <div class="thesis-block">
+    <div class="t-label">The Second True Truth</div>
+    <div class="t-text">
+      <span>Efficacious grace and personal love</span><br>
+      are always directed to the believer.<br><br>
+      Not the rain that falls on everyone.<br>
+      A spring inside — permanent, inexhaustible,<br>
+      beyond the reach of any enemy.
+    </div>
+  </div>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">He Had to Pass Through Samaria</span>
+    </div>
+    <p class="phase-desc">John 4:4 — He had to pass through Samaria. The word is ἔδει. Necessary. It was on the agenda. Jews didn't pass through Samaria. They went around. The detour through Samaria was deliberate — not a geographical inconvenience but a sovereign appointment. One woman. One well. Noon. This is what personal love looks like when it moves through history. It reroutes the journey for the individual. Common grace falls on everyone. Personal love plans the detour.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:4–7</div>
+      <div class="verse">"And he had to pass through Samaria. So he came to a town of Samaria called Sychar, near the field that Jacob had given to his son Joseph. Jacob's well was there; so Jesus, wearied as he was from his journey, was sitting beside the well. It was about the sixth hour. A woman from Samaria came to draw water. Jesus said to her, 'Give me a drink.'"</div>
+      <div class="note">Everything about this scene is wrong by the world's standards. Wrong time — respectable women came in the morning, in groups. Wrong place — Jews don't engage Samaritans. Wrong person — as the conversation will reveal, a woman with five husbands and a sixth man who isn't her husband. And Jesus opens by asking her for something. Not demanding. Asking. He who is about to offer her the living water of efficacious grace asks her for a drink of common water first. Personal love disarms before it offers.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:10</div>
+      <div class="verse">"For if while we were enemies we were reconciled to God by the death of his Son, much more, now that we are reconciled, shall we be saved by his life."</div>
+      <div class="note">The detour to Samaria is Romans 5:10 in motion. While we were enemies — while she was at the well alone at noon carrying five failed relationships and a current living arrangement that excluded her from her own community — He came. Reconciliation was the agenda before she knew she needed it. Efficacious grace moves toward the believer before the believer can move toward it. The appointment was made in eternity. The detour was planned before she was born.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The appointment is kept — now the offer is made</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Living Water — What Efficacious Grace Provides</span>
+    </div>
+    <p class="phase-desc">What Jesus offers the Samaritan woman is categorically different from what Nicodemus heard. Nicodemus heard about the mechanism — born of water and Spirit, the wind blows where it wills. He heard doctrine about what God does. The Samaritan woman gets a personal offer of what God gives. The living water. Not the rain that falls on the just and unjust alike. A spring — inside, permanent, producing life from the inside out. This is efficacious grace named by the one who provides it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:10, 13–14</div>
+      <div class="verse">"Jesus answered her, 'If you knew the gift of God, and who it is that is saying to you, Give me a drink, you would have asked him, and he would have given you living water.'… Jesus said to her, 'Everyone who drinks of this water will be thirsty again, but whoever drinks of the water that I will give him will never be thirsty again. The water that I will give him will become in him a spring of water welling up to eternal life.'"</div>
+      <div class="note">Two waters named in the same conversation. The well water — Jacob's well, deep and good, the best the created order can provide — produces thirst again. You draw from it today and come back tomorrow. This is the condition of every human provision, every human relationship, every human system of meaning. It satisfies temporarily. Then the thirst returns. The living water is different in kind, not just degree. It becomes a spring inside the person — not drawn from outside but welling up from within. The Greek is πηγή — a source, an origin point. The supply originates inside the believer. Satan cannot touch it. Circumstances cannot drain it. The flesh cannot contaminate the source.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 7:38–39</div>
+      <div class="verse">"Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'" Now this he said about the Spirit, whom those who believed in him were to receive…</div>
+      <div class="note">One drink becomes rivers. The spring that wells up inside the individual believer overflows outward. John identifies it precisely — the Spirit. The living water is the indwelling Holy Spirit, the efficacious grace of God resident inside the believer permanently, producing life, overflowing into the lives of everyone the believer touches. The Samaritan woman demonstrates this within minutes of receiving it — she goes back to the city that rejected her and the whole city comes out to Jesus. One drink. Rivers flowing. This is the ambassadorial function operating at full capacity from the root of efficacious grace.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 1:13–14</div>
+      <div class="verse">"In him you also, when you heard the word of truth, the gospel of your salvation, and believed in him, were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory."</div>
+      <div class="note">Sealed — σφραγίζω, a permanent securing, a mark of ownership that cannot be removed. The Spirit as the guarantee — ἀρραβών, the down payment that legally obligates the full delivery to follow. The efficacious grace that the Samaritan woman is about to receive is not conditional, not temporary, not subject to revocation by Satan, the world, or the flesh. It is sealed. The grace pipeline from the Father to the indwelling Spirit runs unimpeded through the reconciled believer. This is the inheritance she never knew she had coming.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The offer is made — now the καρδία is addressed directly</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Go Call Your Husband — Personal Love Knows Your Name</span>
+    </div>
+    <p class="phase-desc">She asks for the living water. Jesus responds by going directly to her καρδία. Go call your husband. Five words that expose everything she has been carrying to that well at noon — the five marriages, the current arrangement, the isolation, the social exile that makes noon the only safe time to draw water. He is not there to condemn her. He already knows. He came to Samaria knowing. And He goes to the exact place of her deepest wound not to judge it but to show her that the One offering her living water knows exactly who she is — and is offering it anyway. This is personal love. It knows your name.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:16–18</div>
+      <div class="verse">"Jesus said to her, 'Go, call your husband, and come here.' The woman answered him, 'I have no husband.' Jesus said to her, 'You are right in saying, I have no husband; for you have had five husbands, and the one you now have is not your husband. What you have said is true.'"</div>
+      <div class="note">He affirms her honesty before He completes the picture. You are right. What you have said is true. There is no condemnation in this exchange — only the complete knowledge of the One who was sitting at the well when she arrived. This is the difference between common grace and personal love. Common grace reaches toward humanity in general. Personal love knows the number of your marriages, the condition of your current living situation, the hour you chose to come to the well, and the weight you have been carrying alone. And it makes the appointment anyway. This is where your new life starts.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:38–39</div>
+      <div class="verse">"For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</div>
+      <div class="note">The personal love of God in Christ Jesus is not revocable by any force in the created order. Not by five failed marriages. Not by a current living arrangement that violates the Law. Not by social exile or moral history or the weight of a life that has not gone the way anyone planned. Nothing in all creation can separate the believer from this love — because this love is not based on the believer's performance. It is based on the integrity of the God who planned the detour through Samaria before she was born.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 139:1–4</div>
+      <div class="verse">"O LORD, you have searched me and known me! You know when I sit down and when I rise up; you discern my thoughts from afar. You search out my path and my lying down and are acquainted with all my ways. Even before a word is on my tongue, behold, O LORD, you know it altogether."</div>
+      <div class="note">David understood what the Samaritan woman experienced at the well. To be completely known and completely loved at the same time. Not loved despite being known — loved with full knowledge. The personal love of God is not the love of someone who doesn't know the whole story. It is the love of the One who searched the καρδία before the world had form and chose the appointment at the well anyway.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Known completely. Loved personally. Now she asks the right question.</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Worship in Spirit and Truth — The Priestly Function of the Reconciled</span>
+    </div>
+    <p class="phase-desc">She pivots to worship — not to deflect, but because being known by this man has opened something. Where do we worship? Her people say this mountain. Your people say Jerusalem. It is a genuine question from a woman whose entire religious identity has been contested terrain her whole life. Jesus does not take sides in the geography debate. He redefines worship entirely. God is Spirit. Those who worship Him must worship in spirit and in truth. The mode is as varied as every human and culture past, present, and future. The object is fixed — God the Father. The manner is fixed — in spirit and in truth. The efficacious grace that produced the new birth has also produced a priest. And the priest's primary function is worship.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:23–24</div>
+      <div class="verse">"But the hour is coming, and is now here, when the true worshipers will worship the Father in spirit and in truth, for the Father is seeking such people to worship him. God is spirit, and those who worship him must worship in spirit and in truth."</div>
+      <div class="note">The Father is seeking such people. He is not waiting to be found by worshipers who earn the right through correct geography, correct ritual, or correct ethnic identity. He is actively seeking. The detour to Samaria was the Father seeking. The appointment at the well was the Father seeking. The true worshiper worships from the invisible space God creates — in spirit, from the indwelling Spirit who is the efficacious grace resident inside the believer — and in truth, according to the revealed Word that defines the object and the manner. The mode belongs to the worshiper. The object and the manner belong to God.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 12:1</div>
+      <div class="verse">"I appeal to you therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship."</div>
+      <div class="note">Spiritual worship — λογικὴν λατρείαν, reasonable, rational, of the inner life. The efficacious grace that flows through the grace pipeline from the Father to the indwelling Spirit produces exactly this — a believer whose whole life becomes an act of worship. Not confined to a mountain or a temple. Not performed in prescribed ritual. The living sacrifice of a life yielded to the God who planned the detour, made the appointment, and knew every word before it was spoken. This is the priestly function of the reconciled. This is what the living water produces.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Peter 2:9</div>
+      <div class="verse">"But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."</div>
+      <div class="note">The Samaritan woman — wrong ethnicity, wrong gender, wrong moral history by every religious standard of her day — is addressed by Peter's declaration as fully as any Jewish believer. Chosen. Royal priesthood. His own possession. Called out of darkness into His marvelous light. Efficacious grace does not grade on the curve of human merit. It places every believer in the royal family of God on identical ground — not because of what they brought to the well, but because of who met them there.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The priest worships. The ambassador speaks. One drink becomes rivers.</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Grace Pipeline — Unimpeded from Father to Believer</span>
+    </div>
+    <p class="phase-desc">The efficacious grace that the Samaritan woman received at the well did not originate at the well. It originated in the eternal purpose of God — in the integrity of a God who will not compromise His character, who became a man to suffer and die to redeem His people from the slave market of sin, who planned every detour and every appointment before the foundation of the world. That grace flows through a pipeline that Satan, the world, and the flesh cannot interrupt — from the Father, through the imputed righteousness of Christ, to the indwelling Spirit in the fellowshipped believer. All blessings flow through this pipeline. All discipline flows through this pipeline. It does not depend on the condition of the believer's circumstances. It depends on the integrity of God.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:32</div>
+      <div class="verse">"He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?"</div>
+      <div class="note">The logic is from the greater to the lesser. If God gave the Son — the maximum possible act of grace, the one that cost everything — then every lesser provision flows from that same grace pipeline as a matter of course. The believer who understands this does not approach God as a petitioner hoping to receive. He approaches as a child of the King accessing what the King has already provided. The pipeline is open. The flow is unimpeded. The only variable is whether the believer is in fellowship to receive what is already moving toward him.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Peter 1:3</div>
+      <div class="verse">"His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence."</div>
+      <div class="note">All things that pertain to life and godliness — already granted, past tense, accomplished fact. Not things to be accumulated through spiritual achievement. Things already provided through the grace pipeline that runs from the Father to the believer through the knowledge of Christ. The Samaritan woman did not earn the living water. She received it. The believer does not earn the provisions of the grace pipeline. He receives them — by staying in the fellowship that keeps the pipeline open, by the confession that restores it when sin interrupts the flow, by the Spirit-filled life that keeps the channel clear.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 3:16–17</div>
+      <div class="verse">"…that according to the riches of his glory he may grant you to be strengthened with power through his Spirit in your inner being, so that Christ may dwell in your hearts through faith…"</div>
+      <div class="note">Strengthened through His Spirit in the inner being — the grace pipeline operating at full capacity in the fellowshipped believer. Christ dwelling in the καρδία through faith — not as a visitor but as a permanent resident, the living water that has become a spring inside the person. The riches of His glory are the measure of what flows through the pipeline. Not the believer's merit. Not the believer's spiritual achievement. The riches of His glory. The pipeline is as large as God is.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The pipeline runs from eternity into the individual καρδία — and from there into the world</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">One Drink. Rivers Flowing. The Arc Completed.</span>
+    </div>
+    <p class="phase-desc">The Samaritan woman leaves her water jar at the well. She came for water and found something that made the jar unnecessary. She goes back to the city that had excluded her — the city she came to the well at noon to avoid — and says come see a man who told me everything I ever did. That testimony brings the whole city out to Jesus. One drink of the water that gives life became rivers of living water flowing out from her καρδία into the καρδία of everyone she met. This is the arc completed. Common grace opened the door for Nicodemus in the night. Efficacious grace and personal love produced rivers in Samaria at noon. From one woman who came to the well alone.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:28–30</div>
+      <div class="verse">"So the woman left her water jar and went away into town and said to the people, 'Come, see a man who told me all that I ever did. Can this be the Christ?' They went out of the town and were coming to him."</div>
+      <div class="note">She left her water jar. The instrument of her daily survival, the reason she was at the well, the thing she came for — left behind. Because she had found something that made the jar beside the point. The efficacious grace that produces the new life does not merely add to what was already there. It reorders what matters. The ambassador who carries the living water does not need the world's instruments of survival the way she needed that jar. The spring is inside. And it is already flowing toward the city she was avoiding.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 7:38</div>
+      <div class="verse">"Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'"</div>
+      <div class="note">Rivers — plural, flowing outward, beyond the individual. The living water does not stay contained in the καρδία of the one who received it. It moves. It overflows. The Samaritan woman is the first demonstration of this in John's Gospel — the first person to carry the living water back to a community and watch it flow. The teacher-pastor who has been drinking from this water continuously, who has stayed in fellowship, who has kept the grace pipeline open across years and decades — does not produce a trickle. He produces rivers. The anointed Word flowing from his καρδία into the καρδία of the hearer carries the full force of the living water behind it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 4:39–42</div>
+      <div class="verse">"Many Samaritans from that town believed in him because of the woman's testimony, 'He told me all that I ever did.'… They said to the woman, 'It is no longer because of what you said that we believe, for we have heard for ourselves, and we know that this is indeed the Savior of the world.'"</div>
+      <div class="note">The woman's testimony brought them to Jesus. Then they heard for themselves. This is the Gospel of Salvation as seed, the Gospel of doctrine as light, continued teaching as watering — God causing the growth. The ambassador carries the word that opens the door. The Spirit uses it to reach inside the hearer. The hearer who responds receives what the woman received — the living water that becomes a spring inside, the personal love of a God who knew everything about them before they arrived, the efficacious grace that flows unimpeded from the Father through the grace pipeline into the individual καρδία. And it never ends from that moment forward.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Arc Completed — Grace and Love</div>
+    <div class="hinge-text">
+      Common grace and impersonal love reached toward you<br>
+      before you knew you were being reached for.<br>
+      The rain fell. The veil thinned. The Spirit moved.<br>
+      You received double — life and righteousness at once.<br><br>
+      Then the detour was made. The appointment was kept.<br>
+      The One who controls history came to your well<br>
+      at the exact hour you would be there,<br>
+      knowing everything about you before you spoke a word.<br><br>
+      Efficacious grace and personal love are the root and ground<br>
+      of everything that follows.<br>
+      The grace pipeline runs from the Father<br>
+      through the imputed righteousness of Christ<br>
+      to the indwelling Spirit inside you —<br>
+      unimpeded by Satan, the world, or the flesh.<br><br>
+      You are a priest. You are an ambassador.<br>
+      You are an heir of the royal family of God.<br>
+      You carry living water in a world dying of thirst.<br><br>
+      Leave your water jar.<br>
+      Go tell what you know.<br>
+      One drink becomes rivers.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

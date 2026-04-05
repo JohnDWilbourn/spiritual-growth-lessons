@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace and Love — Part 1 — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  header .series-note {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .thesis-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .thesis-block .t-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .thesis-block .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  .thesis-block .t-text span { color: var(--gold-light); }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 008</div>
+    <h1>Grace and Love</h1>
+    <div class="subtitle">Part 1 — Common Grace and the New Birth</div>
+    <div class="series-note">Part 1 of 2 &nbsp;·&nbsp; John 3 — Nicodemus</div>
+  </header>
+
+  <p class="intro">
+    Grace is not God's mood. It is not sentiment. It is not the divine equivalent of looking the other way. Grace is God's policy — His fixed, consistent, unalterable way of dealing with fallen humanity on the basis of the finished work of Christ on the cross. Everything God does for mankind flows from this policy. And because God will not compromise His integrity, the plan that flows from that integrity has no room for human merit, human ability, or human achievement. Not because God is indifferent to what man does — but because one imperfect component breaks the chain. Grace excludes human merit to protect the integrity of the plan. This lesson is about the first form that grace takes — the grace that reaches toward every human being before they can reach back.
+  </p>
+
+  <div class="thesis-block">
+    <div class="t-label">The Foundation</div>
+    <div class="t-text">
+      Grace is all that God is free to do for mankind<br>
+      on the basis of the saving work of Christ on the cross.<br><br>
+      <span>The plan of God flows from the integrity of God.</span><br>
+      Grace excludes human merit to protect that integrity.<br>
+      The plan has no weak links.
+    </div>
+  </div>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Grace as Policy — The Plan That Flows from the Integrity of God</span>
+    </div>
+    <p class="phase-desc">Grace is not occasional. It is not a divine override activated when human effort falls short. It is God's governing policy toward fallen humanity — the plan He put in place before the foundation of the world, operating exclusively on the basis of what Christ accomplished at the cross. Every blessing, every provision, every act of divine favor toward any human being in any dispensation flows from this policy. And because the plan flows from the integrity of God — from His absolute oneness, from the impossibility of any attribute acting in contradiction to any other — it cannot contain human merit. Human merit is not a weak link in the plan. It is structurally incompatible with it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:8–9</div>
+      <div class="verse">"For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."</div>
+      <div class="note">Not your own doing. Not a result of works. So that no one may boast. The exclusion of human merit is not incidental — it is the design. If works contributed anything to salvation, someone could boast. And if someone could boast, the glory of the plan would be divided between God and man. Grace is the mechanism that keeps the glory undivided — that ensures the integrity of the plan is never compromised by the introduction of human merit. The gift is entirely God's. The reception is entirely by faith. The merit belongs entirely to the object of that faith.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 11:6</div>
+      <div class="verse">"But if it is by grace, it is no longer on the basis of works; otherwise grace would no longer be grace."</div>
+      <div class="note">Grace and works are mutually exclusive categories. You cannot mix them without destroying both. The moment works enter the equation, grace ceases to be grace — it becomes a transaction, a merit system, a negotiation between the creature and the Creator. Paul states this as a logical necessity. If it is grace, works are excluded by definition. If works are included, grace has been redefined into something that is no longer grace. The integrity of the plan depends on this distinction being maintained with absolute precision.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Titus 3:5</div>
+      <div class="verse">"He saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewing of the Holy Spirit."</div>
+      <div class="note">Not because of works done by us in righteousness — the human résumé contributes nothing to the transaction. According to His own mercy — the initiative, the standard, and the provision all originate from God. The washing of regeneration and renewing of the Holy Spirit — the mechanism of the new birth, which no human effort can produce or substitute for. The plan flows from the integrity of God. The execution is entirely divine. The human being receives it or rejects it. He does not improve it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The policy is established — now what does it look like when God extends it toward a dead world?</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Water — The Irreplaceable Image of Grace</span>
+    </div>
+    <p class="phase-desc">God chose water as the physical image of grace — not as illustration but as reality written into the created order. Three quarters of the earth is covered in it. Three quarters of the human body is composed of it. Remove it and everything dies. You cannot substitute anything for what water is and what water does. It falls from the sky without being asked. It carves canyons over centuries. Under ice it shapes continents. In its gentlest form it sustains a seed. In its fullest force it levels cities. God's fingerprints are on water. Common grace is to the dead soul exactly what water is to the body — irreplaceable, sovereign in its forms and actions, and operating without regard for whether the recipient has earned it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 5:45</div>
+      <div class="verse">"…For he makes his sun rise on the evil and on the good, and sends rain on the just and on the unjust."</div>
+      <div class="note">The rain falls on everyone. It does not check credentials. It does not verify the moral record of the field it waters. The just and the unjust receive the same rain from the same sky out of the same grace. This is common grace written into the created order — God's impersonal love extended to every human being without discrimination, without regard for the response of the recipient, simply because the character of the Giver demands it. The rain is real water. Common grace is real grace. Neither is diminished by being extended to those who reject it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 7:11–12, 23</div>
+      <div class="verse">"…all the fountains of the great deep burst forth, and the windows of the heavens were opened. And rain fell upon the earth forty days and forty nights… Only Noah was left, and those who were with him in the ark."</div>
+      <div class="note">The first rain was both judgment and salvation in the same water. One storm. One sky. Two outcomes determined entirely by where each person stood in relation to the provision God had already made. Common grace is like a mirage in the desert for those who reject the Word with negative volition at Gospel hearing — but the mirage is real water for those who exercise positive volition. The provision does not change. The reception does. The rain fell on everyone. What each person did with the ark God had provided determined what the rain meant for them.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Water is irreplaceable — and so is common grace. No human substitute will do.</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Veil — Why Human IQ Is No Substitute</span>
+    </div>
+    <p class="phase-desc">Nicodemus can read. He can teach. He has accumulated everything a man can accumulate by human effort — religious training, intellectual achievement, positional authority, moral seriousness. He is not a fool. He is not insincere. He is not hostile. He is the best the human system can produce. And none of it substitutes for what common grace does. His IQ cannot open the eyes of the heart. His Torah knowledge cannot thin the veil. His position as a ruler of Israel cannot draw the dead soul toward the light. The same words spoken to Nicodemus are spoken to all humanity — but only those with the eyes of the heart enlightened can see what is actually being said.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:18</div>
+      <div class="verse">"…having the eyes of your hearts enlightened, that you may know what is the hope to which he has called you, what are the riches of his glorious inheritance in the saints."</div>
+      <div class="note">The eyes of the heart — τοὺς ὀφθαλμοὺς τῆς καρδίας. Not the eyes of the intellect. Not the eyes of religious training. The innermost faculty opened by the Spirit to see what was always there but veiled to the natural mind. Nicodemus has extraordinary intellectual eyes. They have not yet served him here. The veil does not yield to intelligence. It does not yield to religious achievement. It yields to the Spirit — and common grace is the provision that thins it enough for the light behind it to be perceptible at Gospel hearing.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 3:14–16</div>
+      <div class="verse">"But their minds were hardened. For to this day, when they read the old covenant, that same veil remains unlifted, because only through Christ is it taken away… But when one turns to the Lord, the veil is removed."</div>
+      <div class="note">The veil lies over the heart — not the text. The words are the same for everyone. The Scripture is available to all. The veil makes it opaque to the one who has not turned to the Lord and transparent to the one who has. Nicodemus reads the Torah with the veil in place and sees the letter without the life. Common grace thins the veil — makes the outline of what is behind it perceptible enough for positive volition to reach toward it. The Spirit removes it entirely at the moment of the new birth. No human substitute can do either.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 2:14</div>
+      <div class="verse">"The natural person does not accept the things of the Spirit of God, for they are folly to him, and he is not able to understand them because they are spiritually discerned."</div>
+      <div class="note">Not able — a statement of incapacity. The natural person is not merely unwilling. He is spiritually dead. Death is not a condition that improves with study, effort, or sincerity. Common grace is the irreplaceable divine provision — the water that no human intelligence can generate — that bridges the gap between spiritual death and the possibility of response. Without it, the Gospel cannot be heard. With it, even the most unlikely hearer can reach toward the light they have just begun to see.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The veil thins — the light becomes perceptible — and a ruler of Israel comes in the dark</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Nicodemus — The Night Meeting</span>
+    </div>
+    <p class="phase-desc">A secret night meeting. A high and noble man coming at personal risk with the humility of teachability evidenced by the act of asking questions. Nicodemus does not know what he needs. But something has moved in him — common grace at work, the veil thinning, the eyes of the heart beginning to perceive the outline of something his categories cannot contain. He comes to Jesus not with answers but with recognition — no one can do these signs unless God is with him. That recognition is the first movement of a soul being drawn toward the light. It is the beginning of positive volition. And Jesus meets it with the most radical statement in the Gospel.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:3–6</div>
+      <div class="verse">"Jesus answered him, 'Truly, truly, I say to you, unless one is born again, he cannot see the kingdom of God.' Nicodemus said to him, 'How can a man be born when he is old?'… Jesus answered, 'Truly, truly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God. That which is born of the flesh is flesh, and that which is born of the Spirit is spirit.'"</div>
+      <div class="note">Born of water and the Spirit — the irreplaceable provision named precisely. The water is common grace — the preparatory provision that thins the veil, makes the Gospel perspicuous, awakens the capacity of the dead soul to respond. The Spirit is the regenerating power that raises the soul from death to life. You cannot be born of the Spirit without first being drawn by the water of common grace. And common grace alone cannot produce the new birth — only the Spirit can do that. Flesh produces flesh. Spirit produces spirit. No human substitute operates in either category.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:7–8</div>
+      <div class="verse">"Do not marvel that I said to you, 'You must be born again.' The wind blows where it wishes, and you hear its sound, but you do not know where it comes from or where it goes. So it is with everyone who is born of the Spirit."</div>
+      <div class="note">The wind — πνεῦμα, Spirit. You hear it but you cannot control it. You cannot predict it, schedule it, or replicate it by human effort. The Spirit moves sovereignly — as the wind moves, as the rain falls — where He wills, when He wills, in the soul that common grace has prepared to receive Him. The new birth is not the graduation of the religious life. It is the sovereign act of the Spirit stepping into the dead soul and opening the eyes of the heart for the first time. Nicodemus cannot produce this. Neither can anyone else. It is entirely outside the reach of human merit, human ability, or human good.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 6:44</div>
+      <div class="verse">"No one can come to me unless the Father who sent me draws him. And I will raise him up on the last day."</div>
+      <div class="note">The draw precedes the coming. Common grace is the mechanism of the draw — God's impersonal love moving toward every dead soul, turning the mirage into real water at the moment positive volition reaches toward it. The draw is universal. The response is individual. The One who draws guarantees the outcome for everyone who comes. The sovereignty is in the drawing. The volition is in the coming. The perfection of the plan is in the fact that nothing in this sequence depends on human merit at any point.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The love that drives common grace is not sentimental — it is the most costly policy ever enacted</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">God's Impersonal Love — What Drives the Policy</span>
+    </div>
+    <p class="phase-desc">The grace that reaches toward every dead soul is driven by God's impersonal love for humanity. This is not the intimate covenant love of a father for his child or a husband for his wife. It is the steady, undiscriminating, sovereign love of a God whose integrity compels Him to extend grace toward every human being — including the ones whose negative volition will reject it. It does not require a lovable object. It does not require a deserving recipient. It operates because God's character demands it and the cross has made it possible. This is what John 3:16 is actually saying — and it has been misread for two thousand years.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:16–17</div>
+      <div class="verse">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. For God did not send his Son into the world to condemn the world, but in order that the world might be saved through him."</div>
+      <div class="note">Κόσμον — the world. In John's Gospel this word carries the weight of the hostile world system — the order of existence in rebellion against its Creator. God's impersonal love is not directed toward a lovable object. It is directed toward a dead, hostile, spiritually blind humanity. The cross is the ultimate expression of common grace — the most costly act in the history of existence, extended to a world that deserved nothing, so that whoever — any person, anywhere, at any moment — might not perish. This is not sentiment. It is the policy of a perfect God enacted at infinite cost to make the perfect plan available to imperfect humanity.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:19–21</div>
+      <div class="verse">"And this is the judgment: the light has come into the world, and people loved the darkness rather than the light… But whoever does what is true comes to the light, so that it may be clearly seen that his works have been carried out in God."</div>
+      <div class="note">The light has come into the world — not to some of the world. Common grace extended universally. The division that follows is not produced by God withholding the light selectively. It is produced by the response of the human will to the light that has come to all. Some love the darkness. Some come to the light. The same grace. The same impersonal love. The difference is entirely in the direction of the will. The mirage is real water for those who reach toward it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 5:8</div>
+      <div class="verse">"But God shows his love for us in that while we were still sinners, Christ died for us."</div>
+      <div class="note">While we were still sinners — before the response, before the faith, before the positive volition that turns toward the light. The cross was not executed for a deserving object. It was the impersonal love of God satisfying His own righteousness completely so that grace could operate freely toward the very people whose sin demanded judgment. Human good, when assumed to be man's approach to God, expresses arrogance. The cross expresses the only approach that worked — God's own, at infinite cost, excluding every human contribution by design.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The policy reaches the dead soul — and the Spirit does what no substitute can do</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The First Spark — Double Imputation and the New Birth</span>
+    </div>
+    <p class="phase-desc">Common grace has opened the door. The impersonal love of God has driven the provision toward the dead soul. The veil has thinned. The light is perceptible. The positive volition of the individual reaches toward what it can barely see. And then the Spirit steps in — sovereignly, as the wind moves, into the dead soul — and opens the eyes of the heart for the first time. The first spark of life. And in that moment the dead person receives double. Not a partial provision. Not a down payment on something earned later. Everything at once. Life and righteousness simultaneously — double for all the struggle of a life that was moving toward this moment without knowing it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 1:12–13</div>
+      <div class="verse">"But to all who did receive him, who believed in his name, he gave the right to become children of God, who were born, not of blood nor of the will of the flesh nor of the will of man, but of God."</div>
+      <div class="note">Not of blood. Not of the will of the flesh. Not of the will of man. The new birth excludes every human category of origin — ethnic descent, natural impulse, human decision operating independently of grace. Born of God — the new birth is entirely divine in its origin even as it is entirely real in its reception. The positive volition is the individual's own. But the birth itself is God's act. The right to become children of God is conferred in that moment — not earned, not graduated into. Given. To whoever receives Him.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:10</div>
+      <div class="verse">"But if Christ is in you, although the body is dead because of sin, the Spirit is life because of righteousness."</div>
+      <div class="note">The human spirit imputed — the faculty that was dead now alive. And righteousness imputed simultaneously — the finished work of Christ credited to the account of the new believer in the same instant the Spirit enters. Double imputation. Life where there was death. Righteousness where there was condemnation. The Spirit of the living God where there was emptiness. Not one after the other. Both at once. The plan of God has no weak links — and the new birth is the proof. Human merit contributes nothing. Divine grace provides everything. The integrity of God's plan is intact — because the plan never depended on anything other than the integrity of God.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 40:2</div>
+      <div class="verse">"Speak tenderly to Jerusalem, and cry to her that her warfare is ended, that her iniquity is pardoned, that she has received from the LORD's hand double for all her sins."</div>
+      <div class="note">Double for all her sins — the economy of grace does not merely restore what was lost. It doubles it. This is the policy of a God whose integrity cannot be compromised — not remedial, not just sufficient, but abundantly more than what sin took. The new believer receives life and righteousness together, the Spirit and the standing together, the full provision of God's grace policy enacted at the cross now applied personally and permanently. Common grace did its work. The Spirit completed it. The new birth is the beginning of everything Part 2 is about.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Corinthians 5:17</div>
+      <div class="verse">"Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come."</div>
+      <div class="note">New creation. Not improved. Not reformed. New. The Spirit who hovered over the formless void before creation has spoken light into the darkness of the individual soul. Common grace and impersonal love have accomplished everything they were designed to accomplish — and will not follow the believer across the threshold. What follows is something the unbeliever has never tasted and the believer can never exhaust. One woman at a well in the heat of the day is about to find out what that is.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">What Common Grace Accomplishes — and Where It Ends</div>
+    <div class="hinge-text">
+      Grace is God's policy — all He is free to do for mankind<br>
+      on the basis of the finished work of Christ.<br>
+      The plan flows from the integrity of God. No weak links. No human merit anywhere in the chain.<br><br>
+      Common grace is the first form that policy takes —<br>
+      the rain that falls on the just and the unjust,<br>
+      the light that has come into the world,<br>
+      the veil thinned enough for the light behind it to be seen,<br>
+      the mirage that becomes real water at the moment of positive volition.<br><br>
+      No human substitute can do what common grace does.<br>
+      Not intelligence. Not religion. Not sincerity. Not moral achievement.<br>
+      The Spirit moves where He wills. The new birth is His act alone.<br><br>
+      And when He steps into the dead soul —<br>
+      the person receives double.<br>
+      Life and righteousness. Together. At once.<br>
+      The full provision of a plan rooted in the integrity of God<br>
+      applied personally to the one who reached toward the light.<br><br>
+      Common grace and impersonal love have done their work.<br>
+      They do not follow the believer across the threshold.<br>
+      What follows is personal. Permanent. Inexhaustible.<br><br>
+      One woman at a well in the heat of the day<br>
+      is about to find out what that means.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

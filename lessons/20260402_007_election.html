@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Election — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .thesis-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .thesis-block .t-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .thesis-block .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  .thesis-block .t-text span { color: var(--gold-light); }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 007</div>
+    <h1>Election</h1>
+    <div class="subtitle">An Invitation from Eternity Past — Extended to All, Received by Choice</div>
+  </header>
+
+  <p class="intro">
+    No doctrine in Scripture has been more weaponized, more distorted, and more used to divide the body of Christ than election. It has been turned into a decree of exclusion by some and denied entirely by others. Both errors make the same mistake — they begin with a system and read the text through it rather than letting the text define the terms. This lesson begins where all sound doctrine must begin: with the integrity of God. What His righteousness demands, His justice executes. Grace is always the policy. And election, rightly understood, is the sovereign invitation of an eternal God extended to every human being who has ever drawn breath — with the response left genuinely in the hands of the one who receives it.
+  </p>
+
+  <div class="thesis-block">
+    <div class="t-label">The Three Axes of Election</div>
+    <div class="t-text">
+      <span>God has a decree.</span> Jesus controls history.<br>
+      The Spirit guides to all truth — but does not guide all to truth.<br><br>
+      History is a long arc.<br>
+      Each individual chooses how closely to follow<br>
+      God's decree, Jesus' control, and the Spirit's guidance.
+    </div>
+  </div>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Integrity of God — The Ground on Which Election Stands</span>
+    </div>
+    <p class="phase-desc">Every doctrine must be evaluated against the character of God before it is accepted as sound. God will never compromise His integrity. His attributes do not compete — righteousness, justice, love, sovereignty, and veracity operate in perfect harmony at every moment. Any doctrine of election that pits God's sovereignty against His love, or His justice against His grace, has already gone wrong. The cross is the proof that God found a way to satisfy every attribute simultaneously — and election must be understood in that light.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:25–26</div>
+      <div class="verse">"…whom God put forward as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins. It was to show his righteousness at the present time, so that he might be just and the justifier of the one who has faith in Jesus."</div>
+      <div class="note">Just and the justifier — both simultaneously. This is the statement of God's integrity at the cross. He did not choose between justice and grace. He satisfied justice completely so that grace could operate freely. Propitiation is the satisfaction of divine righteousness by the blood of Christ. On that basis — and only on that basis — God is free to extend grace to every human being without compromising a single attribute. Election operates within this framework, never outside it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 46:9–10</div>
+      <div class="verse">"…for I am God, and there is no other; I am God, and there is none like me, declaring the end from the beginning and from ancient times things not yet done, saying, 'My counsel shall stand, and I will accomplish all my purpose.'"</div>
+      <div class="note">God declares the end from the beginning — not because He forces every outcome but because He knows every outcome perfectly and operates from that knowledge into history. His counsel stands not by overriding human choices but by working through them, above them, and despite them toward the purpose He decreed before time began. This is the decree — fixed, certain, accomplished — and it is the basis on which He credits faith as righteousness to Abraham four centuries before the Law and two millennia before the cross.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Genesis 15:6</div>
+      <div class="verse">"And he believed the LORD, and he counted it to him as righteousness."</div>
+      <div class="note">Abraham believed — positive volition directed toward a promise not yet fulfilled. God counted it as righteousness — credited the finished work of a cross not yet accomplished to the account of a man responding in faith to a word not yet fully revealed. God could do this because He knows the end from the beginning. The cross was as certain in eternity past as it was in time. Grace is always the policy — and because God's foreknowledge is perfect, grace could be extended on credit long before the payment was made in history.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The ground is established — now what is the invitation?</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Election as Invitation — Extended to All</span>
+    </div>
+    <p class="phase-desc">Election is not a decree of exclusion. It is an invitation from eternity past, grounded in God's foreknowledge, extended without restriction to every human being. The Groom sends His groomsmen out to invite — all can come. The highways and byways. Good and bad alike. The invitation goes to whoever will receive it. The response is genuinely and irreducibly the individual's own. God does not override free will or moral agency. He works through them, above them, and sometimes despite them — but He does not nullify them.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 1:1–2</div>
+      <div class="verse">"…elect according to the foreknowledge of God the Father, in the sanctification of the Spirit, for obedience to Jesus Christ and for sprinkling with his blood…"</div>
+      <div class="note">Election is according to foreknowledge — κατὰ πρόγνωσιν. God's election is not arbitrary selection from a neutral pool. It is grounded in His perfect foreknowledge of every human choice across all of history. He does not elect arbitrarily and then arrange the choices to match. He knows the choices and elects accordingly. The sovereignty is real. The foreknowledge is real. The human response is real. All three operate simultaneously without contradiction.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 22:9–10, 14</div>
+      <div class="verse">"'Go therefore to the main roads and invite to the wedding feast as many as you find.' And those servants went out into the roads and gathered all whom they found, both bad and good. So the wedding hall was filled with guests… For many are called, but few are chosen."</div>
+      <div class="note">Many are called — the invitation is universal, without restriction, extended to whoever the servants find. Few are chosen — not because the invitation was withheld from the rest, but because the rest did not respond, or responded on their own terms rather than the King's. The chosen are those who came and wore the garment the King provided. The call went to all. The choice to receive — and to receive on God's terms rather than their own — is what differentiates the elect from the rest.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Peter 3:9</div>
+      <div class="verse">"The Lord is not slow to fulfill his promise as some count slowness, but is patient toward you, not wishing that any should perish, but that all should reach repentance."</div>
+      <div class="note">Not wishing that any should perish. If election were a decree that predetermined some for damnation, this verse is incoherent. God genuinely desires that all reach repentance. The patience of God in history is the patience of an inviting King who keeps sending groomsmen to the highways, keeps extending the feast, keeps holding the door open. The long arc of history is the long arc of a God who will not close the invitation before its time.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The invitation is universal — and God reserves the right to work through whoever receives it</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Pharaoh Principle — Negative Volition Pressed Into Divine Purpose</span>
+    </div>
+    <p class="phase-desc">God does not override free will — but He will use it. Even when human choices run directly against His revealed will, God's sovereignty operates above those choices to accomplish His decreed purpose. Pharaoh is the most documented case in both Testaments. He is not a passive puppet whose strings God pulled. He is a man whose own stubborn negative volition God confirmed and then leveraged for the most significant act of national deliverance in the Old Testament. This is not injustice. It is sovereignty operating through the grain of human choice rather than against it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Exodus 4:21; 8:15</div>
+      <div class="verse">"…but I will harden his heart, so that he will not let the people go." / "But when Pharaoh saw that there was a respite, he hardened his heart and would not listen to them, as the LORD had said."</div>
+      <div class="note">The sequence matters. Pharaoh hardened his own heart first — repeatedly, willfully, against the accumulating evidence of the plagues. God's hardening is the judicial confirmation of a direction Pharaoh had already chosen. This is not arbitrary predestination. It is the sovereign God taking a man's own entrenched negative volition and using it for a purpose larger than that man could imagine. The result was the Exodus, the revelation of God's power to Egypt and the nations, and the permanent testimony of redemption embedded in Israel's national memory.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 9:17–18</div>
+      <div class="verse">"For the Scripture says to Pharaoh, 'For this very purpose I have raised you up, that I might show my power in you, and that my name might be proclaimed in all the earth.' So then he has mercy on whom he wills, and he hardens whom he wills."</div>
+      <div class="note">Paul is not teaching that God randomly selects individuals for damnation. He is teaching that God's sovereign purpose operates above human choices — using even the hardest negative volition to accomplish what He decreed. The mercy and hardening are responses to the direction of the human will — not arbitrary assignments. God wills mercy toward those who respond to the invitation. God wills confirmation of hardness toward those who have entrenched themselves against it. His name is proclaimed in both cases.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:28</div>
+      <div class="verse">"And we know that for those who love God all things work together for good, for those who are called according to his purpose."</div>
+      <div class="note">All things — including the negative choices of others, the hostile actions of enemies, the consequences of sin running amok in a fallen world. God does not override free will. He works all things together for good regardless of what free will produces. The Pharaohs of history do not derail the decree. They become instruments of it without knowing it. This is sovereignty not as control of every micro-decision but as the guarantee that no decision — however contrary to God's revealed will — can ultimately subvert His decreed purpose.</div>
+    </div>
+  </div>
+
+  <div class="bridge">God works through whoever He chooses — and His choices consistently invert human expectation</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Reversal Pattern — God's Freedom to Invert Human Expectation</span>
+    </div>
+    <p class="phase-desc">One of the most consistent patterns in Scripture is God's deliberate inversion of human expectation, tradition, and social order in the execution of His elective purpose. He does not do this arbitrarily. He does it to demonstrate that His election operates on His terms — not on the basis of birth, social standing, ethnic identity, religious credential, or human tradition. From the patriarchs to the messianic line to the incarnation itself, God repeatedly chooses the unexpected vessel to carry the expected promise.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 9:10–13</div>
+      <div class="verse">"And not only so, but also when Rebekah had conceived children by one man, our forefather Isaac, though they were not yet born and had done nothing either good or bad — in order that God's purpose of election might continue, not because of works but because of him who calls — she was told, 'The older will serve the younger.' As it is written, 'Jacob I loved, but Esau I hated.'"</div>
+      <div class="note">Before they were born, before they had done good or bad — the election was stated. Not because Jacob was morally superior. Not because Esau was condemned. Because God's purpose does not rest on human merit or birth order. The older serves the younger — the first reversal of the natural order in the patriarchal line. It will not be the last. God is establishing from the beginning that His election cannot be calculated by human systems of priority.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 1:5–6</div>
+      <div class="verse">"…and Salmon the father of Boaz by Rahab, and Boaz the father of Obed by Ruth, and Obed the father of Jesse, and Jesse the father of David the king."</div>
+      <div class="note">Rahab — a Canaanite prostitute from Jericho. Ruth — a Moabite widow, from a nation born of Lot's incest. Both in the messianic line. Both ancestors of David. Both ancestors of Christ. God places in the bloodline of the Messiah two women who had no claim by birth, ethnicity, or moral standing — and excludes from that line the ethnic insiders who rejected the invitation. The reversal is not accidental. It is the pattern. Election has never been about bloodline.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Samuel 12:24 / Luke 1:30–31</div>
+      <div class="verse">"…and she bore a son, and he called his name Solomon." / "And the angel said to her, 'Do not be afraid, Mary, for you have found favor with God. And behold, you will conceive in your womb and bear a son, and you shall call his name Jesus.'"</div>
+      <div class="note">David's dynastic line runs through Nathan, not Solomon — the branch no one expected. The Messiah comes through Mary, not Joseph — the vessel no one anticipated. God does not bypass His own covenants. He fulfills them through the person and the path that human tradition would never have selected. The line is unbroken. The fulfillment is exact. But the route consistently passes through the door that human calculation left unopened.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 1:27–29</div>
+      <div class="verse">"But God chose what is foolish in the world to shame the wise; God chose what is weak in the world to shame the strong; God chose what is low and despised in the world, even things that are not, to bring to nothing things that are, so that no human being might boast in the presence of God."</div>
+      <div class="note">The reversal pattern has a purpose — the elimination of human boasting before God. If election followed human logic, the elect would have grounds for pride. By consistently choosing the unexpected, the weak, the outside, and the despised, God ensures that the glory of election belongs entirely to the One who elects. No human being can stand before God and claim that his election was the natural result of his own superiority.</div>
+    </div>
+  </div>
+
+  <div class="bridge">God's decrees cannot be weaponized — man has always tried and always failed</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Anti-Weaponization Principle — Man Cannot Use God's Decrees Against God</span>
+    </div>
+    <p class="phase-desc">Every time God establishes a covenant, an ordinance, or a decree, man attempts to take that provision and use it as an instrument of exclusion, superiority, or control. Circumcision becomes ethnic identity. Torah becomes a merit system. Election becomes a license for spiritual pride. God consistently and decisively exposes and dismantles every attempt to weaponize His grace. The letter is always subverted by those who miss the spirit — and God consistently demonstrates that the spirit cannot be captured by the letter.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 2:28–29</div>
+      <div class="verse">"For no one is a Jew who is merely one outwardly, nor is circumcision outward and physical. But a Jew is one inwardly, and circumcision is a matter of the heart, by the Spirit, not by the letter. His praise is not from man but from God."</div>
+      <div class="note">Circumcision was God's ordained sign of the Abrahamic covenant. By Paul's day it had been weaponized into an ethnic and religious credential — the mark that placed a man inside the elect and outside the reach of grace's obligations. Paul dismantles it precisely. The sign was always pointing to something inward. The letter was always meant to reveal the spirit. When the letter is used to replace the spirit it becomes a weapon against the very covenant it was meant to signify.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 9:30–32</div>
+      <div class="verse">"What shall we say, then? That Gentiles who did not pursue righteousness have attained it, that is, a righteousness that is by faith; but that Israel who pursued a law that would lead to righteousness did not succeed in reaching that law. Why? Because they did not pursue it by faith, but as if it were based on works."</div>
+      <div class="note">The Torah was God's revelation of His righteousness — given to Israel as a gift, pointing toward the righteousness that only Christ could provide. Israel weaponized it into a merit system, pursuing righteousness by works rather than receiving it by faith. The result was that the Gentiles who never had the Torah arrived at righteousness by faith while Israel — who had the Torah — missed it by treating it as a credential rather than a pointer. God will not let the letter subvert the spirit.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 8:39–40</div>
+      <div class="verse">"They answered him, 'Abraham is our father.' Jesus said to them, 'If you were Abraham's children, you would be doing the works Abraham did, but now you seek to kill me, a man who has told you the truth that I heard from God. This is not what Abraham did.'"</div>
+      <div class="note">The Pharisees weaponize Abrahamic descent as their credential for election. Jesus dismantles it immediately — Abraham's defining characteristic was faith directed toward God's word, not ethnic descent. The ones claiming Abraham as their father are seeking to kill the very Word of God Abraham believed. The credential is exposed as empty. Descent from Abraham counts for nothing if it is used to reject the One Abraham's faith was pointing toward.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Galatians 3:28–29</div>
+      <div class="verse">"There is neither Jew nor Greek, there is neither slave nor free, there is no male and female, for you are all one in Christ Jesus. And if you are Christ's, then you are Abraham's offspring, heirs according to promise."</div>
+      <div class="note">The promise was never ethnic. It was always in Christ. Every human category that man has used to create tiers of election — Jew and Greek, slave and free, male and female — is dissolved in union with Christ. The heir of the Abrahamic promise is not the one with the right bloodline or the right credential. It is the one who is in Christ. Election has always been about the promise, and the promise has always been about Christ.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The invitation goes to all — the response is individual — the destination is certain</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Election and the Kingdom — The Long Arc Completed</span>
+    </div>
+    <p class="phase-desc">History is a long arc. God's decree was issued in eternity past. Christ controls the unfolding of that decree in time. The Spirit guides toward the truth that makes participation in the decree possible. Every individual across all of human history has chosen — and is choosing — how closely to follow that guidance. The Kingdom is the completion of the arc. It is the wedding feast fully set, the guests fully gathered, the false participants removed, and the elect reigning with the King who invited them before the foundation of the world.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 5:9</div>
+      <div class="verse">"And they sang a new song, saying, 'Worthy are you to take the scroll and to open its seals, for you were slain, and by your blood you ransomed people for God from every tribe and language and people and nation.'"</div>
+      <div class="note">Every tribe, language, people, and nation. The elect are not drawn from one ethnic group, one culture, one religious tradition, or one social class. The long arc of history — the highways and byways, the Rahabs and the Ruths, the Gentiles who arrived at righteousness by faith — all of them gathered by the blood of the One who purchased the field to find the treasure hidden in it. The reversal pattern reaches its completion: the feast is filled with those the world would never have invited.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:29–30</div>
+      <div class="verse">"For those whom he foreknew he also predestined to be conformed to the image of his Son, in order that he might be the firstborn among many brothers. And those whom he predestined he also called, and those whom he called he also justified, and those whom he justified he also glorified."</div>
+      <div class="note">The golden chain — foreknew, predestined, called, justified, glorified. Every link is certain because every link rests on the foreknowledge and purpose of God, not on the consistency of human performance. The one who is foreknown will be glorified. The decree issued in eternity past reaches its completion in eternity future. The arc is long. The outcome is certain. Each individual determines by his choices how closely he walks the arc — but the arc itself does not bend.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 22:17</div>
+      <div class="verse">"The Spirit and the Bride say, 'Come.' And let the one who hears say, 'Come.' And let the one who is thirsty come; let the one who desires take the water of life without price."</div>
+      <div class="note">The last invitation in Scripture. The Spirit — guiding toward truth. The Bride — the Church, the ambassador corps, every believer carrying the call to the highways. The one who hears — individual, volitional, responsible. Come. The water of life without price — grace, always grace, to the end of the canon and beyond. Election is not the closing of the door. It is the eternal extension of the invitation by the God whose righteousness demanded the cross, whose justice executed it, and whose grace is all He is now free to offer on the basis of it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Timothy 2:10</div>
+      <div class="verse">"Therefore I endure everything for the sake of the elect, that they also may obtain the salvation that is in Christ Jesus with eternal glory."</div>
+      <div class="note">Paul endures for the sake of the elect — not because the elect are a fixed list requiring no proclamation, but because the elect are those who will respond to the proclamation. The ambassador's work matters. The groomsman's invitation matters. The Spirit's guidance matters. Election is not a reason for passivity. It is the ground of confidence that the proclamation will find those it was sent to find — and that no one who responds will be turned away.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">What Election Actually Is</div>
+    <div class="hinge-text">
+      Election is not a decree of exclusion.<br>
+      It is an invitation from eternity past, grounded in the foreknowledge of a God whose integrity is absolute.<br><br>
+      What His righteousness demands, His justice executes.<br>
+      Grace is always the policy — all that God is free to do on the basis of the work of Christ on the cross.<br><br>
+      God has a decree. Jesus controls history. The Spirit guides to all truth.<br>
+      Each individual chooses how closely to follow.<br><br>
+      The Groom sends His groomsmen out. All can come.<br>
+      Not all will. And some arrive on their own terms and are removed at the door.<br><br>
+      The arc is long. The decree stands. The invitation remains open.<br>
+      The last word of Scripture on the subject is not a closed door.<br>
+      It is: Come.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

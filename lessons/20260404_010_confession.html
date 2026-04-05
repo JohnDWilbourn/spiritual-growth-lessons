@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confession — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 010</div>
+    <h1>Confession</h1>
+    <div class="subtitle">The Approach to the Throne — The First Problem-Solving Device</div>
+  </header>
+
+  <p class="intro">
+    The believer who sins does not lose his salvation. He loses the flow. Those are not the same thing. Salvation is permanent — sealed, imputed, guaranteed by the integrity of God. The grace pipeline purchased by the blood of Christ is inviolable — shielded from Satan, the world, and the flesh. Nothing can damage or destroy it. What sin interrupts is not the pipeline. It is the flow within it. Fellowship is the flow. Confession restores it. And when the flow is restored, the royal priest can approach the throne — to pray, to praise, to study, to proclaim. Confession is not primarily about guilt. It is the approach protocol of the priest who intends to be at the throne.
+  </p>
+
+  <!-- PHASE I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Not a Transaction — The Withdrawal of False Attribution</span>
+    </div>
+    <p class="phase-desc">The common teaching is that confession means telling God what you did and receiving forgiveness in return. Name the sin. Get the credit. Move on. That is a transaction. And transactions have a built-in problem — they leave the self intact. The self that sinned presents its case, receives its verdict, and walks away unchanged. Confession is not a transaction. It is the emptying of the self — and by emptying, what is meant precisely is the withdrawal of inherent meaning and meaningfulness from the people, places, things, and ideas to which the self has attached ultimate significance. The sin was the act of attributing to something other than God a significance it could not bear. Confession withdraws that attribution. The self is not destroyed. It is reoriented. Jesus turned every transactional approach to God on its head — in prayer, in alms, in ceremony. Confession is no different.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 6:6</div>
+      <div class="verse">"But when you pray, go into your room and shut the door and pray to your Father who is in secret. And your Father who sees in secret will reward you."</div>
+      <div class="note">The private room is the space where the transaction collapses. There is no audience. No social credit. No performance to validate. In the private priesthood — the invisible, personal relationship between the believer and the Father — the self cannot perform. It can only be what it is. The false attribution that drove the sin has no audience to protect it in that room. It can be laid down without cost to the social self. This is why the private priesthood is the only space where genuine confession happens. The throne is in that room.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 2:5–8</div>
+      <div class="verse">"Have this mind among yourselves, which is yours in Christ Jesus, who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself… And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross."</div>
+      <div class="note">The mind of Christ is not defined by its emptying — the emptying was the path, not the destination. The destination was complete submission to the Father's will. The fully operational καρδία, identified with and submitted to the will of God, doing the will of God — that is the mind of Christ. The emptying made the submission possible by removing the false attributions that would have made the cross negotiable. Christ withdrew every claim the self could make and became obedient to death. Not because self-destruction was the goal — because the Father's will was the goal. Confession participates in the same movement on the scale of a single soul.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">Two distinct acts of God in one verse. The known sins named in confession receive specific forgiveness — the believer who names what he knows is forgiven for what he names. The cleansing of all unrighteousness covers what the conscience missed — the forgotten sins, the unrecognized distortions, the areas of self-deception the moral inventory did not reach. God's provision is complete because it covers the gap between what man can know about himself and what God knows. The system is not dependent on the perfection of the believer's self-knowledge. It is dependent on the faithfulness and justice of God.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The false attribution named — now what it produces when left intact</div>
+
+  <!-- PHASE II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">What Blocks Confession — Pride and the Self-Serving Narrative</span>
+    </div>
+    <p class="phase-desc">The self-serving narrative is the sin nature's first response to sin. It generates with remarkable speed and remarkable creativity. The sin was justified. The circumstances made it necessary. Someone else bears the greater responsibility. The damage was not that serious. Every version of that narrative is a fig leaf — the self attributing meaning to its own judgment and reputation rather than releasing that attribution to God. The root is pride. And pride produces two things in the unconfessed soul — arrogance turned inward, and hatred turned outward. Both are the fruit of a self that will not withdraw the false attribution and will not approach the throne.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 32:3–4</div>
+      <div class="verse">"For when I kept silent, my bones wasted away through my groaning all day long. For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer."</div>
+      <div class="note">David describes the interruption of the flow with the precision of a man who lived it. Not guilt as abstraction — bones wasting, groaning all day, the hand of God heavy, strength dried up. The pipeline is intact. The Father's provision is still moving through it. But the flow to David is blocked by what he will not lay down. The longer the narrative is maintained, the heavier the weight becomes. The self that attributes ultimate significance to its own reputation cannot approach the throne because it is too busy protecting what it brought to the door.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 2:1</div>
+      <div class="verse">"Therefore you have no excuse, O man, every one of you who judges. For in passing judgment on another you condemn yourself, because you, the judge, practice the same things."</div>
+      <div class="note">The hatred turned outward is the most sophisticated form of the self-serving narrative. The man who judges others for the sins he commits has displaced the weight of his own blocked flow onto a visible target. The judgment feels righteous. It uses the standard of God's Word as cover for avoiding God's Word. You who judge — have you not done the same? The indictment is already in the room. The man rendering the verdict is the man the verdict is about. The judicial function has been turned outward to avoid being turned inward where it belongs.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Proverbs 28:13</div>
+      <div class="verse">"Whoever conceals his transgressions will not prosper, but he who confesses and forsakes them will obtain mercy."</div>
+      <div class="note">Concealment is the active choice to maintain the false attribution. The self that conceals knows what it is hiding and chooses to keep it hidden because the attribution — the significance it has assigned to its own justification — is not yet ready to be withdrawn. The prosperity that is blocked is not material. It is the soul-growth, the advance in doctrine, the deepening of the priestly life at the throne that cannot happen while the flow is interrupted. Confession is not optional maintenance. It is the operational requirement of the functioning priest.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The narrative named — now what the approach to the throne requires</div>
+
+  <!-- PHASE III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Cost — Ego Death and the Daily Lamb</span>
+    </div>
+    <p class="phase-desc">Confession is a sacrifice. Not a small religious gesture — a sacrifice. The Levitical system made this viscerally clear. You sinned. You go to the yard. You select an innocent animal. You look it in the eyes. You cut its throat. You watch it die for what you did. You carry that weight to the sanctuary. Every time. The daily confession of the Church Age believer is a smaller sacrifice than that — but it is a sacrifice of the same order. The self-serving narrative is laid on the altar. The false attributions are withdrawn. The ego that constructed the defense is brought to death — not once, but daily, because the sin nature regenerates the narrative overnight and the morning requires the same death again. The self must be led to the slaughter daily so that the priest can approach the throne unencumbered.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 51:16–17</div>
+      <div class="verse">"For you will not delight in sacrifice, or I would give it; you will not be pleased with a burnt offering. The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise."</div>
+      <div class="note">The broken spirit is the self-serving narrative dismantled — the self that has stopped attributing ultimate significance to its own justification and stopped defending what it brought to the door. The contrite heart — דַּכָּא, crushed, ground down, the thing that has been pressed until its resistance is gone — is the will that has withdrawn every false attribution and comes to the throne with nothing to protect. God will not despise it. He has never despised it. This is the sacrifice that the blood of bulls and goats was always pointing toward — and it is the sacrifice that makes the approach to the throne possible.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 9:23</div>
+      <div class="verse">"And he said to all, 'If anyone would come after me, let him deny himself and take up his cross daily and follow me.'"</div>
+      <div class="note">Daily. The self that sinned yesterday regenerates the narrative today. The cross is not a one-time event in the believer's life. The denial of self that confession requires is the daily carrying of it — not a morbid fixation on failure but the clean, regular practice of a priest who keeps the approach to the throne unobstructed. The man who has not confessed in a week has been carrying a week's worth of false attributions to the door and wondering why the throne feels distant.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 1:27–29</div>
+      <div class="verse">"But God chose what is foolish in the world to shame the wise… so that no human being might boast in the presence of God."</div>
+      <div class="note">The wise are put to shame not because their wisdom is refuted but because the self that built the wisdom withdraws its claims. The man who constructed the most sophisticated self-serving narrative finds that wisdom dissolved not by a better argument but by the withdrawal of the attribution that made the argument necessary. No boasting in the presence of God — because at the throne, every false attribution has been laid down. What remains is the broken spirit. And God receives it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The cost is named — now what confession produces in the whole person</div>
+
+  <!-- PHASE IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">What Confession Produces — Flow, Approach, and the Peace of Assurance</span>
+    </div>
+    <p class="phase-desc">Confession operates on four levels simultaneously. Positionally — the flow through the inviolable pipeline is restored, the grace and discipline of God moving freely to the believer again. Relationally — the approach to the throne is made possible, the priest arriving in the condition required to pray, praise, study, and proclaim. Psychologically — the self is humbled, the judicial function is turned inward rather than outward, and the peace of assurance settles over the καρδία that has laid down what it was carrying. Functionally — the fully operational καρδία, submitted to the will of God, doing the will of God, knowing God and being known by God. All four are the fruit of a single act in the private room with the door shut.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:15–16</div>
+      <div class="verse">"For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin. Let us then with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">The throne of grace is the destination confession is preparing the priest to reach. Draw near — the movement of approach, the priest coming into the presence of the Father through the High Priest who has already entered behind the curtain. The confidence is not the confidence of a man who has not sinned. It is the confidence of a man whose flow is operational — who has withdrawn the false attributions, laid down the narrative, and arrives at the throne with nothing to defend. At that throne: mercy received, grace found, the need met. Prayer. Praise. Study. Proclamation. This is why confession matters.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 11:31</div>
+      <div class="verse">"But if we judged ourselves truly, we would not be judged."</div>
+      <div class="note">The judicial function turned inward — the properly functioning conscience doing its moral inventory, rendering verdict on the self rather than projecting it outward onto others. The man who judges himself regularly cannot maintain a sustained posture of superiority over others. He knows too well what the morning mirror shows. This is the humbling that confession instills — not self-hatred, not the annihilation of the self, but accurate self-assessment. The self at its true size before God. And at its true size, it fits through the door to the throne.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 4:6–7</div>
+      <div class="verse">"…do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."</div>
+      <div class="note">The peace that surpasses understanding is the peace of the καρδία that is at the throne — not carrying what it already confessed, not defending what it already laid down. The guilt complex collapses not through emotional resolution but through the legal assurance that the case is closed. Faithful and just — the integrity of God guaranteeing the outcome. The flow is restored. The priest is at the throne. The peace is the experiential reality of a soul that is no longer hiding in the garden.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 32:5</div>
+      <div class="verse">"I acknowledged my sin to you, and I did not cover my iniquity; I said, 'I will confess my transgressions to the LORD,' and you forgave the iniquity of my sin."</div>
+      <div class="note">The same David whose bones were wasting and whose groaning filled the day. The moment the narrative was laid down — I acknowledged, I did not cover, I said I will confess — the forgiveness was immediate. Not after a waiting period. Not after demonstrated remorse. You forgave. Past tense. The flow restored. The iniquity — not just the act but the twisted root of it — addressed. The priest functional again. The approach to the throne clear.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Four phases of doctrine in hand — now the garden opens</div>
+
+  <!-- PHASE V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Garden — The First Approach</span>
+    </div>
+    <p class="phase-desc">There is a story you have heard your entire Christian life. The man blamed the woman. The woman blamed the serpent. God punished them all. Adam has been carrying that verdict for six thousand years. Now read it again — with the eyes of the heart that have spent four phases learning what confession actually is. Not transaction. Not the reporting of accurate information to God. The withdrawal of false attribution in the privacy of the priesthood, in the presence of the One who already knows everything, with no audience and no defense. Read what Adam actually said. Then decide whether the verdict you walked in with is the verdict the text supports.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:9–13</div>
+      <div class="verse">"But the LORD God called to the man and said to him, 'Where are you?' And he said, 'I heard the sound of you in the garden, and I was afraid, because I was naked, and I hid myself.' He said, 'Who told you that you were naked? Have you eaten of the tree of which I commanded you not to eat?' The man said, 'The woman whom you gave to be with me, she gave me fruit of the tree, and I ate.' Then the LORD God said to the woman, 'What is this that you have done?' The woman said, 'The serpent deceived me, and I ate.'"</div>
+      <div class="note">Read what Adam said. He named his condition — afraid, naked, hiding. He named the sequence — the woman you gave to be with me, she gave me fruit of the tree, and I ate. That is a complete record with no fabrication. He does not claim ignorance. He does not claim deception. He names the full sequence accurately. Eve does the same — she names the agent and the act. Both statements are factually complete. Both are the false attribution withdrawn — no longer defending the self, no longer constructing the narrative, speaking what happened before the One who already knew. God's response confirms it. He does not charge them with lying. He moves directly to consequences and provision. Because what they brought to the door was already laid down. The approach was made. The first confession in human history was not deflection. It was the withdrawal of everything the self could have used as a shield.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:15</div>
+      <div class="verse">"I will put enmity between you and the woman, and between your offspring and her offspring; he shall bruise your head, and you shall bruise his heel."</div>
+      <div class="note">The protoevangelion — the first Gospel, veiled in the judgment pronounced on the serpent. The people of faith who read this with the eyes of the heart enlightened recognize it. The seed of the woman who will crush the serpent's head is the Son not yet born — the One whose own withdrawal of every false claim at the cross will make every subsequent approach to the throne possible. The first covenant proceeding ends not with condemnation but with promise. The God who examined them is already working the provision. Moses received this and wrote it with the care of a man who understood what he was recording.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:21</div>
+      <div class="verse">"And the LORD God made for Adam and for his wife garments of skins and clothed them."</div>
+      <div class="note">The fig leaves were man's covering — self-generated, insufficient, the false attribution made physical. God replaced them with skins. Skins require blood. An animal died in the garden — the first blood shed in human history, shed by God for the covering of the ones who had just approached Him with nothing left to defend. His choosing of the covering, not theirs. His provision of the blood, not theirs. The sacrifice is made by the One who receives the approach. The pipeline purchased by this blood — and every subsequent shedding that pointed toward the final shedding — is what makes every approach to the throne possible from that moment forward.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The system established in the garden has never changed</div>
+
+  <!-- PHASE VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Lord Walking in the Garden — and the Next Time He Walked Among Men</span>
+    </div>
+    <p class="phase-desc">The LORD God walked in the garden in the cool of the day in the presence of sinful man. He walked toward the ones who were hiding. He examined, He listened, He provided the covering. He would not walk in the presence of sinful humanity again until He put on flesh and walked into Galilee. The incarnation is the second time God walks among sinful men. Everything between the garden and the manger is the long arc of the covenant stated in Genesis 3:15 — maintained through every dispensation, confirmed at every altar, pointing toward the One whose blood would make the final covering. The system that produced the first approach in Eden is the same system that produces the flow of 1 John 1:9. It has never been revised. It has only been fulfilled.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:8</div>
+      <div class="verse">"And they heard the sound of the LORD God walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of the LORD God among the trees of the garden."</div>
+      <div class="note">He was walking in the garden. Moving through the space where sinful man was hiding. The God whose integrity cannot be compromised walked toward the people who had just violated His command — not to condemn them but to find them. Where are you. Not because He did not know. Because the question was the invitation to stop hiding. To come out from behind the trees. To withdraw the fig leaf. The self that stops hiding and walks toward the sound of God moving in the garden is the self that has begun the approach. The hiding is the self-serving narrative made physical. Coming out is the beginning of the withdrawal.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 1:14</div>
+      <div class="verse">"And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth."</div>
+      <div class="note">Dwelt — ἐσκήνωσεν, tabernacled, pitched His tent among us. The God who walked in the garden walked again — in human flesh, in Galilee, in Jerusalem, at a well in Samaria. The second walking of God among sinful men. And this time the provision He brought was not animal skins. It was His own blood — the covering that Eden pointed to, the sacrifice that made every approach to the throne legally grounded in something sufficient to satisfy the integrity of God completely. The shielded pipeline runs through this blood. What it carries toward the believer has been purchased at that price.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">John writes this at the end of the first century — decades after the cross, after the resurrection, after Pentecost. He is not introducing a new system. He is naming what has been operating since the garden. The God who walked toward the hiding man and asked where are you is the same God who is faithful and just to forgive and cleanse the one who stops hiding and speaks. The approach that Adam and Eve made before the Lord in the cool of the day is the same approach that 1 John 1:9 describes. The pipeline is inviolable. The flow is restorable by confession. The throne is accessible. The known sins are forgiven. The unknown sins are cleansed. And at that throne — the priest prays, praises, studies, and proclaims. The will of God done. The meat consumed. The face of God sought and found.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">What Confession Actually Is</div>
+    <div class="hinge-text">
+      Not a transaction. Not guilt management.<br>
+      The withdrawal of false attribution —<br>
+      the self that assigned ultimate meaning to things that cannot bear it,<br>
+      laying that assignment down in the private room<br>
+      before the One who already knows everything.<br><br>
+      The pipeline is inviolable. Purchased by blood. Shielded.<br>
+      Sin interrupts the flow. Confession restores it.<br>
+      Fellowship is the flow.<br><br>
+      And when the flow is restored —<br>
+      the priest approaches the throne.<br>
+      Humbled. Judging self, not others.<br>
+      At peace with the assurance that the case is closed.<br>
+      The known sins forgiven. The forgotten sins cleansed.<br><br>
+      At the throne: prayer, praise, study, proclamation.<br>
+      The will of God done. The face of God known.<br>
+      The meat of the believer's life consumed in His presence.<br><br>
+      This is not a New Testament innovation.<br>
+      It is what happened in a garden<br>
+      when two people stopped hiding<br>
+      and the Lord walked toward them<br>
+      and provided the covering they could not provide for themselves.<br><br>
+      He would not walk among sinful men again<br>
+      until He put on flesh.<br>
+      And when He did —<br>
+      He became the covering.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
