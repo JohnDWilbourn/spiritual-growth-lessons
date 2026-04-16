@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bread of Life — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .stage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 012</div>
+    <h1>The Bread of Life</h1>
+    <div class="subtitle">Doctrine as the Food That Grows the Soul Toward Maturity</div>
+  </header>
+
+  <p class="intro">
+    Alienation from the spiritual life is not the consequence of sin — it is the consequence of ignorance of doctrine. Without doctrine, the believer cannot execute the spiritual life. He has been given the life. He cannot live it because he does not know what it is or how it operates. The Bread of Life is not a metaphor for religious feeling. It is the provision of God for the soul that must be fed in order to grow — from infancy to adolescence to maturity — entirely under the grace provision of God the Holy Spirit, who receives the Word from the teacher, deposits it into the soul, and metabolizes it into the knowing of God that is eternal life itself.
+  </p>
+
+  <div class="stage-label">Infancy — Learning the Will of God</div>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Infant at the Breast — The Child Posture and the First Food</span>
+    </div>
+    <p class="phase-desc">The newly saved believer is a spiritual infant by definition. Not as an insult — as a spiritual fact of the new birth. The human spirit imputed at salvation is a new faculty that has just come into existence. It requires immediate feeding. The child posture Jesus requires is not innocence. It is teachability. The infant who comes to the Word comes without a competing system already in place. He arrives empty and receptive, which is exactly the condition required for the pure milk of the Word to do its work. The will of God is something being encountered for the first time. The Spirit receives it from the teacher and begins depositing it into the newly created capacity of the soul. This is where the spiritual life begins. Not at conversion — at the first feeding after conversion.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 2:2</div>
+      <div class="verse">"Like newborn infants, long for the pure milk of the word, so that by it you may grow up into salvation."</div>
+      <div class="note">Long for it — the verb is ἐπιποθέω, an intense yearning, the same drive that moves a newborn toward the breast. Peter is not describing a mild preference. He is describing the instinct of a newly created life reaching toward the only thing that will sustain it. The pure milk of the Word — not mixed with human philosophy, not diluted by sentiment, not flavored to make it more palatable. Pure. The Spirit can only metabolize what is actually there. Adulterated milk does not grow the soul. It produces the stunted believer who has been in church for twenty years and is still an infant.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 18:3</div>
+      <div class="verse">"Truly, I say to you, unless you turn and become like children, you will never enter the kingdom of heaven."</div>
+      <div class="note">The child posture is not the destination — it is the entry point. You cannot receive the Bread of Life without it. The adult who arrives at the Word with his own system already in place, his own conclusions already drawn, his own theology already assembled, has no room for what the Spirit is trying to deposit. The child arrives with room. The child asks questions. The child receives correction without defending his prior position. The child learns because he knows he does not yet know. This is the posture the newly saved believer has naturally — and must intentionally maintain as he grows, because the flesh will work steadily to replace it with the pride of accumulated religious knowledge.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Deuteronomy 8:3</div>
+      <div class="verse">"…that he might make you know that man does not live by bread alone, but man lives by every word that comes from the mouth of God."</div>
+      <div class="note">The wilderness is the classroom for this lesson. God withheld the natural bread and provided manna — the food that came directly from His mouth, that could not be stored, that required daily dependence, that could not be generated by human effort. Every morning the infant believer wakes to the same condition — the soul requires feeding again. Yesterday's manna does not sustain today. The Word must be received fresh, under the filling of the Spirit, into the soul that has been cleared by confession and is ready to receive what the Spirit is ready to give. This is the daily rhythm of the infant stage. This is where the spiritual life is built from the ground up.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The infant fed — now what happens when the feeding stops</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Arrested Infancy — The Danger of the Soul That Is Never Fed</span>
+    </div>
+    <p class="phase-desc">The infant who is not fed does not stay neutral. He regresses or he is captured by the world's competing system, which is always present and always offering its own food. The believer who never receives doctrine doesn't stand still at spiritual infancy. He develops into a carnal adult — a full-grown human being with a stunted spiritual life, capable of religious behavior but incapable of executing the spiritual life because the food that would have grown the soul toward maturity was never received. Alienation from the spiritual life is not produced by sin. It is produced by the ignorance that sin's absence of doctrine creates. The pipeline is intact. The provision is available. But the believer who does not know the provision exists cannot claim it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 5:12–14</div>
+      <div class="verse">"For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil."</div>
+      <div class="note">By this time you ought to be teachers. The writer is not simply rebuking slow learners — he is identifying a catastrophic failure of the developmental process. These believers have had sufficient time to move from infancy through adolescence to maturity. They are still infants. Not because the provision was unavailable but because the reception was interrupted. Unskilled in the word of righteousness — the spiritual life requires skill, and skill requires practice, and practice requires the food that produces the capacity for practice. The believer who lives on milk indefinitely is not resting comfortably at a lower level. He is operating below the threshold of spiritual functionality.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 3:1–3</div>
+      <div class="verse">"But I, brothers, could not address you as spiritual people, but as people of the flesh, as infants in Christ. I fed you with milk, not solid food, for you were not ready for it. And even now you are not yet ready, for you are still of the flesh."</div>
+      <div class="note">Still of the flesh. Paul is not describing unbelievers. He is describing saved, indwelt, sealed believers who are operating from the flesh because the doctrine that would move them from carnal to spiritual has not been metabolized. They have the life. They cannot live it. The jealousy and strife among them is not the primary problem — it is the symptom. The primary problem is that the soul has not been fed. The Spirit has no deposited doctrine to work with. The pipeline carries provision toward them that they cannot receive because they have not grown the capacity to receive it. This is the most common condition of the Western church in any generation.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 4:18</div>
+      <div class="verse">"They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart."</div>
+      <div class="note">Paul's clinical diagnosis of the unbeliever applies precisely to the doctrinally empty believer in its functional dimension. The darkened understanding is not produced by moral failure alone — it is produced by the ignorance that the absence of doctrine creates. The alienation from the life of God is not the loss of salvation. It is the inability to execute the spiritual life that salvation made possible. The believer in this condition is not an unbeliever. He is a believer operating below the threshold of what his salvation was designed to produce — because the food that would have illuminated his understanding was never received.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Infancy named and its danger named — now the transition</div>
+
+  <div class="stage-label">Adolescence — Transitioning to the Doing of God's Will</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Adolescent and the Transition — Knowing Without Yet Doing</span>
+    </div>
+    <p class="phase-desc">The adolescent believer has received enough doctrine to know the will of God but is not yet consistently doing it. The tension between the flesh and the Spirit is most acute at this stage — enough doctrine to be convicted, not enough metabolized doctrine to consistently execute. He knows what the promises say. He has not yet learned to claim them under pressure. He knows what confession is. He does not yet confess quickly and return to the filling without extended detours through guilt and self-condemnation. He knows the spiritual life is real. He is still partly living from the old operating system. The adolescent stage is not failure. It is the necessary passage through which the doctrine received in infancy becomes the doctrine executed in maturity. The Spirit is the One moving him through it — under the grace provision that operates at every stage.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:27</div>
+      <div class="verse">"Do not labor for the food that perishes, but for the food that endures to eternal life, which the Son of Man will give to you. For on him God the Father has set his seal."</div>
+      <div class="note">The crowd has just eaten the loaves and fish. They followed Jesus across the lake for more. He names precisely what the adolescent stage looks like — laboring for the food that perishes. Pursuing the provision without pursuing the Provider. Wanting the blessing without the doctrine that would introduce them to the One behind the blessing. The adolescent believer can fall into the same pattern — pursuing the emotional experience of worship, the social belonging of the church community, the moral comfort of religious activity, while the food that endures to eternal life sits available and unclaimed because it requires the child posture he has already begun to outgrow.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">James 1:22–25</div>
+      <div class="verse">"But be doers of the word, and not hearers only, deceiving yourselves. For if anyone is a hearer of the word and not a doer, he is like a man who looks intently at his natural face in a mirror. For he looks at himself and goes away and at once forgets what he was like."</div>
+      <div class="note">The adolescent stage is exactly the mirror stage. He looks. He sees what the Word shows him. He goes away and forgets — not because the doctrine was false but because the execution has not yet caught up with the reception. Milk is learning the will of God. Meat is doing the will of God. The transition between them is not a single event. It is the progressive metabolization of deposited doctrine into active faith operating from the right lobe — the Spirit moving what the teacher deposited in the left lobe into the lived reality of the right. The adolescent who stays at the mirror and does not walk away from it is the one who grows.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 7:15</div>
+      <div class="verse">"For I do not understand my own actions. For I do not do what I want, but I do the very thing I hate."</div>
+      <div class="note">Paul is describing the conflict of the transition with clinical precision. The will is aligned with the Word — I want to do what God requires. The execution is not yet consistently there — I do the very thing I hate. This is not the description of a carnal unbeliever. It is the description of a believer in transition, whose doctrine has outrun his capacity to execute it, who is learning through repeated failure and repeated return what the mature believer has learned to do quickly and cleanly. The adolescent stage is not shameful. It is the training ground. The Spirit is present at every failure, receiving the confession, restoring the filling, moving the believer one more step toward the consistent execution that marks maturity.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The transition named — now the hard saying that separates those who will grow from those who will not</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Hard Saying — The Transition Requires Receiving What Is Difficult</span>
+    </div>
+    <p class="phase-desc">The transition from milk to meat does not happen automatically. It requires the willingness to receive doctrine that the flesh resists — the hard saying, the teaching that cuts against the grain of the self-serving narrative, the Word that the natural mind cannot receive without the Spirit's metabolizing work. Jesus pressed the crowd with exactly this and they walked away. The adolescent believer faces the same decision at every stage of the transition — will I receive what the Spirit is offering even when it is difficult, even when it costs the comfort of the old operating system, even when the flesh insists that this teaching is too hard? The ones who stay are the ones who grow. The ones who walk away remain adolescents indefinitely.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:53–56</div>
+      <div class="verse">"So Jesus said to them, 'Truly, truly, I say to you, unless you eat the flesh of the Son of Man and drink his blood, you have no life in you. Whoever feeds on my flesh and drinks my blood has eternal life, and I will raise him up on the last day. For my flesh is true food, and my blood is true drink. Whoever feeds on my flesh and drinks my blood abides in me, and I in him.'"</div>
+      <div class="note">The flesh and blood language was designed to offend the natural mind. Not because Jesus wanted to drive people away but because the transition from milk to meat requires the death of the natural mind's insistence on managing what it receives. The natural mind wants doctrine it can control — principles it can apply on its own terms, theology that leaves the self intact and in charge. Jesus is offering the Person — His flesh, His blood, His life given for the life of the world. You cannot receive this on your own terms. You receive it as a child or you do not receive it at all. This is the hard saying. This is the transition point.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:63</div>
+      <div class="verse">"It is the Spirit who gives life; the flesh is no help at all. The words that I have spoken to you are spirit and life."</div>
+      <div class="note">The hinge verse of the entire passage. The flesh profits nothing — the natural mind operating without the Spirit cannot metabolize what is being offered. The words are spirit and life — not inspirational content, not moral instruction, not theological information. Spirit and life. The same Spirit who receives the doctrine from the teacher and transfers it from left lobe to right lobe for metabolization. The words of Jesus are the vehicle. The Spirit is the metabolizer. The life is the result. The adolescent who receives this — who stops trying to process the doctrine through the natural mind alone and yields the hand-off point to the Spirit — begins to move into the doing that marks the transition to maturity.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 6:66–67</div>
+      <div class="verse">"After this many of his disciples turned back and no longer walked with him. So Jesus said to the twelve, 'Do you want to go away as well?'"</div>
+      <div class="note">The question is still being asked. At every stage of the transition from adolescence to maturity Jesus asks the same thing — do you want to go away as well? The doctrine is too hard. The cost is too high. The flesh has a better offer. Do you want to go? The believer who stays — not from loyalty, not from sentiment, not from religious habit, but because the doctrine has been metabolized deeply enough that there is genuinely nowhere else to go — is the believer who is crossing the threshold into maturity.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The hard saying received — now the mark of the maturing believer</div>
+
+  <div class="stage-label">Maturity — Doing the Will of God and Knowing Him</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">To Whom Shall We Go — The Mature Believer and the Executed Spiritual Life</span>
+    </div>
+    <p class="phase-desc">Peter's answer is not sentiment. It is not loyalty to a teacher he has followed for three years. It is the confession of a man whose doctrine has been metabolized deeply enough to produce an epistemological necessity — Lord, to whom shall we go? You have the words of eternal life. There is nowhere else to go because there is no other source of what the soul requires. This is the mark of the maturing believer. Not the absence of struggle. Not the achievement of a moral standard. The deep metabolization of doctrine that has produced the problem-solving devices, the operational spiritual gifts, the consistent execution of the will of God from a καρδία that knows the Shepherd's voice and follows it — all of it under the grace provision of the Spirit who has been doing the work from the first feeding forward.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:68–69</div>
+      <div class="verse">"Simon Peter answered him, 'Lord, to whom shall we go? You have the words of eternal life, and we have believed, and have come to know, that you are the Holy One of God.'"</div>
+      <div class="note">We have believed and have come to know — the two tenses are significant. The believing is the foundation laid at the new birth. The knowing is the progressive deepening of the relationship through the metabolized Word. Peter is not simply confessing loyalty. He is confessing the epistemological reality that the doctrine has produced — there is no other source of eternal life, no other food that grows the soul, no other provision that the Spirit can metabolize into the knowing of God that is life itself. This is where the adolescent transition ends and the mature execution begins. Not a graduation ceremony. The moment the doctrine has gone deep enough that the alternatives have lost their appeal entirely.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 5:14</div>
+      <div class="verse">"But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil."</div>
+      <div class="note">Trained by constant practice — the mature believer is not the one who received a large quantity of doctrine. He is the one whose powers of discernment have been exercised repeatedly through the testing, failure, confession, filling, and renewed execution of the spiritual life. The problem-solving devices are operational because they have been deployed under pressure and proven to work. The spiritual gifts are functioning because they have been exercised in the service of the body. The mature believer is not the scholar. He is the one whose doctrine has been lived long enough to become the instinctive operating system of the soul.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Colossians 1:9–10</div>
+      <div class="verse">"…asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding, so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God."</div>
+      <div class="note">Filled with the knowledge of His will — this is the mature stage of what began as milk in infancy. The will of God learned, metabolized, and now operative in the executed spiritual life. Walk in a manner worthy — the doing that the adolescent stage was the transition toward. Bearing fruit in every good work — the spiritual gifts operating from their proper foundation. Increasing in the knowledge of God — not a fixed destination but a deepening that continues as long as the believer is walking in the filling, claiming the promises, and executing the life the Spirit has been preparing him to live from the moment of the new birth.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The executed life named — now the telos toward which all of it moves</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">This Is Eternal Life — Knowing God and Being Known by Him</span>
+    </div>
+    <p class="phase-desc">The mature believer is not the one who has arrived. He is the one who is most deeply in motion toward the One who is eternal life itself. The Bread of Life has been consumed at the depth his developed capacity can hold — and the capacity keeps growing, which means the consumption deepens, which means the knowing deepens, which means the life that is eternal life deepens. This is not a future state waiting to be entered at death. It is operative now, in time, in the Spirit-filled life of the believer who has received the provision God prepared from before the foundation of the world — the Bread of Life, the Word made flesh, the words that are spirit and life, metabolized by the Spirit into the knowing of God that is the purpose of the entire journey.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 17:3</div>
+      <div class="verse">"And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</div>
+      <div class="note">Eternal life is not a destination. It is a relationship of knowing — γινώσκω, the knowing that comes from the inside of an encounter, from the lived experience of the relationship rather than the academic study of its subject. The infant begins to know God through the first doctrines deposited by the Spirit. The adolescent deepens the knowing through the testing that drives the doctrine from intellectual reception into operational faith. The mature believer knows God the way Peter knew Him at the water's edge — not from a distance, not from a textbook, but from the inside of a life that has been fed by the Bread of Life long enough that the knowing has become the life itself.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 4:9</div>
+      <div class="verse">"But now that you have come to know God, or rather to be known by God, how can you turn back again to the weak and worthless elementary principles of the world, whose slaves you want to be once more?"</div>
+      <div class="note">Or rather to be known by God — Paul corrects himself mid-sentence because the direction of the knowing matters. The mature believer does not ascend to God through accumulated doctrine. The Spirit carries him into the presence of the Father through the Son — and the Father knows him. Completely. By name. The way Jesus knew the Samaritan woman at the well. The way the Shepherd knows each sheep. To be known by God is the experiential reality that the Bread of Life was always moving the believer toward. The milk introduced the relationship. The meat deepened it. The mature life is the life in which the knowing of God and being known by God is the daily operational reality of the soul.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:35</div>
+      <div class="verse">"Jesus said to them, 'I am the bread of life; whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'"</div>
+      <div class="note">Shall not hunger. Shall never thirst. The promise is not that the mature believer has no needs — it is that the Bread of Life is sufficient for every need the soul presents at every stage of its development. The infant's hunger is met. The adolescent's thirst is met. The mature believer's deepening capacity is met by a provision that is inexhaustible because it is the Person Himself — the living bread who came down from heaven, whose words are spirit and life, who is metabolized by the Spirit into the soul at the depth the soul can receive, and who deepens the capacity to receive by the very act of being received. This is eternal life. This is the will of God. This is what the Bread of Life was offered to produce in every soul that comes to Him as a child and never stops.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Bread of Life — From Infancy to Maturity</div>
+    <div class="hinge-text">
+      Alienation from the spiritual life is not produced by sin.<br>
+      It is produced by ignorance of doctrine.<br>
+      Without doctrine the believer cannot execute the spiritual life.<br><br>
+      The infant receives the pure milk of the Word —<br>
+      learning the will of God,<br>
+      the Spirit depositing the first doctrine<br>
+      into the newly created capacity of the soul.<br><br>
+      The adolescent transitions from knowing to doing —<br>
+      the hard saying received,<br>
+      the flesh and the Spirit in the tension of the passage,<br>
+      the doctrine moving from left lobe to right lobe<br>
+      under the Spirit's metabolizing work.<br><br>
+      The mature believer executes the spiritual life —<br>
+      the problem-solving devices operational,<br>
+      the spiritual gifts deployed,<br>
+      the powers of discernment trained by constant practice,<br>
+      the knowing of God deepening without ceiling.<br><br>
+      Every stage operates under the grace provision<br>
+      of God the Holy Spirit —<br>
+      who receives the Word from the teacher,<br>
+      transfers it from the natural mind to the soul,<br>
+      and metabolizes it into the knowing of God<br>
+      that is eternal life itself.<br><br>
+      This is eternal life —<br>
+      that they know you, the only true God,<br>
+      and Jesus Christ whom you have sent.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
