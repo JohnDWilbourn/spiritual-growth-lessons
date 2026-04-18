@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Sin and Divine Discipline — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .discipline-block {
+    background: var(--accent-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .discipline-stage {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .discipline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .discipline-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 017</div>
+    <h1>Personal Sin and Divine Discipline</h1>
+    <div class="subtitle">The Three Categories of Sin, the Three Stages of Discipline, and the Recovery</div>
+  </header>
+
+  <p class="intro">
+    The sin nature provides the temptation. The individual provides the decision. Personal sin originates from volition — the free will of the creature choosing to yield to the temptation the sin nature generates through the area of weakness and the lust pattern. This distinction matters. The sin nature cannot be held responsible for personal sin — the individual can. And because the individual is responsible, the recovery is available to the individual. The God whose justice must address personal sin is the same God whose love motivated the cross that made the recovery possible. Divine discipline is not punishment administered by an angry God. It is corrective training administered by a faithful Father who will not leave His carnal children in the condition their sin has produced.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Mental Attitude Sins — Where Every Personal Sin Begins</span>
+    </div>
+    <p class="phase-desc">Every personal sin begins in the mind before it becomes a word or an act. Mental attitude sins are the first category — the thoughts, attitudes, and inner orientations that constitute sin in themselves regardless of whether they ever produce verbal or overt expression. Hatred, arrogance, jealousy, bitterness, envy, worry, fear, lust, covetousness, vindictiveness — these are not pre-sins waiting to become real sins. They are sins. Jesus addressed this precisely in the Sermon on the Mount. The man who has not committed adultery but has looked at a woman with lust has committed adultery in his heart. The man who has not murdered but nurses hatred toward his brother is guilty before the standard of God's righteousness. The interior life is as fully under the jurisdiction of divine righteousness as the exterior life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 5:21–22, 27–28</div>
+      <div class="verse">"You have heard that it was said to those of old, 'You shall not murder'… But I say to you that everyone who is angry with his brother will be liable to judgment… You have heard that it was said, 'You shall not commit adultery.' But I say to you that everyone who looks at a woman with lustful intent has already committed adultery with her in his heart."</div>
+      <div class="note">Jesus is not raising the standard above what the Law required. He is exposing what the Law always required — the interior standard that the external code was always pointing toward. The Pharisees had mastered the exterior compliance while the interior remained unaddressed. The sin nature's area of strength had polished the outside of the cup while the inside filled with the mental attitude sins that the area of weakness generated and the lust pattern sustained. Mental attitude sins are the primary category because they are the source from which verbal and overt sins proceed. Confession names them first — sins of mental attitude, thoughts, words, and deeds — because the interior must be addressed before the exterior can be rightly evaluated.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Proverbs 23:7</div>
+      <div class="verse">"For as he thinks in his heart, so is he…"</div>
+      <div class="note">The interior life defines the person. Not the reputation, not the public performance, not the exterior compliance with social or religious standards. What a man thinks in his heart is what he is. The mental attitude sins that the properly functioning conscience surfaces in moral inventory are not incidental impurities on an otherwise clean record. They are the record — the actual condition of the soul that the exterior presentation either reflects or conceals. The believer who confesses his mental attitude sins is not being hyperscrupulous. He is confessing what the sin nature's deepest operation has been producing in the interior life that only God and his own conscience can see.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Corinthians 10:5</div>
+      <div class="verse">"We destroy arguments and every lofty opinion raised against the knowledge of God, and take every thought captive to obey Christ."</div>
+      <div class="note">Take every thought captive — the mental attitude is the battlefield where the sin nature operates most consistently and most invisibly. The Spirit-filled believer does not simply suppress mental attitude sins through willpower. He brings every thought under the authority of Christ — the deposited doctrine metabolized into the right lobe providing the standard against which every interior attitude is measured and every mental attitude sin is identified and named. The properly functioning conscience operating in the filling does this work continuously. When it surfaces a mental attitude sin, the response is immediate confession, restored filling, and the mind reset under the authority of the Word.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Mental attitude sins unnamed — now what they produce when spoken</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Verbal Sins — The Interior Made Audible</span>
+    </div>
+    <p class="phase-desc">Verbal sins are the mental attitude sins made audible — the interior life expressed through the tongue. Gossip, slander, maligning, judging, lying, cursing, blasphemy, false teaching — every verbal sin originates in a mental attitude sin that was not named and confessed before it found expression in words. The tongue is the most dangerous instrument the sin nature has access to — it can destroy relationships, reputations, congregations, and nations with nothing more than words. James devotes more attention to the tongue than to almost any other single subject because he understands what the sin nature can accomplish through speech that it cannot accomplish through any physical act. The verbal sin category also carries a specific additional discipline — the triple compound discipline that falls on the believer who judges others verbally.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">James 3:5–6</div>
+      <div class="verse">"So also the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire! And the tongue is a fire, a world of unrighteousness. The tongue is set among our members, staining the whole body, setting on fire the entire course of life, and set on fire by hell."</div>
+      <div class="note">Set on fire by hell — the verbal sin is not a small failure of self-control. It is the sin nature at its most destructive, the lust pattern finding its most accessible outlet. The tongue that gossips, slanders, or maligns is the tongue operating from the mental attitude sin that produced the assessment being expressed. The stain spreads from the tongue to the whole body — the verbal sin damages the speaker as much as the spoken about, confirming and deepening the mental attitude sin that produced it rather than relieving it. Confession of verbal sin requires naming the verbal act and the mental attitude sin beneath it — the root addressed, not just the fruit cut off.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 12:36–37</div>
+      <div class="verse">"I tell you, on the day of judgment people will give account for every careless word they speak, for by your words you will be justified, and by your words you will be condemned."</div>
+      <div class="note">Every careless word — not only the deliberately malicious statement but the thoughtless comment, the casual dismissal, the offhand judgment passed without awareness of its weight. The verbal sins that occur in the ordinary flow of conversation without the heat of deliberate malice are still verbal sins. The properly functioning conscience in the Spirit-filled believer catches them — the careless word that was unkind, the judgment that was unfair, the exaggeration that was untrue. These are named in confession with the same precision as the deliberate verbal sin. The standard is the same. The recovery is the same. The confession is specific to what was actually said.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 4:29</div>
+      <div class="verse">"Let no corrupting talk come out of your mouths, but only such as is good for building up, as fits the occasion, that it may give grace to those who hear."</div>
+      <div class="note">Corrupting talk — the verbal sin that tears down, that maligns, that damages the hearer or the person spoken about. The standard is not silence but construction — words that build up, that fit the occasion, that give grace. The Spirit-filled believer's speech is the ambassador function operating verbally — the living water overflowing from the καρδία into the hearing of others. The verbal sin is the ambassador function's opposite — the sin nature's most socially accessible tool for damage, destructiveness, and the dissolution of what the Spirit-filled community is designed to be.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Verbal sins named — now the overt acts the interior has been producing</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Overt Sins — The Interior Made Visible</span>
+    </div>
+    <p class="phase-desc">Overt sins are the mental attitude sins made visible through physical action. They are the terminal expression of what the area of weakness generated and the lust pattern sustained — the desire fully conceived, giving birth to the act. Sexual immorality, theft, violence, drunkenness, fraud, idolatry — the overt sin is not more serious than the mental attitude sin that produced it. It is simply more visible. The mental attitude sin of lust becomes overt sexual sin. The mental attitude sin of covetousness becomes overt theft. The mental attitude sin of hatred becomes overt violence. The overt sin is the evidence that the mental attitude sin was not addressed — not caught and confessed at the interior level before it found external expression.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:19–21</div>
+      <div class="verse">"Now the works of the flesh are evident: sexual immorality, impurity, sensuality, idolatry, sorcery, enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions, envy, drunkenness, orgies, and things like these. I warn you, as I warned you before, that those who do such things will not inherit the kingdom of God."</div>
+      <div class="note">The works of the flesh are evident — overt. Visible. The output of the sin nature's area of weakness operating through the lust pattern without the restraint of the Spirit-filled life. Paul's list moves from overt sexual sins through idolatry to social fragmentation — enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions — and back to overt physical indulgence. The list is not ranked by severity. The social sins that fragment a congregation — strife, divisions, jealousy — sit alongside the overt sins that scandalize it. Both are works of the flesh. Both require the same response — confession, restored filling, the sin nature displaced from operational control.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">James 1:15</div>
+      <div class="verse">"Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."</div>
+      <div class="note">The sequence is precise. The desire — the mental attitude sin, the lust pattern activated. Conceived — the volition yielding to the temptation. Gives birth to sin — the overt act. Sin fully grown brings forth death — the carnal state, the interrupted filling, the spiritual inoperability that unconfessed sin produces in the believer. The overt sin is not the starting point. It is the end point of a sequence that began in the interior and was not addressed at any earlier stage. Confession works at every point in the sequence — the mental attitude sin named before it becomes verbal, the verbal sin named before it becomes overt, the overt sin named as specifically as the act that produced it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 John 3:4</div>
+      <div class="verse">"Everyone who makes a practice of sinning also practices lawlessness; sin is lawlessness."</div>
+      <div class="note">Sin is lawlessness — the precise definition. Not weakness, not failure, not falling short of an ideal. The violation of God's law. The overt sin is the most concrete expression of the lawlessness that the sin nature generates — the act that crosses the line that God's righteousness has established. The believer who makes a practice of overt sin — who has not interrupted the sequence at the mental attitude or verbal stage and has allowed the sin nature to produce its full expression repeatedly — is the believer who is most in need of the discipline that the justice of God will administer to bring him back to fellowship.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Three categories of personal sin named — now the response of the justice of God</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Divine Discipline — Three Stages of Corrective Grace</span>
+    </div>
+    <p class="phase-desc">Divine discipline is not punishment administered by an angry God. It is corrective action taken by the justice of God to train, encourage, and motivate the carnal believer to recover and return to the plan of God. It is limited to believers and occurs only in time — never in eternity. God desires only the best for every member of His family. Therefore all divine discipline is administered in love and grace, in the manner of a parent toward a child. The pain of punishment is designed to bring the carnal believer back — not to destroy him, not to condemn him, but to restore him to the fellowship that the unconfessed sin has interrupted. The intensity increases with each stage precisely because the love that motivates it will not give up.</p>
+
+    <div class="discipline-block">
+      <div class="discipline-stage">Stage One</div>
+      <div class="discipline-title">Warning Discipline</div>
+      <div class="discipline-desc">The first stage alerts the carnal believer to his need to recover fellowship with God. The Lord graciously knocks at the door — through the conscience, through the Word, through circumstances that create discomfort — giving the believer every opportunity to recognize his failure and confess. Warning discipline is the gentlest form. It is designed to be recognized and responded to before the consequences of unconfessed sin accumulate. The believer who hears the knock and confesses at this stage avoids everything that follows. The believer who ignores it invites the next stage. Revelation 3:19-20 — those whom I love I reprove and discipline. The knock at the door is love expressed through the justice that will not leave the carnal believer in the condition his sin has produced.</div>
+    </div>
+
+    <div class="discipline-block">
+      <div class="discipline-stage">Stage Two</div>
+      <div class="discipline-title">Intensive Discipline</div>
+      <div class="discipline-desc">When warning discipline is ignored, the justice of God escalates to intensive discipline — a more potent warning administered to shock the rebellious believer out of his persistent carnality. The intensity is not disproportionate. It is calibrated to the individual believer and administered for maximum effectiveness — neither too lenient nor too severe. Physical illness, financial pressure, relational breakdown, loss of opportunity — the forms are varied but the purpose is identical. Bring the believer back. Every intensification of discipline is another expression of the love that will not abandon the carnal believer to the consequences of his own choices. Even under intensive discipline, logistical grace continues — God faithfully sustains His errant children with the basic provisions that keep recovery possible.</div>
+    </div>
+
+    <div class="discipline-block">
+      <div class="discipline-stage">Stage Three</div>
+      <div class="discipline-title">Dying Discipline — The Sin Unto Death</div>
+      <div class="discipline-desc">The final stage of divine discipline is administered only after a period of prolonged and unchecked carnality — when the believer has declined through successive stages of reversionism to the point where God can no longer use him and removes him from this life. This is the sin unto death — sin face to face with death — a premature, sometimes painful departure from time into eternity. The manner varies: physical illness, sudden death, prolonged suffering. The purpose is not condemnation — the sin unto death does not extend beyond the grave. At the moment of physical death, the negative believer, like his positive counterpart, is absent from the body and face to face with the Lord. The sting of death does not follow into eternity. Scripture records believers who recovered from the final stages of dying discipline through confession — David, Hezekiah, the incestuous Corinthian. The recovery is available until the last breath.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 12:5–6, 10–11</div>
+      <div class="verse">"…'My son, do not regard lightly the discipline of the Lord, nor be weary when reproved by him. For the Lord disciplines the one he loves, and chastises every son whom he receives.'… He disciplines us for our good, that we may share his holiness. For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</div>
+      <div class="note">The Lord disciplines the one he loves — divine discipline is the evidence of sonship, not its denial. The believer under discipline has not been abandoned. He has been identified as a son worth pursuing. He disciplines us for our good — not for God's satisfaction, not for the punishment's own sake, but for the specific outcome: that we may share his holiness, that the peaceful fruit of righteousness may be produced in the one who has been trained by it. The discipline is always purposive. It always aims at the restoration of the fellowship that the personal sin interrupted. The justice that administers it is the same justice that justifies — the just and the justifier operating in the same direction toward the same end.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Discipline named in three stages — now the triple compound for verbal sins</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">Triple Compound Discipline — The Specific Consequence of Judging Others</span>
+    </div>
+    <p class="phase-desc">Verbal sins that judge others carry a specific and compounded discipline. The believer guilty of gossip, slander, maligning, or judging others receives not one but three forms of divine punishment simultaneously. This is not arbitrary severity. It reflects the layered nature of the verbal sin that judges — it generates a mental attitude sin, expresses it verbally, and implicates the person being judged. The justice of God addresses all three layers. Understanding this should produce a specific and immediate response in the believer who catches himself in the act of judging another — not prolonged self-condemnation but immediate confession of all three components and the quick restoration of fellowship that prevents the triple discipline from accumulating.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 7:1–2</div>
+      <div class="verse">"Judge not, that you be not judged. For with the judgment you pronounce you will be judged, and with the measure you use it will be measured to you."</div>
+      <div class="note">With the measure you use it will be measured to you — this is the triple compound discipline operating as a principle. The believer who judges another receives discipline for the mental sin that motivated the judgment, discipline for the verbal act of judging, and discipline for the sins he named in his judgment — as though he himself had committed them. If the person he judged was actually under divine discipline, the judge receives an equal measure of that discipline. If the person was innocent, the judge receives discipline for the falsely attributed sins while the innocent person receives special blessing. The judicial function belongs to God. When the believer usurps it, the justice of God returns it to its rightful owner with compound interest.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 2:1</div>
+      <div class="verse">"Therefore you have no excuse, O man, every one of you who judges. For in passing judgment on another you condemn yourself, because you, the judge, practice the same things."</div>
+      <div class="note">You condemn yourself — not metaphorically but structurally. The judicial function turned outward onto another is the judicial function that belongs turned inward onto the self. The believer who judges another is the believer whose own confession is overdue — who has displaced the moral inventory that confession requires onto a visible external target. The triple compound discipline is the justice of God redirecting the judgment back to its proper object. The only escape from the triple compound is what should have prevented it — the properly functioning conscience doing its daily moral inventory and naming the mental attitude sins before they find verbal expression in the judgment of others.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">James 4:11–12</div>
+      <div class="verse">"Do not speak evil against one another, brothers. The one who speaks evil against a brother or judges his brother, speaks evil against the law and judges the law… There is only one lawgiver and judge, he who is able to save and to destroy. But who are you to judge your neighbor?"</div>
+      <div class="note">Who are you to judge — the question cuts to the heart of why verbal sins that judge are treated with such severity. The believer who judges another is not merely being unkind. He is assuming a prerogative that belongs exclusively to God — the judicial function that only the One who is both just and the justifier is qualified to exercise. The triple compound discipline is the justice of God reclaiming what the judging believer has usurped. The recovery is identical to every other verbal sin — confession naming the mental attitude sin, the verbal act, and the specific judgment passed — followed by the restored filling and the judicial function returned to its proper interior orientation.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Discipline in all its forms — now the recovery that closes the loop</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Recovery — Confession Closing the Loop</span>
+    </div>
+    <p class="phase-desc">The loop that Romans 5:12 opened — sin entering the world through one man, death spreading to all — is closed by the same justice that opened it. The justice that condemned the sinner in Adam is the justice that justifies the believer in Christ. The justice that disciplines the carnal believer through three escalating stages is the justice that forgives and cleanses the confessing believer through one act of humility and submission. The recovery is not complicated. It is not prolonged. It is not dependent on the intensity of remorse or the duration of contrition. It is dependent on the faithfulness and justice of God — the same two attributes that make divine discipline certain also make divine forgiveness certain. The system established in the garden. Confirmed at the cross. Available to every believer every time personal sin interrupts the filling.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">The complete recovery in one verse. The known sins — the mental attitude sins, the verbal sins, the overt sins — named specifically in confession and forgiven specifically. All unrighteousness — the forgotten sins, the unrecognized attitudes, the areas the moral inventory did not fully reach — cleansed completely. Faithful — God will act without fail. Just — the forgiveness is legally grounded in the finished work of the cross. The penalty for every confessed sin was already executed at Calvary. God is not overlooking sin when He forgives the confessing believer. He is applying the already-rendered verdict of the cross to the specific act. The divine discipline that was accumulating stops. The filling is restored. The grace pipeline is open. The priest is functional at the throne.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 32:5</div>
+      <div class="verse">"I acknowledged my sin to you, and I did not cover my iniquity; I said, 'I will confess my transgressions to the LORD,' and you forgave the iniquity of my sin."</div>
+      <div class="note">David — the man whose bones wasted, whose strength dried up, whose groaning filled the day under the weight of unconfessed sin — names the recovery precisely. I acknowledged. I did not cover. I said I will confess. Three acts of the will turning the judicial function inward where it belongs. And you forgave — the immediate response of the faithful and just God whose love motivated the provision and whose justice makes the forgiveness legally sound. The iniquity of my sin — not just the act but the twisted root of it addressed. The same David who wrote Psalm 51 after Bathsheba. The same man. The same God. The same recovery. Available every time.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 12:12–13</div>
+      <div class="verse">"Therefore lift your drooping hands and strengthen your weak knees, and make straight paths for your feet, so that what is lame may not be put out of joint but rather be healed."</div>
+      <div class="note">Lift your drooping hands — the command to the believer emerging from divine discipline through confession and restored fellowship. The discipline has done its work. The filling is restored. The path forward is clear. The healing is available — not in spite of the discipline but through it, because the discipline trained what the carnal state had allowed to weaken. The believer who has moved through warning discipline to confession and recovery is stronger than the believer who was never disciplined, because the discipline metabolized the doctrine into the lived experience that no amount of classroom theology can substitute. The peaceful fruit of righteousness — produced in the one who has been trained by it.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Personal Sin and Divine Discipline — The Loop and Its Closing</div>
+    <div class="hinge-text">
+      The sin nature provides the temptation.<br>
+      The individual provides the decision.<br>
+      Mental attitude, verbal, overt —<br>
+      three categories, one source, one solution.<br><br>
+      Divine discipline — not anger, corrective grace.<br>
+      Warning, intensive, dying discipline —<br>
+      three stages of the love that will not abandon<br>
+      the carnal believer to his own choices.<br><br>
+      The triple compound for the verbal sin that judges —<br>
+      the judicial function returned to its proper owner<br>
+      with the full weight of justice behind it.<br><br>
+      And the recovery — always available,<br>
+      right up to the last breath.<br>
+      Faithful and just to forgive.<br>
+      Faithful and just to cleanse.<br>
+      The known sins named. The forgotten sins covered.<br>
+      The filling restored. The pipeline open.<br>
+      The priest at the throne.<br><br>
+      The loop that opened in Adam<br>
+      closes at the cross —<br>
+      every time the confessing believer<br>
+      acknowledges what he did,<br>
+      does not cover it,<br>
+      and says I will confess.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

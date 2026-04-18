@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam's Original Sin — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 015</div>
+    <h1>Adam's Original Sin</h1>
+    <div class="subtitle">The Fall, the Federal Headship, and the Condition Every Human Being Is Born Into</div>
+  </header>
+
+  <p class="intro">
+    Before the cross can be understood, the problem the cross solved must be understood. Before grace can be received rightly, the condition grace addresses must be named precisely. Every human being except Jesus Christ enters this world in the same condition — physically alive, spiritually dead, bearing Adam's original sin imputed to a sin nature inherited through genetic transmission, separated from God before the first personal sin is ever committed. This is not a harsh theological position. It is the precise diagnosis that makes the cure make sense. Romans 5:12 is the spine of this lesson. Everything else builds from it.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Adam Before the Fall — Created Spiritually Alive</span>
+    </div>
+    <p class="phase-desc">Adam was created with everything required for a relationship with God — body, soul, and human spirit. The human spirit was the faculty of God-consciousness, the capacity for fellowship with the Creator, the organ of spiritual perception that made the things of God accessible to him. He was created in the image of God — the image bearer, the rational, volitional creature designed to reflect the character of the One who made him. The garden was the environment of provision — every need met, every tree available save one. One prohibition. One test of the volition that made the image bearer genuinely the image bearer. God does not program robots. He creates creatures with free will whose choices are real.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 2:7 / Genesis 2:16–17</div>
+      <div class="verse">"…then the LORD God formed the man of dust from the ground and breathed into his nostrils the breath of life, and the man became a living creature." / "And the LORD God commanded the man, saying, 'You may surely eat of every tree of the garden, but of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die.'"</div>
+      <div class="note">The breath of life — the divine act that distinguished Adam from the dust he was formed from. God breathed into him and he became a living creature — not merely biological life but the full triune composition of body, soul, and human spirit that made fellowship with God possible. The prohibition is not arbitrary restriction. It is the structure within which genuine volition could be exercised. Love that cannot choose otherwise is not love. Obedience that has no alternative is not obedience. The tree of the knowledge of good and evil is the test that made Adam's relationship with God real — and the choice that would make the fall of all mankind possible.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 1:26–27</div>
+      <div class="verse">"Then God said, 'Let us make man in our image, after our likeness…' So God created man in his own image, in the image of God he created him; male and female he created them."</div>
+      <div class="note">In our image — the image of the triune God. Rational, volitional, morally responsible, spiritually capable. The image bearer is not God but reflects the character of God in a way that no other creature does. The sovereignty of God finds its creaturely echo in the volition of man. The veracity of God finds its creaturely echo in the conscience of man. The love of God finds its creaturely echo in the relational capacity of man. When Adam fell, the image was not destroyed — it was damaged. The human spirit was lost. The God-consciousness that made the image bearer capable of genuine relationship with the Creator was extinguished. What remained was the image of God without the life of God.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Created spiritually alive — now the choice that changed everything</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Fall — Spiritual Death and the Formation of the Sin Nature</span>
+    </div>
+    <p class="phase-desc">Adam ate. The prohibition was clear. The warning was explicit — in the day you eat of it you shall surely die. He ate with full cognitive awareness of what he was doing. This was not a mistake. It was not a misunderstanding. It was willful, cognitive disobedience — the volition of the image bearer turned against the One whose image he bore. The death was immediate. Not physical — Adam continued to breathe, to move, to speak. Spiritual death. The human spirit lost. The faculty of God-consciousness extinguished. The capacity for fellowship with the Creator gone. And in the cell structure of his body, the sin nature was formed — the inherent corruption and center of rebellion against God that would from that moment forward be transmitted genetically to every descendant.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:6–7</div>
+      <div class="verse">"So when the woman saw that the tree was good for food, and that it was a delight to the eyes, and that the tree was to be desired to make one wise, she took of its fruit and ate, and she also gave some to her husband who was with her, and he ate. Then the eyes of both were opened, and they knew that they were naked. And they sewed fig leaves together and made themselves loincloths."</div>
+      <div class="note">Their eyes were opened — not to wisdom but to their condition. The first thing spiritual death produced was shame. Not guilt in the fully formed sense but the raw awareness of exposure — nakedness that had been without significance before was suddenly unbearable. The fig leaves are the first human good. The first self-generated attempt to cover what only God can cover. The first self-serving narrative — if we cover ourselves before He arrives, perhaps the condition will not be what it is. The fig leaves failed then. They have been failing ever since. Every human attempt to address the condition of spiritual death through human effort, religious performance, or moral achievement is a fig leaf.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:12</div>
+      <div class="verse">"Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned—"</div>
+      <div class="note">One man. Sin entered the world through one man's one act. Death through sin — the spiritual death that the prohibition warned of was executed immediately at the moment of the transgression. And death spread to all men — not gradually, not selectively, not proportionally. To all. The federal headship of Adam means that when the representative of the human race sinned, the entire human race sinned in him. Every person born after Adam entered the world in the same condition Adam was in after the fall — spiritually dead, bearing the sin nature, separated from God before the first personal sin was ever committed. This is the diagnosis. The cross is the only cure.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 6:6</div>
+      <div class="verse">"We know that our old self was crucified with him in order that the body of sin might be brought to nothing, so that we would no longer be enslaved to sin."</div>
+      <div class="note">The body of sin — the sin nature residing in the cell structure of the physical body, the genetic inheritance from Adam that cannot be removed by education, therapy, moral effort, or religious discipline. The body of sin is not eliminated at salvation — it remains present in the believer until physical death or the Rapture. What the cross accomplished was not the removal of the sin nature but the breaking of its mastery — the old self crucified with Christ so that the believer is no longer enslaved to the sin nature's demands. The sin nature is still present. The Spirit-filled believer is no longer under its control.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The fall executed — now the transmission to every descendant</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Federal Headship — Why All Mankind Fell When Adam Fell</span>
+    </div>
+    <p class="phase-desc">Adam was not merely an individual making a personal decision with personal consequences. He was the federal head of the human race — the natural and representative head of every human being who would ever live. His decision was made on behalf of everyone descended from him, not because God arbitrarily assigned the consequences but because Adam genuinely represented what humanity is. When the representative falls, the represented fall with him. This is the principle of federal headship — the same principle that makes Christ's work on the cross applicable to all who believe. As Adam is the federal head of all mankind through physical birth, Christ is the federal head of regenerate mankind through the new birth.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:19</div>
+      <div class="verse">"For as by the one man's disobedience the many were made sinners, so by the one man's obedience the many will be made righteous."</div>
+      <div class="note">The symmetry is exact and intentional. One man's disobedience — the entire race made sinners. One man's obedience — the entire race given the basis for righteousness. The federal headship principle operates in both directions. Adam's representation produced the problem. Christ's representation provides the solution. The mechanism is identical — what the federal head does is credited to those he represents. Adam's sin is credited to every member of the race he heads. Christ's righteousness is credited to every member of the regenerate race he heads. The grace that reverses the fall operates through the same structural principle as the fall itself.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 15:21–22</div>
+      <div class="verse">"For as by a man came death, by a man has come also the resurrection of the dead. For as in Adam all die, so also in Christ shall all be made alive."</div>
+      <div class="note">In Adam all die — the scope is universal and the mechanism is the federal headship. Every human being who descends from Adam through physical birth is in Adam and therefore dies. In Christ shall all be made alive — the scope is universal in offer and the mechanism is identical. Everyone who is in Christ through the new birth participates in His resurrection life. The two Adams stand at the two ends of human history as the two federal heads whose decisions determine the condition of everyone under their respective headships. The first Adam produced the problem. The Last Adam — 1 Corinthians 15:45 — is the solution.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 5:15–17</div>
+      <div class="verse">"But the free gift is not like the trespass. For if many died through one man's trespass, much more have the grace of God and the free gift by the grace of that one man Jesus Christ abounded for many."</div>
+      <div class="note">Much more — the grace that reverses the fall is not merely equivalent to the damage the fall produced. It exceeds it. The trespass produced death. The grace produces life and righteousness simultaneously — double imputation at the new birth. What Adam lost was the human spirit and righteous standing. What Christ restores is the human spirit imputed by the Spirit in regeneration and the divine righteousness imputed by the justice of God at the moment of faith. The grace abounds. The solution is larger than the problem it addresses.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The federal headship established — now the precise mechanics of what is imputed at birth</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Double Imputation at Physical Birth — Spiritually Dead Before the First Sin</span>
+    </div>
+    <p class="phase-desc">At the moment of physical birth two imputations occur simultaneously. Soul life is imputed to the biological life of the infant — the combination that produces a living human being, a person for whom God has a plan and purpose. And Adam's original sin is imputed to the genetically formed sin nature that the infant inherited through the male line of descent. These two imputations happen at the same instant. The result is a person who is physically alive but spiritually dead — condemned before the first personal sin is ever committed, not because of anything the individual has yet done but because of the condition inherited through the federal headship of Adam. This is why the new birth is not improvement but resurrection — the spiritually dead cannot improve their way to life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 51:5</div>
+      <div class="verse">"Behold, I was brought forth in iniquity, and in sin did my mother conceive me."</div>
+      <div class="note">David is not accusing his mother of personal sin. He is naming the condition he entered the world in — the iniquity and sin that are the inherited condition of every human being from the moment of conception. The sin nature is genetically formed through procreation. Adam's original sin is imputed to that formed sin nature at birth. David, the man after God's own heart, the author of the greatest confession in the Old Testament, acknowledges that his problem did not begin with Bathsheba. It began at birth. It began in Adam. The solution — the clean heart, the right spirit, the restoration of the joy of salvation — is entirely God's work, not the improvement of what was already there.</div>
+      </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:1–3</div>
+      <div class="verse">"And you were dead in the trespasses and sins in which you once walked, following the course of this world, following the prince of the power of the air, the spirit that is now at work in the sons of disobedience — among whom we all once lived in the passions of our flesh, carrying out the desires of the body and the mind, and were by nature children of wrath, like the rest of mankind."</div>
+      <div class="note">Dead — not sick, not weak, not in need of assistance. Dead. The spiritual death inherited from Adam through the federal headship is not a condition that improves with education, moral effort, or religious sincerity. It is the absence of the life that would make improvement possible. By nature children of wrath — not by behavior, not by accumulated personal sin, but by nature. The condition is inherited. The wrath is the just consequence of the condition. And the solution — verses 4 through 8 — is entirely the work of God. But God, being rich in mercy, because of the great love with which he loved us, even when we were dead, made us alive together with Christ.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 3:6</div>
+      <div class="verse">"That which is born of the flesh is flesh, and that which is born of the Spirit is spirit."</div>
+      <div class="note">Born of the flesh — the physical birth that transmits the sin nature, imputes Adam's original sin, and produces a physically alive but spiritually dead human being. Born of the Spirit — the new birth that imputes the human spirit, imputes the divine righteousness, and produces a spiritually alive new creation. The two births are categorically different in origin, mechanism, and result. The first birth produces the problem. The second birth is the solution. No amount of the first birth's product can generate the second birth — flesh produces flesh. Only the Spirit produces spirit. This is what Nicodemus could not understand until the doctrine was laid in front of him at midnight in Jerusalem.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The condition named — now the one exception that makes the solution possible</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The One Exception — The Virgin Birth and the Impeccable Humanity of Christ</span>
+    </div>
+    <p class="phase-desc">Every human being without exception inherits the sin nature through the male in procreation. Adam's original sin is imputed to that genetically formed nature at birth. This is the universal condition of the human race — with one exception. Jesus Christ was conceived by means of the Holy Spirit, born of a virgin, without a human father. Because the sin nature is transmitted through the male line, and because there was no human father, Jesus was born without the sin nature. He did not receive the imputation of Adam's original sin. He was born without spiritual death — the only human being in history to enter the world in the condition Adam was in before the fall. This is not a minor theological detail. It is the essential qualification that made the cross possible.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 1:35</div>
+      <div class="verse">"And the angel answered her, 'The Holy Spirit will come upon you, and the power of the Most High will overshadow you; therefore the child to be born will be called holy — the Son of God.'"</div>
+      <div class="note">Holy — set apart, without the inherited corruption that every other human being enters the world with. The mechanism of the virgin birth is the mechanism by which the genetic transmission of the sin nature was bypassed. The Holy Spirit overshadowing Mary — not a human father — meant that no sin nature was transmitted. Jesus entered the world with the full triune composition of body, soul, and human spirit that Adam had before the fall, and without the sin nature that Adam's fall produced. He was the Last Adam — 1 Corinthians 15:45 — fully human, bearing everything humanity bears except the inherited corruption that disqualified the rest of the race from serving as the substitute.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:21</div>
+      <div class="verse">"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</div>
+      <div class="note">Who knew no sin — the impeccable humanity of Christ, born without the sin nature, living without personal sin through thirty-three years of the most intense temptation any human being has ever faced. He qualified as the substitute precisely because He had no sin of His own to answer for. When the justice of God imputed all the sins of the human race to Christ on the cross, it was a judicial imputation — there was no affinity between the sin imputed and the sinless One who received it. The cross was possible because the virgin birth was real. The substitute was qualified because the sin nature was absent. The solution worked because the exception was genuine.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 4:15</div>
+      <div class="verse">"For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin."</div>
+      <div class="note">Tempted in every respect as we are — the full weight of human temptation pressed against a human being who had no sin nature to provide the internal pull toward the temptation. This made His temptation harder, not easier. The sin nature in the ordinary human being provides a predisposition toward the temptation — the internal desire that already exists before the external temptation arrives. Jesus faced every temptation without that internal pull, relying entirely on the Holy Spirit in the same operating environment He modeled for the Church Age believer. Yet without sin. The exception intact from birth to death. The qualification maintained through every test. The substitute worthy.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The exception qualified — now the solution applied</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Solution — Justification and the Double Imputation at the New Birth</span>
+    </div>
+    <p class="phase-desc">The problem produced by Adam's original sin required a solution that addressed every dimension of what the fall damaged. Spiritual death required new life. The absence of the human spirit required its restoration. The absence of righteous standing before God required the imputation of divine righteousness. The condemnation that came through one man's trespass required the justification that comes through one man's obedience. The solution is the double imputation at the new birth — simultaneous, complete, requiring nothing from the recipient except the faith that is itself the grace gift of God. What Adam lost in one act of willful disobedience, the Last Adam restored through one act of perfect obedience at the cross — and more than restored, because the grace abounds much more than the trespass.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:18–19</div>
+      <div class="verse">"Therefore, as one trespass led to condemnation for all men, so one act of righteousness leads to justification and life for all men. For as by the one man's disobedience the many were made sinners, so by the one man's obedience the many will be made righteous."</div>
+      <div class="note">One trespass — condemnation for all. One act of righteousness — justification and life for all. The symmetry is the argument. The same federal headship principle that transmitted the problem provides the basis for the solution. Adam's disobedience was real — it produced real condemnation. Christ's obedience was real — it produces real justification. The condemnation that came through Adam to every human being at physical birth is reversed at the new birth by the justification that comes through Christ to everyone who believes. Not improved — reversed. Not partially addressed — fully resolved. The justice of God that condemned the sinner in Adam is the same justice of God that justifies the believer in Christ.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:23–24</div>
+      <div class="verse">"…for all have sinned and fall short of the glory of God, and are justified by his grace as a gift, through the redemption that is in Christ Jesus."</div>
+      <div class="note">All have sinned — the universal condition that Romans 5:12 diagnosed. Justified by his grace as a gift — the universal solution available through Christ. The gift requires nothing from the recipient except reception by faith. No merit, no works, no prior condition of moral improvement. The spiritually dead person who believes in Christ receives simultaneously the human spirit imputed by the Spirit in regeneration and the divine righteousness imputed by the justice of God — double imputation at the new birth, reversing the double condition of spiritual death and condemnation that Adam's original sin produced at physical birth. The problem and the solution are both handled entirely by God. The creature receives or rejects. He contributes nothing to either the problem or the solution.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">John 5:24</div>
+      <div class="verse">"Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life."</div>
+      <div class="note">Passed from death to life — not improved from death toward life, not rehabilitated from death through sustained effort, not gradually elevated from death by religious accumulation. Passed. A completed transaction at a specific moment. The spiritually dead person who hears and believes crosses the threshold from the condition Adam produced to the condition Christ provides — from spiritual death to eternal life, from condemnation to justification, from the absence of the human spirit to its permanent indwelling, from the absence of divine righteousness to its judicial imputation. This is what the new birth is. This is what the cross made possible. This is the answer to Adam's original sin.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Adam's Original Sin — The Problem and Its Solution</div>
+    <div class="hinge-text">
+      Adam was created spiritually alive —<br>
+      body, soul, and human spirit.<br>
+      One prohibition. One test. One act of willful disobedience.<br><br>
+      Spiritual death — immediate.<br>
+      The human spirit lost.<br>
+      The sin nature formed in the cell structure of the body.<br>
+      Transmitted genetically through the male in procreation<br>
+      to every descendant of Adam without exception.<br><br>
+      At physical birth — two imputations simultaneously.<br>
+      Soul life to biological life.<br>
+      Adam's original sin to the genetically formed sin nature.<br>
+      Physically alive. Spiritually dead.<br>
+      Condemned before the first personal sin is committed.<br><br>
+      One exception — the virgin birth.<br>
+      No human father. No transmitted sin nature.<br>
+      No imputation of Adam's original sin.<br>
+      The Last Adam — qualified as the substitute.<br><br>
+      At the new birth — two imputations simultaneously.<br>
+      The human spirit imputed by the Spirit in regeneration.<br>
+      The divine righteousness imputed by the justice of God.<br>
+      Spiritually alive. Justified. Passed from death to life.<br><br>
+      The grace abounds much more than the trespass.<br>
+      What Adam lost in one act,<br>
+      Christ restored in one act —<br>
+      and more than restored,<br>
+      because the solution is larger than the problem.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

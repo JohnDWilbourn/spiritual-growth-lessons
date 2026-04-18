@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sin Nature — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 016</div>
+    <h1>The Sin Nature</h1>
+    <div class="subtitle">The Enemy Inside the Wire — Its Architecture and Its Operation</div>
+  </header>
+
+  <p class="intro">
+    Salvation removed the penalty of sin. It did not remove the sin nature. The inherited corruption that Adam's fall produced — residing in the cell structure of the physical body, transmitted genetically through every generation — is present in the believer from the moment of physical birth until the moment of physical death or the Rapture. It cannot be educated out, disciplined out, prayed out, or outgrown. What the cross accomplished was not the elimination of the sin nature but the breaking of its mastery. The believer is no longer enslaved to it. But it is still present, still operational, still pressing for control of the soul every moment the filling of the Spirit is absent. Knowing its architecture is not morbid self-examination. It is the intelligence briefing the soldier needs before he enters the field.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">What the Sin Nature Is — The Resident Enemy</span>
+    </div>
+    <p class="phase-desc">The sin nature is the inherent corruption and center of rebellion against God present in every member of the human race without exception — except Jesus Christ. It is not the sum of personal sins committed. It is the source from which the temptation to commit them originates. It is the home to which Adam's original sin was imputed at physical birth. It resides in the cell structure of the human body — not in the soul, not in the human spirit, but in the physical body itself — which is why death or the Rapture finally removes it. Scripture names it variously: the old man, the flesh, the body of sin, the principle of sin. All of these refer to the same resident enemy operating from within the physical body of every person who has ever lived.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 7:18</div>
+      <div class="verse">"For I know that nothing good dwells in me, that is, in my flesh. For I have the desire to do what is right, but not the ability to carry it out."</div>
+      <div class="note">Paul is not describing an unbeliever struggling with moral failure. He is describing the apostle — the most doctrinally advanced believer of the Church Age — acknowledging the permanent presence of the sin nature in his flesh. Nothing good dwells in me, that is, in my flesh — the qualification is precise. Good dwells in Paul — the divine righteousness imputed at salvation, the human spirit, the indwelling Spirit, the deposited doctrine. But nothing good dwells in the flesh. The flesh is the sin nature's territory. It is not reformed by salvation. It is not improved by sanctification. It is present and operational until the body is glorified.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:17</div>
+      <div class="verse">"For the desires of the flesh are against the Spirit, and the desires of the Spirit are against the flesh, for these are opposed to each other, to keep you from doing the things you want to do."</div>
+      <div class="note">Opposed to each other — not on a spectrum, not in a negotiated coexistence. Direct conflict. The flesh and the Spirit do not share the controls. One is in control or the other is. The sin nature operating through the flesh presses against every move the Spirit makes toward the soul. The Spirit operating through the filling presses against every move the sin nature makes toward control of the soul. The carnal believer is the believer in whom the sin nature has gained control through unconfessed sin. The spiritual believer is the believer in whom the Spirit has control through the restored filling. The battle is constant. The outcome of each engagement is determined by the volition of the individual believer.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 6:12–13</div>
+      <div class="verse">"Let not sin therefore reign in your mortal body, to make you obey its passions. Do not present your members to sin as instruments for unrighteousness, but present yourselves to God as those who have been brought from death to life, and your members to God as instruments for righteousness."</div>
+      <div class="note">Let not sin reign — the command assumes that sin has the capacity to reign in the mortal body and that the believer has the volition to prevent it. The sin nature is not automatically suppressed by salvation. It is suppressed by the Spirit-filled life that confession maintains. The command is not remove the sin nature — that is impossible in time. The command is do not let it reign — do not give it the control of the soul that it will take if the filling is absent. Present your members to God as instruments for righteousness — the positive volition that maintains the filling and keeps the sin nature from occupying the operational center of the soul.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The resident enemy identified — now its internal architecture</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Area of Weakness — The Source of Personal Sin</span>
+    </div>
+    <p class="phase-desc">The sin nature has two operational components. The first is the area of weakness — the component that tempts the individual toward personal sin. When a person chooses through his own volition to succumb to the sin nature's temptation through the area of weakness, he generates personal sin — mental, verbal, or overt. The area of weakness is not identical in every person. Individual sin nature patterns vary. What constitutes the dominant area of weakness in one person may not be in another. But every person has one, and every person's area of weakness is the source of the specific temptations that present themselves most persistently and most persuasively to that individual.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 26:41</div>
+      <div class="verse">"Watch and pray that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak."</div>
+      <div class="note">The flesh is weak — not wicked in this context, but specifically weak in the sense of vulnerable. The area of weakness is the point of vulnerability in the individual's sin nature — the place where the temptation finds the least resistance. Jesus identifies the problem precisely: the spirit is willing — the regenerate human spirit, the desire of the new nature to do what God requires — but the flesh is weak. The area of weakness in the sin nature is the gap between the willing spirit and the executing body. Watching and praying — maintaining the Spirit-filled condition through confession and approach to the throne — is the mechanism for closing that gap.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:19–21</div>
+      <div class="verse">"Now the works of the flesh are evident: sexual immorality, impurity, sensuality, idolatry, sorcery, enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions, envy, drunkenness, orgies, and things like these…"</div>
+      <div class="note">The works of the flesh — the output of the area of weakness when the sin nature gains control of the soul. Paul's list is not exhaustive but representative, covering mental attitude sins, verbal sins, and overt sins across both sin nature trends. Every item on this list originates in the area of weakness of the individual's sin nature and is generated when the volition yields to the temptation rather than maintaining the Spirit-filled condition. The list is also not a ranking — enmity and strife are listed alongside sexual immorality and drunkenness. The mental attitude sins that produce the social fragmentation of a congregation are in the same category as the overt sins that produce its scandals.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 7:8</div>
+      <div class="verse">"But sin, seizing an opportunity through the commandment, produced in me all kinds of covetousness. For apart from the law, sin lies dead."</div>
+      <div class="note">Sin seizing an opportunity — the area of weakness is not passive. It actively exploits any available point of entry. Paul names the commandment itself as the occasion — the prohibition activates the desire for what is prohibited. The area of weakness in the sin nature does not require external provocation. It generates temptation from within, using the knowledge of the standard as the very mechanism for pressing against it. This is why the area of weakness cannot be overcome by moral effort alone. The effort of the flesh against the sin nature only activates the area of weakness more intensely. The solution is not effort but displacement — the Spirit-filled life displacing the sin nature's control.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The area of weakness produces sin — the area of strength produces something more deceptive</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Area of Strength — Human Good and Dead Works</span>
+    </div>
+    <p class="phase-desc">The second operational component of the sin nature is more subtle and more dangerous to the spiritual life than the area of weakness — because it looks righteous. The area of strength generates human good — benevolent, morally admirable deeds produced by the energy of the flesh rather than the filling of the Spirit. It becomes operational after the believer has chosen to sin and is functioning under the control of the sin nature. The carnal believer's good deeds produced in the power of the flesh are indistinguishable from the good deeds performed by the unbeliever. They may be morally excellent. They may genuinely benefit others. They have no spiritual or eternal value — because they are produced by the wrong power source.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 64:6</div>
+      <div class="verse">"We have all become like one who is unclean, and all our righteous deeds are like a polluted garment. We all fade like a leaf, and our iniquities, like the wind, take us away."</div>
+      <div class="note">All our righteous deeds — not just the sins but the righteous deeds. The human good produced by the area of strength in the sin nature — the good deeds generated by the flesh — is described as a polluted garment before God. Not because the deeds themselves are evil in their effects but because they are produced by the wrong source and presented as currency in a transaction that God has already completed at the cross. The human good of the area of strength is the fig leaf again — the self-generated covering that looks presentable to human eyes but cannot bear the weight of what it is trying to address.</div>
+      </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 6:1</div>
+      <div class="verse">"Therefore let us leave the elementary doctrine of Christ and go on to maturity, not laying again a foundation of repentance from dead works and of faith toward God."</div>
+      <div class="note">Dead works — the technical term for human good produced by the area of strength of the sin nature. They are dead not because they lack moral content but because they lack spiritual life — they are produced by the flesh, which cannot generate divine good regardless of how impressive the output appears to human observers. The elementary doctrine begins with repentance from dead works — the recognition that the self-generated good of the sin nature's area of strength is not the same thing as the divine good produced by the Spirit-filled life. Leaving dead works behind is the beginning of the advance toward the maturity where the Spirit-filled believer produces what only the Spirit can produce.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 3:12–13</div>
+      <div class="verse">"Now if anyone builds on the foundation with gold, silver, precious stones, wood, hay, straw — each one's work will become manifest, for the Day will disclose it, because it will be revealed by fire, and the fire will test what sort of work each one has done."</div>
+      <div class="note">The Bema evaluation will distinguish what the sin nature's area of strength produced from what the Spirit-filled life produced. Gold, silver, precious stones — the divine good of the Spirit-filled believer, rewardable. Wood, hay, straw — the dead works of the area of strength, not rewardable, burned. The fire does not destroy the believer — he is saved, but only as through fire. It destroys the human good that the area of strength produced throughout the carnal phases of his life. The distinction between divine good and human good is invisible to human observers in time. It is fully disclosed at the Bema.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Two components named — now the two directions the sin nature pulls</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Two Trends — Legalism and Antinomianism</span>
+    </div>
+    <p class="phase-desc">Every sin nature has a dominant trend — a general orientation that shapes the characteristic direction of the individual's carnal behavior. The trend toward legalism pulls toward self-righteousness — conforming to a code of morality, self-denial, human works, or ritual as a means of gaining the approval of God or man. The trend toward antinomianism pulls in the opposite direction — toward self-gratification, disregarding authority, morality, and self-restraint. These two trends are not opposites in the sense that one is acceptable and the other is not. Both are expressions of the sin nature in control of the soul. Both are equally distant from the Spirit-filled life. The legalist and the antinomian are both carnal — one from the area of strength, one from the area of weakness, but both operating from the same source.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 23:25–28</div>
+      <div class="verse">"Woe to you, scribes and Pharisees, hypocrites! For you clean the outside of the cup and the plate, but inside they are full of greed and self-indulgence… So you also outwardly appear righteous to others, but within you are full of hypocrisy and lawlessness."</div>
+      <div class="note">The legalist trend fully expressed. The outside cleaned — the area of strength generating the human good that is visible and admirable to human observers. The inside full of greed and self-indulgence — the area of weakness operating behind the facade of moral achievement. Jesus names the Pharisees as the definitive example of the legalism trend because they are the most sophisticated version of it — the sin nature at its most religious, most respectable, most dangerous to the spiritual life because it is most convincing to the observer and most deceptive to the person operating from it. The whitewashed tomb looks exactly like what it is not.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 6:12–14</div>
+      <div class="verse">"Let not sin therefore reign in your mortal body, to make you obey its passions. Do not present your members to sin as instruments for unrighteousness… For sin will have no dominion over you, since you are not under law but under grace."</div>
+      <div class="note">The antinomianism trend is the sin nature's direct assault through the area of weakness — the passions, the self-gratification, the disregard for authority and restraint. Paul's command let not sin reign addresses this trend directly. The believer is not under law — the legalism trend's strategy of external conformance — but under grace. Grace is not the license the antinomian trend interprets it to be. It is the power system of the Spirit-filled life that produces the real freedom neither trend can generate — freedom from the dominion of sin, not freedom to sin.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Galatians 5:13</div>
+      <div class="verse">"For you were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh, but through love serve one another."</div>
+      <div class="note">Do not use your freedom as an opportunity for the flesh — the antinomianism trend's characteristic error named. The grace that sets the believer free from the dominion of sin is not the permission to follow the antinomianism trend into self-gratification. But neither is the solution the legalism trend's self-imposed code of moral performance. The solution is through love serve one another — the impersonal love that is the fruit of the Spirit operating in the filled believer, the evidence that neither trend is in control, the output of the power system that the sin nature cannot replicate.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Two trends named — now the motivating engine beneath both</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Lust Pattern — The Engine That Drives Both Trends</span>
+    </div>
+    <p class="phase-desc">Beneath both trends and both components of the sin nature operates the lust pattern — the illicit and often insatiable desire that motivates sin toward either direction. Lust is not limited to sexual desire. It is any overriding desire that the sin nature generates to pull the believer away from the filling of the Spirit and toward the satisfaction of the flesh or the approval of the world. Power lust, approbation lust, pleasure lust, social lust, sexual lust, chemical lust, crusader lust, monetary lust, revenge lust, criminal lust — the categories are as varied as human psychology. What they share is the insatiability that characterizes the sin nature's deepest operation — the desire that is never fully satisfied, that intensifies with fulfillment rather than diminishing, that leads the believer further down the road of reversionism with each successive capitulation.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 4:22</div>
+      <div class="verse">"…to put off your old self, which belongs to your former manner of life and is corrupt through deceitful desires."</div>
+      <div class="note">Corrupt through deceitful desires — the lust pattern is not merely strong desire. It is deceptive desire. The lust pattern deceives the believer about the nature of what it is offering — power lust promises control, approbation lust promises significance, pleasure lust promises satisfaction, crusader lust promises righteousness. None of the promises are kept. The fulfillment of the lust pattern increases the corruption rather than relieving it. The old self that belongs to the former manner of life is to be put off — not suppressed by the flesh, which only intensifies it, but displaced by the new self that is being renewed in knowledge after the image of its creator.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">James 1:14–15</div>
+      <div class="verse">"But each person is tempted when he is lured and enticed by his own desire. Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."</div>
+      <div class="note">His own desire — the lust pattern is not external to the individual. It originates in his own sin nature. The temptation is lure and enticement — the lust pattern presenting its offer as attractive, fulfilling, reasonable. Desire conceiving gives birth to sin — the lust pattern does not produce sin automatically. It requires the volition of the individual to yield to it. The sin nature is the source of temptation. Personal sin originates from an individual's volition once he gives in. Sin fully grown brings forth death — the carnal state, the interrupted filling, the grace pipeline's provision blocked by the unconfessed sin that the lust pattern produced.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 John 2:16</div>
+      <div class="verse">"For all that is in the world — the desires of the flesh and the desires of the eyes and pride of life — is not from the Father but is from the world."</div>
+      <div class="note">Three broad categories of lust that John names as the world's operating system — the desires of the flesh, the desires of the eyes, the pride of life. These are the lust pattern's primary channels into the soul. The desires of the flesh are the area of weakness operating through physical appetite. The desires of the eyes are the lust pattern operating through perception and acquisition. The pride of life is the area of strength operating through the approbation and power lust. Not from the Father — the lust pattern and the grace pipeline carry categorically different provisions. The believer cannot receive from both simultaneously. He is either drawing from the pipeline or feeding the lust pattern. The filling determines which.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The architecture complete — now the power that displaces it</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Displacement — Walking by the Spirit</span>
+    </div>
+    <p class="phase-desc">The sin nature cannot be removed in time. It cannot be improved. It cannot be negotiated with. It cannot be overcome by the energy of the flesh — the area of strength attempting to suppress the area of weakness only intensifies the conflict. The only mechanism that displaces the sin nature from operational control of the soul is the filling of the Spirit. When the Spirit fills the yielded vessel through the restoration that confession produces, the sin nature does not disappear — it is displaced. The Spirit occupies the operational center. The lust pattern loses its grip. The trends lose their dominance. The fruit of the Spirit replaces the works of the flesh — not because the sin nature stopped generating them but because the Spirit-filled believer is no longer drawing from the source that produces them.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:16</div>
+      <div class="verse">"But I say, walk by the Spirit, and you will not gratify the desires of the flesh."</div>
+      <div class="note">Walk by the Spirit — the present tense of a continuous action, the ongoing Spirit-filled condition maintained by ongoing confession whenever sin interrupts it. The promise is absolute — you will not gratify the desires of the flesh. Not you will struggle less with the desires of the flesh. Not you will be better equipped to resist the desires of the flesh. You will not gratify them. The lust pattern that drives both trends operates through the flesh. The Spirit-filled believer is not drawing from the flesh. He is drawing from the Spirit. What the sin nature is pressing toward simply does not arrive at the point of execution — not because the believer has overcome the sin nature but because he is not operating from it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:22–24</div>
+      <div class="verse">"But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control… And those who belong to Christ Jesus have crucified the flesh with its passions and desires."</div>
+      <div class="note">The fruit of the Spirit is the output of the displaced sin nature — what the Spirit-filled life produces when the sin nature is no longer in operational control. Love displaces the hatred complex. Joy displaces the frantic search for happiness. Peace displaces the anxiety that the lust pattern generates when unfulfilled. Goodness displaces the dead works of the area of strength. Self-control displaces the lust pattern's insatiable demands. The believer has crucified the flesh — not in the sense that the sin nature is gone but in the sense that its mastery has been broken by the cross and its operational control is surrendered daily through confession and the restored filling.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:4–6</div>
+      <div class="verse">"…in order that the righteous requirement of the law might be fulfilled in us, who walk not according to the flesh but according to the Spirit. For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit. For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."</div>
+      <div class="note">Set the mind on the things of the Spirit — the Spirit-filled life is not passive. It requires the active orientation of the mind toward what the Spirit is providing through the grace pipeline. The doctrine received, metabolized, and applied. The promises claimed. The faith-rest drill executed. The mind set on the things of the Spirit is the mind that is drawing from the pipeline rather than feeding the lust pattern. To set the mind on the flesh is carnal death — the interrupted filling, the sin nature in control, the pipeline blocked. To set the mind on the Spirit is life and peace — the filling restored, the fruit present, the sin nature displaced from operational control of the soul.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Sin Nature — Architecture and Displacement</div>
+    <div class="hinge-text">
+      Present in every believer from physical birth to physical death.<br>
+      Residing in the cell structure of the body.<br>
+      Cannot be removed, improved, or overcome by the flesh.<br><br>
+      Area of weakness — the source of personal sin.<br>
+      Area of strength — the source of human good and dead works.<br>
+      Trend toward legalism — self-righteousness behind a façade of good.<br>
+      Trend toward antinomianism — self-gratification without restraint.<br>
+      Lust pattern — the insatiable engine driving both trends.<br><br>
+      The sin nature cannot be defeated by the energy of the flesh.<br>
+      The area of strength cannot suppress the area of weakness.<br>
+      Moral effort cannot displace what moral effort is made of.<br><br>
+      One mechanism displaces it —<br>
+      the filling of the Spirit restored by confession.<br>
+      The Spirit occupying the operational center of the soul.<br>
+      The lust pattern losing its grip.<br>
+      The fruit of the Spirit replacing the works of the flesh.<br><br>
+      Walk by the Spirit —<br>
+      and you will not gratify the desires of the flesh.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
