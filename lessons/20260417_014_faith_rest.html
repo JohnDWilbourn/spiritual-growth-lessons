@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith-Rest — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .drill-block {
+    background: var(--accent-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .drill-step {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .drill-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .drill-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 014</div>
+    <h1>Faith-Rest</h1>
+    <div class="subtitle">The Third Problem-Solving Device — Entering the Rest That Remains</div>
+  </header>
+
+  <p class="intro">
+    Faith is the only system of perception that is nonmeritorious and compatible with grace. Anyone — from the very young to the very old, from low intelligence to high — can express faith by trusting and believing. In faith, all of the merit lies in the object. When the object is Jesus Christ, faith produces salvation. When the object is the promises and doctrine of God's Word, faith produces happiness, tranquillity, and the blessings of spiritual growth. The faith-rest life is not a technique for the spiritually advanced. It is the normal operating condition of the believer who knows who God is, knows what God has promised, and has learned to mix that knowledge with faith under pressure. We are building a temple — not a prison. Shaped by volition and obedience. Fed by the Word. Cleansed by the blood. Resting in the promises God has decreed.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Temple Under Construction — The Invitation to Build</span>
+    </div>
+    <p class="phase-desc">The spiritual life is not imposed on the believer from outside. It is built from within — through volition, through obedience, through the daily reception of the Word that the Spirit metabolizes into the soul. The edification complex is the interior structure that results from this building process — the deposited doctrine, the metabolized promises, the trained powers of discernment, the problem-solving devices that become the instinctive operating system of the mature believer. God does not conscript builders. He invites them. The positive volition that brought the believer across the threshold of salvation is the same volition that builds the temple one course at a time — every doctrine received, every promise claimed, every act of confession and restored filling adding another layer to the structure that will one day bear the full weight of the spiritual life in operation.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 3:9–11</div>
+      <div class="verse">"For we are God's fellow workers. You are God's field, God's building. According to the grace of God given to me, like a skilled master builder I laid a foundation, and someone else is building upon it. Let each one take care how he builds upon it. For no one can lay a foundation other than that which is laid, which is Jesus Christ."</div>
+      <div class="note">God's fellow workers — the believer is not a passive recipient of a completed structure. He is a co-laborer in the construction of his own interior life, working with the materials the grace pipeline provides. The foundation is fixed — Jesus Christ, the finished work of the cross, the imputed righteousness that makes the building possible. But the superstructure is built by the choices of the individual believer — the daily decision to receive the Word, to confess and return to the filling, to claim the promise rather than hit the panic button. How he builds matters. What he builds with matters. The materials are available. The invitation is open. The volition is his.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:19–22</div>
+      <div class="verse">"So then you are no longer strangers and aliens, but you are fellow citizens with the saints and members of the household of God, built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone, in whom the whole structure, being joined together, grows into a holy temple in the Lord. In him you also are being built together into a dwelling place for God by the Spirit."</div>
+      <div class="note">Being built together — present passive, ongoing construction. The temple is not complete. It is under active construction by the Spirit who indwells the believer and by the volition of the believer who cooperates with the Spirit's work. The cornerstone is fixed — Christ Jesus. The structure grows as the doctrine is received, metabolized, and lived. The believer who understands this does not approach the spiritual life as a series of obligations to be discharged. He approaches it as a builder who knows what he is building, who the architect is, and what the finished structure is designed to be — a dwelling place for God by the Spirit.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Matthew 11:28–30</div>
+      <div class="verse">"Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light."</div>
+      <div class="note">The invitation is not a command to perform. It is a call to come — the same child posture that receives the Bread of Life, the same teachability that opens the soul to the Word the Spirit is ready to metabolize. The yoke is easy and the burden is light not because the spiritual life requires no effort but because the One who carries it with the believer is the one who controls history and holds all things together. The rest Jesus promises is not the rest of inactivity. It is the rest of the soul that has stopped trying to solve what only God can solve — and has learned to mix the promises of God with faith.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The invitation given — now the warning from the wilderness</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Manna and the Meribah — The Wilderness Generation as Warning</span>
+    </div>
+    <p class="phase-desc">The wilderness generation had everything a believer could ask for. The cloud by day. The fire by night. The manna every morning — new every morning, lying on the ground like frost, requiring only that they go out and gather it. The water from the rock. The Tabernacle in the center of the camp with the presence of God visible above it. God had done the most for them when they were His enemies in Egypt. He delivered them, sustained them, guided them, fought for them. And when the no-water situation arrived they hit the panic button every time. They meribahed — griped, complained, accused Moses, longed for Egypt. Not because the provision was unavailable. Because they would not trust the One who had proven Himself faithful at every prior point. The doctrine was there. The provision was there. The rest was available. They would not enter it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 3:7–11</div>
+      <div class="verse">"Therefore, as the Holy Spirit says, 'Today, if you hear his voice, do not harden your hearts as in the rebellion, on the day of testing in the wilderness, where your fathers put me to the test and saw my works for forty years. Therefore I was provoked with that generation, and said, They always go astray in their hearts; they have not known my ways. As I swore in my wrath, they shall not enter my rest.'"</div>
+      <div class="note">They have not known my ways — not they have not known my rules, not they have not known my commands. My ways. The pattern of God's faithfulness. The character behind every provision. Forty years of daily manna, daily cloud, daily fire, daily water — and they still did not know His ways well enough to trust Him when the next crisis arrived. This is the warning. Not knowing about God's provision but knowing the God who provides — the progressive knowing of John 17:3 that the Bread of Life lesson was about. The doctrine metabolized into the right lobe produces trust. The doctrine that stays in the left lobe as academic knowledge produces the Meribah response when pressure arrives.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Exodus 17:2–3</div>
+      <div class="verse">"Therefore the people quarreled with Moses and said, 'Give us water to drink.' And Moses said to them, 'Why do you quarrel with me? Why do you test the LORD?' But the people thirsted there for water, and the people grumbled against Moses and said, 'Why did you bring us up out of Egypt, to kill us and our children and our livestock with thirst?'"</div>
+      <div class="note">Why did you bring us up out of Egypt — the panic button pressed, the self-serving narrative constructed instantly. The complaint is not about water. It is about the decision to trust God in the first place. The Meribah response always questions the original decision to follow — not just the current circumstance but the entire trajectory. This is what fear and anxiety do to thinking. They don't just address the current problem. They rewrite the history of every prior provision and replace the memory of God's faithfulness with the threat of the present crisis. The faith-rest drill is the recovery mechanism — not from the crisis but from the thinking that the crisis has produced.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:32</div>
+      <div class="verse">"He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?"</div>
+      <div class="note">This is the logic Moses was trying to give the people at Meribah. God did the most for you when you were His enemy — sent His Son to the cross, delivered you from Egypt, split the sea. If He did that, will He withhold water? The argument from the greater to the lesser. The God who paid the maximum price for the relationship will not fail to provide for the relationship He purchased at that price. This is the doctrinal rationale the faith-rest drill builds from — the character of the God who has already proven Himself faithful at the point of maximum cost.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The warning from the wilderness — now the rest that remained available through every generation</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Rest That Remains — Hebrews 4 and the Open Promise</span>
+    </div>
+    <p class="phase-desc">The wilderness generation did not exhaust the promise of rest by failing to enter it. The promise passed through their failure intact. The writer of Hebrews makes this precise — in David's day, centuries after the wilderness, the Spirit was still saying today if you hear His voice harden not your hearts. The rest was still available. Still open. Still waiting to be entered by anyone who would mix the promise with faith. Joshua's generation received the land but did not enter the rest — the external possession without the interior condition. The promise continued. It arrives here intact. We who have believed do enter that rest. The grain is in the warehouse. Seven thousand promises recorded and waiting. Not one of them has expired.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:1–3</div>
+      <div class="verse">"Therefore, while the promise of entering his rest still stands, let us fear lest any of you should seem to have failed to reach it. For good news came to us just as to them, but the message they heard did not benefit them, because they were not united by faith with those who listened. For we who have believed enter that rest…"</div>
+      <div class="note">The message they heard did not benefit them because it was not mixed with faith. The doctrine arrived in the left lobe and stopped there. No faith perception. No transfer by the Spirit to the right lobe. No metabolization into the active trust that would have produced the rest. The provision was identical to what the believer has today — the promises of God, the character of the God who made them, the record of His faithfulness. The difference between the wilderness generation and the believer who enters the rest is not the quality of the provision. It is the mixing of faith. The same doctrine in two different believers produces two different outcomes depending entirely on whether it is received with positive volition and mixed with faith or received academically and left in the warehouse.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:9–11</div>
+      <div class="verse">"So then, there remains a Sabbath rest for the people of God, for whoever has entered God's rest has also rested from his own works as God did from his. Let us therefore strive to enter that rest, so that no one may fall by the same sort of disobedience."</div>
+      <div class="note">Rested from his own works — the faith-rest life is not the cessation of activity. It is the cessation of the flesh's attempt to solve what only God can solve. God rested on the seventh day not because He was tired but because the work was complete. The believer who enters the rest rests from the frantic human effort to manage what the sovereign God has already decreed. The striving is not toward the rest through works — it is the diligent, eager pursuit of the rest through faith, the willingness to claim the promise and stand on the character of the One who made it rather than generating solutions from the energy of the flesh.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Lamentations 3:22–23</div>
+      <div class="verse">"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."</div>
+      <div class="note">New every morning — the same rhythm as the manna. The provision falls fresh every day. It cannot be stored from yesterday. It requires today's positive volition, today's confession and filling, today's reception of the Word under the Spirit's metabolizing work. The immutable God applies His unchanging character to every new day with fresh provision. The believer who woke to the worst day of his life woke to the same faithful God he woke to on the best day. The mercies are new. The faithfulness is constant. Great is your faithfulness — the doctrinal conclusion the faith-rest drill is designed to produce under pressure.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The rest available — now the food that sustains the one who enters it</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Fed by the Flesh of Christ — The Daily Bread That Builds the Temple</span>
+    </div>
+    <p class="phase-desc">The manna in the wilderness was daily. You could not store it. It spoiled if you tried. God designed it that way on purpose — every morning a fresh dependence, every morning a fresh provision, every morning the same question from the Sovereign who controls history: will you trust Me today? Jesus names Himself as the true bread that came down from heaven — not a better version of the manna but the reality the manna was always pointing toward. The Word made flesh tabernacled in the center of human history the way the Tabernacle was pitched in the center of the wilderness camp. The manna fell around the Tabernacle every morning. The bread came from the presence of God. Jesus is the Tabernacle and the manna simultaneously — the presence and the provision in one Person, available fresh every day to the believer who comes with the child posture and receives what the Spirit is ready to give.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:32–35</div>
+      <div class="verse">"Jesus then said to them, 'Truly, truly, I say to you, it was not Moses who gave you the bread from heaven, but my Father gives you the true bread from heaven. For the bread of God is he who comes down from heaven and gives life to the world.' They said to him, 'Sir, give us this bread always.' Jesus said to them, 'I am the bread of life; whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'"</div>
+      <div class="note">Give us this bread always — the request made before they understood what they were asking for. The bread of life is not a daily supply of religious feeling or emotional encouragement. It is the Person — the living Word, the flesh of Christ, the doctrine that is His very substance offered to the soul that will receive it. Whoever comes shall not hunger. The promise is absolute and permanent. The believer who has been fed by the flesh of Christ — who has received the doctrine into the soul under the Spirit's metabolizing work — does not starve in the wilderness of the no-water situation. He is living on the bread that endures to eternal life.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 6:63</div>
+      <div class="verse">"It is the Spirit who gives life; the flesh is no help at all. The words that I have spoken to you are spirit and life."</div>
+      <div class="note">His words are spirit and life — not inspiring content, not moral instruction. The vehicle of the Spirit's metabolizing work. The pastor-teacher deposits the words into the left lobe of the natural mind. The Spirit takes them at the hand-off point and carries them into the right lobe where they become the epignosis — the fully usable spiritual knowledge — that the faith-rest drill draws from under pressure. The natural mind cannot generate the rest. The flesh profits nothing. The Spirit gives life through the words. This is why the daily reception of doctrine is not optional enrichment. It is the daily gathering of the manna that the rest depends on.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Matthew 6:11 / Deuteronomy 8:3</div>
+      <div class="verse">"Give us this day our daily bread." / "…that he might make you know that man does not live by bread alone, but man lives by every word that comes from the mouth of God."</div>
+      <div class="note">Daily bread — not weekly, not when the crisis arrives, not when the emotional motivation is present. Daily. The prayer for daily bread is not asking only for physical sustenance. It is the daily petition for the fresh reception of the living Word that the Spirit metabolizes into the soul. Every word that proceeds from the mouth of God — not selected portions, not the comfortable passages, not the doctrine that confirms what the self already believes. Every word. The temple is built course by course, every day, from the daily bread that only the immutable faithful God can provide and only the Spirit can metabolize into the structure that will hold the weight of the spiritual life.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Fed by the Word — now the mechanics of entering the rest under pressure</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Three-Step Drill — Claiming the Promise, Applying the Rationale, Reaching the Conclusion</span>
+    </div>
+    <p class="phase-desc">Fear, worry, and anxiety are emotional sins that shut down thinking. Clear, objective doctrinal thought cannot coexist with them. When the no-water situation arrives and the panic button is within reach, the Meribah response is the path of least resistance — gripe, complain, question whether the whole journey was a mistake. The faith-rest drill is the recovery mechanism. Not from the crisis but from the thinking that the crisis produces. It restores the objective, doctrinal thinking that allows the believer to apply what he has already received to what he is currently facing. The drill has three steps. Each step builds on the previous one. The entire sequence may take thirty seconds or much longer — the believer may need to repeat it as doubts creep back in. Ultimately it becomes a continuous way of life.</p>
+
+    <div class="drill-block">
+      <div class="drill-step">Step One</div>
+      <div class="drill-title">Claim a Promise</div>
+      <div class="drill-desc">The most basic form of doctrine — a direct statement of what God has guaranteed. Thousands of promises are recorded in the written Word. Recalling one that is pertinent to the crisis immediately shifts the focus from the problem to the Provider. "Do not fear, for I am with you" (Isa. 41:10). "Nothing will be impossible with God" (Luke 1:37). "The Lord is the one who goes ahead of you" (Deut. 31:8). "All things work together for good" (Rom. 8:28). The promise reminds the believer that the situation is not outside the jurisdiction of the sovereign God who made the guarantee. Fear begins to quiet. The thinking that was shut down by the emotional sin begins to function again.</div>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-step">Step Two</div>
+      <div class="drill-title">Apply a Doctrinal Rationale</div>
+      <div class="drill-desc">A rationale provides the logical justification for the promise — the reason it can be trusted. The essence of God rationale traces the attributes of the divine character that guarantee the promise: the sovereignty that governs the situation, the omniscience that knew it before it arrived, the omnipotence that can resolve it, the immutability that guarantees the promise will not be revised, the veracity that makes the Word reliable. The logistical grace rationale emphasizes God's unchanging faithfulness in supplying the needs of every believer. The plan of God rationale recounts the believer's place in the eternal purpose of God and the assets provided for his destiny. By mentally tracing a rationale the believer reexplains to himself the pertinent doctrines and moves logically toward a divine viewpoint conclusion.</div>
+    </div>
+
+    <div class="drill-block">
+      <div class="drill-step">Step Three</div>
+      <div class="drill-title">Reach a Doctrinal Conclusion</div>
+      <div class="drill-desc">The promise has been claimed. The rationale has been traced. The believer arrives at the conclusion — the specific doctrinal statement that addresses his specific situation with the full weight of the divine character behind it. "If God is for us, who is against us?" (Rom. 8:31). "Stand by and watch the deliverance of the Lord" (Ex. 14:13). "The battle is the Lord's" (1 Sam. 17:47). The conclusion is not a pep talk or an emotional affirmation. It is the objective doctrinal statement that the believer now knows is true — knows from the deposited doctrine the Spirit has metabolized, not from the intensity of the moment. With objectivity and confidence restored, the believer can evaluate his circumstances and make sound decisions. If the problem is beyond his ability to resolve, he can stand by and watch the Lord work.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:12</div>
+      <div class="verse">"For the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and of spirit, of joints and of marrow, and discerning the thoughts and intentions of the heart."</div>
+      <div class="note">Living and active — the doctrine that has been metabolized into the right lobe is not static theological content stored for future reference. It is alive. It is operative. It reaches into the exact point of need — the division of soul and spirit, the thoughts and intentions of the heart — and addresses what the crisis has exposed. The faith-rest drill works because the Word of God works. The promise claimed is not wishful thinking. It is the living Word of the immutable God cutting through the fear and anxiety that the no-water situation produced and delivering the doctrinal conclusion that restores the rest.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Isaiah 40:31</div>
+      <div class="verse">"But they who wait for the LORD shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint."</div>
+      <div class="note">Wait — קָוָה, kavah, to trust continuously, to exchange. Not waiting as passive inactivity. Waiting as the ongoing exchange of human strength for divine strength — handing the problem to the Lord and receiving back what the flesh could never generate. Those who wait exchange their strength. The human strength that was depleted by the crisis is replaced with divine strength. They mount up, they run, they walk — not in sprints of emotional momentum but in the steady continuous movement of the soul that has entered the rest and is living from it. This is the faith-rest life as a continuous way of life rather than a crisis technique.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The drill in hand — now the complete operational picture</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Cleansed, Fed, Resting — The Temple Functional</span>
+    </div>
+    <p class="phase-desc">The temple is built from three provisions operating in sequence. Cleansed by the blood — confession as the adjustment to the justice of God, the known sins forgiven, all unrighteousness cleansed, the filling of the Spirit restored, the grace pipeline open. Fed by the Word — the daily bread received under the filling, the flesh of Christ metabolized by the Spirit from left lobe to right lobe, the doctrine deposited into the soul that the faith-rest drill will draw from when the next crisis arrives. Resting in the promises — the drill executed, the promise claimed, the rationale traced, the conclusion reached, the emotional sins quieted, the objective doctrinal thinking restored, the sovereign God trusted with what only He can resolve. This is the edification complex in operation. This is the temple functional. This is the spiritual life as God designed it — not a burden carried but a rest entered.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:14–16</div>
+      <div class="verse">"Since then we have a great high priest who has passed through the heavens, Jesus, the Son of God, let us hold fast our confession. For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin. Let us therefore with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">Grace to help in time of need — the promise at the end of the passage that describes the faith-rest life. The time of need is exactly the no-water situation. The throne of grace is exactly where the faith-rest drill leads. The believer who has confessed and is in fellowship, who has received the doctrine and metabolized it under the filling, who has claimed the promise and traced the rationale and reached the conclusion — that believer approaches the throne with confidence. Not the confidence of a man who has not sinned. The confidence of a man who has been cleansed, fed, and is resting in the character of the One who is both just and the justifier. Grace to help. In time of need. Every time.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 4:6–7</div>
+      <div class="verse">"…do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."</div>
+      <div class="note">The peace of God that surpasses understanding is the experiential reality of the faith-rest life in operation. Not the peace of resolved circumstances. The peace of the soul that has entered the rest — that has stopped trying to solve what only God can solve and has handed the situation to the One whose sovereignty, omniscience, omnipotence, and immutability guarantee the outcome. The peace guards the heart and the mind — the very faculties that the emotional sins of fear and anxiety attack. The faith-rest drill protects what the Meribah response destroys. The temple that is cleansed, fed, and resting is the temple that is guarded by the peace that surpasses understanding.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 1:7–8</div>
+      <div class="verse">"…so that the tested genuineness of your faith — more precious than gold that perishes though it is tested by fire — may be found to result in praise and glory and honor at the revelation of Jesus Christ. Though you have not seen him, you love him. Though you do not now see him, you believe in him and rejoice with joy that is inexpressible and filled with glory."</div>
+      <div class="note">The faith-rest life is not a technique for avoiding the fire of testing. It is the technique for passing through it. The tested genuineness of faith — more precious than gold — is produced by the crisis that pressed the believer to the Meribah decision and found him claiming the promise instead of hitting the panic button. The joy that is inexpressible and filled with glory is not the joy of easy circumstances. It is the joy of the soul that has been cleansed, fed, and resting — that has entered the rest that remained available through every generation since the wilderness, that has built the interior temple course by course from the daily bread of the living Word, and that stands at the throne of grace with confidence because the character of God has proven faithful at every prior point and will prove faithful at this one too.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Faith-Rest — The Temple Functional</div>
+    <div class="hinge-text">
+      We are building a temple — not a prison.<br>
+      Shaped by volition and obedience.<br>
+      Fed by the Word — the flesh of Christ,<br>
+      metabolized by the Spirit into the soul<br>
+      that receives it fresh every morning.<br><br>
+      Cleansed by the blood —<br>
+      confession as the adjustment to the justice of God,<br>
+      the filling restored, the grace pipeline open.<br><br>
+      Resting in the promises —<br>
+      claim the promise,<br>
+      apply the rationale,<br>
+      reach the conclusion.<br>
+      Stand by and watch the Lord work.<br><br>
+      The rest remains.<br>
+      It was available in the wilderness.<br>
+      It was available in David's day.<br>
+      It is available now.<br><br>
+      We who have believed do enter that rest —<br>
+      not because the circumstances changed<br>
+      but because the doctrine held,<br>
+      the promise was claimed,<br>
+      and the immutable faithful God<br>
+      proved Himself the same<br>
+      as He has always been.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
