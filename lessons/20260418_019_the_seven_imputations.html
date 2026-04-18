@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seven Imputations — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .stage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .imputation-type {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 019</div>
+    <h1>The Seven Imputations</h1>
+    <div class="subtitle">God's Complete Plan for Humanity — From Physical Birth to Eternity</div>
+  </header>
+
+  <p class="intro">
+    An imputation is an act of the justice of God in which something is charged, attributed, or credited to a member of the human race. God's plan for humanity contains seven imputations — designed to benefit imperfect man without compromising the integrity of God. Some are imputations of blessing. Some are of cursing. But all are flawlessly executed by the justice of God, and all are expressions of a plan that was complete before the foundation of the world. Each imputation builds on the previous one, forming the framework of man's entire relationship with God from birth to salvation to eternity. The seven imputations are the architecture of grace — the precise sequence by which the justice of God addresses the problem Adam's fall produced and delivers the blessing that the plan of God was always designed to provide.
+  </p>
+
+  <div class="stage-label">At Physical Birth — The Condition Every Human Enters</div>
+
+  <!-- IMPUTATION 1 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">1</span>
+      <span class="phase-title">Soul Life to Biological Life</span>
+    </div>
+    <div class="imputation-type">Real Imputation — Blessing</div>
+    <p class="phase-desc">At physical birth, before anything else occurs, the justice of God imputes soul life to the existing biological life of the infant. The combination of soul life and biological life produces a living human being — a person with volition, rationality, and moral responsibility, a person for whom God has a plan and purpose. This is a real imputation — the soul finds its natural home in the genetically formed biological life, so there is affinity between what is given and the one who receives it. The first imputation establishes the creature as the creature God intended — an image bearer, a volitional being capable of relationship with the Creator, a person whose existence is the object of divine love before a single act of personal sin has been committed.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 2:7</div>
+      <div class="verse">"…then the LORD God formed the man of dust from the ground and breathed into his nostrils the breath of life, and the man became a living creature."</div>
+      <div class="note">The breath of life — the divine act that combined biological life with soul life to produce the living human being. God did not create a mechanism. He breathed into it and it became a living creature — the language of personal existence, not mechanical operation. Every human being born since Adam receives the same first imputation at the moment of birth — the justice of God crediting soul life to the biological life that the physical process of birth has produced. The person exists. The plan of God applies to him. The remaining six imputations follow.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Soul life given — now the condition it arrives in</div>
+
+  <!-- IMPUTATION 2 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">2</span>
+      <span class="phase-title">Adam's Original Sin to the Sin Nature</span>
+    </div>
+    <div class="imputation-type">Real Imputation — Cursing</div>
+    <p class="phase-desc">At the same moment soul life is imputed, Adam's original sin is imputed to the genetically formed sin nature that the infant inherited through the male line of descent. This is also a real imputation — there is affinity between Adam's original sin and the sin nature that his disobedience produced, because the sin nature is the direct consequence of that original sin. The result is that every person is born physically alive but spiritually dead — condemned before the first personal sin is ever committed, not because of individual guilt but because of the condition inherited through the federal headship of Adam. This imputation is the diagnosis. Every subsequent imputation either addresses the problem it produces or builds on the solution to it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:12</div>
+      <div class="verse">"Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned—"</div>
+      <div class="note">Death spread to all men — the second imputation operating universally at every physical birth since Adam. The spiritual death that results from the imputation of Adam's original sin to the sin nature is not a punishment inflicted on the infant for his own acts. It is the inherited condition of the federal headship — the representative acted, and every member of the race he represented entered the world in the condition his action produced. In this condemnation God is perfectly just — cursing precedes salvation precisely so that the need for grace is established before the grace is given. The second imputation makes every person an immediate candidate for the third.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The condition established — now the cross that addresses it</div>
+
+  <div class="stage-label">At the Cross — The Transaction That Made Salvation Possible</div>
+
+  <!-- IMPUTATION 3 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">3</span>
+      <span class="phase-title">Mankind's Sins to Christ</span>
+    </div>
+    <div class="imputation-type">Judicial Imputation — Cursing</div>
+    <p class="phase-desc">On the cross, the justice of God the Father imputed all the sins of all mankind to His beloved Son, Jesus Christ. This was a judicial imputation — sin has no affinity with the impeccable humanity of Christ, no home in Him who knew no sin. To complete the judicial action, the Father's justice immediately judged every one of those sins in Christ. Our personal sins are never imputed to us for judgment — the perfect humanity of Christ took upon Himself the penalty that rightfully belonged to all men. This substitutionary work satisfied God's righteousness and justice simultaneously and made possible the salvation of every human being who would ever believe. The third imputation is the hinge on which the entire plan of God turns.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 2:24 / 2 Corinthians 5:21</div>
+      <div class="verse">"He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness." / "For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</div>
+      <div class="note">Bore our sins in his body — the third imputation named from the perspective of its effect on the One who received it. Every sin committed by every member of the human race from Adam to the last person born before the final judgment was imputed to the body of Jesus Christ on the cross and judged there. The judicial imputation is complete — the penalty has been executed, the righteousness has been satisfied, the barrier between God and man has been removed. Made him to be sin who knew no sin — the precision of the judicial imputation. No affinity between the sin imputed and the One who received it. The justice of God executed the judgment on the sin, not on an already-sinful person. The substitution was genuine and the judgment was complete.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Isaiah 53:5–6</div>
+      <div class="verse">"But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed. All we like sheep have gone astray; we have turned — every one — to his own way; and the LORD has laid on him the iniquity of us all."</div>
+      <div class="note">The LORD has laid on him — the third imputation stated from the Father's perspective. Not a voluntary offering alone — a judicial act of God the Father placing the iniquity of all mankind on the One who had no iniquity of His own. The chastisement that brought us peace — the judicial punishment executed on the substitute produced the peace that the justified believer now has with God through Romans 5:1. The third imputation is the legal ground for every subsequent act of divine grace toward every human being who believes.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The cross completed — now what the cross makes possible at salvation</div>
+
+  <div class="stage-label">At Salvation — The Double Imputation That Produces the New Creation</div>
+
+  <!-- IMPUTATION 4 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">4</span>
+      <span class="phase-title">Divine Righteousness to the Believer</span>
+    </div>
+    <div class="imputation-type">Judicial Imputation — Blessing</div>
+    <p class="phase-desc">Because the imputation and judgment of sins in the third imputation satisfied divine integrity, God is free to impute His perfect righteousness to the believer at the moment of faith in Christ. This is a judicial imputation — divine righteousness is credited where it does not rightfully belong. No affinity exists between the absolute righteousness of God and the total depravity of mankind. The judicial action is made complete when the justice of God recognizes His own righteousness in the believer and pronounces him justified — acceptable, vindicated, righteous before the divine standard. The fourth imputation is the basis for the believer's eternal standing before God and for every subsequent blessing the justice of God is free to provide.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 4:3–5</div>
+      <div class="verse">"For what does the Scripture say? 'Abraham believed God, and it was counted to him as righteousness.' Now to the one who works, his wages are not counted as gift but as his due. And to the one who does not work but believes in him who justifies the ungodly, his faith is counted as righteousness…"</div>
+      <div class="note">Counted to him as righteousness — the fourth imputation stated as the pattern established in Abraham before the Law, before circumcision, before any religious system could claim credit for it. The one who does not work but believes — the grace mechanism of the judicial imputation is explicitly nonmeritorious. The righteousness credited is not earned, accumulated, or graduated into. It is the divine righteousness of God Himself credited to the account of the believing sinner at the moment of faith. Abraham's justification is Paul's proof that the fourth imputation has always been the mechanism — grace through faith, apart from works, in every dispensation.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 3:24 / Philippians 3:9</div>
+      <div class="verse">"…and are justified by his grace as a gift, through the redemption that is in Christ Jesus." / "…and be found in him, not having a righteousness of my own that comes from the law, but that which comes through faith in Christ, the righteousness from God that depends on faith."</div>
+      <div class="note">Not having a righteousness of my own — Paul surrenders every credential the flesh could produce. The righteousness from God that depends on faith — the fourth imputation named from the perspective of the one who receives it. It is not Paul's righteousness. It is God's. Credited to Paul's account because Paul believes. The justice of God recognizes His own righteousness in the believer and pronounces justified the one who had no righteousness of his own. This is the legal standing that makes every subsequent blessing possible — the grace pipeline is free to flow toward the believer because the righteousness that justice requires is already in place.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Righteousness imputed — now the life imputed simultaneously</div>
+
+  <!-- IMPUTATION 5 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">5</span>
+      <span class="phase-title">Eternal Life to the Believer</span>
+    </div>
+    <div class="imputation-type">Real Imputation — Blessing</div>
+    <p class="phase-desc">The fifth imputation occurs simultaneously with the fourth at the moment of salvation. God is eternal life — to live eternally with God one must possess His life. The Holy Spirit sets up the affinity for this real imputation when, in the ministry of regeneration, He creates in the believer a human spirit. To this divinely prepared home the justice of God imputes eternal life — assuring the believer of a never-ending relationship with God. The fifth imputation is a real imputation because the human spirit that the Spirit creates at regeneration is the natural home for the eternal life that is imputed to it. The believer's soul and spirit abide with God forever because he shares God's own eternal life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:36 / 1 John 5:11–12</div>
+      <div class="verse">"Whoever believes in the Son has eternal life…" / "And this is the testimony, that God gave us eternal life, and this life is in his Son. Whoever has the Son has life; whoever does not have the Son of God does not have life."</div>
+      <div class="note">Has eternal life — present tense, current possession, not future aspiration. The fifth imputation is received at the moment of faith simultaneously with the fourth. The believer who has the Son has life — the life that is in the Son is the eternal life of God Himself imputed to the human spirit that the Spirit created to receive it. The second imputation produced spiritual death by the absence of the human spirit. The fifth imputation reverses it by the creation and indwelling of the human spirit and the imputation of eternal life to that prepared home. The double imputation at the new birth — righteousness and eternal life simultaneously — is the complete reversal of the double condition of condemnation and spiritual death that the second imputation produced.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 6:23</div>
+      <div class="verse">"For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."</div>
+      <div class="note">The free gift — χάρισμα, the grace gift. The fifth imputation is entirely the justice of God acting on the basis of the finished work of the cross. The wages of sin — what the second imputation produced — is death. The free gift of God — what the fifth imputation provides — is eternal life. The two imputations at physical birth produced the two conditions that the two imputations at salvation reverse. The economy of grace is the exact inverse of the economy of the fall — not a partial repair but a complete reversal, and more than a reversal because the grace abounds much more than the trespass.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Salvation complete — now the blessings that flow to the advancing believer</div>
+
+  <div class="stage-label">In Time — The Blessings That Flow to the Maturing Believer</div>
+
+  <!-- IMPUTATION 6 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">6</span>
+      <span class="phase-title">Blessings in Time to the Mature Believer</span>
+    </div>
+    <div class="imputation-type">Real Imputation — Blessing</div>
+    <p class="phase-desc">The sixth imputation occurs whenever the justice of God pours special blessings to the righteousness of God in the spiritually mature believer. This is a real imputation — there is affinity between the divine blessings and the divine righteousness that the fourth imputation placed in the believer. The justice of God recognizes His own righteousness in the mature believer and directs toward it the special blessings that the righteousness can now carry. Through maximum doctrine resident in the soul, the mature believer has developed the capacity to receive these blessings — he has grown enough to appreciate abundance without being distracted by it, enough to carry suffering without being destroyed by it, enough to be a blessing to everyone in his periphery. The sixth imputation is the evidence that the advance is real.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:3</div>
+      <div class="verse">"Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places."</div>
+      <div class="note">Every spiritual blessing — already provided in the heavenly places, waiting to be received by the believer whose advance has produced the capacity to receive it. The sixth imputation is not earned — the blessings are already there, already provided, already designated for the righteousness of God that the fourth imputation placed in the believer at salvation. What the advance produces is not the blessings themselves but the capacity to receive what was always in the pipeline. The mature believer is not more loved by God than the immature believer. He has developed the capacity to receive what the love of God was always directing toward him through the grace pipeline.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Proverbs 8:18 / 1 Corinthians 2:9</div>
+      <div class="verse">"Riches and honor are with me, enduring wealth and righteousness." / "But, as it is written, 'What no eye has seen, nor ear heard, nor the heart of man imagined, what God has prepared for those who love him'—"</div>
+      <div class="note">What God has prepared — the sixth imputation's provision described in terms of its incomprehensibility to the natural mind. The eye has not seen it. The ear has not heard it. The heart has not imagined it. The special blessings of the sixth imputation exceed what the human capacity for anticipation can project. They include spiritual blessings, temporal blessings, blessings that overflow into the lives of everyone in the mature believer's periphery, blessings in suffering — the dying grace that makes the death-shadowed valley a place of inner peace — and the invisible impact on history that the advancing believer's life produces. These are the blessings that motivate the advance. The capacity that the advance develops is the capacity to receive what God has always been prepared to give.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Blessings in time — now the eternal blessings they are parlayed into</div>
+
+  <div class="stage-label">In Eternity — The Rewards That Distinguish the Winner Believer Forever</div>
+
+  <!-- IMPUTATION 7 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">7</span>
+      <span class="phase-title">Blessings in Eternity to the Mature Believer</span>
+    </div>
+    <div class="imputation-type">Real Imputation — Blessing</div>
+    <p class="phase-desc">The special blessings God imputes on earth in the sixth imputation are parlayed into even greater blessings in heaven. The home of this real imputation is the resurrection body — sinless, immortal, the final dwelling of the believer who advanced to maturity in time. When Jesus Christ evaluates believers in heaven at the Bema for their execution of the spiritual life, only those who received the sixth imputation in time will receive the seventh. God is glorified by what He gives in this final imputation — honors, decorations, and privileges that distinguish the winner believer throughout eternity. The seventh imputation is not a reward for earning God's favor. It is the justice of God giving to the righteousness He placed in the mature believer the fullness of what that righteousness can carry in the sinless environment of eternity.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:10</div>
+      <div class="verse">"For we must all appear before the judgment seat of Christ, so that each one may receive what is due for what he has done in the body, whether good or evil."</div>
+      <div class="note">The judgment seat of Christ — the Bema, the evaluation not of salvation but of the execution of the spiritual life after salvation. Every believer appears. The evaluation is not about eternal destiny — that was settled at the moment of faith. It is about the seventh imputation — the eternal blessings that will be given to the righteousness of God in the mature believer throughout the eternal state. What is done in the body — the divine good produced by the Spirit-filled life receives the seventh imputation. The human good produced by the sin nature's area of strength is burned. The believer is saved regardless. But the eternal distinction between the winner believer and the loser believer begins at the Bema and continues forever.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:7</div>
+      <div class="verse">"…so that in the coming ages he might show the immeasurable riches of his grace in kindness toward us in Christ Jesus."</div>
+      <div class="note">The coming ages — the seventh imputation operating throughout eternity, the immeasurable riches of grace displayed in the winner believer's eternal rewards to the glory of God. The seventh imputation is not merely the believer's reward. It is God's trophy — the demonstration of what the grace pipeline can produce in a human life that cooperated with the Spirit's work from the new birth through the maturing process to the full advance. The immeasurable riches shown in the coming ages are the final expression of a plan that was complete before the foundation of the world, executed through seven imputations, and consummated in the eternal state where the last imputation shines as the fullest expression of the integrity of God.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Timothy 4:7–8</div>
+      <div class="verse">"I have fought the good fight, I have finished the race, I have kept the faith. Henceforth there is laid up for me the crown of righteousness, which the Lord, the righteous judge, will award to me on that day, and not only to me but also to all who have loved his appearing."</div>
+      <div class="note">Laid up for me — the seventh imputation already designated, already in the pipeline, waiting for the Bema evaluation that will release it to the one for whom it was prepared. The crown of righteousness — the affinity of the real imputation — given to the righteousness that God placed in Paul at salvation and that Paul's advance developed the capacity to carry. The righteous judge — the same justice that administered the second imputation at physical birth, the third at the cross, the fourth and fifth at salvation, the sixth throughout the maturing life, now administering the seventh in the eternal state. All seven imputations are acts of the same justice, serving the same love, expressing the same integrity of the same God.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Seven Imputations — God's Complete Plan</div>
+    <div class="hinge-text">
+      At physical birth —<br>
+      Soul life to biological life. The person exists.<br>
+      Adam's original sin to the sin nature. The condition established.<br><br>
+      At the cross —<br>
+      Mankind's sins to Christ. The penalty executed.<br>
+      The barrier removed. The grace pipeline opened.<br><br>
+      At salvation —<br>
+      Divine righteousness to the believer. Justified.<br>
+      Eternal life to the believer. Regenerated.<br>
+      The double condition of the fall reversed simultaneously.<br><br>
+      In time —<br>
+      Blessings to the mature believer. The advance rewarded.<br>
+      The sixth imputation flowing to the righteousness<br>
+      that the fourth imputation placed in the soul at salvation.<br><br>
+      In eternity —<br>
+      Blessings forever to the winner believer.<br>
+      The seventh imputation — the immeasurable riches of grace<br>
+      displayed throughout the coming ages<br>
+      to the glory of the God whose integrity<br>
+      executed every imputation flawlessly.<br><br>
+      Seven imputations. One plan.<br>
+      Complete before the foundation of the world.<br>
+      Executed without compromise to a single attribute.<br>
+      The grace abounds much more than the trespass.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
