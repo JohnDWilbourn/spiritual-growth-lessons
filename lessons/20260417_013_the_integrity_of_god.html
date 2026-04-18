@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Integrity of God — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .stage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 013</div>
+    <h1>The Integrity of God</h1>
+    <div class="subtitle">Ten Attributes — One Uncompromised Character</div>
+  </header>
+
+  <p class="intro">
+    The integrity of God is not one attribute among the ten. It is the oneness of all ten — the absolute coordination and harmony of every attribute of His character operating simultaneously without compromise to any of them. God will not violate His sovereignty to satisfy His love. He will not override His justice to express His mercy. He will not set aside His righteousness to accommodate the creature. Every attribute is eternal, absolute, equal in value, unchangeable, and inseparable from the whole. To know one attribute truly is to begin knowing God. To know all ten in their perfect coordination is to understand why the cross was the only possible solution — and why the grace that flows from it is the only provision that could satisfy every attribute of His character at once.
+  </p>
+
+  <div class="stage-label">The Incommunicable Attributes — What the Creature Cannot Share</div>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Sovereignty — The Supreme Ruler of the Universe</span>
+    </div>
+    <p class="phase-desc">God is sovereign — the supreme ruler of the universe, possessing absolute will, authority, and volition. By God alone are all things brought into being, maintained, controlled, and made subject to His pleasure. His sovereignty does not, however, override the free will of angels or man. In granting volition to rational creatures God guarantees the existence of all free decisions throughout history — and His exact sovereign actions regarding those decisions. Sovereignty and free will are not in conflict. They coexist throughout human history because the sovereign God who decreed the plan also decreed the volition of every creature within it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Deuteronomy 4:39</div>
+      <div class="verse">"Know therefore today, and lay it to your heart, that the LORD is God in heaven above and on the earth beneath; there is no other."</div>
+      <div class="note">No other — not a competing sovereign, not a secondary authority, not a force that operates outside His jurisdiction. The universe has one King. Every event in human history, every decision of every rational creature, every moment of suffering and every moment of blessing operates within the jurisdiction of the One who holds absolute will and authority. The believer who grasps this does not panic when circumstances are outside his control. They were never inside his control. They have always been inside the sovereign's.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 46:10 / Colossians 1:15–17</div>
+      <div class="verse">"…declaring the end from the beginning and from ancient times things not yet done, saying, 'My counsel shall stand, and I will accomplish all my purpose.'" / "…and in him all things hold together."</div>
+      <div class="note">The sovereign God declared the end from the beginning — not as prediction but as decree. The plan was established before the first event of human history and will be executed without revision. In Christ all things hold together — sovereignty is not an abstract attribute of divine authority. It is the active, present, continuous holding together of everything that exists by the One who brought it into being. The believer's life is held together by the same sovereignty that holds the galaxies in place. Nothing that touches him is outside the jurisdiction of the supreme ruler of the universe.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The sovereign ruler is also the unchanging one</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Immutability — The Unchangeable Foundation</span>
+    </div>
+    <p class="phase-desc">God is unchangeable — neither capable of nor susceptible to change. There is no variation or shifting shadow in Him regardless of circumstances, decisions, or events of human history. His works are unalterable. His entire person is the same yesterday and today and forever. Even His omnipotence cannot override His immutability — God cannot become something other than what He is. From His immutability comes His faithfulness. Because He cannot change, every promise He has ever made stands with the full weight of His unchanging character behind it. The believer's security is not grounded in his own consistency. It is grounded in God's.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 13:8 / Malachi 3:6</div>
+      <div class="verse">"Jesus Christ is the same yesterday and today and forever." / "For I the LORD do not change; therefore you, O children of Jacob, are not consumed."</div>
+      <div class="note">The same yesterday — before the cross, in the wilderness, in the garden. The same today — in the specific circumstances of the believer's life right now. The same forever — past the Bema, past the Kingdom, into eternity. The God who made the promise is identically the same God who will keep it. This is the foundation of the faith-rest life. The believer who claims a promise is claiming something backed by the full weight of an immutable character. Not the emotional momentum of a moment. The eternal sameness of the One who cannot change.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Lamentations 3:22–23</div>
+      <div class="verse">"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."</div>
+      <div class="note">New every morning — not because they change but because the immutable God keeps applying His unchanging character to every new day the believer wakes to. The mercies are new. The faithfulness is constant. The believer who woke to the worst day of his life woke to the same immutable God he woke to on the best day. The circumstances are different. The character of the One who governs them is not.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The unchangeable God knows everything — simultaneously and completely</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Omniscience — All-Knowing, All at Once</span>
+    </div>
+    <p class="phase-desc">God knows perfectly, eternally, and simultaneously all that is knowable — both the actual and the possible. The future is as perspicuous to Him as the past. His wisdom is as complete as His knowledge, and His infinite wisdom and knowledge are applied in accomplishing His perfect plan and purpose. The omniscience of God and the free will of man coexist throughout human history — God's foreknowledge of every decision does not produce the decision. The creature's volition is real. The Creator's knowledge of it is complete. Both are true simultaneously because God is not subject to time.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 139:4 / Job 37:16</div>
+      <div class="verse">"Even before a word is on my tongue, behold, O LORD, you know it altogether." / "Do you know the balancings of the clouds, the wondrous works of him who is perfect in knowledge?"</div>
+      <div class="note">Perfect in knowledge — not comprehensive knowledge that is still accumulating, not knowledge subject to revision as new information becomes available. Perfect. Complete. The word David cannot yet speak is already known. The thought the believer has not yet formed is already comprehended. The omniscient God is never surprised by what the creature does, never caught unprepared by the turn of events, never working from incomplete information. Every plan He has made for the believer was made with perfect knowledge of every failure, every sin, every moment of weakness that would occur between the plan's conception and its execution.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 11:33</div>
+      <div class="verse">"Oh, the depth of the riches and wisdom and knowledge of God! How unsearchable are his judgments and how inscrutable his ways!"</div>
+      <div class="note">Unsearchable and inscrutable — not because God has hidden His character from the creature but because the depth of His knowledge exceeds what the finite mind can fully contain. Paul is not expressing frustration. He is expressing worship. The God whose knowledge is inexhaustible is the God whose plan for the believer was conceived with full knowledge of everything that would ever be relevant to it. The believer who trusts that plan is trusting not a guess but the counsel of the One who knows the end from the beginning.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The all-knowing God is also all-powerful — unlimited in ability and authority</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Omnipotence — Unlimited in Power and Authority</span>
+    </div>
+    <p class="phase-desc">God is all-powerful — unlimited in His ability and authority. He holds His created universe together, perpetuates history, and is the source of power given to believers to execute His plan. Divine omnipotence guarantees that nothing will be impossible with God. His power is limited only by His own restriction, self-imposed to be consistent with His entire essence — God can do all He wills but does not will to do all He can. This is not a weakness. It is the integrity of omnipotence operating in coordination with every other attribute. God does not do everything He is capable of doing because some things would violate His righteousness, His justice, or His love.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 40:26</div>
+      <div class="verse">"Lift up your eyes on high and see: who created these? He who brings out their host by number, calling them all by name; by the greatness of his might and because he is strong in power, not one is missing."</div>
+      <div class="note">Billions of stars called by name. Not one missing. The omnipotent God who sustains the universe at that scale is the same God who sustains the believer's life at the scale of one person in one day facing one set of circumstances. The faith-rest life rests on exactly this — if God can move His little finger and put into existence billions of galaxies billions of light years apart, He can handle the specific no-water situation the believer is facing right now. The power that holds the stars in place is the same power available to the Spirit-filled believer for the execution of the spiritual life.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Peter 1:3</div>
+      <div class="verse">"His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence."</div>
+      <div class="note">All things — past tense, already granted. The omnipotent God did not provide some things and leave the rest for the believer to generate from his own resources. He provided everything pertaining to life and godliness through the grace pipeline. The believer's job is not to generate spiritual power. It is to receive what omnipotence has already placed in the pipeline — through the knowledge of Him who called, through the metabolized Word, through the Spirit-filled life that keeps the reception operational.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The all-powerful God is present everywhere — simultaneously and completely</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">Omnipresence — Entirely Present Everywhere at Once</span>
+    </div>
+    <p class="phase-desc">God is eternally, wholly, and simultaneously present everywhere. His entire essence — not a portion of it, not a representative of it — is present in nature, in history, and in all the affairs of man and angels. This is not pantheism, which merely equates God with the world. Omnipresence reveals that God fully occupies time and space while remaining infinitely above and beyond it all. The sovereign and unlimited God whose glory is above the heavens also dwells locally in the manner of His choosing — in the burning bush, in the Tabernacle, in the incarnate Son, and now in the indwelt believer. For the believer, omnipresence means one thing above all else: he is never alone.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 139:7–10</div>
+      <div class="verse">"Where shall I go from your Spirit? Or where shall I flee from your presence? If I ascend to heaven, you are there! If I make my bed in Sheol, you are there! If I take the wings of the morning and dwell in the uttermost parts of the sea, even there your hand shall lead me, and your right hand shall hold me."</div>
+      <div class="note">David is not describing a pursuit. He is describing a refuge. There is nowhere the believer can go where the omnipresent God is not already there ahead of him. The deepest valley, the darkest night, the most isolated moment of the suffering life — God is there. Not arriving when called. Already present. The omnipresence of God is not an abstract theological category. It is the personal eyewitness presence of the One who is immediately available at every moment of the believer's life.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 13:5</div>
+      <div class="verse">"…for he has said, 'I will never leave you nor forsake you.'"</div>
+      <div class="note">The promise is grounded in the attribute. God cannot leave or forsake the believer because omnipresence is not a policy He can choose to suspend — it is what He is. The promise is the verbal guarantee of what is already true by virtue of His nature. The believer who stands on this promise is standing on an attribute of the divine essence, not merely on a statement of divine intention. This is why the promise cannot fail. The immutable God cannot change. The omnipresent God cannot leave. The promise is as stable as the character behind it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The incommunicable foundation established — now the hinge between what God is and what He communicates</div>
+
+  <div class="stage-label">The Hinge — What God Communicates to the Creature</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Veracity — The Absolute Truth That Makes God Knowable</span>
+    </div>
+    <p class="phase-desc">God is absolute truth. His veracity is evident in His words, in His works, and in His ways. Truth has never been diminished or compromised in God — He is the origin of truth. His Word is truth, and it is therefore the only source of absolute truth for mankind. Veracity is the hinge between the incommunicable attributes and the communicable ones because it is the attribute through which God makes Himself knowable to the creature. The incommunicable attributes can be known about. Veracity is the mechanism by which they are known truly. Without it the creature has no reliable access to what God actually is. With it the unbeliever can be confident the Gospel is true, and the believer can be assured that Bible doctrine is the inerrant guide for the spiritual life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 17:17 / John 14:6</div>
+      <div class="verse">"Sanctify them in the truth; your word is truth." / "Jesus said to him, 'I am the way, and the truth, and the life. No one comes to the Father except through me.'"</div>
+      <div class="note">Your word is truth — not your word contains truth or your word points toward truth. Your word is truth. The identification is complete. The Word of God is the veracity of God in written form — the absolute truth of His character deposited in human language so that finite creatures can know the infinite God truly if not exhaustively. Jesus does not say He teaches the truth or represents the truth. He is the truth. The incarnate Son is the veracity of God made flesh — the attribute walked into human history so that the creature could encounter it personally. The Spirit who guides the believer into all truth is guiding him deeper into the Person who is truth itself.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 16:13</div>
+      <div class="verse">"When the Spirit of truth comes, he will guide you into all truth, for he will not speak on his own authority, but whatever he hears he will speak, and he will declare to you the things that are to come."</div>
+      <div class="note">The Spirit of truth — not the Spirit of conviction or the Spirit of power alone, though He is both. The Spirit is named here by His relationship to the attribute of veracity. He guides into all truth because He is the One who transfers the veracity of God from the written Word into the right lobe of the soul where it becomes the metabolized doctrine the believer lives from. The believer who is filled with the Spirit is not simply empowered. He is being guided deeper into the truth that is the living God — the progressive knowing of the One whose Word is truth and whose Son is truth and whose Spirit guides into all truth.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Truth is the hinge — eternal life is what truth delivers</div>
+
+  <!-- SECTION VII -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VII</span>
+      <span class="phase-title">Eternal Life — The Self-Existing One Who Shares His Life</span>
+    </div>
+    <p class="phase-desc">God is the absolute self-existing one — Yahweh, the great I AM, who has neither beginning nor end. There never was a time when God did not exist, and His life continues without termination. God transcends all temporal limitations. While human beings think in terms of past, present, and future, of short or long periods of time, God is not bound by the sequence that governs the creature's experience of existence. His eternal life is not simply long life — it is life of a categorically different order. And He extends a gracious offer for finite man to share it. The timeless life that exists in God is imputed to all who believe in Jesus Christ — not as a metaphor but as a real participation in the life that has no beginning and no end.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Exodus 3:14 / John 3:36</div>
+      <div class="verse">"God said to Moses, 'I AM WHO I AM.'" / "Whoever believes in the Son has eternal life; whoever does not obey the Son shall not see life, but the wrath of God remains on him."</div>
+      <div class="note">I AM — not I was or I will be. The eternal present tense of the self-existing God who is not located in time the way the creature is. When He says I AM to Moses He is naming His nature — the One whose existence is not derived from anything outside Himself, who simply is. And this is the life He offers to the creature — not eternal continuation of what the creature already has, but participation in the I AM, the life that is not subject to death because it does not derive its existence from anything that can die. The believer who received eternal life at salvation received not an extension of his own life but a new life — the life of the self-existing One imputed to a creature who could not generate it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 6:23</div>
+      <div class="verse">"For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."</div>
+      <div class="note">The free gift — χάρισμα, the grace gift. Eternal life is not earned, accumulated, or graduated into. It is imputed at the moment of faith in Christ — together with the righteousness of God, in the same instant, as a double imputation that gives the new believer both the standing and the life simultaneously. The wages of sin is death because sin operates in the economy of the flesh. The gift of God is eternal life because it operates entirely in the economy of grace. The two economies are mutually exclusive. You receive the gift or you receive the wages. The cross is the point where the gift was made possible — Christ receiving the wages on behalf of everyone who would ever receive the gift.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The eternal life given — now the love that motivated the giving</div>
+
+  <div class="stage-label">The Communicable Attributes — Where the Creature Meets God</div>
+
+  <!-- SECTION VIII -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VIII</span>
+      <span class="phase-title">Love — The Eternal Motivation Behind Every Divine Action</span>
+    </div>
+    <p class="phase-desc">The love of God is the absolute virtue and benevolence of His thinking and actions. Scripture's profound declaration — God is love — means that God cannot and does not exist apart from love. Love is not what God does in response to a worthy object. It is what God is. Divine love, unlike human love, does not require an object to activate it. It does not respond to merit, beauty, sincerity, or worthiness. It operates from within the integrity of God without needing anything outside of Him. Love is the eternal motivation behind every action God takes toward mankind — but justice is the point of contact for the fallen creature. Sin broke the relationship at the love point in the garden. Justice became operative. Love remained the reference point — always the motivation, always the ground, never absent, but requiring the satisfaction of the guardians before it can reach the creature freely.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 4:8 / Psalm 89:14</div>
+      <div class="verse">"Anyone who does not love does not know God, because God is love." / "Righteousness and justice are the foundation of your throne; steadfast love and faithfulness go before you."</div>
+      <div class="note">God is love — not God is loving, which would make love a disposition that could vary. God is love. The attribute is identical with the Person. It cannot be increased or diminished, activated or deactivated. Righteousness and justice are the foundation of His throne — the guardians that protect the integrity of His love so that love can operate without compromise to His character. The steadfast love goes before Him — not behind, not underneath, but before. Love is the advance announcement of what is coming. Justice executes what righteousness demands. But love is always the eternal motivation behind both.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 3:16 / Romans 5:8</div>
+      <div class="verse">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life." / "But God shows his love for us in that while we were still sinners, Christ died for us."</div>
+      <div class="note">While we were still sinners — before the response, before the faith, before any positive volition toward the light. The love that motivated the cross was not responding to the creature's worthiness. It was expressing the eternal character of the One whose love requires no object to activate it. This is the impersonal love of God — extended toward the hostile world system, toward the κόσμος in rebellion, toward sinners before they were reconciled. Not because the object was lovable but because the God who is love cannot act from any other motivation. The cross is the ultimate expression of what divine love looks like when justice and righteousness have been fully satisfied.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Chronicles 16:34</div>
+      <div class="verse">"Oh give thanks to the LORD, for he is good; for his steadfast love endures forever!"</div>
+      <div class="note">Endures forever — the same immutability that governs every other attribute governs love. The steadfast love of God toward the believer was not generated at the moment of salvation and is not dependent on the believer's performance for its continuation. It existed before the believer existed. It will exist after every circumstance the believer will ever face has passed. The believer who understands this approaches confession not as an attempt to restore a love that has been damaged but as the adjustment to the justice of God that allows the love that was always there to reach him freely again.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Love motivates — righteousness sets the standard — justice executes</div>
+
+  <!-- SECTION IX -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IX</span>
+      <span class="phase-title">Righteousness — The Inviolable Standard That Guards His Integrity</span>
+    </div>
+    <p class="phase-desc">God is absolute good, free from any compromise in nature. Inviolable righteousness is the very root and center of God's essence. Because God cannot compromise His righteousness without destroying His character, all of His attitudes and actions conform to this flawless standard. Without absolute righteousness God would not be God. His standard cannot accept anything less than itself — He can only condemn sin and reject the relative standards of human good. Righteousness is the principle. It establishes the standard, maintains the standard, and cannot lower the standard for any reason. The only way fallen man can have a relationship with God is by possessing God's own righteousness — which is exactly what is imputed to the believer at the moment of salvation.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:21–22</div>
+      <div class="verse">"But now the righteousness of God has been manifested apart from the law, although the Law and the Prophets bear witness to it — the righteousness of God through faith in Jesus Christ for all who believe."</div>
+      <div class="note">Apart from the law — the righteousness of God is not produced by law-keeping. It is imputed by faith. The law bore witness to the standard but could not produce it in the creature. The cross produced it — Christ bearing the full weight of the righteousness standard in His substitutionary death, so that what righteousness demanded justice could execute on Him rather than on the creature, and what righteousness required could be freely credited to everyone who believes. The believer who receives this imputed righteousness is not merely forgiven. He is made acceptable to the divine standard — possessing the very righteousness of God as his standing before the Father.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:21</div>
+      <div class="verse">"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</div>
+      <div class="note">The great exchange — the most concentrated statement of what the cross accomplished in relation to righteousness. Christ made to be sin — the full imputation of every human sin to the sinless Son. The creature made to be the righteousness of God — the full imputation of the divine standard to the believing sinner. Righteousness set the standard. The standard had to be met. Christ met it on behalf of every human being who would ever believe. The righteousness that guards the integrity of God is the same righteousness that is now the standing of every believer before the Father — not earned, not achieved, imputed by grace through faith.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Righteousness sets the standard — justice executes it</div>
+
+  <!-- SECTION X -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">X</span>
+      <span class="phase-title">Justice — The Guardian That Executes What Righteousness Demands</span>
+    </div>
+    <p class="phase-desc">God is perfectly just and fair, treating all His creatures alike, without bias or partiality. In dealing with fallen man, the justice of God acts as the guardian of God's character, ensuring that His absolute righteousness is never violated. Whatever righteousness demands — either cursing or blessing — justice executes. Righteousness is the principle. Justice is the function. Together they are the guardians of God's integrity. The most dramatic display of divine justice occurred at the cross — righteousness demanded that justice impute all human sins to Jesus Christ and judge Him in our place. This substitutionary atonement satisfied God's righteous standard, freeing His justice to impute His own righteousness to anyone who believes in Jesus Christ. Justice, freed by the cross, is now free to bless the believer — because the believer possesses the righteousness that justice requires.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:25–26</div>
+      <div class="verse">"…whom God put forward as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins. It was to show his righteousness at the present time, so that he might be just and the justifier of the one who has faith in Jesus."</div>
+      <div class="note">Just and the justifier simultaneously — this is the integrity of God expressed in a single phrase. Justice requires the penalty. Grace provides the Substitute. Righteousness demands the standard. The cross meets it. The God who condemns sin and the God who justifies the sinner are not two different Gods operating from two different principles. They are the same God whose integrity holds all ten attributes in perfect coordination — the guardians satisfied, the love expressed, the eternal life given, the veracity confirmed, the sovereign plan executed. The believer who stands justified before God stands on the most thoroughly grounded legal verdict in the history of existence.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">Faithful and just — not faithful and merciful, which might imply God is looking the other way. Just. The forgiveness of the confessing believer is an act of justice because the penalty for the confessed sin was already executed at the cross. God is not overlooking sin when He forgives the confessing believer. He is applying the already-rendered verdict of Calvary to the specific act. This is what makes confession the adjustment to the justice of God. The believer who confesses is not appealing to God's mercy to set aside His justice. He is standing on the justice that has already been satisfied — and receiving from the God who is just and the justifier the forgiveness and cleansing that justice makes freely available to everyone who comes through the cross.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Deuteronomy 32:4</div>
+      <div class="verse">"The Rock, his work is perfect, for all his ways are justice. A God of faithfulness and without iniquity, just and upright is he."</div>
+      <div class="note">All His ways are justice — every act of God toward the creature, whether blessing or discipline, is the execution of justice operating on the basis of righteousness. The blessing the believer receives is not God's favorites policy. It is the just distribution of grace to the one who possesses the righteousness the distribution requires. The discipline the believer receives is not God's anger. It is the just training of the one He loves — justice and love operating together in the grace pipeline toward the maturing believer whose eternal destiny is to know God and be known by Him.</note>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Integrity of God — Ten Attributes, One Uncompromised Character</div>
+    <div class="hinge-text">
+      Sovereignty — the supreme ruler who guarantees every free decision<br>
+      Immutability — the unchangeable foundation of every promise<br>
+      Omniscience — perfect knowledge of everything, always<br>
+      Omnipotence — unlimited power, self-restricted by His own integrity<br>
+      Omnipresence — entirely present everywhere, the believer never alone<br><br>
+      Veracity — the hinge, the attribute that makes God knowable<br>
+      Eternal Life — the self-existing One who shares His life with the creature<br><br>
+      Love — the eternal motivation that requires no object<br>
+      Righteousness — the inviolable standard, the guardian of His integrity<br>
+      Justice — the function that executes what righteousness demands<br><br>
+      All ten operating simultaneously.<br>
+      No attribute overriding another.<br>
+      No compromise to any of them.<br><br>
+      The cross is where all ten were fully expressed at once —<br>
+      the most concentrated act of divine integrity<br>
+      in the history of existence.<br><br>
+      Justice is the point of contact for the fallen creature.<br>
+      Love is always the point of reference.<br>
+      Confession is the adjustment to the justice of God<br>
+      that allows the love that was always there<br>
+      to reach the believer freely again.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
