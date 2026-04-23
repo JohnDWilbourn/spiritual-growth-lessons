@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace Orientation — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 020</div>
+    <h1>Grace Orientation</h1>
+    <div class="subtitle">The Fourth Problem-Solving Device — Living from What God Has Already Provided</div>
+  </header>
+
+  <p class="intro">
+    Grace is God's policy — all He is free to do for mankind on the basis of the finished work of Christ on the cross. Grace Orientation is the believer whose soul has been restructured around that reality so completely that the merit system — in any form, religious or secular — has lost its grip. He no longer approaches God with a résumé. He no longer measures his standing before God by his performance. He no longer extends to others the conditional favor that the merit system produces. He has come to Jesus as a child and is learning from Him — and the rest that Jesus promised has replaced the labor of the soul that carried its own credentials to the throne.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Come and Learn — The Invitation Grace Orientation Answers</span>
+    </div>
+    <p class="phase-desc">The invitation is the starting point. Come to me, all who labor and are heavy laden, and I will give you rest. The labor and the heavy burden are the merit system in full operation — the soul carrying the weight of its own performance as the basis for standing before God. Every religious system that has ever existed is a variation of this burden — if you do enough, are sincere enough, sacrifice enough, conform enough, the scales will tip in your favor. Jesus does not offer a lighter version of that burden. He offers a completely different yoke. Take my yoke upon you and learn from me — the child posture, the teachable soul, the believer who has stopped presenting credentials and started receiving from the One whose finished work is the only merit that matters. The rest that follows is not inactivity. It is the rest of a soul that has finally stopped laboring under the wrong load.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 11:28–30</div>
+      <div class="verse">"Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light."</div>
+      <div class="note">Gentle and lowly in heart — the character of the One whose yoke replaces the merit system's burden. The merit system is administered by the pride that generated it — the self-elevation that insists the creature can present something to God that God is obligated to receive. Jesus is the opposite of that. Gentle and lowly. The grace that motivates the invitation is the same grace that makes the yoke easy — because the merit that the yoke requires has already been provided by the One who issues the invitation. The believer who learns from Jesus learns that the rest was always available. The labor was self-imposed.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:8–9</div>
+      <div class="verse">"For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."</div>
+      <div class="note">Not your own doing — the foundation of Grace Orientation stated at the point of entry. The salvation that established the believer's standing before God was entirely God's act, entirely God's provision, entirely nonmeritorious on the believer's part. If the entry point is grace alone through faith alone — if no human merit contributed anything to the transaction that established the relationship — then no human merit is required to maintain it, and no human merit is the basis for any subsequent blessing. The grace that saved is the grace that sustains. The believer who understands this has the doctrinal foundation for Grace Orientation. The believer who does not keeps laboring under the merit system's burden after the invitation to lay it down has already been issued.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The invitation given — now what it is replacing</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Merit System and Its Forms — What Grace Orientation Displaces</span>
+    </div>
+    <p class="phase-desc">The merit system is the sin nature's area of strength operating at its most sophisticated — the self presenting its own righteousness as currency in the transaction the cross has already completed. It takes many forms. Religious legalism presents moral performance, ritual observance, and doctrinal conformity as the basis for standing before God. Secular moralism presents humanitarian achievement, social justice, and personal virtue as the same currency in a different denomination. Both are the same error — the creature attempting to contribute something to a transaction that required nothing from the creature except faith. Paul's résumé in Philippians 3 is the most devastating dismantling of the merit system in the New Testament, because Paul's résumé was genuinely impressive. And he counted it all loss.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 3:4–8</div>
+      <div class="verse">"…though I myself have reason for confidence in the flesh also. If anyone else thinks he has reason for confidence in the flesh, I have more: circumcised on the eighth day, of the people of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; as to the law, a Pharisee; as to zeal, a persecutor of the church; as to righteousness under the law, blameless. But whatever gain I had, I counted as loss for the sake of Christ. Indeed, I count everything as loss because of the surpassing worth of knowing Christ Jesus my Lord."</div>
+      <div class="note">Blameless — under the Law, by the standard of external conformity, Paul was as close to perfect as the merit system could produce. Circumcised the eighth day. The right tribe. The right training. The right zeal. The right record. And he counted it all loss — not because it was worthless in human terms but because it was structurally incompatible with the grace that the cross provided. You cannot receive the righteousness that God credits freely while presenting the righteousness you accumulated independently. The merit system and the grace system are mutually exclusive. Grace Orientation begins at the moment the believer does what Paul did — counts the résumé as loss and receives what Christ provides instead.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 2:21</div>
+      <div class="verse">"I do not nullify the grace of God, for if righteousness were through the law, then Christ died for no purpose."</div>
+      <div class="note">Christ died for no purpose — Paul's most concentrated statement of what is at stake in the merit system debate. If the Law — or any human performance system — could produce the righteousness that God requires, then the cross was unnecessary. The merit system does not merely diminish grace. It nullifies it. It declares the cross redundant. The believer who approaches God on the basis of his own moral performance is functionally claiming that Christ's death was not sufficient — that something additional is required from the creature. Grace Orientation is the doctrinal rejection of that claim in every form it takes, in every moment of the daily life.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 11:6</div>
+      <div class="verse">"But if it is by grace, it is no longer on the basis of works; otherwise grace would no longer be grace."</div>
+      <div class="note">Grace and works are mutually exclusive categories — mixing them destroys both. The grace that the merit system adulterates is no longer grace. The works that grace displaces are no longer the basis for anything before God. Grace Orientation holds this distinction with absolute precision in the daily operation of the soul — not as a theological position debated in seminaries but as the operating principle from which every approach to God, every reception of blessing, every reception of discipline, and every extension of favor toward others proceeds.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The merit system named — now the grace orientation toward God that replaces it</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Grace Orientation Toward God — Approaching the Throne on the Right Basis</span>
+    </div>
+    <p class="phase-desc">The grace-oriented believer approaches God on the basis of the righteousness that the fourth imputation credited at salvation — not on the basis of his performance since salvation. When he confesses and is restored to fellowship, he approaches the throne with confidence — not the confidence of a man who has maintained a clean record but the confidence of a man who carries the righteousness of God as his permanent standing. When he receives blessing, he receives it as grace — unearned, undeserved, provided by the love of God flowing through the grace pipeline to the righteousness that justice requires. When he receives discipline, he receives it as the corrective training of a faithful Father — not as evidence that God has withdrawn His favor, because the favor is grounded in the imputed righteousness that discipline cannot remove.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:1–2</div>
+      <div class="verse">"Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ. Through him we have also obtained access by faith into this grace in which we stand, and we rejoice in hope of the glory of God."</div>
+      <div class="note">This grace in which we stand — the standing is fixed. Not fluctuating with performance. Not improved by religious achievement. Not diminished by personal failure addressed by confession. The justified believer stands in grace — permanently, judicially, on the basis of the righteousness that God credited at the moment of faith. Peace with God is not the product of the believer's moral achievement. It is the product of the justification that the fourth imputation produced. The grace-oriented believer lives from this standing rather than working toward it — which is the fundamental difference between the yoke that is easy and the burden that is heavy.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:16</div>
+      <div class="verse">"Let us therefore with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">The throne of grace — not the throne of performance evaluation. The believer who approaches with confidence is not approaching because he has earned the right. He is approaching because the righteousness of God that was imputed at salvation has already established the right. The confidence is doctrinal, not emotional — grounded in the integrity of God whose faithfulness and justice guarantee the reception of every confessing, Spirit-filled believer who draws near. Grace to help in time of need — the grace that meets the specific need of the specific moment is available not because the believer deserves it in that moment but because the grace pipeline runs to the righteousness that is permanently in place.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:1</div>
+      <div class="verse">"There is therefore now no condemnation for those who are in Christ Jesus."</div>
+      <div class="note">No condemnation — the grace-oriented believer receives divine discipline without self-condemnation because he understands what discipline is. It is not the withdrawal of God's favor. It is the corrective training of the Father who loves him too much to leave him in the carnal state his sin has produced. The merit system produces self-condemnation under discipline because it has been measuring standing by performance — and the discipline confirms the performance has been inadequate. Grace Orientation receives discipline as the evidence of sonship, confesses, returns to fellowship, and moves forward. No condemnation. The standing is unchanged. The training is underway.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Grace toward God — now the accurate self-assessment grace produces</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Grace Orientation Toward Self — The Accurate Self-Assessment</span>
+    </div>
+    <p class="phase-desc">The merit system produces two distorted self-assessments — the arrogance of the self that believes its performance has earned standing before God, and the self-condemnation of the self that believes its failures have forfeited it. Both are wrong. Both are the merit system measuring what grace has already addressed. Grace Orientation produces the accurate self-assessment — the self at its true size before God simultaneously. The sinner who needed the cross and the saint who received everything at the new birth. The man in Romans 7 who groans over the sin nature's persistent operation and the man in Romans 8 who is more than a conqueror through the One who loved him. Both are the same man. Grace holds them together without collapsing either into the other.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 7:24–25 / Romans 8:37</div>
+      <div class="verse">"Wretched man that I am! Who will deliver me from this body of death? Thanks be to God through Jesus Christ our Lord!" / "No, in all these things we are more than conquerors through him who loved us."</div>
+      <div class="note">Wretched man — the accurate self-assessment of the one who sees the sin nature clearly and does not minimize what it produces. More than conquerors — the accurate self-assessment of the one who sees the grace provision clearly and does not minimize what it provides. Paul does not resolve the tension between these two assessments by choosing one. He holds both simultaneously — and the holding of both is Grace Orientation. The merit system cannot hold both. It either excuses the sin nature with cheap grace or condemns the believer with the standard it cannot meet. Grace holds the wretched man and the more-than-conqueror in the same soul without contradiction because both are grounded in the same reality — the finished work of Christ addressing what the wretched man produced and providing what the more-than-conqueror receives.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 15:10</div>
+      <div class="verse">"But by the grace of God I am what I am, and his grace toward me was not in vain. On the contrary, I worked harder than any of them, though it was not I, but the grace of God that is with me."</div>
+      <div class="note">By the grace of God I am what I am — the grace-oriented self-assessment in one sentence. Not I am what I achieved. Not I am what I failed to achieve. I am what the grace of God has made me — which is simultaneously more than I deserve and exactly what He planned. The hard work that followed is real — Paul worked harder than any of them. But it was not I, but the grace of God that is with me. Grace Orientation does not produce passivity. It produces the hardest working believer in the room — because the labor is no longer aimed at earning standing before God but at responding to the grace that has already established it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Grace toward self — now grace extended toward others</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">Grace Orientation Toward Others — Impersonal Love as the Output</span>
+    </div>
+    <p class="phase-desc">The believer who is grace oriented toward God and toward himself cannot sustain contempt for others. The merit system that evaluated his own standing before God by his performance is the same system that evaluates others by their performance — and condemns them by the same standard it cannot meet itself. Grace Orientation dismantles both simultaneously. You who judge, have you not done the same? — Romans 2:1 defanged not by moral relativism but by the precise doctrinal recognition that every human being is operating from the same sin nature, carrying the same inherited corruption, and in need of the same grace that was extended to you before you deserved it. The impersonal love that grace produces toward others is not sentiment. It is the nonmeritorious favor extended to the undeserving — exactly what God extended to you.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 15:7</div>
+      <div class="verse">"Therefore welcome one another as Christ has welcomed you, for the glory of God."</div>
+      <div class="note">As Christ has welcomed you — the standard of Grace Orientation toward others is not their merit but Christ's welcome. Christ welcomed the believer while he was still a sinner, before the response, before the faith, before the positive volition that turned toward the light. The grace-oriented believer extends the same welcome to others — not because they have earned it, not because they deserve it, not because they have met the standard, but because Christ's welcome is the model and the power source of every act of grace extended in the body of Christ. The glory of God is what the mutual welcome produces — the visible demonstration that the grace pipeline is operational in the community of believers.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 4:32</div>
+      <div class="verse">"Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you."</div>
+      <div class="note">As God in Christ forgave you — the basis and the measure of forgiveness extended to others. Not as much as they deserve. Not as much as their repentance warrants. As God in Christ forgave you — which was entirely on the basis of the finished work of the cross, entirely nonmeritorious, entirely before the forgiven party had done anything to earn it. The grace-oriented believer forgives because he has received forgiveness on the same basis he is being asked to extend it. The merit system cannot produce this forgiveness. It can only produce the conditional pardon that is revocable when performance fails again. Grace produces the forgiveness that mirrors what God in Christ provided — complete, nonmeritorious, grounded in the integrity of the One who forgives rather than the worthiness of the one forgiven.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 2:1</div>
+      <div class="verse">"Therefore you have no excuse, O man, every one of you who judges. For in passing judgment on another you condemn yourself, because you, the judge, practice the same things."</div>
+      <div class="note">The judicial function turned outward onto others is the merit system applied to the neighbor instead of the self. The grace-oriented believer cannot sustain it — not because he is morally superior to the one who judges but because the doctrine he has metabolized will not allow the self-assessment and the assessment of others to operate from different standards. The same grace that received him while he was practicing the same things is the grace he extends to the one he would otherwise judge. Grace Orientation toward others is not a moral achievement. It is the natural output of a soul that has genuinely received the grace it has been given.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Grace toward others — now the operating system in daily life</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Grace Orientation as the Operating System — The Daily Life of the Grace-Oriented Believer</span>
+    </div>
+    <p class="phase-desc">Grace Orientation is not a theological position held in the abstract. It is the operating system from which the daily life proceeds. The grace-oriented believer wakes to the same faithful God who applied His unchanging character to yesterday and will apply it again today — new every morning, great is your faithfulness. He confesses quickly when sin interrupts the filling, not because he fears condemnation but because the throne is where he wants to be and confession is the door. He receives blessing without pride because he knows whose righteousness the blessing is flowing toward. He receives suffering without bitterness because he knows whose sovereignty has permitted it and what love is motivating it. He extends grace to others not as an achievement but as the natural overflow of a soul that is living from what God has already provided. This is the yoke that is easy. This is the burden that is light. This is the rest that Jesus promised.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 4:20–21</div>
+      <div class="verse">"No unbelief made him waver concerning the promise of God, but he grew strong in his faith as he gave glory to God, fully convinced that God was able to do what he had promised."</div>
+      <div class="note">Abraham — the pattern of Grace Orientation in daily operation. No unbelief made him waver — not because the circumstances were encouraging but because the character of the One who made the promise was the ground of the confidence. Fully convinced that God was able — the faith-rest life operating from grace orientation. The promise is trusted not because the performance is adequate but because the integrity of God is unassailable. Abraham grew strong in his faith as he gave glory to God — the grace-oriented life produces doxology, not the anxious striving of the merit system. The glory goes to the One who provided the promise, the righteousness, and the son. Not to Abraham's faith. To the God Abraham was convinced could do what He said.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 4:11–13</div>
+      <div class="verse">"Not that I am speaking of being in need, for I have learned in whatever situation I am to be content. I know how to be brought low, and I know how to abound. In any and every circumstance I have learned the secret of facing plenty and hunger, abundance and need. I can do all things through him who strengthens me."</div>
+      <div class="note">I have learned — Grace Orientation is not innate. It is developed through the testing that presses the doctrine from academic reception into operational faith. The contentment Paul describes is not the contentment of favorable circumstances. It is the contentment of the soul that has learned the secret — that the grace pipeline operates in abundance and in need, in plenty and in hunger, under the filling of the Spirit in either condition. I can do all things through him who strengthens me — not through the merit system's accumulation of personal capability but through the grace provision of the One whose strength flows through the pipeline to the righteousness He placed in the believer at salvation.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Corinthians 12:9–10</div>
+      <div class="verse">"But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me… For when I am weak, then I am strong."</div>
+      <div class="note">My grace is sufficient — the capstone of Grace Orientation. Not my grace plus your performance. Not my grace contingent on your merit. My grace is sufficient. For you. In this. Now. The power of Christ made perfect in weakness — the merit system cannot produce this. The merit system requires strength, achievement, and performance as the basis for the power it claims. Grace operates in the opposite direction — the weakness that the merit system cannot present as a credential is precisely the condition in which the power of Christ rests most fully on the grace-oriented believer. When I am weak, then I am strong — the paradox that only Grace Orientation can sustain, because only the grace-oriented soul has stopped measuring strength by the merit system's standard.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Grace Orientation — The Fourth Problem-Solving Device</div>
+    <div class="hinge-text">
+      Come to me as children and learn from me.<br>
+      The labor of the merit system laid down.<br>
+      The yoke of Christ taken up.<br>
+      The rest Jesus promised — received.<br><br>
+      Grace Orientation toward God —<br>
+      approaching the throne on the basis of imputed righteousness,<br>
+      not accumulated performance.<br>
+      Receiving blessing without pride.<br>
+      Receiving discipline without self-condemnation.<br><br>
+      Grace Orientation toward self —<br>
+      the wretched man and the more-than-conqueror<br>
+      held together in the same soul<br>
+      by the same grace that addressed both.<br><br>
+      Grace Orientation toward others —<br>
+      the nonmeritorious favor extended to the undeserving<br>
+      because the undeserving received it first.<br>
+      As God in Christ forgave you.<br><br>
+      Grace as the operating system —<br>
+      new every morning,<br>
+      sufficient in weakness,<br>
+      flowing through the pipeline<br>
+      to the righteousness already in place.<br><br>
+      My grace is sufficient for you.<br>
+      For you. In this. Now.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

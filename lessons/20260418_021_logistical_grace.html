@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistical Grace — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 021</div>
+    <h1>Logistical Grace</h1>
+    <div class="subtitle">God's Daily Provision for Every Believer — Regardless of Spiritual Condition</div>
+  </header>
+
+  <p class="intro">
+    From the moment of salvation to the moment of physical death or the Rapture, God faithfully supplies everything required for the believer to advance in His plan. Not everything the believer wants. Everything the believer needs. Air to breathe. Food to eat. Shelter. Income. Transportation. Guardian angels. The laws of divine establishment that maintain the civilization the believer lives in. The canon of Scripture. The ministry of the Holy Spirit. The pastor-teacher who deposits the doctrine that the Spirit metabolizes into the soul. Every provision, every day, to every believer — regardless of spiritual condition, regardless of merit, regardless of whether the believer recognizes what is being provided or who is providing it. This is logistical grace. It does not flow because the believer deserves it. It flows because the Shepherd keeps on shepherding.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Relationship That Makes the Provision Possible</span>
+    </div>
+    <p class="phase-desc">Logistical grace does not originate in the believer's performance. It originates in the relationship established at salvation — the relationship in which the justice of God imputed divine righteousness to the believer and pronounced him justified. The grace pipeline that carries logistical grace flows to that righteousness. It flows because the righteousness is there, not because the believer has maintained it by performance. The immutable God who established the relationship at the moment of faith is the same God who sustains it through every subsequent moment — in fellowship and out of fellowship, advancing and regressing, faithful and faithless. The provision flows from the character of the Shepherd, not from the condition of the sheep.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:32</div>
+      <div class="verse">"He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?"</div>
+      <div class="note">The argument from the greater to the lesser. If God provided the maximum — the Son, the cross, the imputed righteousness, the eternal life — He will not withhold the lesser provisions that sustain the believer in the daily life. The grace pipeline that carried the maximum provision at the cross carries every subsequent provision with the same faithfulness. Logistical grace is not a separate category of divine generosity. It is the same grace pipeline flowing at the level of daily need — the same integrity, the same love, the same faithfulness that sent the Son also provides the air, the food, the shelter, and the open Bible. The relationship is the ground. The provision is the consequence.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Lamentations 3:22–23</div>
+      <div class="verse">"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."</div>
+      <div class="note">New every morning — the logistical grace provision falls fresh with every day, the way the manna fell fresh in the wilderness. The immutable God applies His unchanging character to every new morning the believer wakes to. The mercies are new not because the character behind them has changed but because the need is new and the faithfulness is constant. Great is your faithfulness — this is the grace-oriented believer's testimony about the logistical grace he received yesterday, receives today, and will receive tomorrow. Not because he earned it. Because the Shepherd's faithfulness is the ground of the provision, and the Shepherd does not change.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The relationship established — now the scope of what it provides</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Scope of the Provision — Everything Required for the Advance</span>
+    </div>
+    <p class="phase-desc">Logistical grace is comprehensive. It furnishes the basic necessities — air, food, shelter, clothing, the means of income, transportation. It provides security measures — guardian angels, the laws of divine establishment that protect individual freedom and maintain the civilization in which the believer lives. And it provides everything required for spiritual growth — the canon of Scripture, the ministry of the Holy Spirit, the pastor-teacher who deposits the doctrine that the Spirit metabolizes into the soul. The believer who is alive and breathing today is alive and breathing because logistical grace has sustained him to this moment. Every breath is a logistical grace provision. The Word open in front of him is a logistical grace provision. The fact that he can understand what it says is a logistical grace provision.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 6:25–33</div>
+      <div class="verse">"Therefore I tell you, do not be anxious about your life, what you will eat or what you will drink, nor about your body, what you will put on… But seek first the kingdom of God and his righteousness, and all these things will be added to you."</div>
+      <div class="note">All these things will be added — the logistical grace provision named by the One through whom it flows. The anxiety that Jesus addresses is the merit system's response to the no-water situation — the soul that does not know the Shepherd is providing for it treats every need as a crisis to be solved by human effort. Jesus reframes the entire relationship to the daily need — seek first the kingdom and the righteousness, and the provision follows. Not because seeking the kingdom earns the provision but because the same God who directs the seeking also controls the adding. The grace pipeline is already carrying what is needed. The anxious believer is simply not aware of what is moving toward him.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 4:19</div>
+      <div class="verse">"And my God will supply every need of yours according to his riches in glory in Christ Jesus."</div>
+      <div class="note">According to his riches in glory — not according to the believer's merit, not according to the believer's performance, not according to what the believer has done to earn the supply. According to the riches of the One who supplies. The measure of the logistical grace provision is the inexhaustibility of the divine resource, not the adequacy of the human record. Every need — not every want, not every preference, not every comfort — every genuine need for the advance is supplied. The grace pipeline is as large as the riches in glory that flow through it. The provision never runs short because the source never runs dry.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 37:25</div>
+      <div class="verse">"I have been young, and now am old, yet I have not seen the righteous forsaken or his children begging for bread."</div>
+      <div class="note">The testimony of the man who has lived long enough to verify the logistical grace provision across the full arc of a life. I have not seen the righteous forsaken — the experiential confirmation that the Shepherd keeps on shepherding. The provision that looked uncertain in the early years of the advance was real in the middle years and is confirmed in the later years. Logistical grace is not an abstract theological category. It is the daily reality that every advancing believer eventually learns to see for what it is — the faithful provision of a God whose character will not allow Him to abandon what His righteousness has justified.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The scope named — now the sovereign direction that delivers it</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">He Leads — Logistical Grace and the Sovereign Direction</span>
+    </div>
+    <p class="phase-desc">Logistical grace does not arrive randomly. It is directed — the provision brought to the specific believer in the specific circumstance at the specific moment of need by the sovereignty of the God who decreed the plan. The Shepherd leads the sheep. The sheep that follows finds the provision in the place the Shepherd has led it to. The believer who is advancing in the plan of God — who is living one day at a time, each day as unto the Lord, with the confidence that no genuine need can go unmet — is the believer who is positioned to receive the logistical grace provision as it arrives. The believer who has taken himself out of the advance through carnality is still sustained by the pipeline — but his position makes him less available to the specific provisions the advance would have brought him.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 68:19–20</div>
+      <div class="verse">"Blessed be the Lord, who daily bears us up; God is our salvation. Our God is a God of salvation, and to GOD, the Lord, belong deliverances from death."</div>
+      <div class="note">Who daily bears us up — the logistical grace provision as a daily carrying. Not the God who provided a lump sum at salvation and left the believer to manage from the deposit. The God who bears up daily — sustaining the believer through every ordinary day, every difficult day, every day of advance and every day of carnality. The deliverances from death are not only the dramatic rescues. They are the ten thousand daily provisions that kept the believer alive and advancing without his ever knowing what specific danger the guardian angels deflected or what specific need the sovereign God arranged to meet through the circumstances of the day.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Proverbs 3:5–6</div>
+      <div class="verse">"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."</div>
+      <div class="note">He will make straight your paths — the sovereign direction of logistical grace described from the perspective of the believer who cooperates with it. The trust is not passive — it is the active orientation of the will toward the Shepherd rather than toward the believer's own analysis of the route. The paths are made straight not because the believer has planned them correctly but because the Shepherd who leads knows the destination, knows the terrain, and knows what the sheep needs at every point along the way. Acknowledging Him in all the ways is the daily practice of the grace-oriented believer who has learned to follow the leading rather than insisting on his own map.</div>
+    </div>
+  </div>
+
+  <div class="bridge">He leads — even through the valley</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Even Through the Valley — Logistical Grace Under Suffering</span>
+    </div>
+    <p class="phase-desc">Logistical grace does not stop at the edge of the valley. The grace pipeline that supplies the green pasture supplies the death-shadowed valley with the same faithfulness. The believer under divine discipline, the believer in undeserved suffering, the believer walking through the terminal phase of his life in time — all receive the logistical grace provision that their condition requires. Even under intensive divine discipline, God faithfully supplies the basic provisions that keep recovery possible. The dying believer receives dying grace — the highest and final form of logistical grace, the provision that allows the mature believer to walk the death-shadowed valley in inner peace and depart this life in a manner that sends an invisible salute from the grave to everyone who witnesses it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 41:10</div>
+      <div class="verse">"Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."</div>
+      <div class="note">I will uphold you — the logistical grace provision in the valley named as a personal promise from the God who is present in it. Not I will remove the valley. Not I will make the valley comfortable. I will uphold you through it. The strengthening, the help, the upholding are the logistical grace provisions that meet the specific need of the believer who is facing what he cannot face on his own resources. The righteous right hand — the same righteousness that was imputed at salvation, the same integrity that has been sustaining the provision throughout the entire advance, is the hand that upholds in the valley. The provision does not diminish in difficulty. It intensifies to meet the intensified need.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 1:3–4</div>
+      <div class="verse">"Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort, who comforts us in all our affliction, so that we may be able to comfort those who are in any affliction, with the comfort with which we ourselves are comforted by God."</div>
+      <div class="note">God of all comfort — the logistical grace provision in suffering is comfort, and the comfort is itself grace flowing through the pipeline to the righteousness that is in place. The comfort received in affliction is not wasted on the individual who receives it — it becomes the provision that the same believer extends to others who are in any affliction. Logistical grace in the valley overflows into the lives of everyone the believer encounters there. The suffering that appeared to be only a cost becomes a logistical grace provision to others — the pipeline flowing through the believer's valley to reach people who could not be reached any other way.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Job 5:22–24</div>
+      <div class="verse">"At destruction and famine you shall laugh, and shall not fear the beasts of the earth. For you shall be in league with the stones of the field, and the beasts of the field shall be at peace with you. You shall know that your tent is safe…"</div>
+      <div class="note">Your tent is safe — the logistical grace provision in the valley expressed as the security of the one who trusts the Shepherd to provide and protect through it. The believer who has the doctrine in his soul walks through the death-shadowed valley with this confidence — not that the valley will not be real, not that the suffering will not be genuine, but that the tent is safe, the provision is present, and the Shepherd who led into the valley will lead out of it or will be present in the transition beyond it. Great is your faithfulness — spoken from inside the valley by the man who has the metabolized Word to speak it from.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Through the valley — now the table prepared on the other side of it</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">A Table Prepared — Logistical Grace in the Presence of Enemies</span>
+    </div>
+    <p class="phase-desc">Logistical grace does not wait for the conflict to end before it provides. The table is prepared in the presence of enemies — the blessing arrives while the opposition is still active, while the testing is still ongoing, while the adversaries are watching. This is one of the most distinctive characteristics of logistical grace — it does not require favorable circumstances as a precondition. The grace pipeline flows to the righteousness of God in the believer regardless of what the surrounding environment looks like. The believer who understands this does not wait for the enemies to leave before receiving what is on the table. He eats in their presence — which is itself a demonstration of the faith-rest life, the grace orientation, and the logistical grace provision operating simultaneously.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:35–37</div>
+      <div class="verse">"Who shall separate us from the love of Christ? Shall tribulation, or distress, or persecution, or famine, or nakedness, or danger, or sword?… No, in all these things we are more than conquerors through him who loved us."</div>
+      <div class="note">In all these things — not after all these things, not despite all these things, not when all these things are resolved. In them. The logistical grace that makes the believer more than a conqueror operates in the tribulation, the distress, the persecution, the famine. The table is set in the presence of every one of these enemies. The provision does not arrive after the sword is put away. It arrives while the sword is still drawn — which is why the victory is not the believer's achievement but the Shepherd's provision reaching the sheep in the exact circumstance where the sheep most needs to receive it and where the reception most clearly displays the character of the One who provides it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 30:18</div>
+      <div class="verse">"Therefore the LORD waits to be gracious to you, and therefore he exalts himself to show mercy to you. For the LORD is a God of justice; blessed are all those who wait for him."</div>
+      <div class="note">The LORD waits to be gracious — the logistical grace provision is not reluctantly given. It is eagerly directed toward the believer by a God who is waiting for the moment the faith-rest life and the grace orientation of the believer create the condition in which the provision can be received. The table has been prepared. The Shepherd is waiting. The blessing is in the pipeline. The believer who is grace-oriented and Spirit-filled is the believer who can receive in the presence of enemies what the carnal believer cannot receive even in the absence of them — because the reception is not about the circumstances but about the condition of the one receiving.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The table received — now the cumulative testimony of the grace-oriented life</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Surely Goodness and Mercy — The Cumulative Testimony</span>
+    </div>
+    <p class="phase-desc">The believer who has advanced through the green pastures and the still waters and the valley and the table in the presence of enemies arrives at the end of his time in this life with the testimony that logistical grace produces in the soul it has been sustaining all along. Looking back, he sees the provision he received without always recognizing it — the moments of danger the guardian angels deflected, the needs that were met before they became crises, the discipline that brought him back before the descent went further, the Word that was available every morning and the Spirit who was always ready to metabolize it. Looking forward, he sees the house of the LORD — the eternity for which the seventh imputation has been preparing him. Surely goodness and mercy shall follow me all the days of my life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:28</div>
+      <div class="verse">"And we know that for those who love God all things work together for good, for those who are called according to his purpose."</div>
+      <div class="note">All things work together for good — the cumulative testimony of logistical grace stated as a known fact rather than a hoped-for outcome. Not some things, not the pleasant things, not the things the believer chose and managed well. All things. The sovereignty that governs the logistical grace provision does not waste any moment of the believer's life in time. Every provision, every discipline, every valley, every table in the presence of enemies — all of it working together under the sovereign direction of the God who called the believer according to His purpose and who has been sustaining him toward that purpose with every logistical grace provision since the moment of the new birth.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 13:5–6</div>
+      <div class="verse">"…for he has said, 'I will never leave you nor forsake you.' So we can confidently say, 'The Lord is my helper; I will not fear; what can man do to me?'"</div>
+      <div class="note">I will never leave you nor forsake you — the logistical grace provision guaranteed by the omnipresence and immutability of God operating together. The God who cannot leave and cannot change cannot withdraw the sustaining provision from the one He has justified. The confidence that follows — I will not fear — is not bravado. It is the doctrinal conclusion reached by the believer who has metabolized the logistical grace doctrine deeply enough to know that the Shepherd's presence is the ultimate logistical grace provision. Everything else flows from it. The air, the food, the shelter, the Word, the Spirit, the angels, the dying grace — all of it is the expression of the One who has said I will never leave you and cannot be made a liar by any circumstance the believer will ever face.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Peter 1:3</div>
+      <div class="verse">"His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence."</div>
+      <div class="note">All things that pertain to life and godliness — already granted, past tense, accomplished fact. The logistical grace provision is not being accumulated by the believer's advance. It has been provided in full by the divine power of the One who called the believer. The advance develops the capacity to receive what has already been provided — the growing soul receiving more of what was always available, the pipeline delivering to an increasingly developed capacity what it was always carrying. Surely goodness and mercy shall follow all the days of my life — not because the believer earned them, but because the Shepherd who keeps on shepherding is the same yesterday and today and forever.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Logistical Grace — God's Daily Provision</div>
+    <div class="hinge-text">
+      From the moment of salvation to the moment of departure —<br>
+      every breath, every provision, every protection,<br>
+      every open Bible, every Spirit ready to teach,<br>
+      every guardian angel, every establishment law<br>
+      that keeps the civilization standing long enough<br>
+      for the advance to continue.<br><br>
+      Not because the believer deserves it.<br>
+      Because the Shepherd keeps on shepherding.<br>
+      Because the grace pipeline flows to the righteousness<br>
+      that the justice of God placed there at salvation.<br>
+      Because the immutable God cannot be unfaithful<br>
+      to what His integrity has established.<br><br>
+      Through the green pasture and the still water.<br>
+      Through the valley and the table set in enemy territory.<br>
+      Through the discipline and the blessing.<br>
+      Through the advance and the regression.<br>
+      Through the ordinary day and the extraordinary one.<br><br>
+      New every morning.<br>
+      Great is your faithfulness.<br><br>
+      Surely goodness and mercy<br>
+      shall follow me<br>
+      all the days of my life.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

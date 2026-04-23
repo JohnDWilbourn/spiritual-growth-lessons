@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Security — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 023</div>
+    <h1>Eternal Security</h1>
+    <div class="subtitle">The Invisible Silent Foundation — The Launching Pad for the Advance</div>
+  </header>
+
+  <p class="intro">
+    Eternal security is the answer to the unbeliever's deepest fear when he hears the Gospel for the first real time — if I come to God, will He keep me? That question deserves the complete answer, and the complete answer is yes, permanently, by the full weight of the Trinitarian character that initiated, merited, and delivered the relationship. But for the advancing believer, eternal security is something different — the invisible silent basis of confidence toward God and courage toward humanity. He is not thinking about it. He is not defending it. He is not returning to it for reassurance. It is functioning the way a foundation functions — below the surface, silently, holding everything being built on it in place. The student who understands this leaves the question of his security behind and advances from it. That is what this lesson is for.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Creation Testifies — The Stability of the Universe as Witness</span>
+    </div>
+    <p class="phase-desc">Before the Scripture speaks, the creation speaks. The physical constants of the universe — the speed of light, the gravitational constant, the fine structure constant — have held at precisely the values that make matter, chemistry, life, and consciousness possible for billions of years without variation. The tolerance on some of these constants is so narrow that a deviation of one part in ten to the sixtieth power would have produced a universe incapable of sustaining life. The immutable God sustains what His omnipotence created with the same unchanging faithfulness He extends to the believer He justified. The Andromeda galaxy is 2.5 million light years away — the light now reaching the eye left its source 2.5 million years ago, traveling at six trillion miles a year, and arrived precisely where physics said it would. The God whose immutability has kept that light on course for 2.5 million years is the God whose faithfulness holds the believer in the palm of His hand. The creation is not a metaphor for the security. It is the testimony of the character that produces it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 1:20</div>
+      <div class="verse">"For his invisible attributes, namely, his eternal power and divine nature, have been clearly perceived, ever since the creation of the world, in the things that have been made. So they are without excuse."</div>
+      <div class="note">His eternal power and divine nature clearly perceived in the things that have been made — the omnipotence that sustains the physical universe and the immutability that keeps its constants stable are the same attributes that sustain the security of the believer. The creation is not only evidence for the existence of God. It is the continuous real-time testimony to the character of the God who made the promises that eternal security rests on. The believer who looks at the night sky is looking at the sustained testimony of the immutable God — the same God whose faithfulness has not wavered through the entire history of the universe will not waver in His faithfulness to the relationship He established at salvation.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 1:3</div>
+      <div class="verse">"He is the radiance of the glory of God and the exact imprint of his nature, and he upholds the universe by the word of his power."</div>
+      <div class="note">Upholds the universe by the word of his power — present active participle, continuous, ongoing, right now. The same Son who made propitiation for sins is the One who at this moment is holding the physical universe in existence by the word of His power. The security of the believer is sustained by the same word that sustains the galaxies. The God who keeps the stars in their courses keeps the believer in His hand. The one who cannot lose track of a star will not lose track of a son.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The creation testifies to the character — now the character named precisely</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Trinitarian Foundation — Initiative, Merit, Delivery</span>
+    </div>
+    <p class="phase-desc">The security of the believer rests on the character of all three Persons of the Trinity operating simultaneously toward the same permanent end. The Father initiated — the sovereign decree from eternity past, the plan established before the foundation of the world, the election that preceded every human decision. The Son merited — the propitiation satisfied every attribute of the Father's integrity, the righteousness imputed to the believer is Christ's own righteousness, the penalty paid in full by the One who had no sin of His own to answer for. The Spirit delivers — the indwelling that cannot be revoked, the sealing that guarantees the inheritance, the ἀρραβών as the living down payment of the full transaction that the Trinitarian character has committed to completing. The believer's duty in this framework is to know, believe, trust, and metabolize. Not generate the security. Not maintain it. Receive what the full weight of the Trinitarian character has already established and permanently sustains.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:13–14</div>
+      <div class="verse">"In him you also, when you heard the word of truth, the gospel of your salvation, and believed in him, were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory."</div>
+      <div class="note">The ἀρραβών — the down payment, the earnest money, the first installment that legally obligates the Giver to deliver the full amount. In the commercial world of the first century the ἀρραβών was the legally binding portion of a transaction that could not be rescinded without penalty. God placed His seal on the believer — His Spirit as the living guarantee — and that seal cannot be broken without God violating His own integrity. The Spirit who was applied as the guarantee remains until the inheritance is fully delivered. The security is as permanent as the Spirit who constitutes it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 10:28–29</div>
+      <div class="verse">"I give them eternal life, and they will never perish, and no one will snatch them out of my hand. My Father, who has given them to me, is greater than all, and no one is able to snatch them out of the Father's hand."</div>
+      <div class="note">Two hands — the Son's and the Father's. The security is not the believer's grip on God. It is God's grip on the believer. The Son who merited the relationship holds it. The Father who initiated it holds it. No created power, no external force, no combination of anything in the created order can overcome the grip of both hands simultaneously. The believer may stumble. He will not be hurled headlong because the LORD holds his hand. The failing grip of the creature is held by the unfailing grip of the Creator — and the Creator is greater than all.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The Trinitarian foundation — now the two aspects of the same reality</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Two Aspects of One Reality — Security and the Grace Pipeline</span>
+    </div>
+    <p class="phase-desc">Eternal security and the grace pipeline are two aspects of the same reality. One is embraced by the believer — the other is a channel from God. One acts in the believer — the other acts toward the believer. Eternal security is what the believer stands on. The grace pipeline is what flows toward him from the same Trinitarian character that established the security. You cannot have the pipeline without the security — there would be no established righteousness for the provision to flow toward. You cannot have the security without the pipeline — there would be no provision flowing through the permanent relationship the security established. The student who grasps both simultaneously has grasped what the spiritual life is — not a performance maintained to preserve a status, but a permanent relationship through which God's provision flows continuously toward the believer whose job is to receive it, metabolize it, and advance.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:1–2</div>
+      <div class="verse">"Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ. Through him we have also obtained access by faith into this grace in which we stand, and we rejoice in hope of the glory of God."</div>
+      <div class="note">This grace in which we stand — the standing is fixed, the grace is flowing. The security establishes the standing. The grace pipeline flows to the standing. The peace with God is the experiential expression of the security operating invisibly as the foundation of the relationship. The access into this grace is the pipeline open and operational toward the believer whose standing is permanent. Standing and flowing — security and pipeline — two aspects of the same reality, both grounded in the justification that produced them simultaneously at the moment of faith.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Timothy 2:13</div>
+      <div class="verse">"…if we are faithless, he remains faithful — for he cannot deny himself."</div>
+      <div class="note">He cannot deny himself — the security at its most honest. The pipeline does not stop flowing when the believer is carnal. The standing does not disappear when the believer fails. The grace pipeline carries discipline to the carnal believer and blessing to the advancing believer — but it never stops flowing to the righteousness that the fourth imputation placed there permanently. The security is not the believer's faithfulness to God. It is God's faithfulness to Himself — the immutable character that cannot act contrary to what it established. The pipeline flows from that character. The security rests on it. Both are permanent because the character behind both is permanent.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Security and pipeline named — now the life they hold and supply</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Everlasting Not Eternal — The Life That Begins and Never Ends</span>
+    </div>
+    <p class="phase-desc">God alone is eternal — self-existing, uncreated, without beginning or end. The believer cannot be eternal because the believer had a beginning. But the believer can be everlasting — a beginning in time, no end in eternity. The human spirit was known in the mind of God in eternity past, entered matter space and time at physical birth but arrived dead, and was made alive at the moment of faith. Salvation does not create the spirit. It resurrects it. The everlasting life that begins at salvation is the God-designed spirit awakened into the permanence that God always intended for it. We cannot be eternal. We can be everlasting co-heirs with Christ, sons of God, partakers of the divine nature — not by becoming God but by receiving what God extends to the image bearers He made to reflect His character. The image of God in man — self-consciousness, volition, God-consciousness — is the basis for the partaking. The fall damaged all three. Salvation restores God-consciousness. Progressive sanctification works on all three as the doctrine is metabolized and the image is progressively restored. God only deals in permanence. Salvation welcomes the creature into that permanence. The security is what permanence looks like from the inside of a life that has received it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 5:11–13</div>
+      <div class="verse">"And this is the testimony, that God gave us eternal life, and this life is in his Son. Whoever has the Son has life; whoever does not have the Son of God does not have life. I write these things to you who believe in the name of the Son of God, that you may know that you have eternal life."</div>
+      <div class="note">That you may know — not hope, not suspect, not nervously monitor your spiritual condition for signs that the life is still present. Know. The everlasting life is a present possession confirmed by the written testimony of God — the veracity of God behind every word, the immutability of God guaranteeing the testimony will not be revised. The believer who knows that he has everlasting life knows the most stabilizing fact available to a human being in time. That settled knowledge is not the destination of the spiritual life. It is the invisible silent foundation from which the advance proceeds.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Genesis 1:26–27 / Colossians 3:10</div>
+      <div class="verse">"Then God said, 'Let us make man in our image, after our likeness…'" / "…and have put on the new self, which is being renewed in knowledge after the image of its creator."</div>
+      <div class="note">Being renewed — present passive, ongoing process. The image restoration is not completed at salvation. It is initiated at salvation and progresses through the advance. The new self put on at the moment of faith is being renewed — the Spirit metabolizing the doctrine into the soul, the self-consciousness reoriented from self-absorption to self-awareness grounded in the knowledge of who the self is in Christ, the volition being progressively freed from the sin nature's dominance, the God-consciousness deepening into the progressive knowing of God. The security guarantees that the renewal will reach its destination. The advance determines how much of that destination is experienced in time.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The life named — now the confidence and courage it produces</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Invisible Silent Foundation — Confidence Toward God, Courage Toward Humanity</span>
+    </div>
+    <p class="phase-desc">The advancing believer does not think about his security. It is functioning invisibly beneath everything he does — the invisible silent basis of his confidence toward God in prayer, in approach to the throne, in the reception of discipline without self-condemnation, in the claim of every promise the faith-rest drill draws from. The security is also the invisible silent basis of his courage toward humanity — the ambassador who represents the King without apologizing for the message, the priest who intercedes for others from the position of permanent standing before the throne, the believer who extends impersonal love to the undeserving without calculating whether the extension is deserved. The security does not produce this confidence and courage by being thought about. It produces them by being settled — the way a foundation produces the stability of the structure above it not by being visible but by being there.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:16</div>
+      <div class="verse">"Let us therefore with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">With confidence — παρρησίαν, boldness, freedom of speech, the right to approach without restriction. The confidence is grounded in the imputed righteousness that the security established — not in the believer's moral performance since salvation. The throne is approached boldly because the standing is permanent and the access is permanent. The security operating invisibly produces the confidence visibly. The advancing believer does not rehearse the case for his security before approaching the throne. He approaches — because the security is settled and the access is open and the grace to help in time of need is what the pipeline has been carrying toward him all along.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:31, 37–39</div>
+      <div class="verse">"What then shall we say to these things? If God is for us, who can be against us?… No, in all these things we are more than conquerors through him who loved us. For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</div>
+      <div class="note">If God is for us — the security as the basis for the courage. Not if God is sometimes for us. Not if God is for us when we perform adequately. The permanent Trinitarian commitment to the relationship means that nothing in the created order constitutes a threat that the security does not already cover. The more than conquerors is not the believer's achievement. It is the overflow of the security into the daily life — the invisible silent foundation producing the visible operational confidence that takes on tribulation, distress, persecution, and suffering without flinching, because none of these things can separate the believer from the love that was always the motivation behind the security that holds him.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The foundation producing confidence — now the direction it launches toward</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Promised Land — What the Security Was Provided For</span>
+    </div>
+    <p class="phase-desc">The two movements of the evangellion. The first is the salvation gospel — come to faith alone in Christ alone and be saved from the power of sin and death, welcomed into the permanence of God, held in the hands of the Son and the Father, sealed by the Spirit, made a son of God, given everlasting life, granted the imputed righteousness that opens the grace pipeline. The second movement is the living gospel of doctrine — advance from the permanent platform the first movement established, receive the daily bread, metabolize the doctrine, execute the spiritual life, let the cup fill. The Promised Land is the problem-solving devices fully operational, the spiritual gifts deployed from their proper foundation, the progressive knowing of God deepening without ceiling, the blessing of God flowing to the righteousness that has been in place since salvation. The security is the Egypt left behind. The grace pipeline is the manna in the wilderness. The Promised Land is what the advance is moving toward. The believer who has heard about it, who knows it is real, who believes in it and trusts in it and is daily taking in the bread that moves him toward it — that believer has already crossed the Jordan. Now he advances.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 1:16–17</div>
+      <div class="verse">"For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes… For in it the righteousness of God is revealed from faith to faith, as it is written, 'The righteous shall live by faith.'"</div>
+      <div class="note">From faith to faith — the two movements of the evangellion in one phrase. The faith of salvation — the once-for-all act that established the standing, secured the everlasting life, opened the grace pipeline. And the faith of doctrine — the ongoing daily reception of the Word that the Spirit metabolizes into the soul advancing toward the maturity that the security was always designed to make possible. The righteous shall live by faith — the one already made righteous shall live, continuously, by the doctrine that builds the capacity to experience the full provision of the grace pipeline. The security established the righteousness. The doctrine fills the capacity. The advance is the life the security was provided to launch.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 3:12–14</div>
+      <div class="verse">"Not that I have already obtained this or am already perfect, but I press on to make it my own, because Christ Jesus has made me his own… But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus."</div>
+      <div class="note">Forgetting what lies behind — the settled issue of salvation left behind, not because it is unimportant but because it is settled. The security is not what Paul is pressing toward. It is what he is pressing from. He has been made Christ's own — the security established at Damascus, held invisibly beneath everything that follows. From that invisible foundation he presses on — forgetting what lies behind, straining forward, advancing toward the prize. Not yet arrived. Advancing. The Promised Land in view. The bread available daily. The pipeline open. The foundation permanent. The advance underway.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 3:20</div>
+      <div class="verse">"Now to him who is able to do far more abundantly than all that we ask or think, according to the power at work within us…"</div>
+      <div class="note">Far more abundantly than all that we ask or think — the grace pipeline carrying more toward the advancing believer than his own imagination can project. The security established what the pipeline flows to. The advance develops the capacity to receive what the pipeline has always been carrying. The Promised Land is not a place the believer earns. It is the full reception of what the Trinitarian character has been providing through the grace pipeline since the moment of the new birth — the cup filled to the measure of the capacity the advancing spiritual life has developed, overflowing into the lives of everyone in the believer's periphery. This is what the security was provided for. Not to be defended. To be built on.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Eternal Security — The Invisible Silent Foundation</div>
+    <div class="hinge-text">
+      The creation testifies —<br>
+      the immutable God who keeps the stars in their courses<br>
+      keeps the believer in His hand.<br><br>
+      The initiative belongs to the Father.<br>
+      The merit belongs to the Son.<br>
+      The delivery belongs to the Spirit.<br>
+      The believer's duty is to know, believe, trust, and metabolize.<br><br>
+      Eternal security and the grace pipeline —<br>
+      two aspects of the same reality.<br>
+      One embraced by the believer.<br>
+      One flowing toward the believer.<br>
+      One acting in him. One acting toward him.<br><br>
+      For the unbeliever hearing the Gospel —<br>
+      the answer to the deepest fear:<br>
+      if I come to God, will He keep me?<br>
+      Yes. Permanently. Trinitarian character.<br><br>
+      For the advancing believer —<br>
+      invisible. Silent. Below the surface.<br>
+      The foundation holding everything built on it.<br>
+      Confidence toward God.<br>
+      Courage toward humanity.<br><br>
+      The security is the Egypt left behind.<br>
+      The grace pipeline is the manna in the wilderness.<br>
+      The Promised Land is ahead.<br><br>
+      Leave the settled issue behind.<br>
+      Advance.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

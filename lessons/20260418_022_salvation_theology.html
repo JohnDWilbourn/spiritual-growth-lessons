@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvation Theology — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --gold-light: #d4a82a;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 022</div>
+    <h1>Salvation Theology</h1>
+    <div class="subtitle">Propitiation, Expiation, and the Warrant That the Cross Provides</div>
+  </header>
+
+  <p class="intro">
+    The cross accomplished two distinct things simultaneously — one facing God, one facing man. Toward God it was propitiation: the complete satisfaction of every attribute of the divine integrity by the substitutionary death of the sinless Son. Toward man it was expiation: the complete removal of the sin that separated the creature from the Creator. Both were required. Neither is sufficient without the other. And both were accomplished once — not repeatedly, not supplementally, not through any subsequent sacramental system. The Greek text of the New Testament is precise on both counts. What the Latin tradition did with those Greek words is a different story.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">What the Cross Had to Accomplish — The Problem Stated Precisely</span>
+    </div>
+    <p class="phase-desc">Before the cross can be understood, the problem it solved must be stated precisely. Adam's original sin produced spiritual death — the separation of the creature from the Creator, the loss of the human spirit, the imputation of sin to every descendant through the federal headship. The fallen creature stands before the integrity of God in a condition that requires two things simultaneously: the divine integrity must be satisfied, and the creature's sin must be removed. These are not the same requirement. God is not satisfied simply because the sin is removed — His righteousness demanded the penalty, His justice required the execution of it. And the creature is not restored simply because God is satisfied — the sin that condemned him must be addressed directly. The cross is the only transaction in history that addressed both simultaneously without compromise to either.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:23–26</div>
+      <div class="verse">"…for all have sinned and fall short of the glory of God, and are justified by his grace as a gift, through the redemption that is in Christ Jesus, whom God put forward as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins. It was to show his righteousness at the present time, so that he might be just and the justifier of the one who has faith in Jesus."</div>
+      <div class="note">Just and the justifier simultaneously — the two requirements of the cross named in a single phrase. Just — the divine integrity satisfied, the righteousness vindicated, the penalty executed. The justifier — the creature's sin addressed, the standing restored, the condemnation reversed. Paul states the problem and the solution in the same breath because that is what happened at the cross — the problem and the solution were addressed in the same moment, by the same act, through the same blood. The man who reads this in Greek reads something the Latin translation preserves in substance but the sacramental tradition has systematically diluted by making the justification conditional on ongoing participation in the system.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Corinthians 5:21</div>
+      <div class="verse">"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</div>
+      <div class="note">The exchange stated at maximum compression. He who knew no sin made to be sin — the Godward transaction, the imputation of every human sin to the sinless substitute, the propitiation. So that in him we might become the righteousness of God — the manward transaction, the imputation of divine righteousness to the believing sinner, the expiation's positive counterpart. Both directions in one verse. The integrity of God required both. The cross accomplished both. Faith receives both simultaneously. Nothing in the verse suggests that either transaction requires supplementation, repetition, or sacramental re-presentation.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The problem stated — now the Godward transaction</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Propitiation — The Godward Transaction</span>
+    </div>
+    <p class="phase-desc">Propitiation is the satisfaction of the divine integrity by the substitutionary death of Christ. The Greek word is ἱλαστήριον — the mercy seat, the lid of the ark of the covenant where the blood was applied on the Day of Atonement and God was satisfied. Paul uses this word in Romans 3:25 deliberately — the reader steeped in the Septuagint hears the entire Levitical atonement system compressed into one word and then superseded by it. The blood that was applied to the mercy seat year after year, which could never permanently satisfy, has been replaced by the blood of the One of whom the mercy seat was always a type. God is propitiated — not appeased in the pagan sense of placating an arbitrary deity, but satisfied in the precise judicial sense that His righteousness demanded and His justice executed.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:25</div>
+      <div class="verse">"…whom God put forward as a propitiation by his blood, to be received by faith."</div>
+      <div class="note">ἱλαστήριον — the mercy seat. God put Christ forward as the mercy seat of the new covenant, the place where the blood is applied and the divine integrity is satisfied. Received by faith — not by participation in a sacramental system, not by works, not by the performance of penitential acts. By faith. The propitiation is complete. The divine integrity has been satisfied. The only response the creature is required to make is to believe in the One God put forward as the satisfaction. The contested translation that renders this word as expiation rather than propitiation removes the wrath of God from the transaction entirely — which is not a minor adjustment. It changes the nature of what the cross accomplished and who required it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 2:2</div>
+      <div class="verse">"He is the propitiation for our sins, and not for ours only but also for the sins of the whole world."</div>
+      <div class="note">The propitiation is universal in scope and complete in effect. Not for our sins only — the satisfaction of the divine integrity at the cross was sufficient for every human being who has ever lived. The propitiation is not limited by the number of people who receive it. It is limited only by the volition of those who reject it. The wrath of God against sin was fully absorbed by the substitute — this is what propitiation means. C.H. Dodd argued that the Greek word carried no idea of divine wrath and should be translated expiation. He was wrong — and the RSV translation that followed his argument produced exactly the theological confusion his position predicted. Remove the wrath and you remove the need for a substitute. Remove the substitute and you have a moral example, not a savior.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 2:17</div>
+      <div class="verse">"Therefore he had to be made like his brothers in every respect, so that he might become a merciful and faithful high priest in the service of God, to make propitiation for the sins of the people."</div>
+      <div class="note">To make propitiation — the purpose of the incarnation stated precisely. The Son had to become fully human — taking on flesh, experiencing temptation, living in the Spirit operating environment, dying a genuine death — precisely because the propitiation required a human substitute. The divine justice that demanded the penalty required a human being to bear it, because human beings committed the sin. The impeccable human nature of Christ — born without the sin nature, living without personal sin — qualified Him as the substitute who could bear what justice demanded without having any sin of His own to answer for. The propitiation is the culmination of the entire incarnational strategy.</div>
+    </div>
+  </div>
+
+  <div class="bridge">God satisfied — now the creature's side of the transaction</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Expiation — The Manward Transaction</span>
+    </div>
+    <p class="phase-desc">Expiation is the removal of sin from the believer — the clearing of the record, the cancellation of the debt, the blotting out of the transgression. Where propitiation faces God and answers what the divine integrity requires, expiation faces man and answers what the condemned creature needs. The sin that separated the creature from the Creator is removed — not mitigated, not covered over temporarily as the Levitical sacrifices covered it year by year, but removed. Cancelled. Nailed to the cross. The certificate of debt that stood against the creature is taken out of the way. Isaiah saw this coming seven centuries before the cross and named it with the precision of a man who had seen the mercy seat and understood what it was pointing toward.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 2:13–14</div>
+      <div class="verse">"And you, who were dead in your trespasses and the uncircumcision of your flesh, God made alive together with him, having forgiven us all our trespasses, by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross."</div>
+      <div class="note">The record of debt nailed to the cross — the expiation stated in the most concrete legal language Paul could use. The χειρόγραφον — the handwritten certificate of debt, the legal document that itemized every transgression and stood as the grounds for condemnation — cancelled. Set aside. Nailed to the cross alongside the One who bore it. The creature who stood condemned by that record stands free not because the record was disputed but because the penalty it demanded was paid in full by the substitute. Expiation is the legal term for what happened to the record. Propitiation is the legal term for what happened to the God the record offended. Both at the same cross, by the same blood, in the same moment.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 43:25 / Isaiah 44:22</div>
+      <div class="verse">"I, I am he who blots out your transgressions for my own sake, and I will not remember your sins." / "I have blotted out your transgressions like a cloud and your sins like mist; return to me, for I have redeemed you."</div>
+      <div class="note">For my own sake — the expiation is an act of the divine integrity as much as the propitiation is. God blots out the transgressions not because the creature deserves it but because the integrity of God — His veracity, His love, His eternal purpose — requires it. The same divine character that demanded the propitiation also provides the expiation. Blotted out like a cloud, like mist — gone without a trace, not suppressed, not deferred, not covered over temporarily. The expiation is as complete as the propitiation. What Christ bore on the cross satisfied the Father completely. What the Father credited to the believer's account cleared the record completely. Both are the justice of God acting on the basis of the finished work.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Both transactions complete — now the text that names their finality</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Once for All — The Text the Writer of Hebrews Repeats Three Times</span>
+    </div>
+    <p class="phase-desc">The writer of Hebrews is making a sustained argument that the Levitical system has been superseded by the priesthood of Christ. Every element of the old system — the repeated sacrifices, the annual Day of Atonement, the Levitical priests who served generation after generation — was a type pointing toward the antitype. The antitype has come. The type is obsolete. And the most concentrated expression of this argument is the phrase the writer repeats three times in close succession: once for all. The Greek is ἐφάπαξ — once, for all time, with permanent effect, requiring no repetition. The propitiation was made once. The expiation was accomplished once. The veil was torn once. The high priest entered the true holy of holies once. No subsequent sacrifice supplements what was accomplished. No ongoing priestly mediation is required. The once-for-all finality of the cross is the most direct doctrinal challenge to any system that requires the repetition or re-presentation of the sacrifice.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 9:26–28</div>
+      <div class="verse">"…but as it is, he has appeared once for all at the end of the ages to put away sin by the sacrifice of himself. And just as it is appointed for man to die once, and after that comes judgment, so Christ, having been offered once to bear the sins of many, will appear a second time, not to deal with sin but to save those who are eagerly waiting for him."</div>
+      <div class="note">Once to bear the sins of many — the propitiation and expiation accomplished in one unrepeatable act. The parallel with human death is precise and intentional — man dies once, Christ was offered once. The once-ness of death is not a limitation but a completion. It happened and it is done. The second appearing of Christ is not to deal with sin again — because sin was dealt with completely at the first appearing. Any system that requires Christ's sacrifice to be re-presented, re-offered, or perpetuated in any form contradicts this text directly. The once for all of Hebrews 9:26 is not a preference or an interpretation. It is the explicit statement of the writer under the inspiration of the Spirit.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 10:10–14</div>
+      <div class="verse">"And by that will we have been sanctified through the offering of the body of Jesus Christ once for all. And every priest stands daily at his service, offering repeatedly the same sacrifices, which can never take away sins. But when Christ had offered for all time a single sacrifice for sins, he sat down at the right hand of God… For by a single offering he has perfected for all time those who are being sanctified."</div>
+      <div class="note">He sat down — the most theologically loaded posture in Hebrews. The Levitical priests never sat down. There were no chairs in the Tabernacle or the Temple because the work was never finished — the sacrifices had to be repeated because they could never permanently take away sins. Christ sat down because the work was finished. Once for all. A single offering. Perfected for all time. The sitting down of the Son at the right hand of the Father is the posture of completed propitiation and accomplished expiation. The work is done. The priest is seated. No subsequent offering can add to what the seated One accomplished. No system that requires Him to stand again — to re-present the sacrifice — can claim to be consistent with the text that says He sat down.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Once for all established — now what the Latin did to the Greek</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">What the Latin Did to the Greek — Translation as Theology</span>
+    </div>
+    <p class="phase-desc">The Latin did more harm to the Greek than the Greek will ever do to the man who reads it. Jerome's Vulgate was a remarkable achievement — but it was also a theological act. Three translation choices embedded in the Latin text shaped the doctrinal architecture of Western Christianity for a thousand years in ways the Greek text does not support. μετάνοια — the change of mind that Paul and Jesus used for repentance — became poenitentiam, the Latin word for penance, importing an entire penitential system into texts that described an interior volitional reorientation. πρεσβύτερος — elder — became presbyter, which the ecclesiastical tradition read as priest, importing the entire Levitical sacerdotal system into the Church Age through a vocabulary choice. And the sacramental economy that followed these choices built its entire structure on the premise that the propitiation is ongoing — that the mass re-presents the once-for-all sacrifice — which is the precise claim that Hebrews 10:10-14 was written to refute.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Acts 20:28</div>
+      <div class="verse">"Pay careful attention to yourselves and to all the flock, in which the Holy Spirit has made you overseers, to care for the church of God, which he obtained with his own blood."</div>
+      <div class="note">Overseers — ἐπισκόπους, not priests. The New Testament vocabulary for those who lead the Church Age community is consistently non-sacerdotal — elders, overseers, shepherds. The Levitical priest is a type that has been fulfilled and superseded. The Church Age leader serves the community through the ministry of the Word, not through the mediation of sacrifice. The blood that obtained the church was shed once — by the One high priest who has passed through the heavens. The men who serve the community afterward serve as teachers and shepherds, not as mediators between the people and a God who has already been propitiated by the blood of His Son.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Acts 2:38</div>
+      <div class="verse">"And Peter said to them, 'Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.'"</div>
+      <div class="note">Repent — μετανοήσατε, the aorist imperative of μετάνοια. Change your mind. The same word Jesus used in His first recorded sermon — repent, for the kingdom of heaven is at hand. The Latin poenitentiam turned this interior change of mind into an exterior system of penitential acts — confession to a priest, absolution, satisfaction, penance performed. The Greek text knows nothing of this system. Peter is calling for a change of mind about Jesus — the decisive volitional reorientation from rejection to reception, from negative volition to positive volition at Gospel hearing. The moment the Greek μετάνοια became the Latin poenitentiam, the interior became exterior, the volitional became performative, and the grace became merit.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Timothy 2:5</div>
+      <div class="verse">"For there is one God, and there is one mediator between God and men, the man Christ Jesus."</div>
+      <div class="note">One mediator — εἷς μεσίτης. Not one mediator plus the ongoing sacerdotal system. Not one primary mediator supplemented by the intercession of saints and the priestly mediation of ordained clergy. One. The man Christ Jesus — not the glorified Son in His divine nature alone but the man, the one who was made like His brothers in every respect, the one who made propitiation for the sins of the people, the one who sat down at the right hand of the Father when the work was finished. The Greek text of 1 Timothy 2:5 is among the clearest single-verse refutations of the sacerdotal system in the New Testament. The Latin tradition did not remove the verse. It surrounded it with a system that made the verse mean something other than what it says.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The text recovered — now the warrant it provides</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Warrant of the Individual Priesthood — What the Cross Provides</span>
+    </div>
+    <p class="phase-desc">If the propitiation is complete — if God has been fully satisfied by the once-for-all sacrifice of His Son — then the veil between the creature and the Creator has been torn and the access it prevented has been restored. If the expiation is complete — if the sin that condemned the creature has been removed, the record cancelled, the debt nailed to the cross — then there is no remaining barrier between the justified believer and the throne of grace. No mediating human priesthood is required because the One mediator has accomplished everything that any priesthood existed to accomplish. And if there is no mediating human priesthood, then every Church Age believer approaches the throne directly — as a royal priest, holding the warrant that the cross provides, entering the holy of holies through the torn veil by the blood of Jesus.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 10:19–22</div>
+      <div class="verse">"Therefore, brothers, since we have confidence to enter the holy places by the blood of Jesus, by the new and living way that he opened for us through the curtain, that is, through his flesh, and since we have a great priest over the house of God, let us draw near with a true heart in full assurance of faith, with our hearts sprinkled clean from an evil conscience and our bodies washed with pure water."</div>
+      <div class="note">Confidence to enter — παρρησίαν, boldness, freedom of speech, the right to approach without restriction. The blood of Jesus opened the new and living way through the curtain — the same curtain that was torn from top to bottom at the moment of His death, torn by God from the top because the access was God's provision, not man's achievement. The holy places are no longer restricted to a Levitical high priest once a year. They are open to every believer who approaches through the blood. The great priest over the house of God is not the one who restricts access. He is the one whose sacrifice opened it permanently. Draw near — the standing invitation to every Church Age believer who holds the warrant the cross provides.</note>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 2:9</div>
+      <div class="verse">"But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."</div>
+      <div class="note">A royal priesthood — the warrant stated. Not a select few ordained by an ecclesiastical system. Not the clergy as distinct from the laity. Every believer — chosen, royal, priestly. The Levitical system required a tribe, a lineage, an ordination, a system of approach with specific procedures and restrictions. The royal priesthood of the Church Age requires only the imputed righteousness that the propitiation made possible and the expiation confirmed. The priesthood is not earned. It is granted — by the same grace that justified, the same blood that propitiated, the same cross that accomplished both transactions once for all and opened the way for every member of the royal family of God to approach the throne directly, boldly, without a human mediator standing between the priest and the God he serves.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 1:5–6</div>
+      <div class="verse">"…To him who loves us and has freed us from our sins by his blood and made us a kingdom, priests to his God and Father, to him be glory and dominion forever and ever. Amen."</div>
+      <div class="note">Priests to his God and Father — the warrant confirmed in the doxology of Revelation. The One who freed the believer from sins by His blood — expiation — made the freed believer a priest. The freedom and the priesthood are the same transaction. The blood that accomplished the expiation is the same blood that provides the access. The kingdom of priests that Peter described in 1 Peter 2:9 is the same kingdom John sees in Revelation 1:6 — every believer a priest, every believer with direct access, every believer holding the warrant that the cross alone provides. To him be glory — not to the system, not to the institution, not to the tradition. To the One whose blood made the priesthood of every believer possible and whose once-for-all sacrifice made every subsequent human mediation unnecessary.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Salvation Theology — The Complete Transaction</div>
+    <div class="hinge-text">
+      The cross accomplished two things simultaneously.<br>
+      One facing God. One facing man.<br><br>
+      Propitiation — ἱλαστήριον.<br>
+      The divine integrity satisfied.<br>
+      The wrath against sin fully absorbed by the substitute.<br>
+      God is just.<br><br>
+      Expiation — the record cancelled, the debt nailed to the cross,<br>
+      the transgressions blotted out like a cloud.<br>
+      God is the justifier.<br><br>
+      Once for all — ἐφάπαξ.<br>
+      He sat down.<br>
+      The work is finished.<br>
+      No repetition. No supplement. No re-presentation.<br><br>
+      The Latin did more harm to the Greek<br>
+      than the Greek will ever do to the man who reads it.<br>
+      μετάνοια is not poenitentiam.<br>
+      πρεσβύτερος is not sacerdos.<br>
+      One mediator. The man Christ Jesus.<br><br>
+      The veil torn from top to bottom.<br>
+      The way opened by the blood.<br>
+      The warrant granted to every believer —<br>
+      a royal priesthood, a holy nation,<br>
+      priests to his God and Father.<br><br>
+      To him be glory and dominion forever and ever.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
