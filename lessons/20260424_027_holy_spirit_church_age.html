@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Holy Spirit in the Church Age — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .stage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .ministry-block {
+    background: var(--accent-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .ministry-number {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+
+  .ministry-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .ministry-body {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 027</div>
+    <h1>The Holy Spirit in the Church Age</h1>
+    <div class="subtitle">The Five Ministries — The Unique Spiritual Life — The Path Christ Cut First</div>
+  </header>
+
+  <p class="intro">
+    Jesus Christ is the Lord and King of the unique spiritual life — not merely its teacher or its example but its originator, its first practitioner, its living embodiment from before eternity past. He entered human history in hypostatic union — fully God and fully man, the two natures united in one Person without mixture or confusion — and lived the prototype life in the Spirit operating environment that He would give to every Church Age believer at Pentecost. He cut the path first. He walked it in His humanity under the same conditions the believer faces — temptation without a sin nature, testing without divine intervention on His own behalf, ministry in the power of the Spirit rather than in the independent exercise of the divine attributes. He lived it perfectly. Then He gave it to His royal family. The five ministries of the Holy Spirit in the Church Age are the delivery system of what Christ lived first and gave second.
+  </p>
+
+  <div class="stage-label">The Foundation — Hypostatic Union and the Prototype Life</div>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Hypostatic Union — The Lord of the Unique Spiritual Life</span>
+    </div>
+    <p class="phase-desc">The hypostatic union is the doctrinal statement that Jesus Christ is fully God and fully man — two complete natures united in one Person, the divine nature and the human nature coexisting without the divine overwhelming the human or the human contaminating the divine. The Son of God did not become less than God at the incarnation. He took on human nature in addition to the divine nature He already possessed from eternity. What this means for the spiritual life is precise: when Jesus lived in the Spirit operating environment during His earthly ministry, He was not drawing on His divine omnipotence to sustain it. He was living in His humanity, under the filling of the Spirit, as the model of the life He intended to give to every believer. He was Lord and King of the unique spiritual life from before eternity — the life that exists in the plan of God as the design for the Church Age believer — and He was its first practitioner in time. He did not merely describe the spiritual life. He lived it first so that the life He gave at Pentecost was a proven, tested, fully validated way of living.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 2:6–8</div>
+      <div class="verse">"…who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross."</div>
+      <div class="note">Emptied himself — the kenosis, the self-limitation of the independent exercise of the divine attributes during the incarnation. Not the surrender of the divine nature — that is impossible. The voluntary restraint of the independent use of those attributes, living in His humanity in dependence on the Spirit in the same operating environment He gave to the Church Age believer. Becoming obedient to the point of death — the hypostatic union sustaining the perfect humanity through the cross, the divine nature never overriding the human suffering, the fully human death accomplishing what no merely human death could accomplish. This is the foundation. The spiritual life the believer receives is the life the Son of God validated by living it first in the most demanding conditions any human being has ever faced.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:15</div>
+      <div class="verse">"For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin."</div>
+      <div class="note">Tempted in every respect as we are — the full human experience of temptation borne by the One who had no sin nature to provide the internal pull toward it. The temptation was harder for Christ than for any believer, not easier — because the believer's sin nature provides a predisposition toward the temptation that reduces the resistance required. Jesus faced every temptation with the full resistance of impeccable humanity and no internal pull toward it. Yet without sin — the prototype life validated through the most demanding test possible. The spiritual life He gives to the Church Age believer is not theoretical. It is proven under fire. The Lord and King of the unique spiritual life has walked every step of the path before He gave it to His royal family to walk.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The prototype life validated — now the five ministries that deliver it</div>
+
+  <div class="stage-label">The Five Ministries of the Holy Spirit in the Church Age</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Five Ministries — What Every Believer Receives at Salvation</span>
+    </div>
+    <p class="phase-desc">At the moment of faith in Christ, the Holy Spirit performs five distinct ministries simultaneously — four of them permanent and irrevocable, one of them revocable and renewable. All five occur at salvation without the believer's awareness or cooperation — they are the Spirit's sovereign acts on the basis of the finished work of the cross, not responses to the believer's spiritual condition or merit. The four permanent ministries establish the believer's position, identity, and security in Christ forever. The one revocable ministry — the filling — is the operational condition of the Spirit-filled life that the believer maintains through confession and loses through sin. Understanding all five is the foundation for understanding what the spiritual life is and how it works.</p>
+
+    <div class="ministry-block">
+      <span class="ministry-number">Ministry One</span>
+      <div class="ministry-title">Indwelling — The Body as the Temple of God</div>
+      <div class="ministry-body">
+        <p>At salvation the Holy Spirit takes up permanent residence in the physical body of the believer — not metaphorically, not as a feeling, not as a spiritual influence, but as a Person personally present. The body of the believer becomes the temple of God — the New Covenant fulfillment of the Old Covenant Tabernacle and Temple, the dwelling place of the divine presence no longer confined to a building in Jerusalem but permanently residing in every believer without exception. The indwelling is permanent — it cannot be revoked by sin, by carnality, by reversionism, or by any subsequent act of the believer's will. The carnal believer who has grieved the Spirit and quenched the Spirit is still indwelt. The indwelling is not the filling. The Spirit's presence in the body is permanent. The Spirit's operational control of the soul is conditional.</p>
+      </div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 6:19–20</div>
+      <div class="verse">"Or do you not know that your body is a temple of the Holy Spirit within you, whom you have from God? You are not your own, for you were bought with a price. So glorify God in your body."</div>
+      <div class="note">Your body is a temple — not your soul, not your spirit, your body. The physical body is the permanent residence of the third Person of the Trinity. The implications are comprehensive — every use of the body is in the presence of the indwelling Spirit. The indwelling is the basis for Paul's argument about sexual immorality in the preceding verses — not primarily because the act is aesthetically wrong but because the body in which the Spirit dwells is being misused. You are not your own — the indwelling establishes ownership. The body bought at the cross, indwelt by the Spirit, belongs to God. Glorify God in your body — the positive application of the doctrine, the life that the permanent indwelling was designed to produce.</div>
+    </div>
+
+    <div class="ministry-block">
+      <span class="ministry-number">Ministry Two</span>
+      <div class="ministry-title">Baptism — Placed into Union with Christ</div>
+      <div class="ministry-body">
+        <p>The baptism of the Holy Spirit is the act by which the Spirit places the believer into union with Christ at salvation — the ἐν Χριστῷ position established, the believer identified with Christ's death, burial, and resurrection. This is not water baptism. It is the Spirit's sovereign act of placing the believing sinner into the body of Christ and into positional identification with everything Christ accomplished. The baptism of the Spirit is the basis for the Romans 6 argument — you were baptized into His death, therefore reckon yourselves dead to sin and alive to God. The positional truth that the know-reckon-yield sequence draws from is the direct product of the Spirit's baptism ministry. Every believer in the Church Age has been baptized by the Spirit into Christ. No exceptions. No levels. The most carnal believer and the most mature believer are equally in Christ — the position is the same, the capacity to receive the provision of that position is what differs.</p>
+      </div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 12:13</div>
+      <div class="verse">"For in one Spirit we were all baptized into one body — Jews or Greeks, slaves or free — and all were made to drink of one Spirit."</div>
+      <div class="note">All — the universality of the Spirit's baptism ministry in the Church Age. Not the spiritually qualified. Not the doctrinally advanced. All who believe. Jews and Greeks, slaves and free — every social, ethnic, and economic distinction dissolved in the one body that the Spirit's baptism creates. Made to drink of one Spirit — the same Spirit who baptized every believer into the body is the Spirit who indwells every member of that body. The baptism and the indwelling are the same Spirit performing two distinct but related ministries. The one body that the baptism creates is the community in which the indwelling Spirit is personally present in every member simultaneously.</div>
+    </div>
+
+    <div class="ministry-block">
+      <span class="ministry-number">Ministry Three</span>
+      <div class="ministry-title">Sealing — The ἀρραβών, the Guarantee of the Inheritance</div>
+      <div class="ministry-body">
+        <p>The sealing of the Holy Spirit is the divine signature of ownership placed on the believer at salvation — the third Person as the legally binding guarantee that what the Father initiated and the Son merited will be fully delivered at the appointed time. The ἀρραβών — the down payment, the earnest money, the first installment that legally obligates the Giver to complete the transaction — is the Spirit Himself, personally present in the believer as the living guarantee of the inheritance. The sealing cannot be broken before the day it was sealed for — the day of redemption, the Rapture, the completion of the royal family of God. The eternal security of the believer rests in part on the sealing — anything that belongs to God forever cannot be lost, and the Spirit's seal is the divine signature that the believer belongs to God forever.</p>
+      </div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:13–14 / Ephesians 4:30</div>
+      <div class="verse">"…you were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory." / "And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption."</div>
+      <div class="note">Sealed for the day of redemption — the sealing is purposive, directed toward a specific future moment. The Spirit seals the believer now as the guarantee of the full delivery at the Rapture. Do not grieve the Holy Spirit — the sealing is permanent but the Spirit is a Person who can be grieved by the carnal behavior of the believer He has sealed. Grieving the Spirit is not breaking the seal. It is the personal offense to the Person whose seal is permanent. The sealing guarantees the ultimate delivery. The relationship within the sealed condition is still a relationship — personal, responsive, grievable — between the believer and the third Person who has committed Himself to the believer's eternal destination.</div>
+    </div>
+
+    <div class="ministry-block">
+      <span class="ministry-number">Ministry Four</span>
+      <div class="ministry-title">Spiritual Gifts — Sovereign Distribution for the Body</div>
+      <div class="ministry-body">
+        <p>At salvation the Holy Spirit sovereignly distributes spiritual gifts to every believer — specific Spirit-given abilities for the edification of the body of Christ. The gifts are not chosen by the believer, not earned by the believer, not conditional on the believer's spiritual maturity at salvation. They are the Spirit's sovereign distribution according to His own will — to each one individually as he wills. The gifts are permanent — Romans 11:29, the gifts and calling of God are irrevocable. The carnal believer has the same gifts the mature believer has. The difference is whether the gifts are being exercised in the filling of the Spirit, producing divine good, or in the energy of the flesh, producing human good. The Spirit-filled believer exercising his gift from a foundation of metabolized doctrine produces what only the Spirit can produce through a prepared vessel.</p>
+      </div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 12:7–11</div>
+      <div class="verse">"To each is given the manifestation of the Spirit for the common good… All these are empowered by one and the same Spirit, who apportions to each one individually as he wills."</div>
+      <div class="note">To each — the universality of the gifts distribution. Every believer has at least one spiritual gift. No believer is ungifted. As he wills — the sovereignty of the distribution. The Spirit does not consult the believer's preference, background, or assessment of his own capability. He distributes according to His own sovereign wisdom, giving each believer exactly the gift that the body of Christ needs from that specific member at that specific point in redemptive history. The gift is not the point — the common good is the point. The Spirit distributes to produce the building up of the body, the maturation of the royal family, the completion of the work that the Church Age was designed to accomplish.</div>
+    </div>
+
+    <div class="ministry-block">
+      <span class="ministry-number">Ministry Five</span>
+      <div class="ministry-title">Filling — The One Revocable Ministry</div>
+      <div class="ministry-body">
+        <p>The filling of the Holy Spirit is the only one of the five ministries that can be interrupted and restored. It is the operational condition of the Spirit-filled life — the Spirit in control of the soul of the yielded believer, producing the fruit of the Spirit, enabling the exercise of the spiritual gift, metabolizing the doctrine from gnosis to epignosis, making operative all ten problem-solving devices. The filling is interrupted by any personal sin — mental, verbal, or overt. The single mechanism for restoration is confession — 1 John 1:9, the known sins named, the unrighteousness cleansed, the filling restored instantly and completely. The believer who is not filled is not living the unique spiritual life. He is living in the energy of the flesh — whatever he produces is human good, dead works, wood hay and straw at the Bema. The filling is the on/off switch for the entire operational spiritual life.</p>
+      </div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 5:18</div>
+      <div class="verse">"And do not get drunk with wine, for that is debauchery, but be filled with the Spirit."</div>
+      <div class="note">Be filled — πληροῦσθε, present passive imperative. The present tense commands the continuous condition — not a one-time filling but the ongoing filled state maintained through continuous confession of sin whenever it interrupts the condition. Passive — the filling is not something the believer does to himself. It is the Spirit's action in the yielded, confessed vessel. Imperative — it is commanded. The filling is not optional for the believer who intends to execute the spiritual life. It is the prerequisite for every other aspect of the advance. The drunk man is controlled by the wine — his behavior, his speech, his judgment all expressing the influence of what controls him. The Spirit-filled believer is controlled by the Spirit — his behavior, his speech, his judgment all expressing the influence of the One who controls him. The analogy is precise. The control is total in both cases. The question is only what is doing the controlling.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Five ministries named — now the unique spiritual life they deliver</div>
+
+  <div class="stage-label">The Unique Spiritual Life — What No Previous Generation Possessed</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Unique Spiritual Life — The Path Christ Cut First and Gave to His Royal Family</span>
+    </div>
+    <p class="phase-desc">The unique spiritual life of the Church Age is unique not because it is more moral than the spiritual life of the Old Testament believer, or more sincere, or more devoted. It is unique because it operates from a set of provisions that no previous dispensation had available — the permanent indwelling of the Spirit, the sealed position in Christ, the sovereign distribution of spiritual gifts, the complete canon of Scripture, and the filling of the Spirit as the operational condition of a life that Jesus Christ Himself lived first in His humanity as the prototype and then made available to every believer in His royal family at Pentecost. The Church Age believer carries more light than any previous generation. More light means more accountability. More accountability means more potential for the advance — and more consequence for the failure to advance. The Spirit who dwells in every believer is waiting for the positive volition that invites His control. The prototype life is available. The path has been cut. The provision has been made. The question is whether the believer will walk it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 14:16–17</div>
+      <div class="verse">"And I will ask the Father, and he will give you another Helper, to be with you forever, even the Spirit of truth, whom the world cannot receive, because it neither sees him nor knows him. You know him, for he dwells with you and will be in you."</div>
+      <div class="note">Another Helper — ἄλλον παράκλητον, another of the same kind. The disciples had had one Helper — Jesus Himself, present with them, teaching them, interceding for them, sustaining them. The Spirit who comes is another of the same kind — the same quality of personal presence, the same ministry of truth and intercession, now operating from within rather than from alongside. With you forever — the permanent indwelling that the disciples had not yet experienced, the condition that would make the Church Age unique. He dwells with you — the Spirit present with them through the ministry of Christ. Will be in you — the Spirit about to be permanently resident within every believer. The shift from with to in is the shift from the Old Testament pattern to the Church Age reality.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:9–11</div>
+      <div class="verse">"You, however, are not in the flesh but in the Spirit, if in fact the Spirit of God dwells in you. Anyone who does not have the Spirit of Christ does not belong to him. But if Christ is in you, although the body is dead because of sin, the Spirit is life because of righteousness. If the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you."</div>
+      <div class="note">The Spirit of him who raised Jesus from the dead dwells in you — the resurrection power of God personally present in the body of the Church Age believer. Not the general omnipresence of God everywhere. The specific, personal, intentional indwelling of the Spirit who raised Christ from the dead — that same Spirit, that same resurrection power, dwelling in the mortal body of the advancing believer. This is what the Church Age believer carries. This is what the five ministries of the Spirit have placed in the jar of clay. The surpassing power that 2 Corinthians 4 describes is not hyperbole. It is the precise description of what the resurrection Spirit's indwelling provides to the believer who walks in the filling.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:22–25</div>
+      <div class="verse">"But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law. And those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also keep in step with the Spirit."</div>
+      <div class="note">Keep in step with the Spirit — στοιχῶμεν, to walk in line with, to march in the same direction, to maintain the ordered movement of the soldier in formation. The unique spiritual life is not passive reception of the Spirit's influence. It is the active, disciplined, continuous alignment of the believer's volition with the Spirit's direction — the know-reckon-yield sequence operating as the daily discipline of the soul that is keeping step with the One who indwells it. The fruit is not the believer's production from his own effort. It is the Spirit's production through the vessel that is keeping step — the natural output of the life that is being lived from the Spirit operating environment that Jesus Christ walked first and gave to His royal family at Pentecost.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Holy Spirit in the Church Age</div>
+    <div class="hinge-text">
+      Jesus Christ — Lord and King of the unique spiritual life<br>
+      since before eternity past.<br>
+      He entered history in hypostatic union.<br>
+      He lived the prototype life in the Spirit operating environment<br>
+      under the same conditions the believer faces.<br>
+      He cut the path. He validated it.<br>
+      Then He gave it to His royal family at Pentecost.<br><br>
+      Five ministries at the moment of faith —<br>
+      simultaneously, sovereignly, permanently.<br><br>
+      Indwelling — the body as the temple of God.<br>
+      Baptism — placed into union with Christ.<br>
+      Sealing — the ἀρραβών, sealed for the day of redemption.<br>
+      Gifts — sovereign distribution for the common good.<br>
+      Filling — the one revocable ministry,<br>
+      the operational condition of the advance,<br>
+      interrupted by sin,<br>
+      restored by confession,<br>
+      the on/off switch for the entire spiritual life.<br><br>
+      The Spirit of him who raised Jesus from the dead<br>
+      dwells in you.<br><br>
+      Keep in step with the Spirit.<br>
+      The path has been cut.<br>
+      Walk it.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

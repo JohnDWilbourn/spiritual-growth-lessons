@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Holy Spirit Across the Dispensations — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .stage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 026</div>
+    <h1>The Holy Spirit Across the Dispensations</h1>
+    <div class="subtitle">The Third Person of the Trinity — His Work from Creation to the Kingdom</div>
+  </header>
+
+  <p class="intro">
+    The Holy Spirit is not a force, not an influence, not an experience. He is the third Person of the Trinity — equal in essence to the Father and the Son, possessing the same ten attributes of the divine character, personally present and personally active in every dispensation of human history. His ministry did not begin at Pentecost. It began before creation. What changed at Pentecost was not whether the Spirit was working but how — the nature, the permanence, and the intimacy of His presence shifted in a way that no previous dispensation had prepared the human race to expect. To understand what the Church Age believer has, the student must first understand what every previous generation did not have. The dispensational survey of the Spirit's work is the foundation for that understanding.
+  </p>
+
+  <div class="stage-label">Before Creation and at the Foundation of the World</div>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">Over the Waters of the Deep — The Spirit at Creation</span>
+    </div>
+    <p class="phase-desc">The third Person of the Trinity appears in the second verse of the Bible. Before a single creative act is recorded, before light is separated from darkness, before the waters are gathered and the dry land appears — the Spirit of God is present over the formless void. The Hebrew רוּחַ אֱלֹהִים, the Spirit of God, is hovering over the face of the waters. The word for hovering — מְרַחֶפֶת, merachephet — is the same word used in Deuteronomy 32:11 for the eagle that hovers over its nest, stirring up its young, spreading its wings to catch them. It is not passive presence. It is active, protective, preparatory presence — the Spirit poised over the chaos, ready for the creative acts that follow. The third Person of the Trinity was present at the creation of the universe as a full and active participant in the divine work that the first verse of the Bible attributes to God.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 1:1–2</div>
+      <div class="verse">"In the beginning, God created the heavens and the earth. The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters."</div>
+      <div class="note">The Spirit of God hovering — the third Person present before the first creative word is spoken. The creative acts of Genesis 1 are Trinitarian — the Father decrees, the Son executes (John 1:3, Colossians 1:16), the Spirit hovers and moves. The formless void over which the Spirit hovers is the condition of chaos and potential — darkness, water, no form, no function. The Spirit's presence over the chaos is the preparation for the order that the divine word will produce. This is the Spirit's first recorded activity in Scripture and it establishes the pattern — the Spirit is present at the beginning of every new creative work of God, poised over the condition of need, ready for what the Word will accomplish.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Job 33:4 / Psalm 104:30</div>
+      <div class="verse">"The Spirit of God has made me, and the breath of the Almighty gives me life." / "When you send forth your Spirit, they are created, and you renew the face of the ground."</div>
+      <div class="note">The Spirit as the Creator of life — the third Person's active role in the formation of man and the sustaining of the creation that Genesis 1 initiated. Job attributes his own existence to the Spirit of God. The Psalmist attributes the ongoing renewal of the created order to the Spirit sent forth. The Spirit's work at creation is not a one-time event that concluded when the seventh day arrived. It is the ongoing sustaining presence of the third Person in the creation He participated in bringing into existence — the same Spirit who hovered over the waters continues to send forth and renew throughout the history of the world He helped create.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Creation established — now the Spirit's work through human history before the cross</div>
+
+  <div class="stage-label">The Old Testament — Selective, Task-Specific, Withdrawable</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Coming Upon and Departing — The Spirit in the Old Testament Dispensations</span>
+    </div>
+    <p class="phase-desc">The defining characteristic of the Spirit's work in the Old Testament dispensations is selectivity. He did not indwell every believer. He came upon specific individuals for specific tasks — prophets to receive and deliver divine revelation, judges to deliver Israel from enemy oppression, kings to lead the nation under divine authority, craftsmen to execute the detailed work of the Tabernacle and Temple. When the task was completed, or when the recipient's negative volition reached the point of judicial removal, the Spirit withdrew. This was not inconsistency in the Spirit's character. It was the appropriate administration of His ministry within the dispensational structure that God had established. The Old Testament believer could not assume permanent indwelling. David's prayer in Psalm 51:11 — take not your Holy Spirit from me — was a prayer that the Church Age believer never needs to pray, because the condition it feared has been permanently resolved by Pentecost.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Numbers 11:25 / Judges 14:6</div>
+      <div class="verse">"Then the LORD came down in the cloud and spoke to him, and took some of the Spirit that was on him and put it on the seventy elders. And as soon as the Spirit rested on them, they prophesied." / "Then the Spirit of the LORD rushed upon him, and he tore the lion in pieces as one tears a young goat. And he had nothing in his hand."</div>
+      <div class="note">Two characteristic patterns of the Old Testament Spirit ministry — the distributed empowering for the prophetic function, and the sudden coming upon for the military-judicial function. The Spirit resting on the seventy elders enables the prophetic utterance. The Spirit rushing upon Samson enables the superhuman feat of strength. Both are selective — specific individuals, specific moments, specific tasks. Neither is the permanent personal indwelling that the Church Age believer receives at salvation. The contrast with what follows at Pentecost is the entire point of the dispensational survey.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Samuel 16:13–14</div>
+      <div class="verse">"Then Samuel took the horn of oil and anointed him in the midst of his brothers. And the Spirit of the LORD rushed upon David from that day forward… Now the Spirit of the LORD departed from Saul, and a harmful spirit from the LORD tormented him."</div>
+      <div class="note">The Spirit rushing upon David from that day forward — the kingly anointing, the empowering for the royal function, beginning at the moment of Samuel's anointing. And simultaneously — the Spirit of the LORD departed from Saul. The two events in sequence in the same passage are the clearest Old Testament statement of the Spirit's withdrawable character in that dispensation. The Spirit was not lost through an accumulation of personal sins alone. Saul's judicial removal — the point at which God determined that Saul's negative volition had rendered him permanently unusable — was the occasion for the Spirit's departure. David's Psalm 51 prayer makes full sense in this context. He knew what had happened to Saul. He knew the Spirit could depart. He prayed accordingly.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Exodus 31:2–3</div>
+      <div class="verse">"See, I have called by name Bezalel the son of Uri, son of Hur, of the tribe of Judah, and I have filled him with the Spirit of God, with ability and intelligence, with knowledge and all craftsmanship…"</div>
+      <div class="note">Filled with the Spirit of God for craftsmanship — the breadth of the Spirit's task-specific ministry in the Old Testament. The Spirit is not confined to prophetic or military or kingly functions. He empowers the craftsman who will build the Tabernacle — the skilled worker whose hands will shape the ark of the covenant, the lampstand, the altar, the curtains. Every element of the Tabernacle that points toward the coming Christ is produced by a man filled with the Spirit for exactly that purpose. The Spirit's work is as specific as the task and as broad as the entire scope of what God is doing in every dispensation.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Selective and withdrawable in the Old Testament — now the hinge point of the incarnation</div>
+
+  <div class="stage-label">The Incarnation — The Spirit and the Person of Christ</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Spirit Overshadowing Mary — The Incarnation Accomplished</span>
+    </div>
+    <p class="phase-desc">The most concentrated work of the Holy Spirit in all of human history prior to Pentecost is the incarnation of the Son of God. The Spirit overshadows Mary — not metaphorically, not as a figure of speech, but as a direct divine creative act that bypasses the male genetic line and produces the impeccable humanity of Christ without the transmitted sin nature. This is the Spirit's creative work at creation extended into the personal — the same Spirit who hovered over the formless void at the beginning now overshadowing a specific young woman in Nazareth, producing through His direct action the humanity that will bear the sins of the world. The virgin birth is not a biological curiosity. It is the pneumatological requirement for the qualified substitute — the impeccable human nature produced by the Spirit's direct action, free from the genetic transmission of the sin nature that would have disqualified any naturally conceived human being from serving as the propitiation.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 1:35</div>
+      <div class="verse">"And the angel answered her, 'The Holy Spirit will come upon you, and the power of the Most High will overshadow you; therefore the child to be born will be called holy — the Son of God.'"</div>
+      <div class="note">The Holy Spirit will come upon you — the same language used for the Spirit's coming upon Old Testament figures, now applied to the most singular act in redemptive history. The overshadowing is the direct creative action of the third Person producing what no natural process could produce — the holy humanity of the Son of God. Therefore the child will be called holy — the holiness is the direct consequence of the Spirit's action bypassing the genetic transmission of the sin nature. Without the Spirit's overshadowing, the incarnation produces a sinner. With it, the incarnation produces the qualified substitute. The Spirit's work at the incarnation is the pneumatological foundation of the entire plan of salvation.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The humanity produced — now the Spirit descending on that humanity at baptism</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Dove Descending — The Spirit and the Public Ministry of Christ</span>
+    </div>
+    <p class="phase-desc">At the baptism of Jesus in the Jordan, the Trinity is fully present and publicly identified for the first time in human history. The Father speaks from heaven — this is my beloved Son, with whom I am well pleased. The Son stands in the water, the sinless humanity presented for the commission of the public ministry. And the Spirit descends in the form of a dove and rests upon Him. The dove descending and resting — not rushing, not coming upon momentarily — is the permanent empowering of the Son's humanity for the public ministry that the baptism inaugurates. From this moment forward, the Spirit is always with Jesus. Led by the Spirit into the wilderness. Empowered by the Spirit for the healing of the sick. Proclaiming in the power of the Spirit that the Spirit of the Lord is upon Him. Jesus lived the entire public ministry in the Spirit operating environment — the prototype life, the model for what the Church Age believer would receive after Pentecost.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 3:16–17</div>
+      <div class="verse">"And when Jesus was baptized, immediately he went up from the water, and behold, the heavens were opened to him, and he saw the Spirit of God descending like a dove and coming to rest on him; and behold, a voice from heaven said, 'This is my beloved Son, with whom I am well pleased.'"</div>
+      <div class="note">The heavens opened, the Spirit descending, the Father speaking — the Trinity publicly identified at the inauguration of the Son's public ministry. Coming to rest on him — ἐρχόμενον ἐπ' αὐτόν, the present participle of continuous action, the Spirit not rushing upon and departing but descending and remaining. The dove does not return to heaven. It rests. The empowering for the public ministry is permanent for its duration — the Spirit with Jesus through the temptation, through the Galilean ministry, through Jerusalem, through Gethsemane, through the cross. This is the Spirit working in the Old Testament pattern — coming upon a specific individual for a specific commission — but at a level and an intimacy that no Old Testament figure had experienced.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 4:1, 14, 18</div>
+      <div class="verse">"And Jesus, full of the Holy Spirit, returned from the Jordan and was led by the Spirit in the wilderness…" / "And Jesus returned in the power of the Spirit to Galilee…" / "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor."</div>
+      <div class="note">Full of the Holy Spirit — the consistent description of Jesus' condition throughout the public ministry. Led by the Spirit, empowered by the Spirit, anointed by the Spirit, proclaiming in the Spirit. Acts 10:38 adds the summary — God anointed Jesus of Nazareth with the Holy Spirit and with power, and he went about doing good. The entire public ministry is a Spirit-empowered ministry — not because the Son lacked divine power but because the Son in His humanity was living the life that the Spirit operating environment makes possible. He made it. He lived it first and best. Then He gave it to every believer who would come after Him.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The prototype life completed — now the hinge that changes everything</div>
+
+  <div class="stage-label">Pentecost — The Hinge Point of Redemptive History</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Spirit Poured Out — Pentecost and the Church Age Inauguration</span>
+    </div>
+    <p class="phase-desc">Pentecost is the hinge point of the Spirit's dispensational ministry. Everything before it points toward it. Everything after it is defined by it. The Son has completed the work — the propitiation accomplished, the resurrection achieved, the ascension completed, the Son glorified at the right hand of the Father. Now the promise can be fulfilled. John 16:7 — it is to your advantage that I go away, for if I do not go away the Helper will not come to you. The Spirit could not be given in the Church Age form until the Son was glorified. The glorification of the Son is the condition for the outpouring of the Spirit. At Pentecost the condition is met. The Spirit is poured out — not on selected individuals for specific tasks, not in a withdrawable commissioning for a limited period, but on every believer simultaneously, permanently, personally. The Old Testament pattern is superseded. The Church Age begins.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Acts 2:1–4</div>
+      <div class="verse">"When the day of Pentecost arrived, they were all together in one place. And suddenly there came from heaven a sound like a mighty rushing wind, and it filled the entire house where they were sitting. And divided tongues as of fire appeared to them and rested on each one of them. And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit gave them utterance."</div>
+      <div class="note">Rested on each one of them — not on Peter alone, not on the twelve alone, not on the spiritually mature alone. Each one. The universality of the Spirit's Pentecost outpouring is the defining characteristic that separates it from every prior dispensational ministry. The sound, the wind, the fire, the tongues — the visible and audible phenomena are the inaugural signs of a permanent shift in the Spirit's dispensational administration. What was selective is now universal. What was withdrawable is now permanent. What was task-specific is now personal and comprehensive. The Church Age has begun and every believer from Pentecost forward enters it with the full endowment of the Spirit's permanent presence.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 16:7 / John 7:39</div>
+      <div class="verse">"Nevertheless, I tell you the truth: it is to your advantage that I go away, for if I do not go away, the Helper will not come to you. But if I go, I will send him to you." / "Now this he said about the Spirit, whom those who believed in him were to receive, for as yet the Spirit had not been given, because Jesus was not yet glorified."</div>
+      <div class="note">The Spirit had not yet been given — John's editorial comment explaining why the rivers of living water had not yet begun to flow in the Church Age manner. The Spirit's Church Age ministry is contingent on the glorification of the Son. The cross had to be accomplished. The resurrection had to be achieved. The ascension had to be completed. The Son had to be seated at the right hand of the Father. Only then — only from the position of completed propitiation and full glorification — could the Spirit be sent in the Church Age form. This is why John 16:7 is the promise and Acts 2 is its fulfillment. The advantage of the Son's departure is the arrival of the permanent, personal, universal Helper.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Pentecost — now the Spirit's work at the end of the age and beyond</div>
+
+  <div class="stage-label">Beyond the Church Age — Tribulation and Kingdom</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Restrainer Removed and the Spirit Poured Out — Tribulation and Millennium</span>
+    </div>
+    <p class="phase-desc">The Church Age ends at the Rapture — the moment the royal family of God is completed and evacuated. At that moment something unprecedented occurs — the restraining ministry of the Holy Spirit is withdrawn. The lawlessness that the Spirit has been restraining throughout the Church Age is released. The man of lawlessness is revealed. The Tribulation begins. This is not the Spirit's absence from the world — the Spirit is omnipresent and cannot be absent. It is the withdrawal of His specific restraining function, the removal of the check that the Spirit's presence in the indwelt Church has been exerting on the forces of evil throughout the Church Age. The Tribulation saints are saved and serve God without the full Spirit endowment of the Church Age. Then the Kingdom arrives — and the Spirit is poured out on all flesh in fulfillment of Joel's prophecy, the nation of Israel restored, the Spirit operative in the millennial reign of Christ in ways that point back to Pentecost and forward to the eternal state.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Thessalonians 2:6–7</div>
+      <div class="verse">"And you know what is restraining him now so that he may be revealed in his time. For the mystery of lawlessness is already at work. Only he who now restrains it will do so until he is out of the way."</div>
+      <div class="note">He who now restrains — the restrainer who will be taken out of the way at the Rapture. The restraining ministry of the Spirit operating through the indwelt Church is the check on the mystery of lawlessness that has been at work throughout human history. When the Church is evacuated at the Rapture, the restraining presence is removed. Not because the Spirit ceases to exist or ceases to work — but because the specific form of His restraining ministry through the permanently indwelt Church Age believer comes to its appointed end. The withdrawal of the restrainer is the signal that the Church Age is complete and the Tribulation has begun.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Joel 2:28–29 / Acts 2:17</div>
+      <div class="verse">"And it shall come to pass afterward, that I will pour out my Spirit on all flesh; your sons and your daughters shall prophesy, your old men shall dream dreams, and your young men shall see visions. Even on the male and female servants in those days I will pour out my Spirit." / "And in the last days it shall be, God declares, that I will pour out my Spirit on all flesh…"</div>
+      <div class="note">Peter quotes Joel at Pentecost — not because Pentecost is the complete fulfillment of Joel's prophecy but because Pentecost is its first installment, its type, the foretaste of the full outpouring that awaits the millennial age. Joel's prophecy envisions the Spirit poured out on all flesh — sons and daughters, old men and young men, male servants and female servants — the universality of the Spirit's presence in the Kingdom age. The millennial outpouring will exceed Pentecost in scope — every inhabitant of the restored nation of Israel, every person living under the reign of the King of kings, receiving the Spirit's presence in a way that the entire Old Testament pointed toward but never fully experienced. The dispensational survey of the Spirit ends here — in the Kingdom that the Spirit has been working toward through every dispensation of human history.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Holy Spirit Across the Dispensations</div>
+    <div class="hinge-text">
+      Over the waters of the deep — the Spirit hovering<br>
+      before the first creative word was spoken.<br><br>
+      In the Old Testament — selective, task-specific, withdrawable.<br>
+      Coming upon prophets, judges, kings, craftsmen.<br>
+      Departing when the commission ended<br>
+      or the vessel was judicially removed.<br><br>
+      At the incarnation — overshadowing Mary,<br>
+      producing the impeccable humanity<br>
+      that the propitiation required.<br><br>
+      At the baptism — descending as a dove and resting,<br>
+      the Trinity publicly present,<br>
+      the public ministry inaugurated,<br>
+      the prototype life begun.<br><br>
+      At Pentecost — poured out on each one,<br>
+      permanent, personal, universal.<br>
+      The condition met: the Son glorified.<br>
+      The promise fulfilled: the Helper sent.<br><br>
+      At the Rapture — the restrainer removed,<br>
+      the Church Age complete,<br>
+      the Tribulation unleashed.<br><br>
+      In the Kingdom — poured out on all flesh,<br>
+      Joel's prophecy consummated,<br>
+      the Spirit's dispensational work<br>
+      arriving at its appointed destination.<br><br>
+      The same Spirit. Every dispensation.<br>
+      The same Person. Different administration.<br>
+      The Church Age believer has what<br>
+      no previous generation possessed —<br>
+      and the next lesson names precisely what that is.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
