@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctrinal Orientation — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 024</div>
+    <h1>Doctrinal Orientation</h1>
+    <div class="subtitle">The Fifth Problem-Solving Device — The Personal Pivot</div>
+  </header>
+
+  <p class="intro">
+    Doctrinal orientation is the intentional focus of the believer to seek, understand, and obey the strictures of doctrine under the authority of God as the sole provider of the living and powerful word of truth. The soul that knows it is alive and hungry for the bread of life will seek to fulfill that hunger from the only legitimate source. This believer has submitted to the renewal of his mind under grace orientation. He waits on the Lord — not passive waiting but active participatory waiting, the exchange of human strength for divine. He recognizes the strategic victory of God the Son and his own potential for tactical victory at every moment of life beyond salvation, insomuch as he metabolizes doctrine in his soul. Doctrine is the bread of life. All aspects of daily life revolve around it — invisibly but powerfully effective. Doctrinal orientation is the personal pivot for the believer's place in his own history.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Intentional Seek — Volition Driving the Hunger</span>
+    </div>
+    <p class="phase-desc">Doctrinal orientation begins with the will. The soul that has been made alive at salvation — the human spirit quickened, the God-consciousness restored, the capacity for fellowship with the Creator reactivated — is a soul that is genuinely hungry. The hunger is real. The question is what it is directed toward. The sin nature has its own appetite and its own proposed sources of satisfaction, and they are always present, always pressing, always promising what they cannot deliver. Doctrinal orientation is the volitional decision to direct the spiritual hunger toward the only source that can satisfy it — the Word of God received under the filling of the Spirit, metabolized into the right lobe, and applied to the daily life. The believer who seeks doctrine is the believer whose volition has been aligned with the design of the new nature. He seeks because he was made to seek. He finds because the Source is inexhaustible.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 5:6</div>
+      <div class="verse">"Blessed are those who hunger and thirst for righteousness, for they shall be satisfied."</div>
+      <div class="note">Hunger and thirst — the two most urgent physical drives applied to the soul's orientation toward the Word. The Greek is πεινάω and διψάω — not mild preference, not casual interest, the driving biological imperative of the starving and the parched. The soul that hungers and thirsts for the righteousness of God's Word is the soul that will be satisfied — not the soul that grazes, not the soul that samples, not the soul that attends when convenient. The satisfied soul is the soul that seeks with the urgency of genuine hunger. The doctrinal orientation is not casual. It is the intentional, volitional, sustained seek of the soul that knows what it was made to be fed on.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Proverbs 2:1–5</div>
+      <div class="verse">"My son, if you receive my words and treasure up my commandments with you, making your ear attentive to wisdom and inclining your heart to understanding; yes, if you call out for insight and raise your voice for understanding, if you seek it like silver and search for it as for hidden treasures, then you will understand the fear of the LORD and find the knowledge of God."</div>
+      <div class="note">Seek it like silver, search for it as hidden treasure — the intensity of the seek is the measure of the orientation. Silver and hidden treasure are not stumbled upon. They are worked for — deliberately, systematically, with sustained effort applied over time. The doctrinal orientation is the same quality of sustained intentional seeking applied to the knowledge of God. Every condition Solomon names is volitional — receive, treasure up, make your ear attentive, incline your heart, call out, raise your voice, seek, search. The passive believer who waits for doctrine to arrive does not find the knowledge of God. The actively seeking believer finds what the seeking was designed to find.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 11:6</div>
+      <div class="verse">"And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him."</div>
+      <div class="note">He rewards those who seek — the divine commitment to the active seek. The seeking is not unrewarded effort directed into a void. It is the volitional response to the divine invitation that the grace pipeline is already carrying provision toward. The reward is not separate from the seeking — it is the progressive deepening of the knowledge of God that the seeking produces as doctrine is received, metabolized, and applied. The believer who seeks finds not because he has earned the finding but because the God who rewards the seek has always been moving toward the believer who is moving toward Him.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The intentional seek — now the active participatory waiting that sustains it</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Active Participatory Waiting — The Exchange of Strength</span>
+    </div>
+    <p class="phase-desc">Waiting on the Lord is not passive inactivity. The Hebrew קָוָה — kavah — is the word of the wrestler who has been pinned and is waiting for the moment the grip shifts, the sprinter who holds position at the starting mark, the soldier who is in position and ready. It is the exchange — the human strength handed over, the divine strength received in return. The doctrinal orientation sustains this exchange as a way of life. The believer who is doctrinally oriented does not sprint emotionally and collapse. He exchanges continuously — drawing from the deposited doctrine in the right lobe, applying it to the present circumstance, resting in the promises that the faith-rest drill delivers, waiting on the Lord who rewards the wait with a strength that does not fatigue. This is not the waiting of the man who has given up. It is the waiting of the man who has given over — and in giving over, received what he could never have generated.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 40:31</div>
+      <div class="verse">"But they who wait for the LORD shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint."</div>
+      <div class="note">Renew their strength — the Hebrew is יַחֲלִיפוּ כֹחַ, they shall exchange strength. Not restore the human strength that was depleted. Exchange it — hand in the human and receive the divine. The eagle, the runner, the walker — three images of sustained motion at three speeds, all of them dependent not on human capacity but on the exchanged divine strength. The doctrinally oriented believer operates from this exchange as the normal condition of his advance. He is not fatigued by the discipline of the daily seek because he is not running on his own fuel. He has learned to wait — and in waiting, to receive what the waiting was always designed to deliver.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 12:2</div>
+      <div class="verse">"Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect."</div>
+      <div class="note">Transformed by the renewal of your mind — the Greek is ἀνακαινώσει τοῦ νοός, the renovation of the mind by the Spirit operating through the metabolized Word. The doctrinal orientation is the human side of the renovation — the believer presenting himself to the process, making the daily seek, receiving the doctrine under the filling, submitting the mind to the Word's authority. The Spirit is the One who renovates. The believer is the one who participates. The transformation is not passive — the renewal requires the active participatory waiting of the believer who keeps showing up to receive what the Spirit is ready to give. The discernment that follows — what is good and acceptable and perfect — is the fruit of the renovation. It cannot be generated by the unrenovated mind. It is the product of the mind that has been transformed by the ongoing reception of the Word.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The active wait — now the epignosis that the wait produces</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Gnosis to Epignosis — Knowing Trust, Not Blind Faith</span>
+    </div>
+    <p class="phase-desc">The doctrinal orientation produces epignosis — not gnosis. The distinction is load-bearing. Gnosis is academic knowledge in the left lobe — the doctrine received, catalogued, and stored as information. Epignosis is the full knowledge in the right lobe — the doctrine that has been transferred by the Spirit at the hand-off point, metabolized into the operational thinking of the soul, and is now available for application to every circumstance of life. The doctrinally oriented believer does not operate from blind faith — from the emotional momentum of a religious experience that has no doctrinal content to sustain it. He operates from knowing trust — the trust that is grounded in the metabolized knowledge of who God is, what God has done, what God has promised, and what God's character guarantees. Line upon line, precept upon precept — the progressive layering of epignosis building the interior structure that the problem-solving devices draw from.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 28:9–10</div>
+      <div class="verse">"To whom will he teach knowledge, and to whom will he explain the message? Those who are weaned from the milk, those taken from the breast. For it is precept upon precept, precept upon precept, line upon line, line upon line, here a little, there a little."</div>
+      <div class="note">Precept upon precept, line upon line — תַּו לָתַו, tsav la-tsav, the Hebrew staccato of progressive doctrinal accumulation. Not a single dramatic impartation. Not the download of the entire canon in one experience. The progressive layering of doctrine received, metabolized, and built upon — each layer providing the foundation for the next, the structure growing course by course from the daily bread that the Spirit metabolizes into the advancing soul. The doctrinally oriented believer understands this. He is not impatient for the full structure to appear. He receives today's doctrine, metabolizes it, and returns tomorrow for the next course. The building proceeds because the builder shows up.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 1:9–10</div>
+      <div class="verse">"…asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding, so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God."</div>
+      <div class="note">Filled with the knowledge — πληρωθῆτε τὴν ἐπίγνωσιν, filled with the epignosis. Paul is not praying for gnosis — for information deposited in the left lobe. He is praying for the full knowledge that has been transferred to the right lobe and is operative in the daily walk. In all spiritual wisdom and understanding — the wisdom that applies the epignosis to the specific circumstance, the understanding that comprehends the implications of what has been metabolized. Increasing in the knowledge of God — the progressive deepening of the knowing that John 17:3 names as eternal life itself. The doctrinal orientation is not a destination. It is the daily discipline that keeps the increasing underway.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Peter 1:5–8</div>
+      <div class="verse">"For this very reason, make every effort to supplement your faith with virtue, and virtue with knowledge, and knowledge with self-control, and self-control with steadfastness, and steadfastness with godliness, and godliness with brotherly affection, and brotherly affection with love. For if these qualities are yours and are increasing, they keep you from being ineffective or unfruitful in the knowledge of our Lord Jesus Christ."</div>
+      <div class="note">Supplement — ἐπιχορηγήσατε, to furnish lavishly, to supply generously. The doctrinal orientation that produces epignosis is not the minimal compliance of the believer who does the minimum required to avoid the consequences of ignorance. It is the lavish furnishing of the soul — the generous, sustained, intentional supply of doctrine that builds the qualities Peter lists in sequence. Each quality supplies the foundation for the next. The sequence is doctrinal orientation in action — faith supplemented by virtue supplemented by knowledge supplemented by self-control, all the way through to love. The qualities that are yours and increasing keep you from being ineffective. The qualities that are absent produce the ineffectiveness that stagnation always delivers.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Epignosis building — now what it does to the mirror</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Mirror and the Word — Divine Perspective on the Self</span>
+    </div>
+    <p class="phase-desc">The doctrinally oriented believer sees his soul from a divine perspective instead of seeing himself dully in a mirror and forgetting who he is when the mirror is taken away. The James mirror is the most precise image of the undisciplined soul in the New Testament — the man who looks at his natural face, walks away, and immediately forgets what he saw. The undisciplined soul uses the Word of God as a mirror to confirm what it already believes about itself — glances at the reflection, notes what is flattering, ignores what is not, and moves on unchanged. The doctrinally oriented believer uses the Word differently. He looks into it as a window, not a mirror. He sees not his own reflection but the divine perspective on his condition — the accurate self-assessment that grace orientation produces, the judgment of self that confession requires, the identity in Christ that the seven imputations established. What he sees stays with him because it has been metabolized into the right lobe where it becomes the frame of reference for the daily life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">James 1:23–25</div>
+      <div class="verse">"For if anyone is a hearer of the word and not a doer, he is like a man who looks intently at his natural face in a mirror. For he looks at himself and goes away and at once forgets what he was like. But the one who looks into the perfect law, the law of liberty, and perseveres, being no hearer who forgets but a doer who acts, he will be blessed in his doing."</div>
+      <div class="note">Perseveres — παραμείνας, remaining alongside, staying with it. The doctrinally oriented believer does not glance and walk away. He stays with the Word — the daily seek, the daily reception, the daily metabolization under the filling — until the divine perspective on his condition has been transferred from the mirror to the right lobe and is no longer dependent on the mirror's presence to be operative. The blessing is not in the looking. It is in the doing that the looking that perseveres produces. Hearing without doing is the Meribah response to the Word — the provision present, the doctrine available, the word preached, and the profit absent because the hearing was not mixed with the faith that does.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 3:18</div>
+      <div class="verse">"And we all, with unveiled face, beholding the glory of the Lord, are being transformed into the same image from one degree of glory to another. For this comes from the Lord who is the Spirit."</div>
+      <div class="note">With unveiled face — the contrast with Moses whose face was veiled because Israel could not bear the glory. The Church Age believer approaches the Word with unveiled face — the veil torn at the cross, the access permanent, the filling available, the Spirit present to metabolize what is received into the transformation that follows. Being transformed — present passive, ongoing process, the Spirit doing the transforming as the believer keeps the face unveiled and the reception open. From one degree of glory to another — the progressive doctrinal orientation producing the progressive transformation of the image of God in the advancing believer. The mirror that James describes is the veiled mirror — the glance that produces no transformation. The unveiled face beholding the glory of the Lord is the doctrinal orientation that produces the transformation that persists.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The divine perspective operative — now the self-judgment it enables</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">Effective Self-Judgment — Confession, Restoration, and the Place of Refuge</span>
+    </div>
+    <p class="phase-desc">The doctrinally oriented believer has the interior apparatus for effective self-judgment — the properly functioning conscience operating in the filling of the Spirit, the metabolized standard from the right lobe providing the measure, the humility of grace orientation removing the self-protective resistance to the judgment the Word produces. When sin interrupts the filling, confession is the immediate response — not prolonged self-condemnation, not the performance of penitential emotion, not the extended rehearsal of the failure. The known sin named, the forgotten sin covered, the filling restored, the advance resumed. And when the no-water situation arrives — when the pressure of circumstance threatens to overwhelm the objective thinking that the advance requires — the faith-rest drill draws from the epignosis in the right lobe and delivers the doctrinal conclusion that is the place of refuge. The doctrinally oriented believer is never without resources in a crisis because the crisis is exactly the condition that the deposited doctrine was always designed to address.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 11:31–32</div>
+      <div class="verse">"But if we judged ourselves truly, we would not be judged. But when we are judged by the Lord, he disciplines us so that we may not be condemned along with the world."</div>
+      <div class="note">If we judged ourselves truly — the effective self-judgment of the doctrinally oriented believer operating from the metabolized standard in the right lobe. The self-judgment that produces confession is the self-judgment that short-circuits the escalating divine discipline before it reaches the intensive stage. The believer who judges himself accurately and quickly — who names the sin to the Father without extended self-justification or self-condemnation — is the believer who is moving continuously between confession and filling rather than accumulating the unconfessed state that the escalating discipline addresses. The doctrinal orientation provides both the standard for the judgment and the humility to apply it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 119:11</div>
+      <div class="verse">"I have stored up your word in my heart, that I might not sin against you."</div>
+      <div class="note">Stored up — צָפַנְתִּי, I have treasured, hidden away, reserved. The Hebrew word carries the image of the strategic reserve — the doctrine deposited in the right lobe not merely as information but as the operational resource that the crisis will draw from. The doctrinal orientation that stores the Word in the heart is the orientation that produces the automatic response to temptation — the faith-rest drill engaging before the crisis has fully developed, the deposited doctrine meeting the temptation at the point of the lust pattern's first press, the sin prevented not by willpower but by the Word already in residence at the point where the temptation arrives. Jesus in the wilderness — the Word in His mouth at every point of Satan's pressure — is the model. The Word stored up is the Word available in the moment it is needed.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 46:1</div>
+      <div class="verse">"God is our refuge and strength, a very present help in trouble."</div>
+      <div class="note">A very present help — the epignosis-driven faith-rest drill delivering the doctrinal conclusion that names the refuge precisely. The doctrinally oriented believer does not search for a refuge when the crisis arrives. He has one — stored, metabolized, accessible, operative. The refuge is not a feeling he generates or a location he reaches. It is the God he knows through the metabolized Word — the God whose omnipotence, immutability, veracity, and love have been deposited in the right lobe through the daily discipline of the doctrinal orientation. The refuge is present — very present — because the doctrine that names it is resident. The crisis does not create the refuge. The doctrinal orientation created it in advance of the crisis, and the crisis only reveals what was always there.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The refuge operational — now the pivot it produces in history</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Personal Pivot — All Meaning, Purpose, and Direction Known</span>
+    </div>
+    <p class="phase-desc">The doctrinally oriented believer knows who he is, where he is, and what he is for — because the Word has told him and the Spirit has metabolized the telling into the right lobe where it has become the operating frame of reference for every decision, every relationship, every circumstance of the daily life. All meaning is known because it is taught by God. All purpose is known because the plan of God has been deposited as doctrine and the believer's place in it has been revealed through the progressive deepening of the epignosis. All direction is known because the principles of the Word that the Spirit has metabolized provide the navigational system that the advancing believer operates from. Knowing God and being known by God are the same movement — the doctrinal orientation toward God producing the progressive knowing that John 17:3 names as eternal life, and the God who already knows the believer perfectly drawing him deeper into that knowing through the Word that the doctrinal orientation keeps him receiving. This is the personal pivot — the point at which the believer's own history turns, insomuch as he metabolizes doctrine in his soul.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">John 17:3</div>
+      <div class="verse">"And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</div>
+      <div class="note">This is eternal life — not a destination reached at physical death, not a future state to be entered after the Rapture. This. Present tense, present reality, the ongoing progressive knowing of God that the doctrinal orientation sustains and deepens. The doctrinal orientation is not the means to the end of knowing God — it is the knowing of God in the act of orientation. The believer who seeks the Word is the believer who is finding God in the seeking. The epignosis that builds in the right lobe is the knowing of God accumulating in the soul. Knowing God and being known by God are the same movement from two sides — the believer oriented toward God through the Word, God drawing the believer deeper into the relationship that salvation established and the doctrinal orientation advances.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Jeremiah 9:23–24</div>
+      <div class="verse">"Thus says the LORD: 'Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches, but let him who boasts boast in this, that he understands and knows me, that I am the LORD who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the LORD.'"</div>
+      <div class="note">Let him who boasts boast in this — that he understands and knows me. Not the human wisdom that the doctrinal orientation supersedes. Not the human strength that the exchanged divine strength replaces. Not the human riches that the grace pipeline's provision dwarfs. The single boast worth making is the knowing of God — the epignosis that the doctrinal orientation produces, the progressive relationship with the God who practices steadfast love, justice, and righteousness in the earth. The doctrinally oriented believer's personal pivot is not his achievement, his intelligence, his moral record, or his spiritual credentials. It is the knowing of God that the Word has produced in him and that God delights in. This is what all the meaning, purpose, and direction flow from. This is what makes the personal pivot personal.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 1:1–3</div>
+      <div class="verse">"Blessed is the man who walks not in the counsel of the wicked, nor stands in the way of sinners, nor sits in the seat of scoffers; but his delight is in the law of the LORD, and on his law he meditates day and night. He is like a tree planted by streams of water that yields its fruit in its season, and its leaf does not wither. In all that he does, he prospers."</div>
+      <div class="note">His delight is in the law of the LORD — the doctrinal orientation named at its most foundational level as delight. Not obligation. Not discipline imposed from outside. The genuine delight of the soul that has been made alive, that recognizes the Word as the bread it was designed to live on, that meditates day and night not because the schedule demands it but because the orientation has made the Word the natural center of gravity of the daily life. Planted by streams of water — not dependent on rain, not vulnerable to drought, the roots reaching the permanent water supply regardless of surface conditions. The doctrinally oriented believer is the tree — the doctrine is the stream — and the fruit comes in its season, not forced, not performed, but yielded by the tree that is in its right place drawing from its right source. In all that he does, he prospers. This is the personal pivot. This is what the doctrinal orientation was always designed to produce.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Doctrinal Orientation — The Fifth Problem-Solving Device</div>
+    <div class="hinge-text">
+      The soul that knows it is alive and hungry<br>
+      will seek to fulfill that hunger<br>
+      from the only legitimate source.<br><br>
+      Seek it like silver.<br>
+      Search for it as hidden treasure.<br>
+      Active participatory waiting —<br>
+      the exchange of human strength for divine.<br><br>
+      Not blind faith — knowing trust.<br>
+      Not gnosis — epignosis.<br>
+      Line upon line, precept upon precept,<br>
+      the Word metabolized into the right lobe<br>
+      where it becomes the frame of reference<br>
+      for every decision of the daily life.<br><br>
+      The mirror left behind.<br>
+      The unveiled face beholding the glory.<br>
+      Effective self-judgment — confession, restoration, refuge.<br>
+      The deposited doctrine meeting the crisis<br>
+      at the point where the crisis arrives.<br><br>
+      All meaning known because it is taught by God.<br>
+      All purpose known because the plan has been revealed.<br>
+      All direction known because the Word provides the navigation.<br><br>
+      Knowing God and being known by God —<br>
+      the same movement from two sides.<br><br>
+      This is the personal pivot.<br>
+      This is what the doctrinal orientation<br>
+      was always designed to produce.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
