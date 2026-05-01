@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propitiation — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 029</div>
+    <h1>Propitiation</h1>
+    <div class="subtitle">The Satisfaction of the Divine Integrity — God Facing the Cross</div>
+  </header>
+
+  <p class="intro">
+    Propitiation is the Godward transaction of the cross. Where redemption faces the slave and names what the cross accomplished for the bondage, propitiation faces the divine integrity and names what the cross accomplished for God. The wrath of God against sin — the holy, righteous, judicial response of perfect integrity to the violation of its standard — had to be fully satisfied before a single human being could be justified. Christ did not merely demonstrate God's love at the cross. He absorbed the full weight of divine wrath against sin so completely that there is nothing left for the believer to face. God is propitiated. The integrity has been satisfied. The cross closed the account.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">What Propitiation Means — The Word the Translators Contested</span>
+    </div>
+    <p class="phase-desc">The Greek word is ἱλαστήριον — hilastērion. In the Septuagint, the Greek translation of the Hebrew Old Testament, this is the word used for the mercy seat — the lid of the ark of the covenant, the place where the blood of the annual Day of Atonement sacrifice was applied and where God met Israel. Paul uses this word in Romans 3:25 and the writer of Hebrews uses it in Hebrews 9:5. The connection is intentional — Christ is the true mercy seat, the place where the blood is applied and God is satisfied. The question that divided translators in the twentieth century is whether the word means propitiation — the satisfaction of divine wrath — or expiation — the removal of sin. C.H. Dodd argued that the word carried no idea of appeasing divine wrath, that the concept of an angry God demanding satisfaction was a pagan idea imported into Christianity, and that the word should be translated expiation. The RSV followed him. The result was the theological evacuation of the cross — a cross that cleanses the sinner but does not satisfy the Father.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:25</div>
+      <div class="verse">"…whom God put forward as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins."</div>
+      <div class="note">To show God's righteousness — the purpose of the propitiation is the vindication of the divine integrity. God had passed over former sins — the sins of the Old Testament believers were covered by the animal sacrifices that pointed toward the cross without permanently satisfying divine integrity. The question hanging over the entire Old Testament was whether God's justice was compromised by that passing over. The cross answers the question. The propitiation demonstrates that God is just — the divine integrity has been fully satisfied, not merely deferred. The wrath against sin that righteousness demanded and justice was obligated to administer has been fully executed on the substitute. God is both just and the justifier — both attributes operating simultaneously in the same direction toward the same end.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 2:2 / 1 John 4:10</div>
+      <div class="verse">"He is the propitiation for our sins, and not for ours only but also for the sins of the whole world." / "In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins."</div>
+      <div class="note">The propitiation for the sins of the whole world — the scope of the propitiation is universal. The satisfaction of the divine integrity at the cross was sufficient for every human being who has ever lived. The propitiation is not limited by the number of people who receive it. It is limited only by the volition of those who reject it. In this is love — John uses the propitiation as the definition of divine love in action. Not the sentimental love of a God who overlooks sin because He is fundamentally permissive. The love that sent His Son to be the propitiation — the love that motivated the most costly transaction in the history of existence, the love that did not spare its own Son but gave Him up to absorb the full weight of divine wrath against the sin of the world. That is what love looks like from the divine side.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The word established — now the mercy seat it points to</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Mercy Seat — The Shadow and the Reality</span>
+    </div>
+    <p class="phase-desc">The mercy seat was the gold lid of the ark of the covenant — the specific place in the holy of holies where, once a year on the Day of Atonement, the high priest sprinkled the blood of the sacrifice and God was present to meet His people. The Levitical sacrificial system was not the solution to the problem of sin. It was the annual demonstration that the problem could not yet be solved — that the blood of bulls and goats could not permanently satisfy divine integrity, that the sacrifice had to be repeated because it was never final, that the holiest moment in Israel's religious calendar was a shadow pointing toward a reality that had not yet arrived. When Paul uses the word ἱλαστήριον in Romans 3:25, every reader of the Septuagint hears the entire Levitical atonement system compressed into one word and then superseded by it. Christ is the mercy seat. His blood is the final application. The high priest has entered the true holy of holies once for all.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 9:11–12</div>
+      <div class="verse">"But when Christ appeared as a high priest of the good things that have come, then through the greater and more perfect tent (not made with hands, that is, not of this creation) he entered once for all into the holy places, not by means of the blood of goats and calves but by means of his own blood, thus securing an eternal redemption."</div>
+      <div class="note">Once for all — ἐφάπαξ. The annual entry of the Levitical high priest into the holy of holies was a repetition that announced its own inadequacy — if once had been sufficient, once would have been enough. The repetition was the confession that the shadow could not do what the reality would do. Christ entered the true holy of holies once — not the Jerusalem Temple, which is a copy of the heavenly reality — by means of His own blood. Not the blood of goats and calves, which could not permanently satisfy divine integrity. His own blood — the sinless blood of the impeccable humanity, the only blood that could satisfy what no animal blood had ever permanently satisfied. The eternal redemption secured by the once-for-all entry is the final satisfaction of the divine integrity that the mercy seat pointed toward for fifteen hundred years.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 10:4, 10–12</div>
+      <div class="verse">"For it is impossible for the blood of bulls and goats to take away sins." / "And by that will we have been sanctified through the offering of the body of Jesus Christ once for all. And every priest stands daily at his service, offering repeatedly the same sacrifices, which can never take away sins. But when Christ had offered for all time a single sacrifice for sins, he sat down at the right hand of God…"</div>
+      <div class="note">He sat down — the most theologically significant posture in the book of Hebrews. The Levitical priests never sat down. There were no chairs in the Tabernacle or the Temple because the work was never finished. The repetition of the sacrifice was the structural confession of the shadow's inadequacy. Christ sat down because the work was finished. Once for all. A single sacrifice. The propitiation complete. The divine integrity satisfied. The wrath absorbed. Nothing remaining to be done, nothing to be added, nothing to be repeated. Any system that requires the sacrifice to be re-presented — that insists Christ must stand again at any altar anywhere in the world — is the system that contradicts the posture of the seated Son at the right hand of the Father.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The mercy seat superseded — now the wrath that the propitiation absorbed</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Wrath of God — What Righteousness Required and Justice Executed</span>
+    </div>
+    <p class="phase-desc">The wrath of God is not an embarrassing anthropomorphism to be translated away by liberal theology. It is the necessary consequence of the divine integrity confronting sin. Divine righteousness is absolute — it cannot tolerate sin, cannot overlook it, cannot reduce the standard to accommodate human failure. Divine justice is the administrator of what righteousness demands — it must execute the penalty that the violation of the standard requires. The wrath of God is the name for this judicial response of perfect integrity to the violation of its standard — not the rage of an unpredictable deity but the consistent, righteous, judicial response of the immutable God whose character will not permit Him to treat sin as acceptable. The propitiation absorbed this wrath completely. There is nothing left for the believer to face because the substitute faced it all.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 1:18</div>
+      <div class="verse">"For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men, who by their unrighteousness suppress the truth."</div>
+      <div class="note">The wrath of God is revealed — not hidden, not theoretical, not metaphorical. The judicial response of the divine integrity to the violation of its standard is a revealed reality — visible in history, operating in the present, moving toward its ultimate expression at the final judgment. The propitiation does not eliminate the wrath of God. It absorbs it on behalf of the believer. The wrath that is revealed against all ungodliness and unrighteousness has been executed at the cross on the One who bore it in the place of the ones who deserved it. The believer stands not in the path of the wrath but behind the propitiation — sheltered by what Christ absorbed, secure in what the divine integrity declared satisfied.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:9</div>
+      <div class="verse">"Since, therefore, we have now been justified by his blood, much more shall we be saved by him from the wrath of God."</div>
+      <div class="note">Saved from the wrath of God — the practical consequence of the propitiation for the advancing believer. The much more argument of Romans 5 runs from the greater to the lesser — if God justified the enemy through the blood at the cross (the greater provision), He will certainly save the son from the wrath (the lesser provision). The propitiation is not merely a past historical event that has no present relevance. It is the permanent ground of the believer's security from divine wrath — not because the wrath has been eliminated from the divine character but because the propitiation has fully satisfied what the wrath required. The blood stands between the believer and the wrath. The blood is sufficient. The propitiation is complete.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The wrath absorbed — now what a satisfied God is free to provide</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Satisfied God — What Propitiation Makes Possible</span>
+    </div>
+    <p class="phase-desc">The believer who understands propitiation does not approach a God who must be continuously appeased — whose favor must be maintained by sustained moral performance, whose anger must be managed by the accumulation of religious merit. He approaches a God who has been fully satisfied by the propitiation of Christ. The divine integrity that demanded the penalty has received it in full. The justice that executed it has declared it sufficient. The righteousness that required it has been vindicated. God is propitiated. What this means for the advancing believer is the most liberating reality in the Christian life — the confidence toward God that Hebrews 4:16 commands is not presumption. It is the appropriate response to a completed propitiation. The believer draws near with confidence not because he has earned the right but because the One who paid the price has secured it for him permanently.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:14–16</div>
+      <div class="verse">"Since then we have a great high priest who has passed through the heavens, Jesus, the Son of God, let us hold fast our confession. For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin. Let us therefore with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">The throne of grace — the mercy seat transformed by the propitiation from the place where wrath was deferred into the throne where grace is dispensed. The Levitical high priest entered the holy of holies once a year in fear, unable to remain, the veil separating the people from the divine presence. The Church Age believer approaches the throne of grace with confidence — παρρησίαν, boldness, the freedom of speech that belongs to the one who has been granted full access. The propitiation that Christ accomplished by passing through the heavens once for all is the ground of the confidence. Not the believer's moral record. Not the believer's sustained performance. The completed propitiation of the great high priest who passed through the heavens and sat down.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:1–2</div>
+      <div class="verse">"Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ. Through him we have also obtained access by faith into this grace in which we stand, and we rejoice in hope of the glory of God."</div>
+      <div class="note">Peace with God — the relational consequence of the propitiation. The enmity between the sinner and the God whose integrity the sinner's existence violated has been addressed at the cross. The propitiation satisfied what the enmity demanded. The reconciliation restored what the enmity had severed. Peace with God is not a feeling the believer generates. It is the objective reality produced by the completed propitiation — the legal ground on which the advancing believer stands when he draws near to the throne with confidence. Access into this grace in which we stand — the grace pipeline that the propitiation opened, flowing from the satisfied integrity of God toward the righteousness that the fourth imputation placed in the believer at salvation.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The satisfied God — now the blood that accomplished it</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Blood of Christ — Not Metaphor but Mechanism</span>
+    </div>
+    <p class="phase-desc">The blood of Christ is the consistent and precise term throughout the New Testament for the substitutionary, physical death of the impeccable humanity of Jesus Christ as the mechanism of the propitiation. It is not a figure of speech for the death of Christ in general. It is the specific reference to the sacrificial death — the shedding of the sinless blood of the qualified substitute as the ransom price that satisfied the divine integrity. The Levitical sacrificial system established the principle across fifteen hundred years: without the shedding of blood there is no forgiveness. The blood of animals pointed toward the blood of the Lamb — the one sacrifice that the animal blood was always anticipating, the one application that would satisfy what every prior application had only deferred.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 9:22</div>
+      <div class="verse">"Indeed, under the law almost everything is purified with blood, and without the shedding of blood there is no forgiveness of sins."</div>
+      <div class="note">Without the shedding of blood there is no forgiveness — the principle that the entire Levitical system established and that the cross fulfilled. The divine integrity cannot overlook sin. It cannot reduce the standard to accommodate human failure. The penalty must be paid, the blood must be shed, the death must occur. Fifteen hundred years of animal sacrifice established this principle in the consciousness of the covenant people — established it so thoroughly that when the blood of the Lamb was shed at the cross, every reader of the Levitical code understood immediately what had happened. The shadow had met the reality. The annual deferred payment had become the once-for-all final settlement. The blood of the Lamb is the mechanism of the propitiation — the specific act of the substitutionary death that satisfied what the divine integrity required.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Leviticus 17:11</div>
+      <div class="verse">"For the life of the flesh is in the blood, and I have given it for you on the altar to make atonement for your souls, for it is the blood that makes atonement by the life."</div>
+      <div class="note">The life of the flesh is in the blood — the principle that makes the blood of Christ the appropriate mechanism of the propitiation. Life is in the blood. The death of the substitute is accomplished through the shedding of the blood. The substitution requires that the life of the substitute be given in the place of the life of the one who deserves the death. The animal sacrifices gave the life of the animal in the place of the life of the worshipper — temporarily, inadequately, as a shadow. The cross gave the life of the Son of God in the place of the life of every human being who would ever believe — permanently, completely, as the reality that the shadow always pointed toward. The blood that makes atonement is the blood that carries the life that is given. At the cross, the infinite life of the impeccable humanity of Christ was given in the place of every finite life that deserved the death the sin required.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The blood named — now the practical meaning for the advancing believer</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Advancing Believer and the Completed Propitiation</span>
+    </div>
+    <p class="phase-desc">The propitiation is not merely a historical event that the believer acknowledges as part of his doctrinal system. It is the living foundation of every moment of the believer's relationship with God. When the believer confesses sin and is restored to fellowship, he is not re-propitiating God — he is applying the already-completed propitiation to the specific act that interrupted the filling. When the believer approaches the throne of grace in prayer, he approaches on the basis of the completed propitiation — the satisfied integrity of God that makes the approach possible. When the advancing believer receives divine discipline, he receives it not as the expression of divine wrath against his sin but as the corrective training of the Father whose wrath has been fully absorbed by the propitiation — the discipline is the expression of love operating through the justice that was satisfied at the cross, not the wrath that the cross absorbed. The propitiation changes everything about how the believer relates to God in every moment of the spiritual life.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">Faithful and just to forgive — the propitiation is the ground of the justness of the forgiveness. When the believer confesses, the justice of God forgives — not because the justice is being set aside in favor of mercy but because the justice has already been fully satisfied at the cross. The propitiation paid the penalty. The confession acknowledges the specific act. The justice that was satisfied at the cross applies the completed satisfaction to the confessed sin and forgives on the basis of what has already been executed. Faithful — the immutable character of God guarantees the forgiveness. Just — the completed propitiation makes the forgiveness legally grounded. The believer does not need a new propitiation every time he sins. He needs the application of the one propitiation that was made once for all.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:1</div>
+      <div class="verse">"There is therefore now no condemnation for those who are in Christ Jesus."</div>
+      <div class="note">No condemnation — the positional consequence of the completed propitiation. The wrath of God that righteousness demanded and justice was obligated to execute has been absorbed in full by the propitiation of Christ. There is nothing remaining for the believer to face in the category of condemnation — not in time, not in eternity, not in any circumstance of the daily life or the eschatological future. No condemnation is absolute — it admits of no qualification, no performance condition, no sustained faithfulness requirement. It is the permanent positional reality of the one who is in Christ Jesus — the one for whom the propitiation was applied, the wrath was absorbed, and the divine integrity was fully satisfied. The advancing believer lives and moves and has his being in the no condemnation of the completed propitiation.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Propitiation — The Satisfaction of the Divine Integrity</div>
+    <div class="hinge-text">
+      The wrath of God against sin —<br>
+      the holy, righteous, judicial response<br>
+      of perfect integrity to the violation of its standard —<br>
+      had to be fully satisfied.<br><br>
+      Not deferred. Not overlooked. Not reduced.<br>
+      Fully satisfied.<br><br>
+      Christ is the ἱλαστήριον — the mercy seat.<br>
+      His blood is the final application.<br>
+      The shadow of fifteen hundred years<br>
+      of animal sacrifice met the reality<br>
+      at the cross on Golgotha.<br><br>
+      He sat down.<br>
+      The work is finished.<br>
+      The divine integrity has been satisfied.<br>
+      The wrath has been absorbed.<br>
+      The account is closed.<br><br>
+      The believer does not approach an appeasable God —<br>
+      a God whose favor must be managed<br>
+      by sustained moral performance.<br>
+      He approaches a propitiated God —<br>
+      a God whose integrity has been fully satisfied<br>
+      by the once-for-all sacrifice of the Son<br>
+      who passed through the heavens<br>
+      and sat down.<br><br>
+      There is therefore now no condemnation<br>
+      for those who are in Christ Jesus.<br>
+      Draw near with confidence.<br>
+      The throne of grace is open.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

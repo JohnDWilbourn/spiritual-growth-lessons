@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconciliation — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 030</div>
+    <h1>Reconciliation</h1>
+    <div class="subtitle">The Barrier Removed — The Enmity Ended — The Relationship Restored</div>
+  </header>
+
+  <p class="intro">
+    Reconciliation is the relational transaction of the cross. Where redemption names what the cross accomplished for the bondage, and propitiation names what the cross accomplished for the divine integrity, reconciliation names what the cross accomplished for the relationship. Every human being without exception enters the world as an enemy of God — not the enemy God made him but the enemy the fall made him, the creature whose spiritual death and sin nature put him in a state of objective hostility to the God whose integrity he violated by his very existence in a fallen condition. The cross removed the barrier that the hostility produced. The reconciliation restored what the fall severed. And the restored relationship is not merely the absence of enmity — it is the foundation of the ambassador function, the basis for the royal priesthood, the ground on which the advancing believer stands when he approaches the throne and when he represents the King to the world.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Greek Vocabulary — Exchange and Restoration</span>
+    </div>
+    <p class="phase-desc">The Greek words for reconciliation are καταλλαγή — katallagē — and the verb καταλλάσσω — katallassō. The root meaning is the exchange — the changing of one thing for another, the substitution of one state for another. In commercial usage it refers to the exchange of currency. In relational usage it refers to the restoration of a broken relationship through the removal of the cause of the breach. The reconciliation in the New Testament is the divine act by which God changed the state of the relationship from enmity to peace — not by overlooking the cause of the enmity but by removing it through the propitiation and redemption of the cross. God did not reconcile Himself to sin. He reconciled sinners to Himself by addressing the sin that produced the enmity. The exchange is one-directional — God reconciles the world to Himself, not Himself to the world. The enmity was on the human side, produced by sin. The reconciliation is God's act, removing the cause of the enmity from the human side through the cross.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:18–19</div>
+      <div class="verse">"All this is from God, who through Christ reconciled us to himself and gave us the ministry of reconciliation; that is, in Christ God was reconciling the world to himself, not counting their trespasses against them, and entrusting to us the message of reconciliation."</div>
+      <div class="note">All this is from God — the reconciliation is entirely the divine initiative. God reconciled us to himself — not we reconciled God to us. The direction is consistent throughout the New Testament. The enmity that the fall produced was on the human side. The act of removal was on the divine side. God through Christ addressed the cause of the enmity — the trespasses — by not counting them against the reconciled. Not counting their trespasses — the same judicial act of the propitiation and redemption described from the relational angle. The trespasses that produced the enmity have been addressed at the cross. The barrier has been removed. The relationship has been restored. And the restored relationship immediately generates a commission — the ministry of reconciliation, the message entrusted to the reconciled, the ambassador function that the restored relationship makes possible.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:10–11</div>
+      <div class="verse">"For if while we were enemies we were reconciled to God by the death of his Son, much more, now that we are reconciled, shall we be saved by his life. More than that, we also rejoice in God through our Lord Jesus Christ, through whom we have now received reconciliation."</div>
+      <div class="note">While we were enemies — the pre-reconciliation state named without softening. Not strangers. Not distant. Enemies. The fall produced an objective hostility between the creature and the Creator — not the emotional hostility of personal animosity but the judicial hostility of the violated standard, the structural enmity of the spiritually dead creature before the living God whose integrity requires what the creature cannot provide. Reconciled by the death of his Son — the cross as the specific mechanism of the reconciliation. Much more — the logical argument from the greater to the lesser. If God reconciled enemies through the death of His Son (the greater provision), He will certainly sustain the sons through His life (the lesser provision). The reconciliation is the foundation of everything that follows in the spiritual life.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The vocabulary established — now the barrier the reconciliation removed</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Barrier — What Stood Between the Creature and the Creator</span>
+    </div>
+    <p class="phase-desc">The barrier between God and man is not an arbitrary wall erected by an exclusive deity. It is the structural consequence of the fall — the spiritual death that the second imputation produced, the sin nature that Adam's transgression generated, the condemnation that the imputation of Adam's original sin established before the first personal sin was ever committed. The divine integrity cannot have fellowship with spiritual death. The righteousness of God cannot coexist with the unrighteousness of the fallen creature. The justice of God cannot declare innocent what the standard has condemned. The barrier is the inevitable consequence of the collision between the absolute integrity of God and the absolute depravity of fallen man — neither side capable of yielding, neither side able to bridge the gap by their own resources. The cross removes the barrier entirely — not by reducing the divine standard but by providing the divine provision that meets the standard from the human side through the qualified substitute.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:14–16</div>
+      <div class="verse">"For he himself is our peace, who has made us both one and has broken down in his flesh the dividing wall of hostility by abolishing the law of commandments expressed in ordinances, that he might create in himself one new man in place of the two, so making peace, and might reconcile us both to God in one body through the cross, thereby killing the hostility."</div>
+      <div class="note">Broken down the dividing wall of hostility — the barrier named as a dividing wall, the spatial image of an absolute separation. The hostility it represents is the enmity between the fallen creature and the divine integrity — the structural consequence of sin, not a personal grievance to be managed but a judicial condition to be resolved. Killing the hostility — the reconciliation is described as the killing of the hostility itself, not merely the suppression of it or the management of it. The hostility did not survive the cross. The barrier was broken down not by reducing the standard but by meeting it through the sacrifice of the One who abolished the law of commandments expressed in ordinances — not by eliminating the law but by fulfilling it in its entirety in the impeccable humanity of Christ and in bearing its curse in the substitutionary death.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 1:21–22</div>
+      <div class="verse">"And you, who once were alienated and hostile in mind, doing evil deeds, he has now reconciled in his body of flesh by his death, in order to present you holy and blameless and above reproach before him."</div>
+      <div class="note">Alienated and hostile in mind — the pre-reconciliation condition described from both the relational and the mental angle. Alienated — separated from God, the spiritual death that the fall produced. Hostile in mind — the cognitive orientation of the fallen creature toward God, the cosmic system viewpoint that the sin nature generates and the lust pattern sustains. He has now reconciled — the completed act, the present reality. The reconciliation is not in process. It is accomplished. The present tense of the believer's relationship with God is the reconciled state — holy and blameless and above reproach before him. This is not the moral achievement of the advancing believer. It is the positional reality of the reconciliation — the believer presented to God on the basis of what Christ accomplished in the body of flesh by His death, not on the basis of what the believer has produced by his moral effort.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The barrier removed — now the peace the reconciliation produced</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Peace with God — Not the Absence of Conflict but the Presence of Restored Relationship</span>
+    </div>
+    <p class="phase-desc">The peace that the reconciliation produces is not the subjective feeling of inner tranquility. It is the objective reality of the restored relationship — the legal peace that exists between the reconciled believer and the God whose integrity the propitiation satisfied. Romans 5:1 names it precisely: we have peace with God. Not we feel peaceful toward God. Not we have ceased to experience anxiety in God's presence. We have peace with God — the enmity has been objectively removed, the hostility has been killed, the barrier has been broken down, and the relationship between the reconciled creature and the propitiating Creator is the relationship of peace that the cross produced. This peace is the foundation of the confidence toward God that the advancing believer operates from — the objective basis on which the royal priest approaches the throne, on which the royal ambassador represents the King, on which the Spirit-filled believer executes the spiritual life without the paralyzing anxiety of the unreconciled.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:1</div>
+      <div class="verse">"Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ."</div>
+      <div class="note">We have peace with God — εἰρήνην ἔχομεν πρὸς τὸν θεόν. The peace is objective, present, and grounded in the justification that preceded it. The reconciliation that produced the peace did not create a new divine standard for the relationship — it met the existing standard through the propitiation and credited the believer with the righteousness that the standard requires. The peace is not conditional on the believer's subsequent performance. It is the consequence of the justification that the fourth imputation established — the divine righteousness credited to the account of the believing sinner, the judicial declaration that the divine integrity required satisfied, and the resulting relationship of peace between the justified creature and the justifying God.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Isaiah 53:5</div>
+      <div class="verse">"But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."</div>
+      <div class="note">The chastisement that brought us peace — the substitutionary bearing of the penalty is the mechanism of the peace. The chastisement belonged to the transgressor. It fell on the substitute. And the consequence of the chastisement falling on the substitute rather than on the transgressor is peace — not the absence of chastisement in the abstract but the specific peace that results from the chastisement having been paid. The chastisement that our transgressions deserved and that the divine integrity demanded has been fully executed on the One who bore it in our place. The peace that follows is the peace of the completed transaction — the account closed, the penalty paid, the relationship restored, the barrier removed.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Peace established — now the scope of the reconciliation</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Scope of the Reconciliation — All Things</span>
+    </div>
+    <p class="phase-desc">The reconciliation accomplished at the cross is not limited to the relationship between God and individual human beings. It encompasses the entire fallen creation — the cosmic scope of the disruption that the angelic fall and the human fall produced in the universe that God created good. Colossians 1:20 names the scope explicitly — all things, whether on earth or in heaven, reconciled through the blood of the cross. The enmity between the fallen creation and its Creator extends beyond the human race. The cosmic conflict that preceded human history, the corruption of the creation that the curse introduced, the disruption of the divine order that sin produced at every level of reality — all of this is addressed by the reconciliation of the cross. The blood of Christ is the mechanism of the cosmic restoration that the Kingdom will fully realize and that the eternal state will consummate.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 1:19–20</div>
+      <div class="verse">"For in him all the fullness of God was pleased to dwell, and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross."</div>
+      <div class="note">All things, whether on earth or in heaven — the cosmic scope of the reconciliation. The enmity between the fallen creation and the Creator is not limited to the human level. The angelic conflict, the corruption introduced at the fall, the disruption of the divine order at every level of the created universe — all of it addressed by the blood of the cross. Making peace by the blood of his cross — the mechanism is the same as the individual reconciliation, applied to the cosmic scope. The cross is the hinge point of all of redemptive history — the moment at which the cosmic enmity was legally resolved, even if the full realization of the resolution awaits the Kingdom and the eternal state. The advancing believer lives in the period between the legal resolution of the reconciliation at the cross and its full experiential realization in the Kingdom.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 8:19–21</div>
+      <div class="verse">"For the creation waits with eager longing for the revealing of the sons of God… in hope that the creation itself will be set free from its bondage to corruption and obtain the freedom of the glory of the children of God."</div>
+      <div class="note">The creation waits — the cosmic dimension of the reconciliation's completion. The fallen creation participates in the consequences of the reconciliation accomplished at the cross, awaiting the full realization that the revealing of the sons of God at the Rapture and the return of Christ will produce. The freedom of the glory of the children of God is the freedom that the reconciliation secured for the human race extended to the entire created order. The reconciliation is not merely individual and spiritual. It is cosmic and material — the restoration of the entire creation to the relationship with the Creator that the fall severed.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The cosmic scope — now the ambassador function the reconciliation grounds</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Ministry of Reconciliation — The Ambassador Function Grounded</span>
+    </div>
+    <p class="phase-desc">The reconciliation accomplished at the cross immediately generates a commission. You cannot be reconciled to the King and not serve as His ambassador. You cannot receive the peace that the cross produced and not carry the message of reconciliation to those who are still enemies. The ministry of reconciliation is the natural overflow of the received reconciliation — the reconciled believer functioning as the ambassador of the reconciling God, carrying the message of the completed propitiation to the world that the propitiation was sufficient for. This is the doctrinal ground of Lesson 003's royal ambassador — the commission that the reconciliation enables. The ambassador represents a King he is at peace with. The reconciliation is what makes the peace possible. The peace is what makes the ambassadorship possible. The ambassadorship is what makes the advance of the Gospel in history possible.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:20</div>
+      <div class="verse">"Therefore, we are ambassadors for Christ, God making his appeal through us. We implore you on behalf of Christ, be reconciled to God."</div>
+      <div class="note">Ambassadors for Christ — the identity that the reconciliation produces. The reconciled believer is not merely a grateful recipient of the divine provision. He is the commissioned representative of the reconciling God — the ambassador who carries the message of reconciliation to the world that is still in the state of enmity that the cross addressed. God making his appeal through us — the divine initiative continues through the human instrument. The God who initiated the reconciliation by sending His Son now extends the offer of reconciliation through the ambassador whom the Son has commissioned. Be reconciled to God — the content of the ambassador's message is the completed reconciliation, the finished propitiation, the removed barrier, the peace available to every human being who will receive the completed transaction by faith.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 2:9</div>
+      <div class="verse">"But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."</div>
+      <div class="note">Called you out of darkness into his marvelous light — the reconciliation described as the transition from the pre-reconciliation state of enmity and darkness to the reconciled state of relationship and light. The royal priesthood that the believer holds — established in Lesson 002 — is grounded in the reconciliation. The priest approaches God on behalf of the people. The ambassador approaches the world on behalf of God. Both functions require the reconciliation that the cross accomplished. Without the reconciliation there is no access to the throne. Without the access to the throne there is no royal priesthood. Without the royal priesthood there is no ambassador function. Without the ambassador function the message of reconciliation does not go out. The cross is the ground of everything the advancing believer does in both directions — toward God and toward the world.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The ambassador commissioned — now the three doctrines held together</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">Redemption, Propitiation, Reconciliation — Three Angles on One Cross</span>
+    </div>
+    <p class="phase-desc">The three doctrines name the same transaction from three different angles simultaneously. Redemption faces the slave — the cross purchased the human being out of three bondages by paying the ransom price of the blood of Christ. Propitiation faces the divine integrity — the cross satisfied the wrath of God against sin by the substitutionary absorption of the full judicial penalty that righteousness demanded. Reconciliation faces the relationship — the cross removed the barrier between the alienated creature and the Creator by killing the hostility and restoring the peace that the fall had severed. None of the three is sufficient alone to describe what the cross accomplished. All three are required for the complete picture. The redeemed slave who has been freed from bondage needed the propitiation — without the satisfaction of the divine integrity, the ransom price would have had no legal ground to stand on. The propitiated God who declared the believer justified needed the reconciliation — without the removal of the barrier, the satisfied integrity would have produced a transaction without a relationship. And the reconciled believer who has peace with God needed the redemption — without the purchase out of bondage, the restored relationship would have been a relationship with a slave who could not yet function in the freedom the relationship required.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:24–25</div>
+      <div class="verse">"…and are justified by his grace as a gift, through the redemption that is in Christ Jesus, whom God put forward as a propitiation by his blood, to be received by faith."</div>
+      <div class="note">Redemption and propitiation in the same passage — two angles on the same transaction named side by side. The redemption that is in Christ Jesus — the purchase out of bondage, the slave freed by the ransom price. Whom God put forward as a propitiation by his blood — the Godward satisfaction of the divine integrity, the mercy seat sprinkled with the blood that the Levitical system always pointed toward. The reconciliation that completes the picture — the restored relationship that the propitiation and redemption together produced — is what Romans 5:1 names in the verse that immediately follows the full soteriological statement of Romans 3-4. Justified by faith — we have peace with God. The justified slave is the reconciled creature is the propitiated sinner is the redeemed prisoner. Same person, same moment, same transaction, three angles, one cross.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 2:13–15</div>
+      <div class="verse">"And you, who were dead in your trespasses and the uncircumcision of your flesh, God made alive together with him, having forgiven us all our trespasses, by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross. He disarmed the rulers and authorities and put them to open shame, by triumphing over them in him."</div>
+      <div class="note">The three doctrines visible in one passage. Canceling the record of debt — the redemption, the expiation of the manward transaction, the certificate of debt nailed to the cross. Forgiven all our trespasses — the reconciliation, the not-counting of the trespasses that the cross accomplished. He disarmed the rulers and authorities — the cosmic dimension of the propitiation's victory, the powers of the cosmic system stripped of their claim on the reconciled, redeemed, propitiated believer. The cross accomplished everything. Redemption purchased the slave. Propitiation satisfied the integrity. Reconciliation restored the relationship. And the advancing believer who understands all three approaches the throne, walks in the filling, executes the spiritual life, and carries the message of reconciliation to a world that is still in the state all three of these doctrines addressed — and that the cross is fully sufficient to address again, in every generation, for every human being who will receive by faith what the blood of Christ has fully accomplished.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Reconciliation — The Barrier Removed, the Relationship Restored</div>
+    <div class="hinge-text">
+      While we were enemies —<br>
+      alienated, hostile in mind, doing evil deeds —<br>
+      God reconciled us to himself<br>
+      through the death of His Son.<br><br>
+      The barrier broken down.<br>
+      The hostility killed.<br>
+      The dividing wall demolished in His flesh.<br>
+      Peace — not the absence of conflict<br>
+      but the presence of the restored relationship.<br><br>
+      All things reconciled — whether on earth or in heaven —<br>
+      making peace by the blood of His cross.<br><br>
+      Therefore we are ambassadors for Christ.<br>
+      God making His appeal through us.<br>
+      Be reconciled to God —<br>
+      the message of the completed transaction,<br>
+      carried by the ones who received it first,<br>
+      to the world that the propitiation was sufficient for.<br><br>
+      Three doctrines. One cross.<br>
+      Redemption — the slave purchased.<br>
+      Propitiation — the integrity satisfied.<br>
+      Reconciliation — the relationship restored.<br><br>
+      We have peace with God<br>
+      through our Lord Jesus Christ.<br>
+      Draw near. Advance. Proclaim.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>

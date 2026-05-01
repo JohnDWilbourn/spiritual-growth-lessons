@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redemption — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 028</div>
+    <h1>Redemption</h1>
+    <div class="subtitle">The Price Paid — The Slave Purchased — The Freedom Granted</div>
+  </header>
+
+  <p class="intro">
+    Redemption is the first of three doctrines that name what the cross accomplished from three different angles simultaneously. Where propitiation faces God and names what the cross did for the divine integrity, and reconciliation faces the relationship and names what the cross did for the enmity between God and man, redemption faces the slave and names what the cross did for the bondage. Every human being without exception enters the world in three forms of bondage — to sin, to the law, and to the cosmic system. The price paid at the cross purchased the slave out of every bondage simultaneously. The redeemed slave does not return to the slave market. He has been bought with a price.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Greek Vocabulary — What Redemption Actually Means</span>
+    </div>
+    <p class="phase-desc">The New Testament uses three Greek words to express the concept of redemption, each carrying a distinct nuance of the same fundamental transaction. ἀγοράζω — agorazō — means to purchase in the marketplace, to buy. The agora was the marketplace of the Greek city, the commercial center where goods and slaves were bought and sold. To agorazō the believer is to purchase him in the slave market. ἐξαγοράζω — exagorazō — adds the preposition ek, out of, carrying the additional nuance of purchasing out of the slave market — not merely buying but removing from the market entirely. And ἀπολύτρωσις — apolutrōsis — is the most theologically comprehensive term, meaning the release obtained by the payment of a ransom price, the full redemption that results from the ransom being paid. All three words are present in the New Testament's treatment of what the cross accomplished. Together they describe a transaction that is commercial in its structure, military in its imagery, and soteriological in its consequence.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 3:24</div>
+      <div class="verse">"…and are justified by his grace as a gift, through the redemption that is in Christ Jesus."</div>
+      <div class="note">The redemption that is in Christ Jesus — ἀπολύτρωσις, the full release obtained by the payment of the ransom price. Justification and redemption are named in the same clause because they are two angles on the same transaction. Justification names what God declares — the sinner is righteous before the divine standard. Redemption names what Christ paid — the ransom that made the declaration possible. The two doctrines are inseparable at the cross and are received simultaneously by the believer at the moment of faith. The justified believer is the redeemed slave. The redeemed slave is the justified believer. Same person, same moment, same transaction, two different angles.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 6:20 / 1 Corinthians 7:23</div>
+      <div class="verse">"…for you were bought with a price. So glorify God in your body." / "You were bought with a price; do not become slaves of men."</div>
+      <div class="note">Bought with a price — ἠγοράσθητε τιμῆς, purchased at a price, the agorazō vocabulary of the marketplace. The price is named elsewhere as the blood of Christ — 1 Peter 1:18-19. The purchase is complete and irrevocable — the believer has been bought, past tense, accomplished fact. The two applications Paul draws from the doctrine are precise: glorify God in your body, because the body belongs to the One who purchased it; do not become slaves of men, because the slave who has been bought out of the slave market cannot be resold into it. The redeemed slave owes his entire existence — including his body — to the One who paid the ransom.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The vocabulary established — now the three bondages the price purchased freedom from</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">Bondage to Sin — Purchased Out of the Slave Market of Sin</span>
+    </div>
+    <p class="phase-desc">The first and most fundamental bondage is to sin itself — the bondage that the second imputation established at physical birth when Adam's original sin was imputed to the genetically formed sin nature. The unredeemed human being is a slave to sin not primarily in the sense of being compelled to commit specific sinful acts but in the deeper sense of being under the mastery of the sin nature, spiritually dead, separated from God, and subject to the penalty of sin which is death. The redemption that the cross accomplishes addresses this bondage at the deepest level — not merely the acts of sin but the condition of slavery that produced them. The blood of Christ is the ransom price that purchases the slave out of the bondage to sin's penalty and opens the way for the sin nature's mastery to be broken through the filling of the Spirit.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 6:17–18</div>
+      <div class="verse">"But thanks be to God, that you who were once slaves of sin have become obedient from the heart to the standard of teaching to which you were committed, and, having been set free from sin, have become slaves of righteousness."</div>
+      <div class="note">Slaves of sin — the pre-redemption condition named precisely. The bondage to sin is not a metaphor. It is the structural condition of the unredeemed human being — spiritually dead, under the mastery of the sin nature, unable to produce the righteousness that divine integrity requires. Having been set free from sin — the redemption accomplished. The freedom is not freedom from the presence of the sin nature — it remains in the physical body until death or the Rapture. It is freedom from sin's mastery, from sin's penalty, from sin's claim on the soul that was purchased at the cross. The redeemed slave is now a slave of righteousness — not compelled by the sin nature but yielded by volition to the divine righteousness that the fourth imputation credited at salvation.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 1:7</div>
+      <div class="verse">"In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace."</div>
+      <div class="note">Redemption through his blood — the ransom price named. The blood of Christ is not a metaphor for the death of Christ in general. It is the specific reference to the substitutionary sacrifice — the sinless blood of the impeccable humanity of Christ, shed as the price that satisfied the divine integrity and purchased the slave from the bondage to sin's penalty. According to the riches of his grace — the measure of the redemption is not the magnitude of the sin but the inexhaustibility of the grace that provided the ransom. The price was not calculated to match the debt. It was provided from the riches of grace — which is to say, it is as inexhaustible as the character of the God who provided it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Free from sin's bondage — now the second bondage the cross addressed</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">Bondage to the Law — Purchased Out from Under the Curse</span>
+    </div>
+    <p class="phase-desc">The second bondage is to the law — specifically to the curse of the law that the Mosaic code pronounced on every human being who failed to keep it perfectly. The law was never designed as a means of salvation. It was designed as an instrument of condemnation — to demonstrate to the human being that he cannot produce the righteousness that divine integrity requires by his own moral effort. The law's function is diagnostic, not remedial. It names the disease without providing the cure. And the disease it names is universal — all have sinned and fall short of the glory of God. The law pronounces a curse on every person who does not keep it in its entirety, and no human being apart from Jesus Christ has ever kept it in its entirety. Redemption purchases the believer out from under that curse.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 3:13</div>
+      <div class="verse">"Christ redeemed us from the curse of the law by becoming a curse for us — for it is written, 'Cursed is everyone who is hanged on a tree.'"</div>
+      <div class="note">Redeemed us from the curse of the law — ἐξηγόρασεν, the exagorazō vocabulary, purchased us out of. The curse of the law is the condemnation that the law's impossible standard pronounced on every human being who failed to meet it — which is every human being without exception. By becoming a curse for us — the substitutionary bearing of the curse. Christ took upon Himself at the cross the full weight of the law's condemnation against the human race. The curse that should have fallen on every person who failed to keep the law in its entirety fell instead on the One who had kept it in its entirety — the only human being who had never violated a single requirement of the law. The substitution is precise. The curse is removed from the one who violated the law and placed on the One who never did.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 4:4–5</div>
+      <div class="verse">"But when the fullness of time had come, God sent forth his Son, born of woman, born under the law, to redeem those who were under the law, so that we might receive adoption as sons."</div>
+      <div class="note">Born under the law, to redeem those who were under the law — the precision of the incarnational strategy. To redeem the human being from the bondage of the law, the Redeemer had to enter the bondage of the law Himself — born under it, subject to it, tested by it. He entered the slave market of the law not as a slave but as the Redeemer — the One who could pay the price because He owed no debt of His own. That we might receive adoption as sons — the positive result of the redemption from the law's bondage. Freedom from the curse produces the adoption, the full family standing of the son who is no longer under the law as a condemning instrument but under grace as the source of the relationship the redemption restored.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Free from the law's curse — now the third bondage</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">Bondage to the Cosmic System — Purchased Out of the World</span>
+    </div>
+    <p class="phase-desc">The third bondage is to the cosmic system — the organized opposition to God's plan that Satan administers through the world system, the flesh, and the lust pattern of the sin nature. The unredeemed human being is not merely a sinner under condemnation and a lawbreaker under the law's curse. He is a prisoner of war in a cosmic conflict that preceded human history — captured at the fall into the bondage of the enemy's system, operating from the enemy's viewpoint, serving the enemy's purposes without knowing it. The redemption of the cross addresses this bondage by purchasing the believer out of the enemy's system — not removing him physically from the world but changing his citizenship, his commanding officer, and his operating system.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Titus 2:14</div>
+      <div class="verse">"…who gave himself for us to redeem us from all lawlessness and to purify for himself a people for his own possession who are zealous for good works."</div>
+      <div class="note">To redeem us from all lawlessness — the third bondage addressed. Lawlessness is not merely the violation of specific legal codes. It is the fundamental orientation of the sin nature and the cosmic system toward the authority of God — the disposition of the creature against the Creator that Satan's rebellion introduced into the universe and the fall transmitted to the human race. The redemption from lawlessness is the purchase of the believer out of the cosmic system's operating orientation and into a new operating system — the Spirit-filled life, the grace pipeline, the doctrinal orientation that replaces the enemy's viewpoint with the divine viewpoint. A people for his own possession — the purchased slave becomes the valued possession of the One who paid the price, not as chattel but as the object of the love that motivated the purchase.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 1:18–19</div>
+      <div class="verse">"…knowing that you were ransomed from the futile ways inherited from your forefathers, not with perishable things such as silver or gold, but with the precious blood of Christ, like that of a lamb without blemish or spot."</div>
+      <div class="note">Ransomed from the futile ways — the exagorazō vocabulary applied to the cosmic system's futile operating principles. The futile ways inherited from the forefathers are the generational transmission of the cosmic system's values — the lust pattern, the human good, the dead works, the self-generated righteousness that the sin nature produces and the world system rewards. Not with silver or gold — the ransom price of the cosmic system's slave market is not a financial transaction. It is the precious blood of Christ — the sinless humanity, the impeccable life, the substitutionary death of the Lamb without blemish. The price is higher than any material commodity because the value of what was purchased is higher than any material commodity — the soul of a human being, created in the image of God, known before the foundation of the world, destined for everlasting life in the presence of the Trinity.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Three bondages — one price — now what the freedom produces</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Price — The Blood of Christ and What It Accomplished</span>
+    </div>
+    <p class="phase-desc">The ransom price of the redemption is named consistently throughout the New Testament as the blood of Christ — a term that carries precise theological content that must not be reduced to a figure of speech. The blood of Christ refers specifically to the substitutionary, physical death of the impeccable humanity of Jesus Christ — the sinless blood shed at the cross as the payment that satisfied the divine integrity and purchased the slave from all three bondages simultaneously. The blood is the price. The cross is the slave market. The resurrection is the receipt. The ascension is the Redeemer returning to the Father with the completed transaction. And the believer at the moment of faith is the slave who hears the price announced and receives the freedom it purchased by the single nonmeritorious act of trust in the One who paid it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 9:12</div>
+      <div class="verse">"…he entered once for all into the holy places, not by means of the blood of goats and calves but by means of his own blood, thus securing an eternal redemption."</div>
+      <div class="note">Securing an eternal redemption — the ἀπολύτρωσις that is eternal, permanent, unrepeatable. The high priest entered the holy of holies once a year with the blood of animals that could never permanently satisfy the divine integrity — the sacrifice had to be repeated because it was never final. Christ entered the true holy of holies once for all with His own blood — the sinless blood of the impeccable humanity — and secured an eternal redemption. Not secured a temporary reduction in bondage. Not secured a probationary release. Secured an eternal redemption — the ἐφάπαξ of Hebrews repeated in the vocabulary of redemption. The slave market has been permanently closed to the one who has been redeemed by the blood of the Lamb. The freedom is as eternal as the blood that purchased it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Revelation 5:9</div>
+      <div class="verse">"And they sang a new song, saying, 'Worthy are you to take the scroll and to open its seals, for you were slain, and by your blood you ransomed people for God from every tribe and language and people and nation…'"</div>
+      <div class="note">From every tribe and language and people and nation — the scope of the redemption is universal in offer, identical in price, and inclusive of every ethnic, linguistic, and national category that exists in human history. The ransom price was not calibrated to the magnitude of the individual's sin or the dignity of his race or the sophistication of his culture. The same blood, the same price, the same freedom, available to every human being from every nation in every generation. The new song of heaven is the song of the redeemed from every slave market the world has ever maintained — all of them purchased by the same ransom, all of them standing before the Lamb who paid it.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The price named — now the freedom it produced and what the redeemed slave does with it</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Freedom — The Redeemed Slave Does Not Return to the Market</span>
+    </div>
+    <p class="phase-desc">The freedom that redemption produces is not the freedom to sin. It is the freedom from the mastery of sin, from the curse of the law, and from the futile operating principles of the cosmic system — the freedom to live in the Spirit operating environment that Jesus Christ opened at Pentecost and made available to every member of His royal family. The redeemed slave has been purchased for a purpose — not merely liberated from the slave market but made a possession of the One who paid the price, given a new identity, a new operating system, a new commanding officer, and a new mission. The freedom is not an end in itself. It is the condition from which the spiritual life proceeds. You cannot advance toward the Promised Land while you are still in the slave market. Redemption is the exodus. The advance is what follows.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Galatians 5:1</div>
+      <div class="verse">"For freedom Christ has set us free; stand firm therefore, and do not submit again to a yoke of slavery."</div>
+      <div class="note">For freedom Christ has set us free — the redemption is purposive. The freedom is not incidental to the cross. It is its stated objective. Stand firm — the positive imperative, the call to occupy and hold the ground that the redemption secured. Do not submit again to a yoke of slavery — the negative imperative, the warning against the reversionism that returns the redeemed slave to the operating principles of the bondage the cross freed him from. The legalism that Paul is addressing in Galatians is precisely this — the attempt to return to the law's bondage as a means of maintaining standing before God, after the redemption has already purchased the believer out from under the law's curse. The redeemed slave who voluntarily returns to the slave market is the reversionist. The purchased slave who walks in the freedom the cross secured is the advancing believer. The difference is volition.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:2</div>
+      <div class="verse">"For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death."</div>
+      <div class="note">Set you free in Christ Jesus — the freedom of the redeemed slave described in operational terms. The law of the Spirit of life — the operating system of the Spirit-filled life that the redemption made accessible — has set the believer free from the law of sin and death, the operating system of the sin nature and the cosmic system that held him in bondage before the cross. The freedom is not the absence of the sin nature — it is still present in the physical body. The freedom is the availability of a more powerful operating system that displaces the sin nature's mastery when the believer walks in the filling of the Spirit. Redemption removed the bondage. The filling provides the alternative. The believer's volition determines which operating system he runs on at any given moment.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Redemption — The Price, the Bondage, the Freedom</div>
+    <div class="hinge-text">
+      Three bondages at the cross —<br>
+      bondage to sin, bondage to the law's curse,<br>
+      bondage to the cosmic system's futile ways.<br><br>
+      One price —<br>
+      the precious blood of Christ,<br>
+      the Lamb without blemish or spot,<br>
+      the sinless humanity of the impeccable Redeemer<br>
+      who owed no debt of His own<br>
+      and paid the debt of every slave<br>
+      in every slave market<br>
+      from every tribe and language and people and nation.<br><br>
+      Eternal redemption — ἐφάπαξ.<br>
+      Once for all. He sat down.<br>
+      The slave market permanently closed<br>
+      to the one who has been purchased by the blood.<br><br>
+      You were bought with a price.<br>
+      You are not your own.<br>
+      The freedom is not freedom to sin —<br>
+      it is freedom from bondage,<br>
+      freedom for the advance,<br>
+      freedom to walk in the Spirit operating environment<br>
+      that the Redeemer opened when He paid<br>
+      what only He could pay.<br><br>
+      The redeemed slave does not return<br>
+      to the slave market.<br>
+      Stand firm.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+</body>
+</html>
