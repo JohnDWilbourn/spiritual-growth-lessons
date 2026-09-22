@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humility and Teachability — The Second Floor — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 033</div>
+  <h1>Humility and Teachability</h1>
+  <div class="subtitle">Floor Two of the Edification Complex of the Soul</div>
+</header>
+
+<p class="intro">
+  Doctrine correctly received produces a second floor that has nothing to do with information
+  and everything to do with posture. Humility is not a virtue added alongside doctrinal orientation.
+  It is the condition that determines whether the doctrine already received will be allowed to
+  keep correcting the believer, or whether it will be filed away the moment it says something he
+  did not want to hear.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">The Floor That Determines the Rest</span>
+  </div>
+  <p class="phase-desc">Floor one can be built by a believer who is privately arrogant — doctrine can be studied, memorized, even taught, by a man whose pride has not yet been addressed. But nothing above floor one can be built by that same man until pride is dealt with, because every floor above the first requires the believer to keep being corrected by what he learns, and arrogance is precisely the refusal to be corrected. Humility does not compete with doctrinal orientation for first place. It determines whether the orientation already achieved keeps functioning.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">James 4:6</div>
+    <div class="verse">"But he gives more grace. Therefore it says, 'God opposes the proud but gives grace to the humble.'"</div>
+    <div class="note">Opposes — not merely withholds from, actively resists. The construction analogy holds: God is not a passive source the proud simply fail to draw from. He stands against the further building of a structure whose second floor was never laid.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Proverbs 16:18</div>
+    <div class="verse">"Pride goes before destruction, and a haughty spirit before a fall."</div>
+    <div class="note">Destruction and fall — architectural language again, describing what happens to a structure whose second floor was never built. The first floor's doctrine does not prevent the collapse; only the humility that was supposed to follow it does.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Peter 5:5</div>
+    <div class="verse">"Likewise, you who are younger, be subject to the elders. Clothe yourselves, all of you, with humility toward one another, for 'God opposes the proud but gives grace to the humble.'"</div>
+    <div class="note">Clothe yourselves — a garment put on deliberately, not a disposition some believers happen to have and others do not. Peter commands the acquisition of humility the same way doctrine is commanded to be received: as an act of the will, repeated.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Micah 6:8</div>
+    <div class="verse">"He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?"</div>
+    <div class="note">Walk humbly — a manner of ongoing movement, not a single posture struck once. The floor is built by the daily walk, not by a moment of correct feeling that is never repeated.</div>
+  </div>
+
+  <p class="bridge">The floor is named — now what it looks like to build it</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">Teachable, Not Merely Agreeable</span>
+  </div>
+  <p class="phase-desc">Teachability is frequently mistaken for agreeableness — nodding along, avoiding conflict, deferring to whoever speaks with confidence. Genuine teachability is a harder condition: the willingness to be shown that a settled belief is wrong and to change it on the evidence of Scripture rather than defend it out of pride of prior investment. The agreeable believer avoids friction. The teachable believer accepts friction when the Word produces it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Acts 17:11</div>
+    <div class="verse">"Now these Jews were more noble than those in Thessalonica; they received the word with all eagerness, examining the Scriptures daily to see if these things were so."</div>
+    <div class="note">Eagerness combined with examination — the Bereans did not accept Paul's teaching uncritically, nor did they reject it defensively. They tested it against Scripture, which is teachability functioning correctly: open to correction, but by the Word, not by mere assertion.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Proverbs 9:8–9</div>
+    <div class="verse">"Do not reprove a scoffer, or he will hate you; reprove a wise man, and he will love you. Give instruction to a wise man, and he will be still wiser; teach a righteous man, and he will increase in learning."</div>
+    <div class="note">The wise man's response to correction is love, not resentment. Solomon locates teachability in the response to reproof specifically — not in the absence of ever needing correction, but in what happens when correction arrives.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 141:5</div>
+    <div class="verse">"Let a righteous man strike me — it is a kindness; let him rebuke me — it is oil for my head; let my head not refuse it."</div>
+    <div class="note">Oil for my head — rebuke reframed as something to welcome rather than merely tolerate. The teachable believer has trained himself to receive correction as a gift rather than an attack, which is what allows the second floor to keep being built over a lifetime.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Proverbs 12:1</div>
+    <div class="verse">"Whoever loves discipline loves knowledge, but he who hates reproof is stupid."</div>
+    <div class="note">The two are bound together — loving discipline and loving knowledge are the same disposition described from two angles. A believer cannot claim the first floor while refusing the discipline that the second floor requires; they stand or fall together.</div>
+  </div>
+
+  <p class="bridge">Teachability defined — now the authority it submits to</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Submission to Legitimate Authority</span>
+  </div>
+  <p class="phase-desc">Humility is not formless deference to whoever is loudest or most confident. It is submission to legitimate authority — the pastor-teacher who handles the Word accurately, the Scripture itself as the final court of appeal, and ultimately God, whose authority the other two derive from and are accountable to. A believer can be humble toward the wrong authority and produce exactly the instability doctrinal orientation was supposed to prevent. The floor is built by submitting correctly, not merely submitting.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Hebrews 13:17</div>
+    <div class="verse">"Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account. Let them do this with joy and not with groaning, for that would be of no advantage to you."</div>
+    <div class="note">The advantage clause is notable — submission to legitimate spiritual authority is stated to benefit the believer submitting, not merely to serve institutional order. The floor is built for the believer's own construction, not for someone else's convenience.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Timothy 2:2</div>
+    <div class="verse">"…and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also."</div>
+    <div class="note">Faithful men — the qualification for legitimate teaching authority is faithfulness to what has been received, not personal charisma or institutional title. Humility discerns this qualification rather than submitting indiscriminately to anyone in a position of apparent authority.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Thessalonians 5:12–13</div>
+    <div class="verse">"We ask you, brothers, to respect those who labor among you and are over you in the Lord and admonish you, and to esteem them very highly in love because of their work."</div>
+    <div class="note">Because of their work — the respect commanded is tied to the function performed, not to the person's status independent of it. Teachability recognizes the office by what it does, which is protect and build the souls under its care.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Acts 5:29</div>
+    <div class="verse">"But Peter and the apostles answered, 'We must obey God rather than men.'"</div>
+    <div class="note">The boundary on submission to human authority — it holds only where human authority does not contradict the higher authority it derives from. Humility is not the abdication of discernment. It is discernment submitted to the right source.</div>
+  </div>
+
+  <p class="bridge">The authority is named — now the arrogance that resists it</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">The Arrogance That Blocks Construction</span>
+  </div>
+  <p class="phase-desc">Arrogance takes several forms in the soul, and none of them look identical from the outside. Some arrogance is loud and combative. Some is quiet self-sufficiency that simply stops listening once it believes it has learned enough. Some is intellectual — the accumulation of doctrine as private achievement rather than as material for construction. All of them produce the same structural failure: the second floor stops being built, and everything above it becomes impossible regardless of how sound the first floor was.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 Corinthians 8:1–2</div>
+    <div class="verse">"Knowledge puffs up, but love builds up. If anyone imagines that he knows something, he does not yet know as he ought to know."</div>
+    <div class="note">Puffs up — inflation without structural gain, the exact opposite of building. The believer who treats doctrine as private achievement rather than construction material has confused the two, and the confusion halts the second floor even while the first appears to advance.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 12:16</div>
+    <div class="verse">"Live in harmony with one another. Do not be haughty, but associate with the lowly. Never be wise in your own sight."</div>
+    <div class="note">Wise in your own sight — self-referential judgment, the believer becoming his own final court of appeal instead of submitting to the standard doctrinal orientation was supposed to establish. This is arrogance's quietest and most dangerous form, because it can coexist with genuine doctrinal knowledge.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Proverbs 26:12</div>
+    <div class="verse">"Do you see a man who is wise in his own eyes? There is more hope for a fool than for him."</div>
+    <div class="note">More hope for the fool — a deliberately jarring comparison. The fool at least knows he lacks wisdom and can be taught. The man wise in his own eyes has closed the door humility was supposed to keep open, and closed doors do not admit correction.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Galatians 6:3</div>
+    <div class="verse">"For if anyone thinks he is something, when he is nothing, he deceives himself."</div>
+    <div class="note">Deceives himself — the arrogant believer's first and most immediate victim is his own perception. Before arrogance damages relationships or ministry, it damages the accuracy of the believer's self-assessment, which is the very faculty humility was supposed to keep functioning.</div>
+  </div>
+
+  <p class="bridge">The block is named — now the freedom on the other side of it</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">The Freedom Humility Produces</span>
+  </div>
+  <p class="phase-desc">Arrogance markets itself as strength and humility as weakness, and the believer under pressure often believes the marketing. The opposite is closer to true. The arrogant man is fragile — every correction threatens the self-image he is defending, every criticism must be managed or deflected. The humble man is free — correction costs him nothing he was protecting, because he had already surrendered the need to appear right. Floor two, once built, does not feel like submission. It feels like the removal of a weight the believer did not know he was carrying.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Matthew 11:29</div>
+    <div class="verse">"Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls."</div>
+    <div class="note">Rest for your souls — the promise attached to lowliness, not to strength asserted. The Lord names His own humility as the very quality that produces rest, an unlikely pairing to anyone who has confused humility with fragility.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Philippians 2:3–4</div>
+    <div class="verse">"Do nothing from selfish ambition or conceit, but in humility count others more significant than yourselves. Let each of you look not only to his own interests, but also to the interests of others."</div>
+    <div class="note">Count others more significant — a deliberate mental act, not an emotional state that arrives spontaneously. The freedom this produces is the freedom from constantly monitoring one's own standing, a monitoring that consumes enormous energy without producing anything.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Peter 5:6–7</div>
+    <div class="verse">"Humble yourselves, therefore, under the mighty hand of God so that at the proper time he may exalt you, casting all your anxieties on him, because he cares for you."</div>
+    <div class="note">Casting all your anxieties — placed immediately after the command to humble oneself, as though the two are the same movement. The anxiety of self-protection is what humility releases, and what is released does not have to be carried any further.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Isaiah 66:2</div>
+    <div class="verse">"…this is the one to whom I will look: he who is humble and contrite in spirit and trembles at my word."</div>
+    <div class="note">Trembles at my word — a reverence for the standard itself, not fear of the consequences of disobedience. The freedom of floor two is the freedom to take the Word more seriously than the self, which turns out to be lighter than taking the self seriously ever was.</div>
+  </div>
+
+  <p class="bridge">The freedom is real — now the third floor it opens onto</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">What This Floor Makes Possible</span>
+  </div>
+  <p class="phase-desc">Floor two does not exist for its own sake any more than a stairwell exists to be admired rather than climbed. It exists to make floor three possible — personal love for God, which requires a believer who can be corrected by what he learns about God rather than defending a prior image of God he is unwilling to update. Humility is what keeps the growing knowledge of God from being filtered through pride before it reaches the place it needs to land.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">James 1:21</div>
+    <div class="verse">"Therefore put away all filthiness and rampant wickedness and receive with meekness the implanted word, which is able to save your souls."</div>
+    <div class="note">Meekness — the posture that allows the Word to be implanted rather than merely encountered. James pairs the receiving with the disposition required to receive it correctly, which is exactly the relationship between floor one and floor two.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 25:9</div>
+    <div class="verse">"He leads the humble in what is right, and teaches the humble his way."</div>
+    <div class="note">Teaches the humble specifically — not a general offer available equally to all postures of soul. The instruction that builds every floor above this one is directed to those who have built this floor first.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 3:12</div>
+    <div class="verse">"Put on then, as God's chosen ones, holy and beloved, compassionate hearts, kindness, humility, meekness, and patience."</div>
+    <div class="note">Grouped with compassion, kindness, meekness, and patience — humility does not stand alone in the list Paul gives. It belongs to a family of dispositions that together describe the second floor from several angles, each one requiring the others to be complete.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Floor Two, Complete</div>
+    <div class="hinge-text">
+      Not agreeableness — teachability.<br>
+      Not deference to whoever is loudest — submission to legitimate authority.<br>
+      Not weakness — the freedom of a man with nothing left to defend.<br><br>
+      Arrogance halts construction at whatever floor it takes hold on.<br>
+      Humility keeps every floor above this one open to what is still being built.<br><br>
+      This is what makes personal love for God possible —<br>
+      a soul willing to keep being corrected by what it learns of Him.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>

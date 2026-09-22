@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impersonal Love for All Mankind — The Fourth Floor — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 035</div>
+  <h1>Impersonal Love for All Mankind</h1>
+  <div class="subtitle">Floor Four of the Edification Complex of the Soul</div>
+</header>
+
+<p class="intro">
+  This floor is named impersonal not because it lacks warmth but because it does not depend on
+  the personal qualities of the one receiving it. Personal love for God is grounded in who God
+  is. Impersonal love for mankind is grounded in who the believer has become — a virtue in the
+  subject strong enough to extend regardless of merit in the object. It is the hardest floor to
+  build and the one most people mistake for something else entirely.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">A Virtue in the Subject, Not a Judgment of the Object</span>
+  </div>
+  <p class="phase-desc">Ordinary love evaluates its object and responds to what it finds — affection increases with attractiveness, decreases with offense. Impersonal love reverses the entire mechanism. It does not evaluate the object at all. It flows from a fixed capacity in the subject that does not fluctuate with what the object deserves. This is why the floor cannot be built by trying to see the good in difficult people — that strategy still evaluates the object and simply chooses to weight the evaluation favorably. The actual floor requires a source that makes the evaluation unnecessary.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Matthew 5:44–45</div>
+    <div class="verse">"But I say to you, Love your enemies and pray for those who persecute you, so that you may be sons of your Father who is in heaven. For he makes his sun rise on the evil and on the good, and sends rain on the just and on the unjust."</div>
+    <div class="note">The sun and rain do not discriminate on the basis of merit. This is offered as the pattern impersonal love follows — provision extended on the basis of the Giver's own character, not on any qualification found in the recipient.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Luke 6:32–33</div>
+    <div class="verse">"If you love those who love you, what benefit is that to you? For even sinners love those who love them. And if you do good to those who do good to you, what benefit is that to you? For even sinners do the same."</div>
+    <div class="note">Even sinners — the Lord names the baseline every natural human being already achieves without any spiritual capacity at all. Floor four is measured against a higher standard than this baseline, or it has not actually been built.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 5:6–8</div>
+    <div class="verse">"For while we were still weak, at the right time Christ died for the ungodly… but God shows his love for us in that while we were still sinners, Christ died for us."</div>
+    <div class="note">The ungodly, the still sinners — Christ's love in the atonement is presented as the archetype of impersonal love, extended before any merit existed in its object and remaining unchanged by what the object was at the time it was extended.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 13:4–7</div>
+    <div class="verse">"Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful… it bears all things, believes all things, hopes all things, endures all things."</div>
+    <div class="note">Not a description of feeling but of function — a catalog of what love does regardless of what the situation provokes. Paul is not describing an emotion that happens to be patient; he is describing patience as one of the operations of a settled capacity.</div>
+  </div>
+
+  <p class="bridge">The virtue is in the subject — now where that virtue actually comes from</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">The Only Source Deep Enough</span>
+  </div>
+  <p class="phase-desc">A believer's own reserves of patience and goodwill are finite and predictable — they run out under sufficient provocation, the way any human resource runs out under sufficient demand. Impersonal love cannot be sustained from this source because the demand made on it by a fallen world is effectively unlimited. The floor is built instead as an overflow from floor three — the personal love for God that does not diminish under provocation because its object, unlike difficult people, never changes and never runs dry.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 John 4:11</div>
+    <div class="verse">"Beloved, if God so loved us, we also ought to love one another."</div>
+    <div class="note">Ought — the obligation is grounded in what has been received, not in an independent duty owed to other people directly. The love commanded here is downstream of a love already given, not a resource the believer is expected to produce from nothing.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 15:9</div>
+    <div class="verse">"As the Father has loved me, so have I loved you. Abide in my love."</div>
+    <div class="note">Abide — a continuous dwelling in the source, not a single withdrawal from it. The love that flows out toward others in floor four is drawn from a supply the believer stays connected to, not a stockpile accumulated once and spent down.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Corinthians 5:14</div>
+    <div class="verse">"For the love of Christ controls us."</div>
+    <div class="note">Controls — an active governing force, not a memory or sentiment consulted occasionally. Paul's capacity to love the difficult people in his ministry field is presented as under the direct control of a love received from Christ, not generated by Paul's own personality or patience.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 5:5</div>
+    <div class="verse">"…because God's love has been poured into our hearts through the Holy Spirit who has been given to us."</div>
+    <div class="note">Poured — a continuous action, not a one-time deposit. The Spirit's ongoing ministry supplies floor four's material in real time, which is the only way a finite believer can extend a love that must hold up against an unlimited demand.</div>
+  </div>
+
+  <p class="bridge">The source is named — now what this love actually looks like in practice</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Toward the Enemy, Specifically</span>
+  </div>
+  <p class="phase-desc">Impersonal love is not primarily tested in relationships with agreeable people. It is tested — and only actually proven — in relationships with people who have given the believer legitimate cause for resentment. Scripture does not command a general fondness for humanity in the abstract while permitting exceptions for those who have wronged the believer directly. It names the enemy specifically as the proving ground, because a love that only holds when it is convenient has not yet demonstrated it is the love the floor requires.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Romans 12:19–21</div>
+    <div class="verse">"Beloved, never avenge yourselves, but leave it to the wrath of God… To the contrary, 'if your enemy is hungry, feed him; if he is thirsty, give him something to drink.' … Do not be overcome by evil, but overcome evil with good."</div>
+    <div class="note">Feed him, give him drink — specific, practical acts of provision directed at the enemy, not merely an internal attitude of tolerance. Impersonal love is measured in concrete action toward the person who least deserves it by ordinary reckoning.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Luke 23:34</div>
+    <div class="verse">"And Jesus said, 'Father, forgive them, for they know not what they do.'"</div>
+    <div class="note">Spoken from the cross, in the midst of the injury rather than after it had healed. The prototype of floor four is not retrospective forgiveness offered once resentment has faded on its own but active love extended at the point of maximum provocation.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Acts 7:59–60</div>
+    <div class="verse">"And as they were stoning Stephen, he called out, 'Lord Jesus, receive my spirit.' And falling to his knees he cried out with a loud voice, 'Lord, do not hold this sin against them.'"</div>
+    <div class="note">Stephen's dying prayer for his murderers, following the pattern set at the cross. The floor built in Stephen's soul held under the most extreme test Scripture records, which is precisely the kind of test that reveals whether the floor is genuinely built or only assumed to be.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Peter 2:23</div>
+    <div class="verse">"When he was reviled, he did not revile in return; when he suffered, he did not threaten, but continued entrusting himself to him who judges justly."</div>
+    <div class="note">Entrusting himself to him who judges justly — the mechanism that made the non-retaliation possible. The believer does not extend impersonal love by suppressing the desire for justice but by transferring the settling of accounts to God, who alone judges accurately.</div>
+  </div>
+
+  <p class="bridge">The test named — now the reward this floor produces</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">What the Believer Gains, Not the Enemy</span>
+  </div>
+  <p class="phase-desc">Impersonal love primarily benefits the one exercising it, though this is rarely how it is presented or felt at the moment of extending it. The believer who has genuinely stopped requiring good behavior from other people as the price of his goodwill has been freed from a dependency most people never examine — the need for other people's conduct to be acceptable before he can be at peace. This freedom is the floor's own reward, independent of whether the difficult person ever changes.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Matthew 5:9</div>
+    <div class="verse">"Blessed are the peacemakers, for they shall be called sons of God."</div>
+    <div class="note">Sons of God — the identity conferred on the one who makes peace, not primarily a description of what happens to those with whom peace is made. The blessing lands on the believer extending the love, whatever the response it meets.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Proverbs 25:21–22</div>
+    <div class="verse">"If your enemy is hungry, give him bread to eat, and if he is thirsty, give him water to drink, for you will heap burning coals on his head, and the LORD will reward you."</div>
+    <div class="note">The LORD will reward you — a reward explicitly promised to the one extending the kindness, separate from whatever effect it has on the enemy. Impersonal love is never presented in Scripture as a strategy with a guaranteed outcome for the other person; it is a floor built in the believer regardless of outcome.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 3:13</div>
+    <div class="verse">"…bearing with one another and, if one has a complaint against another, forgiving each other; as the Lord has forgiven you, so you also must forgive."</div>
+    <div class="note">Bearing with — an ongoing weight-bearing, not a single act of release. The floor is not built by one dramatic act of forgiveness but by a sustained capacity to keep bearing with people whose behavior does not improve.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Galatians 6:9</div>
+    <div class="verse">"And let us not grow weary of doing good, for in due season we will reap, if we do not give up."</div>
+    <div class="note">The season of reaping is deferred, not immediate. Impersonal love that is extended and then abandoned when no quick result follows was never load-bearing in the first place. The floor requires the patience of a builder who does not need to see the roof to keep laying courses.</div>
+  </div>
+
+  <p class="bridge">The reward is real — now the unity this floor makes possible</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">The Unity It Builds Among Believers</span>
+  </div>
+  <p class="phase-desc">Impersonal love is tested most obviously toward enemies, but it is exercised most constantly inside the church, where believers of genuinely different temperaments, backgrounds, and maturity levels are required to function together without the excuse that their differences justify division. Unity in the body is not produced by uniformity of personality or perfect agreement on every secondary matter. It is produced by a floor of impersonal love strong enough to hold together people who would not naturally choose each other's company.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Ephesians 4:2–3</div>
+    <div class="verse">"…with all humility and gentleness, with patience, bearing with one another in love, eager to maintain the unity of the Spirit in the bond of peace."</div>
+    <div class="note">Bearing with one another in love — patience is again named as the operational content of the love that holds a diverse body together. The unity described is not natural affinity but a manufactured peace, deliberately maintained.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 14:1</div>
+    <div class="verse">"As for the one who is weak in faith, welcome him, but not to quarrel over opinions."</div>
+    <div class="note">Welcome, not correct on contact — Paul directs the stronger believer to extend impersonal love toward the weaker one specifically at the point of disagreement, which is exactly where natural affection tends to fail first.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 12:24–25</div>
+    <div class="verse">"…but God has so composed the body, giving greater honor to the part that lacked it, that there may be no division in the body, but that the members may have the same care for one another."</div>
+    <div class="note">The same care — extended equally regardless of the perceived rank or value of the member receiving it. Impersonal love inside the body does not calibrate its investment to who seems most valuable, which is precisely what prevents the divisions that natural human ranking would otherwise produce.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 13:34–35</div>
+    <div class="verse">"A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another."</div>
+    <div class="note">By this — the identifying mark of discipleship is not doctrinal accuracy alone but the visible love that holds believers together across the differences that would otherwise divide them. Floor four is the floor the watching world is specifically told to look for.</div>
+  </div>
+
+  <p class="bridge">Unity is built — now the completion this floor is opening onto</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">The Floor Beneath the Penthouse</span>
+  </div>
+  <p class="phase-desc">Impersonal love is the last floor before the penthouse, and its placement here is not incidental. A soul still calculating whether other people have earned its goodwill is a soul still tethered to circumstance, and no such soul can share the settled happiness of God that does not depend on circumstance at all. Only when love has been detached from merit entirely — extended freely regardless of what it receives in return — is the soul finally free enough to receive the contentment the fifth and final floor consists of.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 Peter 4:8</div>
+    <div class="verse">"Above all, keep loving one another earnestly, since love covers a multitude of sins."</div>
+    <div class="note">Above all — a ranking Peter assigns explicitly, placing this love at the summit of the practical instructions surrounding it. What covers what would otherwise divide a community is precisely the floor that has stopped keeping score.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 3:14</div>
+    <div class="verse">"And above all these put on love, which binds everything together in perfect harmony."</div>
+    <div class="note">Binds everything together — the image is structural, exactly the language this whole series has been using. Every floor named in the surrounding verses (compassion, kindness, humility, patience) is held in place by this one, which is why it comes last.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Floor Four, Complete</div>
+    <div class="hinge-text">
+      Not a judgment of who deserves it — a virtue that does not ask the question.<br>
+      Not a resource the believer generates — an overflow from floor three, which does not run dry.<br>
+      Not tested by agreeable people — proven only against the ones who gave real cause for resentment.<br><br>
+      What is gained belongs to the one who extends it,<br>
+      whether or not the one who receives it ever changes.<br><br>
+      One floor remains — and it cannot be reached by aiming at it directly.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>

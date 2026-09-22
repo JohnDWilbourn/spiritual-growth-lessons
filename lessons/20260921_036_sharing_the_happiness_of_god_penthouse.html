@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharing the Happiness of God — The Penthouse — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 036</div>
+  <h1>Sharing the Happiness of God</h1>
+  <div class="subtitle">The Penthouse of the Edification Complex of the Soul</div>
+</header>
+
+<p class="intro">
+  The penthouse is reached, never stormed. A believer cannot pursue happiness directly and arrive
+  at this floor — happiness pursued as a goal in itself collapses back into dependence on
+  circumstance, which is the very instability the four floors beneath it were built to overcome.
+  What follows is not a sixth virtue to add to the other five. It is what remains once the other
+  five have finished doing their work.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">Not Pursued, Received</span>
+  </div>
+  <p class="phase-desc">Every other floor in this structure is built by direct effort — the believer studies doctrine, practices humility, cultivates love for God, extends love toward others. The fifth floor breaks this pattern. It cannot be built by direct effort because happiness aimed at directly is not happiness at all but a counterfeit assembled from favorable circumstances, which by definition cannot be guaranteed to last. The penthouse arrives as the settled condition of a soul that has finished the work beneath it, not as a project undertaken in its own right.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Philippians 4:11–12</div>
+    <div class="verse">"Not that I am speaking of being in need, for I have learned in whatever situation I am to be content. I know how to be brought low, and I know how to abound. In any and every circumstance, I have learned the secret of facing plenty and hunger, abundance and need."</div>
+    <div class="note">Learned — twice repeated, and the tense is significant. Paul does not claim to have been born content or to have stumbled into contentment by temperament. He describes a floor built over time, through the same disciplined process this entire series has traced.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Habakkuk 3:17–18</div>
+    <div class="verse">"Though the fig tree should not blossom, nor fruit be on the vines… yet I will rejoice in the LORD; I will take joy in the God of my salvation."</div>
+    <div class="note">Though and yet — the joy is stated to hold precisely where circumstance offers it no support whatsoever. This is the marker that distinguishes the penthouse from ordinary contentment: it survives the removal of every external prop.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">James 1:2–4</div>
+    <div class="verse">"Count it all joy, my brothers, when you meet trials of various kinds, for you know that the testing of your faith produces steadfastness. And let steadfastness have its full effect, that you may be perfect and complete, lacking in nothing."</div>
+    <div class="note">Count it — a deliberate act of reckoning, not a spontaneous feeling. James commands an assessment of trials that runs contrary to the natural response, made possible only by a structure already in place to sustain the reckoning.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 5:3–4</div>
+    <div class="verse">"…we rejoice in our sufferings, knowing that suffering produces endurance, and endurance produces character, and character produces hope."</div>
+    <div class="note">A chain identical in structure to Peter's chain of virtues — each stage producing the next. The penthouse is the terminal point of a sequence that begins in suffering, not a state that avoids suffering altogether.</div>
+  </div>
+
+  <p class="bridge">Received, not pursued — now what stability actually looks like</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">Stability That Does Not Move</span>
+  </div>
+  <p class="phase-desc">A completed penthouse produces a specific, testable stability — not the absence of hardship but the absence of the soul being thrown off course by hardship. The believer at this floor still grieves, still feels loss, still experiences pain as pain. What has changed is that none of it dislodges the settled condition underneath, the way weather affects the surface of the ocean without disturbing what lies beneath it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Isaiah 26:3</div>
+    <div class="verse">"You keep him in perfect peace whose mind is stayed on you, because he trusts in you."</div>
+    <div class="note">Stayed — fixed, anchored, not drifting with the current circumstance. The peace described is not the believer's own achievement but something God keeps, conditioned on where the mind is fixed rather than on what is happening around it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 112:6–7</div>
+    <div class="verse">"He will never be moved; the righteous will be remembered forever. He is not afraid of bad news; his heart is firm, trusting in the LORD."</div>
+    <div class="note">Not afraid of bad news — a specific, concrete test rather than an abstract description of virtue. The stability of the penthouse is measured by exactly this kind of moment, the arrival of news that would ordinarily destabilize an unfinished structure.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Philippians 4:6–7</div>
+    <div class="verse">"…do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and minds in Christ Jesus."</div>
+    <div class="note">Surpasses all understanding — a peace that does not derive from having reasoned one's way to a satisfying explanation of the circumstance. It guards the heart and mind, an active protective function, not merely an internal feeling that happens to be present.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Corinthians 4:8–9</div>
+    <div class="verse">"We are afflicted in every way, but not crushed; perplexed, but not driven to despair; persecuted, but not forsaken; struck down, but not destroyed."</div>
+    <div class="note">Each pairing acknowledges the real weight of the affliction while denying it the final word. The penthouse does not exempt the believer from any of these experiences. It ensures that none of them is the last thing standing.</div>
+  </div>
+
+  <p class="bridge">The stability holds — now the joy that is distinct from mere stability</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">His Joy, Not a Resemblance of It</span>
+  </div>
+  <p class="phase-desc">The penthouse is not described in Scripture as a happiness similar to God's own, achieved independently and running in parallel to His. It is described as His actual joy, made available for transfer into the believer who has built the structure that can receive it. This is a stronger claim than mere resemblance, and it explains why the floor cannot be manufactured by human effort alone — it is not a human achievement in the first place but a gift received once the site is prepared.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">John 15:11</div>
+    <div class="verse">"These things I have spoken to you, that my joy may be in you, and that your joy may be full."</div>
+    <div class="note">My joy — not a joy modeled after His, but His own, stated to become the believer's possession. The fullness named at the end of the verse describes the completed penthouse, joy with nothing further needed to make it whole.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 17:13</div>
+    <div class="verse">"But now I am coming to you, and these things I speak in the world, that they may have my joy fulfilled in themselves."</div>
+    <div class="note">Fulfilled in themselves — the location specified is internal, not circumstantial. This is the joy Christ possessed through His own earthly life, offered to the believer who follows the same construction pattern He demonstrated first.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Hebrews 12:2</div>
+    <div class="verse">"…looking to Jesus, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame."</div>
+    <div class="note">For the joy — the cross itself is presented as endured for the sake of a joy on the other side of it, not as an obstacle joy had to route around. The pattern of suffering producing joy, traced earlier in this lesson, has its ultimate demonstration here.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Peter 1:8</div>
+    <div class="verse">"Though you have not seen him, you love him. Though you do not now see him, you believe in him and rejoice with joy that is inexpressible and filled with glory."</div>
+    <div class="note">Inexpressible and filled with glory — a joy that exceeds ordinary vocabulary because its source is not ordinary. Peter is not describing an emotion produced by favorable circumstances but a joy connected directly to the object of faith, unseen and yet fully operative.</div>
+  </div>
+
+  <p class="bridge">His joy, received — now the finished shape of the whole structure</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">Christ Formed, Not a System Completed</span>
+  </div>
+  <p class="phase-desc">It would be a misreading of this entire series to imagine the completed edification complex as a checklist of five virtues successfully acquired, a personal achievement the believer can point to with satisfaction. The finished structure is better described the way Paul describes it — not five things obtained, but one Person formed. The floors are not trophies. They are the successive stages by which the character of Christ takes up residence in a soul that increasingly resembles Him because it has, floor by floor, been rebuilt on His pattern.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Galatians 4:19</div>
+    <div class="verse">"…my little children, for whom I am again in the anguish of childbirth until Christ is formed in you!"</div>
+    <div class="note">Formed — the same family of construction language used throughout this series, applied here directly to the Person rather than to an abstract virtue. The completed penthouse is not a state the believer arrives at alone; it is Christ Himself taking shape in him.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 1:27</div>
+    <div class="verse">"…Christ in you, the hope of glory."</div>
+    <div class="note">Christ in you — the compact center of everything the edification complex was ever building toward. The structure and the resident are named as one reality, not a house awaiting an occupant it has not yet received.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Ephesians 3:19</div>
+    <div class="verse">"…and to know the love of Christ that surpasses knowledge, that you may be filled with all the fullness of God."</div>
+    <div class="note">Filled with all the fullness of God — the terminal aim of the entire prayer Paul offers in this chapter, matching the terminal floor of the structure this series has traced. Nothing beyond this filling is described because nothing beyond it is needed.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Corinthians 3:18</div>
+    <div class="verse">"And we all, with unveiled face, beholding the glory of the Lord, are being transformed into the same image from one degree of glory to another."</div>
+    <div class="note">From one degree of glory to another — a progressive transformation, not a single completed event. Even a soul with a finished penthouse continues advancing, because the resemblance to Christ this structure produces has no ceiling built into it.</div>
+  </div>
+
+  <p class="bridge">Christ formed — now what continues to threaten even the finished floor</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">What Still Threatens the Completed Structure</span>
+  </div>
+  <p class="phase-desc">No floor in this structure, including the penthouse, is permanently immune to neglect. A believer who stops the daily intake that built floor one begins losing ground on every floor above it, the way a building left unmaintained deteriorates regardless of how well it was originally constructed. The threats are not primarily external circumstances — suffering, properly received, builds rather than destroys this structure. The threats are internal: the quiet abandonment of the daily discipline that every floor, including the highest one, continues to depend on.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Revelation 2:4–5</div>
+    <div class="verse">"But I have this against you, that you have abandoned the love you had at first. Remember therefore from where you have fallen; repent, and do the works you did at first."</div>
+    <div class="note">Fallen — a structure that had genuinely risen and then declined, addressed to a church with real doctrinal accuracy still intact. The warning demonstrates that no floor in this series, once built, is exempt from the ongoing maintenance every floor requires.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 3:12–15</div>
+    <div class="verse">"Now if anyone builds on the foundation with gold, silver, precious stones, wood, hay, straw — each one's work will become manifest, for the Day will disclose it, because it will be revealed by fire… If anyone's work is burned up, he will suffer loss, though he himself will be saved, but only as through fire."</div>
+    <div class="note">The quality of material matters permanently, evaluated at the Judgment Seat of Christ. A structure built with the durable material this series has described — epignosis, genuine humility, real love — survives an evaluation that a structure built from lesser material does not.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Timothy 4:3–4</div>
+    <div class="verse">"For the time is coming when people will not endure sound teaching, but having itching ears they will accumulate for themselves teachers to suit their own passions, and will turn away from listening to the truth and wander off into myths."</div>
+    <div class="note">The floor most directly threatened by this drift is the first one — doctrinal orientation — and its collapse eventually brings down whatever was built on top of it. The threat named here is not sudden catastrophe but a slow substitution of preference for truth.</div>
+  </div>
+
+  <p class="bridge">The threat is named — now the promise that outlasts it</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">The Promise to the One Who Keeps Building</span>
+  </div>
+  <p class="phase-desc">Six lessons have traced one structure from its foundation to its penthouse, and the entire series ends where it began — with a promise, not a certificate of completion. The believer who has followed this construction, whatever floor he currently occupies, has the same assurance given to every generation before him: the God who began this work is not indifferent to whether it finishes, and the structure He is building does not depend on the builder's own strength to stand once it is up.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Philippians 1:6</div>
+    <div class="verse">"And I am sure of this, that he who began a good work in you will bring it to completion at the day of Jesus Christ."</div>
+    <div class="note">He who began — the initiative and the guarantee of completion both rest with God, not with the believer's own consistency. This does not remove the believer's responsibility to keep building daily; it grounds that responsibility in a confidence that does not depend solely on the believer's own track record.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Peter 3:18</div>
+    <div class="verse">"But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be the glory both now and to the day of eternity."</div>
+    <div class="note">A command, not a suggestion for the unusually devoted. Every believer, at whatever floor he currently occupies, is addressed by this final instruction of Peter's letter, and no floor in the structure this series has traced is presented as optional for some believers and required for others.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Jude 24–25</div>
+    <div class="verse">"Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy, to the only God, our Savior, through Jesus Christ our Lord, be glory, majesty, dominion, and authority, before all time and now and forever."</div>
+    <div class="note">Great joy — the same word this series has traced from floor five, appearing here as the setting in which the completed believer is finally presented. The joy that was received in time is the same joy in which the believer stands at the end of the age.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Structure, Complete</div>
+    <div class="hinge-text">
+      Not pursued directly — received as the consequence of the four floors beneath it.<br>
+      Not the absence of suffering — stability that suffering does not dislodge.<br>
+      Not a resemblance of His joy — His joy, made the believer's own possession.<br><br>
+      One foundation. Five floors. No shortcuts between them.<br>
+      Christ formed, not a system completed.<br><br>
+      The One who began this work in you<br>
+      will bring it to completion at the day of Jesus Christ.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctrinal Orientation — The First Floor — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 032</div>
+  <h1>Doctrinal Orientation</h1>
+  <div class="subtitle">Floor One of the Edification Complex of the Soul</div>
+</header>
+
+<p class="intro">
+  A structure is only as sound as its lowest floor, and every floor above depends on what was
+  laid first. Doctrinal orientation is that first floor — the believer's mind reset to operate
+  on the standard of Scripture rather than the standard of self, culture, or circumstance. Nothing
+  built above it will stand if this floor is skipped, however sincere the effort spent on the
+  floors that were supposed to come next.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">Why This Floor Comes First</span>
+  </div>
+  <p class="phase-desc">A builder does not choose the foundation floor by preference. It comes first because everything above it requires it to already be there. Doctrinal orientation occupies the same non-negotiable position in the edification complex — not the most exciting floor, not the one most believers would volunteer to spend the most time discussing, but the one without which humility has no standard to submit to, love for God has no content to be grounded in, and love for others has no source to draw from besides human sentiment, which does not hold under pressure.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Proverbs 24:3–4</div>
+    <div class="verse">"By wisdom a house is built, and by understanding it is established; by knowledge the rooms are filled with all precious and pleasant riches."</div>
+    <div class="note">Three terms in sequence — wisdom builds, understanding establishes, knowledge fills. Solomon describes the same order the edification complex follows: a structure that rises through accumulated content, not through effort applied without content to direct it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 3:10</div>
+    <div class="verse">"According to the grace of God given to me, like a skilled master builder I laid a foundation, and someone else is building upon it. Let each one take care how he builds upon it."</div>
+    <div class="note">Paul's warning applies to every believer building his own soul, not only to teachers building congregations. The foundation someone else laid — the doctrine received — determines what can safely be built on top of it. Careless building on a sound foundation is still careless building.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Matthew 7:24–25</div>
+    <div class="verse">"Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock. And the rain fell, and the floods came, and the winds blew and beat on that house, but it did not fall, because it had been founded on the rock."</div>
+    <div class="note">The wise builder's advantage was not superior construction technique. It was site selection — he built on rock before he built anything else. Doctrinal orientation is the believer choosing where to build before deciding what to build.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Ezra 7:10</div>
+    <div class="verse">"For Ezra had set his heart to study the Law of the LORD, and to do it and to teach his statutes and rules in Israel."</div>
+    <div class="note">Set his heart — a deliberate act of the will preceding the study, not a mood that arrived unbidden. Doctrinal orientation begins as a decision, made before any feeling of hunger for the Word has developed to sustain it.</div>
+  </div>
+
+  <p class="bridge">The floor comes first — now the thinking it replaces</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">Two Kinds of Thinking</span>
+  </div>
+  <p class="phase-desc">Every soul thinks by some standard. The unoriented soul thinks by whatever standard is nearest — mood, upbringing, the consensus of whoever is in the room. Doctrinal orientation replaces that drifting standard with a fixed one. This is not a call to stop thinking for oneself. It is a call to stop thinking from a foundation that shifts with the weather and start thinking from one that does not move regardless of what the day brings.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Isaiah 55:8–9</div>
+    <div class="verse">"For my thoughts are not your thoughts, neither are your ways my ways, declares the LORD. For as the heavens are higher than the earth, so are my ways higher than your ways and my thoughts than your thoughts."</div>
+    <div class="note">The distance named here is not a minor variance to be split. It is categorical. Doctrinal orientation does not average human thinking with divine thinking — it displaces the one with the other, floor by floor, as doctrine is received and believed.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 2:14, 16</div>
+    <div class="verse">"The natural person does not accept the things of the Spirit of God, for they are folly to him, and he is not able to understand them because they are spiritually discerned… But we have the mind of Christ."</div>
+    <div class="note">The natural mind cannot get there by effort — Paul says folly, not difficulty. What replaces natural thinking is not a sharper version of the same faculty but a different mind altogether, made available to the believer and appropriated through the daily intake of doctrine.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 8:5–6</div>
+    <div class="verse">"For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit. For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."</div>
+    <div class="note">Set the mind — a deliberate positioning, not a passive drift. Doctrinal orientation is this positioning sustained daily, the mind aimed at the content of Scripture rather than left to settle wherever gravity pulls it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Philippians 4:8</div>
+    <div class="verse">"Finally, brothers, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable, if there is any excellence, if there is anything worthy of praise, think about these things."</div>
+    <div class="note">A command that presumes the believer has a standard by which to judge what qualifies as true, honorable, and just before he can obey it. Doctrinal orientation supplies that standard. Without it, the command has nothing to be obeyed with.</div>
+  </div>
+
+  <p class="bridge">The standard is fixed — now how it gets into the soul</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Received, Then Owned</span>
+  </div>
+  <p class="phase-desc">Hearing doctrine and owning it are two different events separated by an act of faith. A verse can be heard, understood grammatically, even agreed with intellectually, and still remain external to the believer — information he could recite but not information he lives from. Doctrinal orientation is the discipline that closes the distance between the two, taking what was heard and letting it settle into the operational thinking of the soul until it functions the way instinct functions, without conscious retrieval at the moment it is needed.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Deuteronomy 6:6</div>
+    <div class="verse">"And these words that I command you today shall be on your heart."</div>
+    <div class="note">On your heart — not in a book, not on a shelf, not merely in the ears at the moment of hearing. The location specified is internal and permanent, the destination doctrinal orientation is aimed at from the first day of intake.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Jeremiah 15:16</div>
+    <div class="verse">"Your words were found, and I ate them, and your words became to me a joy and the delight of my heart."</div>
+    <div class="note">Ate them — the image of ingestion, not inspection. Jeremiah does not describe examining the words at a distance. He describes taking them in the way food is taken in, so that they become part of him rather than remaining an object he looks at.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Ezekiel 3:1–3</div>
+    <div class="verse">"And he said to me, 'Son of man, eat whatever you find here. Eat this scroll…' So I ate it, and it was in my mouth as sweet as honey."</div>
+    <div class="note">The same ingestion image given as a literal command in a vision, underscoring that the metaphor is not decorative. Doctrine that stays outside the believer as a scroll he carries has not yet done the work doctrinal orientation requires of it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Hebrews 4:12</div>
+    <div class="verse">"For the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and of spirit, of joints and of marrow, discerning the thoughts and intentions of the heart."</div>
+    <div class="note">Living and active — the Word is not an inert text waiting on the believer's initiative alone. It does its own work once received, cutting to a depth the believer's own self-examination cannot reach unassisted.</div>
+  </div>
+
+  <p class="bridge">The Word settles in — now the discipline that keeps it coming</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">Daily, Not Occasional</span>
+  </div>
+  <p class="phase-desc">The floor is not built by a single large deposit of doctrine received once and drawn on indefinitely afterward. It is built the way manna was gathered — a day's portion for a day's need, collected fresh because yesterday's supply does not carry over. The believer who studies intensively for a season and then coasts has built part of a floor and stopped, and the part that was built begins to erode the moment the daily gathering stops.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Exodus 16:4</div>
+    <div class="verse">"Then the LORD said to Moses, 'Behold, I will rain bread from heaven for you, and the people shall go out and gather a day's portion every day, that I may test them, whether they will walk in my law or not.'"</div>
+    <div class="note">A day's portion every day — the provision was deliberately structured to prevent stockpiling. Doctrinal orientation follows the same design. There is no reservoir of doctrine large enough to skip tomorrow's intake.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Lamentations 3:22–23</div>
+    <div class="verse">"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."</div>
+    <div class="note">New every morning — the freshness is not incidental to the mercy, it is a description of how God's provision is structured, daily rather than deposited once. Doctrinal intake follows the same rhythm because it is patterned after the same God.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Acts 17:11</div>
+    <div class="verse">"Now these Jews were more noble than those in Thessalonica; they received the word with all eagerness, examining the Scriptures daily to see if these things were so."</div>
+    <div class="note">Daily examination distinguished the Bereans, not superior intelligence. The habit is named as the mark of nobility here — a consistency of intake available to any believer regardless of natural aptitude.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Job 23:12</div>
+    <div class="verse">"I have not departed from the commandment of his lips; I have treasured the words of his mouth more than my portion of food."</div>
+    <div class="note">Treasured more than food — Job names the priority doctrinal orientation requires without apology. The comparison is not rhetorical excess. It states plainly which appetite governs which.</div>
+  </div>
+
+  <p class="bridge">The discipline sustains it — now what collapses without it</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">The Cost of Skipping the Floor</span>
+  </div>
+  <p class="phase-desc">A believer without doctrinal orientation is not simply behind schedule. He is structurally unstable, moved by whatever pressure is strongest at the moment because he has no fixed content to resist it with. The instability is not a character flaw distinct from the missing floor — it is the direct and predictable consequence of trying to stand on floors that were never given a foundation to rest on.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Ephesians 4:14</div>
+    <div class="verse">"…so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine, by human cunning, by craftiness in deceitful schemes."</div>
+    <div class="note">Two forces named — waves, the internal instability of emotion, and wind, the external pressure of false teaching. Both move the believer who has nothing beneath him to hold his position. Doctrinal orientation is precisely the weight that keeps a structure from being moved by either.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Hosea 4:6</div>
+    <div class="verse">"My people are destroyed for lack of knowledge."</div>
+    <div class="note">Destroyed, not merely disadvantaged. The prophet does not soften the consequence of the missing floor. What doctrine would have prevented is not a minor inconvenience avoided but a destruction that actually occurs in its absence.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">James 1:6–8</div>
+    <div class="verse">"For that person must not suppose that he will receive anything from the Lord; he is a double-minded man, unstable in all his ways."</div>
+    <div class="note">Unstable in all his ways — not merely unstable regarding one decision, but comprehensively, because the instability originates in the absence of a fixed standard rather than in any single circumstance. The double mind has two possible foundations and rests on neither.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Timothy 4:3–4</div>
+    <div class="verse">"For the time is coming when people will not endure sound teaching, but having itching ears they will accumulate for themselves teachers to suit their own passions, and will turn away from listening to the truth and wander off into myths."</div>
+    <div class="note">Accumulate teachers to suit their own passions — the reversal of doctrinal orientation, in which the believer selects doctrine to confirm what he already wants rather than submitting his thinking to what the Word actually says.</div>
+  </div>
+
+  <p class="bridge">The cost is named — now the believer who paid the discipline instead</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">The Believer Standing on This Floor</span>
+  </div>
+  <p class="phase-desc">The doctrinally oriented believer is not identifiable by intensity of feeling or fluency of vocabulary. He is identifiable by consistency — the same daily intake maintained whether the season is easy or hard, the same fixed standard consulted whether the circumstance is favorable or not. What is built on this floor does not announce itself. It simply holds, and what is built on top of it holds because this floor held first.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Psalm 1:2–3</div>
+    <div class="verse">"…but his delight is in the law of the LORD, and on his law he meditates day and night. He is like a tree planted by streams of water that yields its fruit in its season, and its leaf does not wither."</div>
+    <div class="note">Day and night — the meditation is not scheduled around convenience. The tree image that follows describes exactly what doctrinal orientation produces: fruit that comes in its proper time, not forced, and a leaf that does not wither regardless of the surrounding season.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Joshua 1:8</div>
+    <div class="verse">"This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success."</div>
+    <div class="note">Prosperity and success are stated as the consequence of the meditation, not as separate pursuits alongside it. Joshua is not offered two paths to choose between. He is told what results from staying on the first floor without leaving it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 3:16</div>
+    <div class="verse">"Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God."</div>
+    <div class="note">Dwell richly — abundance, not a minimal sufficient dose. The word that has settled richly overflows into teaching others, a floor so completed that it begins contributing to floors being built in other believers as well.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Floor One, Complete</div>
+    <div class="hinge-text">
+      The mind reset to a standard that does not move —<br>
+      not human wisdom, not the consensus of the room,<br>
+      not the mood of the day.<br><br>
+      Received daily. Ingested, not merely inspected.<br>
+      Owned in the soul before it is needed,<br>
+      so that it is there the moment it is.<br><br>
+      Skip this floor and every floor above it has nothing beneath it.<br>
+      Build it and the second floor — humility — has ground to stand on.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Love for God the Father — The Third Floor — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 034</div>
+  <h1>Personal Love for God the Father</h1>
+  <div class="subtitle">Floor Three of the Edification Complex of the Soul</div>
+</header>
+
+<p class="intro">
+  Love for God is not the emotional prerequisite for the first two floors — it is what those two
+  floors, correctly built, eventually produce. A believer cannot manufacture this floor by trying
+  to feel affection he does not yet have. He builds it the only way it can be built: by learning
+  who God actually is, in enough depth that indifference becomes impossible.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">Grown, Not Generated</span>
+  </div>
+  <p class="phase-desc">A believer who tries to love God by an act of unaided will produces, at best, a performance of affection that cannot sustain itself under pressure. Genuine love for God is not generated this way. It is grown — the natural and almost involuntary response of a soul that has come to know, in increasing depth, exactly who it is dealing with. The floor is built by knowledge working on the heart, not by the heart trying to work without knowledge to draw on.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 John 4:19</div>
+    <div class="verse">"We love because he first loved us."</div>
+    <div class="note">The order stated plainly — His love is prior, ours is responsive. The believer does not generate love for God from an empty starting point. He responds to a love that has already been demonstrated, and the response grows in proportion to how clearly the demonstration is understood.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 5:8</div>
+    <div class="verse">"But God shows his love for us in that while we were still sinners, Christ died for us."</div>
+    <div class="note">Shows — the love is not merely asserted but demonstrated in an event with a specific timestamp and a specific cost. The more precisely the believer understands what the cross actually accomplished, the less abstract this demonstration remains.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Ephesians 3:17–19</div>
+    <div class="verse">"…that Christ may dwell in your hearts through faith — that you, being rooted and grounded in love, may have strength to comprehend with all the saints what is the breadth and length and height and depth, and to know the love of Christ that surpasses knowledge."</div>
+    <div class="note">Comprehend and know are both requested in a prayer for growth, not assumed as already complete. Paul treats the knowledge of Christ's love as something the mature believer is still growing into, not a fact absorbed once and set aside.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 34:8</div>
+    <div class="verse">"Oh, taste and see that the LORD is good! Blessed is the man who takes refuge in him!"</div>
+    <div class="note">Taste and see — an invitation to direct experience of God's goodness, not merely intellectual assent to a doctrine about it. The floor grows through this kind of tasting, repeated over years, until the goodness is no longer a proposition but a settled conviction.</div>
+  </div>
+
+  <p class="bridge">The love grows from knowledge — now the essence it is grown from</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">Knowing the Essence, Not a Feeling About God</span>
+  </div>
+  <p class="phase-desc">Much of what passes for love for God in casual religious experience is actually a feeling generated by music, atmosphere, or emotional momentum, disconnected from any specific content about who God is. Floor three requires content. It is love directed at the actual essence and character of God — His holiness, veracity, sovereignty, love, and justice — not at a vague warmth associated with religious settings. The love is only as substantial as the knowledge it is attached to.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Exodus 34:6–7</div>
+    <div class="verse">"The LORD, the LORD, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness, keeping steadfast love for thousands, forgiving iniquity and transgression and sin."</div>
+    <div class="note">A self-description God gives of His own character, in specific terms rather than a mood. The floor is built on content of exactly this kind — attributes named, not a diffuse sense that God is somehow good in an unspecified way.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Jeremiah 9:24</div>
+    <div class="verse">"…but let him who boasts boast in this, that he understands and knows me, that I am the LORD who practices steadfast love, justice, and righteousness in the earth. For in these things I delight."</div>
+    <div class="note">Understands and knows — paired verbs describing something more than acquaintance, and God states plainly that this knowing is what He delights in. The floor being built is not incidental to God; it is the very thing He designed the relationship to produce.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 145:8–9</div>
+    <div class="verse">"The LORD is gracious and merciful, slow to anger and abounding in steadfast love. The LORD is good to all, and his mercy is over all that he has made."</div>
+    <div class="note">Attributes stated as facts about God's unchanging character, not descriptions of a mood that varies with circumstance. Love grown from this kind of content does not fluctuate with circumstance either, because its object does not fluctuate.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 17:3</div>
+    <div class="verse">"And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</div>
+    <div class="note">Eternal life defined as knowing, present tense, ongoing. The floor is not a side project alongside the main business of the Christian life. This knowing is named as the substance of eternal life itself.</div>
+  </div>
+
+  <p class="bridge">The essence is known — now what that knowledge produces in the will</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Obedience as the Evidence, Not the Substitute</span>
+  </div>
+  <p class="phase-desc">Obedience does not replace personal love for God as an alternative path for believers who find affection difficult to muster. It is the evidence that the affection is real. A believer who claims to love God while treating His commands as optional has not actually built this floor — he has built something else and mislabeled it. Genuine love expresses itself in obedience the way genuine gratitude expresses itself in action, not as a separate performance layered on top.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">John 14:21</div>
+    <div class="verse">"Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him."</div>
+    <div class="note">Whoever has and keeps — the two verbs define love rather than merely accompanying it. The Lord does not describe obedience as a separate proof alongside love. He describes obedience as what loving Him actually consists of in practice.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 John 5:3</div>
+    <div class="verse">"For this is the love of God, that we keep his commandments. And his commandments are not burdensome."</div>
+    <div class="note">Not burdensome — a claim that only makes sense if the obedience flows from genuine love rather than external constraint. Commands feel heavy when they are complied with reluctantly; they feel light when they are the natural expression of an already-formed affection.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Deuteronomy 11:1</div>
+    <div class="verse">"You shall therefore love the LORD your God and keep his charge, his statutes, his rules, and his commandments always."</div>
+    <div class="note">Love and keeping his charge stated in the same breath, as though separating them would misunderstand the command. This pattern is consistent across both Testaments — love for God is never presented as a private feeling detached from conduct.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 21:15–17</div>
+    <div class="verse">"'Simon, son of John, do you love me more than these?' … 'Yes, Lord; you know that I love you.' He said to him, 'Feed my lambs.'"</div>
+    <div class="note">Each declaration of love answered with a commission, not with reassurance about feelings. The Lord's response pattern establishes that love, once claimed, is immediately expected to produce concrete obedience — feeding, tending, caring for what He has entrusted.</div>
+  </div>
+
+  <p class="bridge">Obedience confirms the floor is real — now what threatens to divide it</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">Undivided Devotion</span>
+  </div>
+  <p class="phase-desc">Floor three cannot be built as one devotion among several competing for the believer's ultimate loyalty. Scripture repeatedly frames love for God as jealous of rivals — not because God is insecure, but because divided love is structurally weaker love, the same way a floor built from mixed and incompatible materials is a weaker floor than one built from a single sound material. The competition is not always dramatic idolatry. It is more often the quiet substitution of some lesser good for the place only God is designed to occupy.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Deuteronomy 6:5</div>
+    <div class="verse">"You shall love the LORD your God with all your heart and with all your soul and with all your might."</div>
+    <div class="note">All — repeated three times across three faculties. The command does not permit a portion reserved for competing loves. Floor three is built at this scale or it is not the floor Scripture describes.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Matthew 6:24</div>
+    <div class="verse">"No one can serve two masters, for either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve God and money."</div>
+    <div class="note">Structurally impossible, not merely inadvisable. The Lord does not warn that divided devotion is difficult to sustain. He states that it cannot exist — one loyalty will inevitably subordinate the other, whichever object was ever the true priority.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Matthew 10:37</div>
+    <div class="verse">"Whoever loves father or mother more than me is not worthy of me, and whoever loves son or daughter more than me is not worthy of me."</div>
+    <div class="note">Even legitimate loves — family relationships Scripture elsewhere commands the believer to honor — must occupy a lower rank than love for God. The floor is not threatened primarily by illegitimate loves but by legitimate ones improperly ranked.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Revelation 2:4</div>
+    <div class="verse">"But I have this against you, that you have abandoned the love you had at first."</div>
+    <div class="note">Addressed to a church with genuine doctrinal accuracy and diligent labor — proof that floors one and two can remain intact while floor three quietly erodes. The Lord notices the erosion even when the surrounding structure looks sound.</div>
+  </div>
+
+  <p class="bridge">Undivided devotion held — now the confidence it produces</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">The Confidence This Floor Produces</span>
+  </div>
+  <p class="phase-desc">A believer who has genuinely come to love God on the basis of who God actually is carries a settled confidence that no circumstance can fully unsettle. This is not stoic detachment or manufactured optimism. It is the practical result of knowing, at a depth that has been tested, that the God being loved is trustworthy in exactly the ways Scripture says He is. The confidence is a by-product of the floor, not a separate achievement pursued alongside it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Romans 8:38–39</div>
+    <div class="verse">"For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</div>
+    <div class="note">I am sure — Paul's confidence rests on his knowledge of God's character, not on his own emotional constancy. The list of potential threats is exhaustive precisely because the confidence being described is meant to be comprehensive, covering every category a believer might fear.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 27:1</div>
+    <div class="verse">"The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life; of whom shall I be afraid?"</div>
+    <div class="note">The rhetorical questions carry the weight of an argument already settled. David does not ask because he is uncertain of the answer. The confidence is the fruit of a love for God grown deep enough that fear has lost its footing.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Timothy 1:12</div>
+    <div class="verse">"…for I know whom I have believed, and I am convinced that he is able to guard until that Day what has been entrusted to me."</div>
+    <div class="note">Know whom, not merely know what — the confidence is anchored in a Person known in depth, not in a set of doctrines held at a distance. This is floor three's distinguishing mark: personal, not merely propositional, knowledge.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 73:25–26</div>
+    <div class="verse">"Whom have I in heaven but you? And there is nothing on earth that I desire besides you. My flesh and my heart may fail, but God is the strength of my heart and my portion forever."</div>
+    <div class="note">Asaph's confession follows a chapter of genuine struggle with doubt, making the confession more credible than an untested claim of confidence. Floor three that has been tested and holds is the floor that actually supports what is built above it.</div>
+  </div>
+
+  <p class="bridge">Confidence secured — now what floor three opens onto</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">The Overflow Toward Others</span>
+  </div>
+  <p class="phase-desc">Floor three does not terminate in the believer's private relationship with God, however genuine and important that relationship is on its own terms. It is the source from which floor four draws. A believer cannot manufacture unconditional love for difficult people from his own reserves — those reserves run out quickly under real provocation. He can sustain it only as an overflow from a love for God secure enough that it does not need the approval or good behavior of other people to keep functioning.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 John 4:20–21</div>
+    <div class="verse">"If anyone says, 'I love God,' and hates his brother, he is a liar; for he who does not love his brother whom he has seen cannot love God whom he has not seen. And this commandment we have from him: whoever loves God must also love his brother."</div>
+    <div class="note">The two loves are tied together as a single test — the visible relationship exposing the truth of the invisible one. John does not treat floor three and floor four as separate achievements that might exist independently of each other.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Luke 7:47</div>
+    <div class="verse">"…her sins, which are many, are forgiven — for she loved much. But he who is forgiven little, loves little."</div>
+    <div class="note">Love scaled to the perceived weight of forgiveness received. The woman's extravagant love for Christ flows directly from her grasp of what she had been forgiven, the same causal relationship that produces the overflow toward others in floor four.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Corinthians 5:14</div>
+    <div class="verse">"For the love of Christ controls us, because we have concluded this: that one has died for all, therefore all have died."</div>
+    <div class="note">Controls us — the love received is not merely appreciated privately but exerts active governance over subsequent behavior. Paul's ministry to others is presented as the direct consequence of a love already received and understood.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Floor Three, Complete</div>
+    <div class="hinge-text">
+      Not manufactured affection — love grown from knowledge of the essence.<br>
+      Not a feeling in a religious setting — devotion attached to attributes named in Scripture.<br>
+      Not private sentiment — obedience that proves the love is real.<br><br>
+      Undivided, because a divided floor cannot bear the weight above it.<br>
+      Confident, because the God it is grown from does not change.<br><br>
+      This is what makes impersonal love possible —<br>
+      an overflow from a well that does not run dry when people are difficult to love.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edification Complex of the Soul — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  .floor-diagram {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 2rem 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.88rem;
+  }
+
+  .floor-row {
+    padding: 0.65rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .floor-row:last-child { border-bottom: none; }
+  .floor-row.penthouse { background: var(--ink); color: var(--bar-text); }
+  .floor-row.penthouse .floor-label { color: var(--gold); }
+  .floor-row.floor-4 { background: #ede5d5; }
+  .floor-row.floor-3 { background: #f0e8d8; }
+  .floor-row.floor-2 { background: #f2ecdf; }
+  .floor-row.floor-1 { background: #f5efe6; }
+  .floor-row.foundation { background: var(--accent-bg); font-style: italic; color: var(--muted); }
+
+  .floor-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 031</div>
+  <h1>The Edification Complex of the Soul</h1>
+  <div class="subtitle">Six Floors, One Foundation, No Shortcuts</div>
+</header>
+
+<p class="intro">
+  Every believer is under construction. Not metaphorically — technically. The soul that receives
+  Bible doctrine under the filling of the Spirit is a soul being built, floor by floor, into a
+  structure that did not exist at the moment of salvation and could not exist without the daily
+  labor of taking in the Word. This lesson names the site, the material, the order of work, and
+  the Builder who oversees it all.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">A Structure, Not a Feeling</span>
+  </div>
+  <p class="phase-desc">Paul's verb for spiritual growth is a construction term. <em>Oikodomeo</em> — house-building — is not a poetic flourish borrowed for effect. It is the precise word for the process he describes, chosen because the process is precise: material is gathered, laid in order, and the structure rises measurably over time. The soul is not edified by an emotional high that leaves no trace once the feeling passes. It is edified the way a wall is edified — course by course, and the courses do not disappear when the mason goes home for the night. What is built stays built until something tears it down.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 Corinthians 3:9</div>
+    <div class="verse">"For we are God's fellow workers. You are God's field, God's building."</div>
+    <div class="note">Two images in one verse — field and building. The field grows what is planted; the building stands on what is laid. Paul does not choose one image and discard the other. Growth and construction are the same event described from two angles: organic increase and structural assembly.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Peter 2:5</div>
+    <div class="verse">"…you yourselves like living stones are being built up as a spiritual house, to be a holy priesthood, to offer spiritual sacrifices acceptable to God through Jesus Christ."</div>
+    <div class="note">Living stones — an image that refuses to let the reader think of construction as mechanical. The material is alive. It responds to doctrine the way flesh responds to nourishment, not the way brick responds to mortar. The house being built is a house that can also refuse the building.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Jude 20</div>
+    <div class="verse">"But you, beloved, building yourselves up in your most holy faith and praying in the Holy Spirit."</div>
+    <div class="note">The present participle — building, ongoing, unfinished. There is no verse in the New Testament that describes edification as a completed past event in the believer's experience. It is always underway, always the current tense of a life still being constructed.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Colossians 2:7</div>
+    <div class="verse">"…rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving."</div>
+    <div class="note">Rooted and built up — an agricultural image fused with an architectural one, the same fusion Paul makes in 1 Corinthians 3:9. Roots go down before walls go up. The order matters as much as the images.</div>
+  </div>
+
+  <p class="bridge">The structure is real — now the material it is built from</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">The Only Material That Builds</span>
+  </div>
+  <p class="phase-desc">Not everything that passes for spiritual knowledge is construction material. The Greek marks a hard line between <em>gnosis</em> — information about God held in the academic memory — and <em>epignosis</em> — doctrine that has been believed, transferred by the Spirit into the operational thinking of the soul, and made available for use. A believer can accumulate gnosis for decades and build nothing, the way a man can own a warehouse of lumber and never raise a single wall. The lumber has to be carried onto the site and nailed into place. Epignosis is doctrine carried onto the site.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 Corinthians 8:1</div>
+    <div class="verse">"Knowledge puffs up, but love builds up."</div>
+    <div class="note">Gnosis inflates. Epignosis constructs. Paul draws the contrast in five words and lets it stand — the man who has only gnosis grows larger in his own estimation without growing more mature, while the man whose knowledge has become epignosis produces love, which is the only knowledge that adds anything to the structure.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Timothy 3:7</div>
+    <div class="verse">"…always learning and never able to arrive at a knowledge of the truth."</div>
+    <div class="note">A description of gnosis without epignosis carried to its terminal condition — perpetual learning that never becomes usable knowledge, because the transfer from academic to operational never occurs. The problem was never a shortage of instruction. It was a failure to believe what was heard.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Hebrews 5:12–14</div>
+    <div class="verse">"For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food… solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil."</div>
+    <div class="note">Trained by constant practice — the Greek is a gymnasium term, the discipline of repeated exercise. Epignosis is not delivered by a single act of hearing. It is trained into the soul by the same doctrine applied and reapplied until the application becomes reflexive.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Philippians 1:9</div>
+    <div class="verse">"And it is my prayer that your love may abound more and more, with knowledge and all discernment."</div>
+    <div class="note">Love abounding through knowledge — not despite it, not around it. Paul does not set doctrine and love against each other. The love that builds the structure is produced by the same epignosis that constitutes its material.</div>
+  </div>
+
+  <p class="bridge">The material is named — now the order it must be laid in</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Sequence, Not Selection</span>
+  </div>
+  <p class="phase-desc">A building rises in an order that the builder does not get to negotiate. The foundation goes in before the first floor; the first floor closes before the second opens. The edification complex follows the same discipline. A believer cannot select impersonal love as a favorite virtue and cultivate it in isolation from doctrinal orientation and humility, any more than a contractor can frame the third story before the footings are poured. Each floor depends structurally on the one beneath it — not sequentially in time alone, but load-bearing in fact. Skip a floor and the one above it has nothing to stand on.</p>
+
+  <div class="floor-diagram">
+    <div class="floor-row penthouse">
+      <div class="floor-label">Penthouse</div>
+      <div>Sharing the Happiness of God</div>
+    </div>
+    <div class="floor-row floor-4">
+      <div class="floor-label">Floor 4</div>
+      <div>Impersonal Love for All Mankind</div>
+    </div>
+    <div class="floor-row floor-3">
+      <div class="floor-label">Floor 3</div>
+      <div>Personal Love for God the Father</div>
+    </div>
+    <div class="floor-row floor-2">
+      <div class="floor-label">Floor 2</div>
+      <div>Humility and Teachability</div>
+    </div>
+    <div class="floor-row floor-1">
+      <div class="floor-label">Floor 1</div>
+      <div>Doctrinal Orientation</div>
+    </div>
+    <div class="floor-row foundation">
+      <div class="floor-label">Foundation</div>
+      <div>Filling of the Holy Spirit</div>
+    </div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Luke 14:28–30</div>
+    <div class="verse">"For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it? Otherwise, when he has laid a foundation and is not able to finish, all who see it begin to mock him, saying, 'This man began to build and was not able to finish.'"</div>
+    <div class="note">The Lord's own illustration of sequence and cost applied to discipleship. A structure abandoned mid-course is not a partial success. It is a visible failure — the unfinished floor testifying to everyone who sees it that the builder stopped short.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 Corinthians 3:11</div>
+    <div class="verse">"For no one can lay a foundation other than that which is laid, which is Jesus Christ."</div>
+    <div class="note">Every floor of the ECS ultimately rests on this one foundation. The filling of the Spirit that undergirds the five floors is itself grounded in the finished work of Christ — there is no alternate foundation a believer could substitute and still call the resulting structure edification.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Peter 1:5–7</div>
+    <div class="verse">"For this very reason, make every effort to supplement your faith with virtue, and virtue with knowledge, and knowledge with self-control, and self-control with steadfastness, and steadfastness with godliness, and godliness with brotherly affection, and brotherly affection with love."</div>
+    <div class="note">A chain, not a list — each item explicitly supplementing the one before it. Peter does not offer seven virtues for the believer to choose among. He describes a sequence in which each link depends on the one preceding it, the same architecture that governs the five floors of the ECS.</div>
+  </div>
+
+  <p class="bridge">The order is fixed — now the foundation everything rests on</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">The Foundation No One Sees</span>
+  </div>
+  <p class="phase-desc">Foundations are the least admired part of any building and the most necessary. No visitor compliments the footings. The filling of the Holy Spirit occupies the same position in the edification complex — invisible in the finished structure, indispensable to its existence. Without it, doctrine can be heard but not metabolized; volition can be exercised but not empowered. The foundation is not a floor a believer eventually leaves behind as he advances. It is the condition that makes every floor above it possible, maintained continuously by the same mechanism that restores it whenever it is lost.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Ephesians 5:18</div>
+    <div class="verse">"And do not get drunk with wine, for that is debauchery, but be filled with the Spirit."</div>
+    <div class="note">A command, present tense, addressed to believers already indwelt. Filling is distinct from indwelling — indwelling is permanent and unconditional at salvation; filling is the moment-by-moment condition of control that the command assumes can be lost and must be recovered.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 John 1:9</div>
+    <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+    <div class="note">The mechanism of recovery. Confession here is not groveling and not a transaction that earns restoration — it is naming to the Father what He already knows, and receiving on that basis what His own faithfulness and justice guarantee. The foundation, once cracked, is not permanently lost. It is restored the moment the sin is named.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Galatians 5:16</div>
+    <div class="verse">"But I say, walk by the Spirit, and you will not gratify the desires of the flesh."</div>
+    <div class="note">Walking — a present, continuous verb describing a manner of life rather than a single decisive act. The foundation is not laid once at conversion and forgotten. It is walked on, moment by moment, and the walking is what keeps it under the structure it supports.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 7:38–39</div>
+    <div class="verse">"'Whoever believes in me, as the Scripture has said, out of his heart will flow rivers of living water.' Now this he said about the Spirit, whom those who believed in him were to receive."</div>
+    <div class="note">Rivers, not a reservoir — the image is of continuous flow rather than a fixed deposit drawn down over time. The Spirit's filling is not rationed. What limits the flow is not supply but the believer's own condition, restored by confession whenever it is interrupted.</div>
+  </div>
+
+  <p class="bridge">The foundation holds — now the survey of what it carries</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">The Five Floors, Named in Advance</span>
+  </div>
+  <p class="phase-desc">Five lessons follow this one, each taking a single floor and building it out in full. Naming them here in sequence is not a substitute for that work — it is the blueprint the construction crew consults before the first stone is laid. Doctrinal orientation establishes the standard the believer will think by. Humility clears the resistance that would otherwise reject the standard once it corrects him. Personal love for God supplies the motive that makes obedience something other than duty. Impersonal love extends what personal love has produced outward to a world that has done nothing to earn it. And the happiness of God is not pursued directly at any point in the sequence — it arrives as the settled condition of a soul that has finished the four floors beneath it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Romans 12:2</div>
+    <div class="verse">"Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect."</div>
+    <div class="note">Floor one in miniature — the mind renewed by doctrine rather than conformed to the surrounding pattern of thought. This is the first work, and nothing built afterward corrects a foundation of unrenewed thinking.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">James 4:6</div>
+    <div class="verse">"…God opposes the proud but gives grace to the humble."</div>
+    <div class="note">Floor two in miniature — the resistance that pride offers to correction, and the grace that flows only where that resistance has been laid down. Doctrine received without humility is doctrine received defensively, and defensive reception builds nothing.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">1 John 4:19</div>
+    <div class="verse">"We love because he first loved us."</div>
+    <div class="note">Floor three in miniature — love for God that originates in what has been understood about His love, not in an act of will generated from nothing. The floor cannot be built by trying harder to feel affection. It is built by knowing more of what prompted the affection in the first place.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Matthew 5:44–45</div>
+    <div class="verse">"But I say to you, Love your enemies… so that you may be sons of your Father who is in heaven. For he makes his sun rise on the evil and on the good, and sends rain on the just and on the unjust."</div>
+    <div class="note">Floor four in miniature — love extended on the same indiscriminate basis God's own provision is extended on, unearned and unconditional. This floor is impossible to build directly from floor one; it is only reachable by way of floor three.</div>
+  </div>
+
+  <p class="bridge">The floors are named — now what stands when the naming is finished</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">The Penthouse Is Not the Goal</span>
+  </div>
+  <p class="phase-desc">Sharing the happiness of God sounds like the destination this whole structure is aimed at, and in one sense it is. But the believer who makes happiness itself the target never reaches the penthouse, because happiness pursued directly collapses into circumstance-dependence — contentment when things go well, and its opposite the moment they do not. The believer who builds the four floors beneath it, for their own sake and because doctrine commands them, discovers the happiness arriving as a consequence he did not manufacture. It is the only floor in the structure that cannot be built by aiming at it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Philippians 4:11–12</div>
+    <div class="verse">"Not that I am speaking of being in need, for I have learned in whatever situation I am to be content. I know how to be brought low, and I know how to abound. In any and every circumstance, I have learned the secret of facing plenty and hunger, abundance and need."</div>
+    <div class="note">Learned — not received in a moment, not natural to the man. Paul places the discipline of learning exactly where the four floors beneath it belong: prior to the contentment, producing it, not replaced by it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 17:13</div>
+    <div class="verse">"But now I am coming to you, and these things I speak in the world, that they may have my joy fulfilled in themselves."</div>
+    <div class="note">Not a similar joy — His joy, the joy He built in His own soul during the incarnation, made available for transfer into the believer who builds the same structure He built first.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Nehemiah 8:10</div>
+    <div class="verse">"…for the joy of the Lord is your strength."</div>
+    <div class="note">Strength derived from joy, not joy derived from strength. The causal order runs from the completed structure to the strength it produces, never the reverse.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Galatians 4:19</div>
+    <div class="verse">"…my little children, for whom I am again in the anguish of childbirth until Christ is formed in you."</div>
+    <div class="note">Formed — a construction verb again, the same family of language as <em>oikodomeo</em>. The edification complex completed is not a system of virtues achieved. It is Christ formed in the believer, floor by floor, until the structure and the Person occupying it are no longer distinguishable.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Site Is Marked</div>
+    <div class="hinge-text">
+      One foundation. Five floors. No shortcuts between them.<br><br>
+      The material is epignosis — doctrine believed, not merely known.<br>
+      The order is fixed — no floor built ahead of the one beneath it.<br>
+      The penthouse is not pursued — it arrives when the rest is finished.<br><br>
+      Begin with the first floor.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>
