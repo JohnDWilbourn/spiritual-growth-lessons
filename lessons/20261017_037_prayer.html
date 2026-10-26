@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prayer — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+/* ── Action buttons ── */
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0.6rem 1.5rem 0.6rem;
+  flex-wrap: wrap;
+  background: var(--bar-bg, var(--ink, #1a1410));
+}
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(184,151,58,0.4);
+  border-radius: 3px;
+  color: rgba(244,236,216,0.85);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.doc-btn:hover {
+  border-color: var(--gold, #b8973a);
+  color: var(--gold, #b8973a);
+  background: rgba(184,151,58,0.08);
+}
+.doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .doc-btn .btn-label { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 037</div>
+    <h1>Prayer</h1>
+    <div class="subtitle">Access, Faith, and the Will of God</div>
+  </header>
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4L72.5,104.28A56,56,0,0,1,149.31,102a8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,1,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,1,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142a8,8,0,0,0-10.64,12,56,56,0,0,0,76.81-2.26l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,2.34a8,8,0,0,0-11.32,0L136,20.69l-6.34-6.35a8,8,0,0,0-11.32,11.32L128,35.31l-96,96V224a8,8,0,0,0,8,8H232a8,8,0,0,0,8-8V131.31Zm-128,201,75.51-75.51,18.34,18.34L56,221.37ZM224,216H179.31l-30.62-30.63,18.34-18.34L224,224Zm0-42.63-82.34-82.34,16-16L224,151.37ZM152,69,51.31,169.66,40,158.34,140.69,57.66ZM165.66,56,144,77.66,139.31,73l21.66-21.65Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,200V172l52-52,44,44,28-28,52,52.07V200Zm84-104a12,12,0,1,1,12,12A12,12,0,0,1,124,96Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,88H152V40a8,8,0,0,0-8-8H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V96A8,8,0,0,0,216,88Zm-56,0V51.31L208.69,88ZM56,208V48h80V96a8,8,0,0,0,8,8h56V208Zm130.34-82.34a8,8,0,0,1,0,11.31L165.66,158l20.68,20.69a8,8,0,0,1-11.32,11.31l-26.34-26.34a8,8,0,0,1,0-11.32l26.34-26.34A8,8,0,0,1,186.34,125.66Zm-96,11.31L110.34,158,89.66,178.69A8,8,0,0,1,78.34,167.38L99,146.66,78.34,126a8,8,0,1,1,11.32-11.31Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+
+  <p class="intro">
+    God speaks to the believer through His Word. The believer speaks to God through prayer. That is the whole traffic of the relationship, and neither direction works without the other: prayer without the Word asks blindly, and the Word without prayer is never answered back. Prayer is not a technique for getting things. It is access to the throne, granted through the Son, carried by the Spirit, and addressed to the Father, and the Father hears it. This lesson covers what that access is, how prayer works, what a believer asks and in what order, what stops it, how God answers, and where every prayer ends up.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Access — The Throne of Grace</span>
+    </div>
+    <p class="phase-desc">Prayer starts with a place and a door. The place is the throne of God, called the throne of grace. The door is Christ: through Him, in one Spirit, the believer has access to the Father. Because access is given through the Son, it is the believer's, and it is the believer's now, with confidence. The unbeliever's one prayer is the one that opens the door: calling on the name of the Lord to be saved. After that the believer prays as a son. Isaiah gives the other half: the Father is already listening, so prayer is not an effort to get His attention.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:16</div>
+      <div class="verse">"Let us then with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">προσερχώμεθα οὖν μετὰ παρρησίας τῷ θρόνῳ τῆς χάριτος — let us draw near with παρρησία, free speech, boldness. Present subjunctive: keep on coming. The throne is a throne of grace, not a courtroom, and the purpose is stated: mercy and help in time of need. The two things asked for are exactly what the believer lacks.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 2:18</div>
+      <div class="verse">"For through him we both have access in one Spirit to the Father."</div>
+      <div class="note">ἡ προσαγωγὴ ἐν ἑνὶ πνεύματι πρὸς τὸν πατέρα — the access is through Him (the Son), in one Spirit, to the Father. All three Persons are in the sentence. "We both" is Jew and Gentile in Christ, so the access is the believer's by position. For those outside, Romans 10:13 gives the one open prayer: everyone who calls on the name of the Lord will be saved.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 10:19–22</div>
+      <div class="verse">"Therefore, brothers, since we have confidence to enter the holy places by the blood of Jesus, by the new and living way that he opened for us through the curtain, that is, through his flesh, and since we have a great priest over the house of God, let us draw near with a true heart in full assurance of faith,"</div>
+      <div class="note">παρρησίαν εἰς τὴν εἴσοδον τῶν ἁγίων — confidence for entrance into the holy places. The curtain that kept the people out of the Most Holy Place is now the way in. The ground is the blood of Jesus and the high priest in the house, and the response is to draw near with πληροφορία πίστεως, full assurance of faith. Access is something already opened, and the believer uses it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Isaiah 65:24</div>
+      <div class="verse">"Before they call I will answer; while they are yet speaking I will hear."</div>
+      <div class="note">וְהָיָה טֶרֶם יִקְרָאוּ וַאֲנִי אֶעֱנֶה עוֹד הֵם מְדַבְּרִים וַאֲנִי אֶשְׁמָע — before they call, I answer; while they are still speaking, I hear. The setting is God's promise to His restored people in the new creation, so it is a statement about God's readiness and not a formula for every request now. What it shows applies across the whole Bible: the Father who is listening already knows what is coming.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The throne and the door — now who carries the prayer</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Provision — Son, Spirit, and the Name</span>
+    </div>
+    <p class="phase-desc">Nobody carries a prayer to the throne alone. The Son is the one mediator and lives to make intercession. The Spirit intercedes where the believer does not know what to ask. And the believer asks in the Son's name. That phrase does not work as a password added to the end of a request. It means asking on the ground of who He is and what He has done, which is why it ties prayer to His will. The believer is told to pray and is also given everything needed for the prayer to arrive.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Timothy 2:5; Hebrews 7:25</div>
+      <div class="verse">"For there is one God, and there is one mediator between God and men, the man Christ Jesus … Consequently, he is able to save to the uttermost those who draw near to God through him, since he always lives to make intercession for them."</div>
+      <div class="note">μεσίτης — a go-between who stands between parties and brings them together. ἐντυγχάνειν ὑπὲρ αὐτῶν — to intercede for them, to meet with someone on another's behalf. πάντοτε ζῶν — always living: the intercession does not stop. A believer's prayer rises into a conversation that is already in progress.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:26–27</div>
+      <div class="verse">"Likewise the Spirit helps us in our weakness. For we do not know what to pray for as we ought, but the Spirit himself intercedes for us with groanings too deep for words. And he who searches hearts knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God."</div>
+      <div class="note">συναντιλαμβάνεται — takes hold together with us, from the other side. οὐκ οἴδαμεν τὸ τί προσευξώμεθα καθὸ δεῖ — we do not know what to pray for as is needful. The weakness is not unwillingness but ignorance of what to ask. ὑπερεντυγχάνει … κατὰ θεόν — He intercedes according to God. The Spirit's prayer is always inside the will of God, and it is made for the believer.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 16:23–24</div>
+      <div class="verse">"Truly, truly, I say to you, whatever you ask of the Father in my name, he will give it to you. Until now you have asked nothing in my name. Ask, and you will receive, that your joy may be full."</div>
+      <div class="note">ἐν τῷ ὀνόματί μου — in my name. In biblical usage a name stands for the person: the character, authority, and standing. To ask in His name is to ask on His account, as His representative, for what fits Him. It does not make any request His. Jesus gives the purpose as well: that your joy may be full.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Carried by the Son and the Spirit — now how prayer works</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Mechanism — Faith Within the Will of God</span>
+    </div>
+    <p class="phase-desc">Prayer works by faith inside the will of God. The promises about asking are large: whatever you ask, believing, you will receive. They are also bounded, and John states the boundary in the same breath: if we ask according to His will, He hears. Neither half cancels the other. Faith is confidence in what God has said, and the will of God is what God has said. A believer who prays from the Word is praying in the one place where both are true. The act itself is the one in <a href="20260417_014_faith_rest.html" style="color:var(--gold);text-decoration:none;">Lesson 014</a>: the request is made and then left with God, and the peace of God stands guard over the mind while He works.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 21:22; Mark 11:24</div>
+      <div class="verse">"And whatever you ask in prayer, you will receive, if you have faith. … Therefore I tell you, whatever you ask in prayer, believe that you have received it, and it will be yours."</div>
+      <div class="note">πάντα ὅσα ἂν αἰτήσητε ἐν τῇ προσευχῇ πιστεύοντες λήμψεσθε — all things you ask in prayer, believing, you will receive. In Mark 11:24 NA28 reads πιστεύετε ὅτι ἐλάβετε, believe that you received (a variant, λαμβάνετε, exists). Both texts make faith the operating condition. They sit in the larger teaching of the Bible, which places the will of God beside them (see the next passage).</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 5:14–15</div>
+      <div class="verse">"And this is the confidence that we have toward him, that if we ask anything according to his will he hears us. And if we know that he hears us in whatever we ask, we know that we have the requests that we have asked of him."</div>
+      <div class="note">ἡ παρρησία — the same boldness as Hebrews 4:16. κατὰ τὸ θέλημα αὐτοῦ — according to His will, the limit of every promise about asking. ἀκούει ἡμῶν — He hears us: in Scripture, God's hearing is more than receiving sound; it is a hearing that acts. ᾐτήματα — the specific requests, and the believer knows he has them, because the ground is God's will and not his own feeling.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 11:6</div>
+      <div class="verse">"And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him."</div>
+      <div class="note">προσερχόμενον … πιστεῦσαι ὅτι ἔστιν καὶ τοῖς ἐκζητοῦσιν αὐτὸν μισθαποδότης γίνεται — the one coming near must believe that He is, and that He becomes a rewarder to those who seek Him. The same verb as Hebrews 4:16, προσέρχομαι: drawing near. Two beliefs make prayer reasonable: that God is there, and that He pays those who seek Him. (<a href="20261017_039_rewards_and_the_kingdom.html" style="color:var(--gold);text-decoration:none;">the Rewards lesson</a> takes up the reward.)</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 4:6–7</div>
+      <div class="verse">"…do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."</div>
+      <div class="note">μηδὲν μεριμνᾶτε … τὰ αἰτήματα ὑμῶν γνωριζέσθω πρὸς τὸν θεόν — be anxious about nothing; let your requests be made known. φρουρήσει — will garrison, a military word for a guard post. What is promised here is the guard of peace, and not necessarily the thing requested. The mechanism is complete in itself: request, thanksgiving, then the peace of God standing over the mind.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Faith inside God's will — now what a believer actually asks</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Operation — What Is Asked and What Hinders</span>
+    </div>
+    <p class="phase-desc">Prayer begins with confession. Confession is the first of the Problem-Solving Devices and the first act of a believer who answers God's initiative: God speaks, calls, and provides first, and the believer responds. Scripture's word for the condition prayer depends on is fellowship (κοινωνία, 1 John 1:3, 6–7), and where sin has not been named there is no working fellowship to pray from. If faith in Christ alone is the cornerstone, confession is the next stone laid on it: the believer is forgiven and cleansed first, and then prayer is effective. The record agrees from Eden onward. God asks "Where are you?" and the first answers are given. The Levitical system makes confession a primary act beside the offering. David lays it out in the Psalms, and John states it as the standing provision of the Church Age (<a href="20260404_010_confession.html" style="color:var(--gold);text-decoration:none;">Lesson 010</a>). After confession come the other kinds of prayer: thanksgiving, intercession, and petition. The Bible lists the kinds and never fixes their sequence, and Paul's "first of all" in 1 Timothy 2:1 means first in importance. Scripture then names what else hinders prayer: cherished sin, wrong motives, a home out of order, a closed hand toward the poor, pride, and disobedience. Each is a problem with the one praying, never with the throne.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 3:9–13</div>
+      <div class="verse">"But the LORD God called to the man and said to him, 'Where are you?' And he said, 'I heard the sound of you in the garden, and I was afraid, because I was naked, and I hid myself.' He said, 'Who told you that you were naked? Have you eaten of the tree of which I commanded you not to eat?' The man said, 'The woman whom you gave to be with me, she gave me fruit of the tree, and I ate.' Then the LORD God said to the woman, 'What is this that you have done?' The woman said, 'The serpent deceived me, and I ate.'"</div>
+      <div class="note">אַיֶּכָּה — "Where are you?" One word, and God speaks it first. The initiative is His; the man and the woman answer. They had hidden (3:8, 10), and once called they say what happened: "I heard … I was afraid … I hid myself"; "she gave me fruit of the tree, and I ate"; "the serpent deceived me, and I ate." Each answer states the facts, and nothing in the text calls any of it false. The man and the woman are the first to respond to God's call by telling Him what occurred, and God speaks to each in turn.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Leviticus 5:5–6</div>
+      <div class="verse">"When he realizes his guilt in any of these, he shall confess the sin he has committed. He shall bring to the LORD as his compensation for the sin that he has committed, a female from the flock, a lamb or a goat, for a sin offering. And the priest shall make atonement for him for his sin."</div>
+      <div class="note">וְהִתְוַדָּה אֲשֶׁר חָטָא עָלֶיהָ — and he shall confess that in which he sinned. The verb is the reflexive form of ידה, to acknowledge, to give thanks, to throw out in the open. Confession is named first and the offering follows, and the priest makes atonement. Confession was never the payment; the offering was. It was the believer's part in the transaction, the acknowledgment that connected him to what the sacrifice covered.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 32:5</div>
+      <div class="verse">"I acknowledged my sin to you, and I did not cover my iniquity; I said, 'I will confess my transgressions to the LORD,' and you forgave the iniquity of my sin."</div>
+      <div class="note">חַטָּאתִי אוֹדִיעֲךָ וַעֲוֺנִי לֹא־כִסִּיתִי — my sin I made known to You, and my iniquity I did not cover. Where Adam hid, David uncovers. אוֹדֶה עֲלֵי פְשָׁעַי לַיהוָה — I will confess my transgressions to the LORD; the same root as Leviticus 5:5. The result is stated in the same breath: וְאַתָּה נָשָׂאתָ — and You lifted off the guilt of my sin. Verses 3–4, quoted in <a href="20261017_038_suffering.html" style="color:var(--gold);text-decoration:none;">Lesson 038</a>, show the cost of the silence that came first.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 1:9</div>
+      <div class="verse">"If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</div>
+      <div class="note">ἐὰν ὁμολογῶμεν τὰς ἁμαρτίας ἡμῶν — if we say the same thing about our sins, the verb is present subjunctive, a continuing practice. πιστός ἐστιν καὶ δίκαιος — faithful and just: God forgives on the ground of what the Son has already done (2:1–2, propitiation; see <a href="20260424_029_propitiation.html" style="color:var(--gold);text-decoration:none;">Lesson 029</a>), so forgiveness answers to His justice. ἀφῇ … καθαρίσῃ ἀπὸ πάσης ἀδικίας — to forgive and to cleanse from all injustice. Both are aorist: complete, not partial. The context in 1:3–7 is fellowship, and this verse is how it is kept.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Timothy 2:1–2</div>
+      <div class="verse">"First of all, then, I urge that supplications, prayers, intercessions, and thanksgivings be made for all people, for kings and all who are in high positions, that we may lead a peaceful and quiet life, godly and dignified in every way."</div>
+      <div class="note">δεήσεις, προσευχάς, ἐντεύξεις, εὐχαριστίας — requests for need, prayer in general, petitions on behalf of others (the noun of ἐντυγχάνω in Hebrews 7:25), and thanks. The list is wide: ὑπὲρ πάντων ἀνθρώπων, for all people, including rulers. A believer's prayer reaches past his own circle.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 66:18–19</div>
+      <div class="verse">"If I had cherished iniquity in my heart, the Lord would not have listened. But truly God has listened; he has attended to the voice of my prayer."</div>
+      <div class="note">אָוֶן אִם־רָאִיתִי בְלִבִּי לֹא יִשְׁמַע אֲדֹנָי — if I had seen (regarded) iniquity in my heart, the Lord would not have heard. The verb is to look at with approval, to keep an eye on something one means to hold. It is not momentary sin that blocks prayer; it is sin held and protected. The remedy is 1 John 1:9: name it and it is cleansed, and the way is clear.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">James 4:2–3</div>
+      <div class="verse">"You do not have, because you do not ask. You ask and do not receive, because you ask wrongly, to spend it on your passions."</div>
+      <div class="note">κακῶς αἰτεῖσθε, ἵνα ἐν ταῖς ἡδοναῖς ὑμῶν δαπανήσητε — you ask badly, in order to spend it on your pleasures. The failure is in the motive: the request is aimed at the believer's own appetite. James gives two reasons for an empty hand in one verse: not asking, and asking for the wrong end.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Peter 3:7</div>
+      <div class="verse">"Likewise, husbands, live with your wives in an understanding way, showing honor to the woman as the weaker vessel, since they are heirs with you of the grace of life, so that your prayers may not be hindered."</div>
+      <div class="note">εἰς τὸ μὴ ἐγκόπτεσθαι τὰς προσευχὰς ὑμῶν — so that your prayers may not be cut off, interrupted. ἐγκόπτω was used of cutting into a road to block it. A man's treatment of his wife is tied to the flow of his prayers. The ground is shared standing: she is a joint heir (συγκληρονόμοις) of the grace of life.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Proverbs 21:13</div>
+      <div class="verse">"Whoever closes his ear to the cry of the poor will himself call out and not be answered."</div>
+      <div class="note">אֹטֵם אָזְנוֹ מִזַּעֲקַת־דָּל גַּם־הוּא יִקְרָא וְלֹא יֵעָנֶה — he who shuts his ear to the cry of the poor, he also will call and not be answered. The measure comes back to the one who set it. A believer who will not hear a need can hardly expect to be heard in his own.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Luke 18:13–14a</div>
+      <div class="verse">"But the tax collector, standing far off, would not even lift up his eyes to heaven, but beat his breast, saying, 'God, be merciful to me, a sinner!' I tell you, this man went down to his house justified, rather than the other."</div>
+      <div class="note">ὁ θεός, ἱλάσθητί μοι τῷ ἁμαρτωλῷ — God, be propitiated toward me, the sinner. The verb is of the same family as ἱλαστήριον in Romans 3:25 (see <a href="20260424_029_propitiation.html" style="color:var(--gold);text-decoration:none;">Lesson 029</a>). The Pharisee's prayer in verses 11–12 is a report on himself. The tax collector's prayer comes from the one place God answers: empty hands. Pride makes a prayer into a speech.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 John 3:22</div>
+      <div class="verse">"…and whatever we ask we receive from him, because we keep his commandments and do what pleases him."</div>
+      <div class="note">ὅτι τὰς ἐντολὰς αὐτοῦ τηροῦμεν — because we keep His commandments. John links asking to a life already lined up with God, and verse 23 gives the commandment: believe in the name of His Son and love one another. It is not a barter. The one who walks in step with God finds that his requests and God's will coincide more and more, which is the same thing as 1 John 5:14.</div>
+    </div>
+  </div>
+
+  <div class="bridge">What is asked and what blocks it — now how God answers</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Expression — Answers, Delay, and Perseverance</span>
+    </div>
+    <p class="phase-desc">God does not answer every prayer the same way, and Scripture shows four shapes. Sometimes He gives what was asked: Elijah prayed and the rain stopped and then came. Sometimes He says no and gives something better: Paul asked three times and was given grace. Sometimes He delays, and the delay is part of the answer (Lazarus lay four days in the tomb). And sometimes He gives what was asked and it does harm: Israel in the wilderness. That last one is the reason to ask according to His will rather than according to desire. Between the asking and the answer the believer is told to keep going: to pray and not lose heart, to struggle in prayer for others, and to do it in the Spirit.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">James 5:16b–18</div>
+      <div class="verse">"The prayer of a righteous person has great power as it is working. Elijah was a man with a nature like ours, and he prayed fervently that it might not rain, and for three years and six months it did not rain on the earth. Then he prayed again, and heaven gave rain, and the earth bore its fruit."</div>
+      <div class="note">πολὺ ἰσχύει δέησις δικαίου ἐνεργουμένη — a just man's request, when it is at work, has great strength. ὁμοιοπαθής — of like nature with us: James takes away the excuse that Elijah was a different kind of man. Elijah prayed twice, the second time after waiting; the answer arrived after persistence, not in a single request.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 12:8–9a</div>
+      <div class="verse">"Three times I pleaded with the Lord about this, that it should leave me. But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'"</div>
+      <div class="note">τρὶς τὸν κύριον παρεκάλεσα — three times I begged the Lord. The answer was no to the request and yes to the need: ἀρκεῖ σοι ἡ χάρις μου. It is the pattern of Gethsemane (Matthew 26:39), where Jesus asked and submitted to the Father's will. Paul's thorn is also covered in <a href="20261017_038_suffering.html" style="color:var(--gold);text-decoration:none;">Lesson 038</a>. A refusal from the Father is still an answer.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Psalm 106:14–15</div>
+      <div class="verse">"But they had a wanton craving in the wilderness, and put God to the test in the desert; he gave them what they asked, but sent a wasting disease among them."</div>
+      <div class="note">וַיִּתֵּן לָהֶם שְׁאֵלָתָם וַיְשַׁלַּח רָזוֹן בְּנַפְשָׁם — He gave them their request, and sent leanness into their soul. The Hebrew says בְּנַפְשָׁם, into their soul; the ESV renders it "among them." The story is in Numbers 11. A granted request is not proof that it was a good request. The danger of asking out of craving is that God may allow it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Luke 18:1, 7</div>
+      <div class="verse">"And he told them a parable to the effect that they ought always to pray and not lose heart. … And will not God give justice to his elect, who cry to him day and night? Will he delay long over them?"</div>
+      <div class="note">πάντοτε προσεύχεσθαι καὶ μὴ ἐγκακεῖν — always to pray and not to grow weary. The parable is told for that purpose. μακροθυμεῖ ἐπ᾿ αὐτοῖς — does He bear long over them? Delay is a real part of the pattern. John 11:6 shows it: Jesus heard that Lazarus was ill and stayed two more days, and the delay served a larger answer.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Colossians 4:12</div>
+      <div class="verse">"Epaphras, who is one of you, a servant of Christ Jesus, greets you, always struggling on your behalf in his prayers, that you may stand mature and fully assured in all the will of God."</div>
+      <div class="note">πάντοτε ἀγωνιζόμενος ὑπὲρ ὑμῶν ἐν ταῖς προσευχαῖς — always agonizing on your behalf in his prayers. ἀγωνίζομαι is the athlete's word, the one that gives us "agony." What Epaphras prays for is growth: τέλειοι, mature, and fully assured in the will of God. Intercession for another believer's maturity is among the most direct ways to serve his growth.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 6:18</div>
+      <div class="verse">"…praying at all times in the Spirit, with all prayer and supplication. To that end, keep alert with all perseverance, making supplication for all the saints,"</div>
+      <div class="note">ἐν παντὶ καιρῷ ἐν πνεύματι — at every season, in the Spirit. Prayer in the Spirit is prayer by a believer who is filled and led (<a href="20260405_011_the_filling_of_the_holy_spirit.html" style="color:var(--gold);text-decoration:none;">Lesson 011</a>). ἀγρυπνοῦντες ἐν πάσῃ προσκαρτερήσει — staying awake with all perseverance. The Greek for the last phrase is a single, strong word for sticking to a task.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Judges 6:36–37</div>
+      <div class="verse">"Then Gideon said to God, 'If you will save Israel by my hand, as you have said, behold, I am laying a fleece of wool on the threshing floor. If there is dew on the fleece only, and it is dry on all the ground, then I shall know that you will save Israel by my hand, as you have said.'"</div>
+      <div class="note">The narrative is a record of what Gideon did and what God allowed. God had already told him, "I will be with you" (6:16), and Gideon asked for a sign anyway, twice. The text does not hold the fleece up as a pattern. Heb 11:32 lists Gideon for his faith, which the Judges account shows was uneven. The model for guidance is what God has said, not a sign requested on top of it. This is a caution, drawn by comparison with Deuteronomy 6:16 and Matthew 4:7: do not put the Lord to the test.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The prayers answered, delayed, refused — now where they are all kept</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Culmination — Prayers Kept Before the Throne</span>
+    </div>
+    <p class="phase-desc">No prayer disappears. Revelation shows the prayers of the saints held in golden bowls and offered on the golden altar before the throne. The text shows prayers kept and received; it does not say that every unanswered prayer is answered later. What it supports is that nothing offered is lost. The central prayer Jesus taught points straight at it: your kingdom come, your will be done on earth as in heaven. The last prayer in the Bible is the same one in a single sentence. Prayer begins as access to the throne and ends as the church asking for the One who sits on it.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 5:8</div>
+      <div class="verse">"And when he had taken the scroll, the four living creatures and the twenty-four elders fell down before the Lamb, each holding a harp, and golden bowls full of incense, which are the prayers of the saints."</div>
+      <div class="note">φιάλας χρυσᾶς γεμούσας θυμιαμάτων, αἵ εἰσιν αἱ προσευχαὶ τῶν ἁγίων — golden bowls full of incense, which are the prayers of the saints. Prayers are given a physical form: kept, in a vessel, before the Lamb. The image does not say how long they are kept, only that they are.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Revelation 8:3–4</div>
+      <div class="verse">"And another angel came and stood at the altar with a golden censer, and he was given much incense to offer with the prayers of all the saints on the golden altar before the throne, and the smoke of the incense, with the prayers of the saints, rose before God from the hand of the angel."</div>
+      <div class="note">ταῖς προσευχαῖς τῶν ἁγίων … ἀνέβη … ἐνώπιον τοῦ θεοῦ — the prayers of the saints went up before God. The sequel in verse 5 is the answer in fire: the censer is filled from the altar and thrown to earth. In context the prayers are answered in the judgments that precede the Kingdom. Whether a particular prayer is among them is not stated; the passage shows prayers received and acted on.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 6:9–10</div>
+      <div class="verse">"Pray then like this: 'Our Father in heaven, hallowed be your name. Your kingdom come, your will be done, on earth as it is in heaven.'"</div>
+      <div class="note">ἐλθέτω ἡ βασιλεία σου, γενηθήτω τὸ θέλημά σου — your kingdom come, your will be done. Both are aorist imperatives, a request for a decisive event. The order is deliberate: the Name first, the Kingdom second, the will third, and only then bread, forgiveness, and deliverance (6:11–13). The prayer Jesus gave puts God's will at the center and the believer's needs inside it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 22:20</div>
+      <div class="verse">"He who testifies to these things says, 'Surely I am coming soon.' Amen. Come, Lord Jesus!"</div>
+      <div class="note">ἔρχου κύριε Ἰησοῦ — come, Lord Jesus. A present imperative, a plea. The last prayer in the Bible is addressed to the Son, in answer to His own promise. All the prayers of the saints are gathered into it: the will of God done in the Kingdom of Christ.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Prayer — Access to the Throne</div>
+    <div class="hinge-text">
+      Through the Son, in the Spirit,<br>
+      to the Father.<br>
+      The way in is open.<br>
+      Draw near with confidence.<br><br>
+      The Son intercedes.<br>
+      The Spirit intercedes.<br>
+      Ask in His name, on His account.<br><br>
+      Faith inside the will of God.<br>
+      Ask, hand it over,<br>
+      and the peace of God stands guard.<br><br>
+      Confession first: fellowship restored.<br>
+      Then thanksgiving, intercession, petition.<br>
+      Cherished sin, wrong motives, a closed hand,<br>
+      pride, disobedience — these hinder.<br><br>
+      Yes. No. Wait.<br>
+      Or granted to the harm of the soul.<br>
+      Pray, and do not lose heart.<br><br>
+      The prayers are kept in golden bowls.<br>
+      Your kingdom come.<br>
+      Come, Lord Jesus.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8973a;"></div>
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  function docAction(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image…');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed.'); });
+    }
+  }
+  window.docAction = docAction;
+})();
+</script>
+</body>
+</html>

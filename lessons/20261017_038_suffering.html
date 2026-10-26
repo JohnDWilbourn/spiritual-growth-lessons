@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suffering — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+/* ── Action buttons ── */
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0.6rem 1.5rem 0.6rem;
+  flex-wrap: wrap;
+  background: var(--bar-bg, var(--ink, #1a1410));
+}
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(184,151,58,0.4);
+  border-radius: 3px;
+  color: rgba(244,236,216,0.85);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.doc-btn:hover {
+  border-color: var(--gold, #b8973a);
+  color: var(--gold, #b8973a);
+  background: rgba(184,151,58,0.08);
+}
+.doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .doc-btn .btn-label { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 038</div>
+    <h1>Suffering</h1>
+    <div class="subtitle">Testing, Chastisement, and the Suffering Nobody Earned</div>
+  </header>
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4L72.5,104.28A56,56,0,0,1,149.31,102a8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,1,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,1,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142a8,8,0,0,0-10.64,12,56,56,0,0,0,76.81-2.26l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,2.34a8,8,0,0,0-11.32,0L136,20.69l-6.34-6.35a8,8,0,0,0-11.32,11.32L128,35.31l-96,96V224a8,8,0,0,0,8,8H232a8,8,0,0,0,8-8V131.31Zm-128,201,75.51-75.51,18.34,18.34L56,221.37ZM224,216H179.31l-30.62-30.63,18.34-18.34L224,224Zm0-42.63-82.34-82.34,16-16L224,151.37ZM152,69,51.31,169.66,40,158.34,140.69,57.66ZM165.66,56,144,77.66,139.31,73l21.66-21.65Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,200V172l52-52,44,44,28-28,52,52.07V200Zm84-104a12,12,0,1,1,12,12A12,12,0,0,1,124,96Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,88H152V40a8,8,0,0,0-8-8H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V96A8,8,0,0,0,216,88Zm-56,0V51.31L208.69,88ZM56,208V48h80V96a8,8,0,0,0,8,8h56V208Zm130.34-82.34a8,8,0,0,1,0,11.31L165.66,158l20.68,20.69a8,8,0,0,1-11.32,11.31l-26.34-26.34a8,8,0,0,1,0-11.32l26.34-26.34A8,8,0,0,1,186.34,125.66Zm-96,11.31L110.34,158,89.66,178.69A8,8,0,0,1,78.34,167.38L99,146.66,78.34,126a8,8,0,1,1,11.32-11.31Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+
+  <p class="intro">
+    Suffering reaches the believer by more than one road, and the first discipline is to stop treating every hardship as the same event. Some of it is a test — pressure that proves and strengthens what the Word has built. Some of it is chastisement — a Father correcting a son who has left the path. Some of it is undeserved — pain no sin explains, permitted for a purpose the sufferer cannot yet see. And some of it is preventive — pressure sent before the fall to keep the believer from falling. Scripture names all four. None is random, none is wasted, and none separates the believer from the love of God. The believer who cannot tell them apart will misread his own life.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Calling — Suffering Is Assigned, Not Accidental</span>
+    </div>
+    <p class="phase-desc">Suffering is not a malfunction in the Christian life. It is part of the assignment. Creation has groaned under futility since Genesis 3, and the believer lives inside that groaning with a new nature in an old body. Christ did not exempt His people from the world He overcame — He told them to expect tribulation and take heart. The surprise is the first casualty of bad theology: the believer who thinks hardship means God has stepped away will read every hard season as abandonment. The text says the opposite. Suffering is granted, it is part of the calling, and the Son went down this road first.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 4:12–13</div>
+      <div class="verse">"Beloved, do not be surprised at the fiery trial when it comes upon you to test you, as though something strange were happening to you. But rejoice insofar as you share Christ's sufferings, that you may also rejoice and be glad when his glory is revealed."</div>
+      <div class="note">Do not be surprised — μὴ ξενίζεσθε, do not treat it as a stranger at the door. The fiery trial, πύρωσις, comes πρὸς πειρασμόν — aimed at testing. Peter gives a posture, not a feeling: no shock, then rejoicing as a partner (κοινωνεῖτε) in Christ's sufferings. The glory is the payoff, at His revelation. The believer is not asked to enjoy the pain. He is asked not to read it as proof that something went wrong.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Philippians 1:29</div>
+      <div class="verse">"For it has been granted to you that for the sake of Christ you should not only believe in him but also suffer for his sake."</div>
+      <div class="note">Granted — ἐχαρίσθη, the verb built on χάρις. Suffering for Christ is handed over the way faith is handed over: as a gift of grace. Paul puts believing and suffering in one sentence and gives both the same verb. Neither is earned. Neither is chosen. Both are assigned.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 5:8</div>
+      <div class="verse">"Although he was a son, he learned obedience through what he suffered."</div>
+      <div class="note">ἔμαθεν ἀφ' ὧν ἔπαθεν — He learned from what He suffered. The Greek sets the two words against each other. Christ was sinless; the suffering did not repair a defect. It was the path of obedience through a fallen world. The Son does not ask His people onto a road He avoided. Everything in this lesson runs over ground He has already crossed.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The calling stated — now what God supplies inside it</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Provision — A Limit, a Priest, and a Comfort That Travels</span>
+    </div>
+    <p class="phase-desc">Before any explanation of suffering comes the provision for it. Three things are supplied in advance. A limit: no test arrives that God has not measured. A High Priest: One who has been through it and knows the weight. A comfort: it comes down from the God of all comfort and is built to be passed along. Provision does not remove the pressure. It guarantees the believer is never left without supply inside the pressure.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 10:13</div>
+      <div class="verse">"No temptation has overtaken you that is not common to man. God is faithful, and he will not let you be tempted beyond your ability, but with the temptation he will provide the way of escape, that you may be able to endure it."</div>
+      <div class="note">πειρασμός again — the same word as test and trial; context decides. Common to man — the kind humans meet. Beyond your ability — God sets the ceiling. And with the test comes the ἔκβασις, the way out. Read the purpose clause: that you may be able to endure it — ὑπενεγκεῖν, to bear up under. The promise is passage through, not exemption from.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 4:15–16</div>
+      <div class="verse">"For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin. Let us then with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."</div>
+      <div class="note">Sympathize — συμπαθῆσαι, to suffer alongside. He met the full pressure and never took the exit that sin offers. The invitation is to come with confidence, μετὰ παρρησίας, and the help is εὔκαιρον — well-timed. It arrives on schedule, not late.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Corinthians 1:3–4</div>
+      <div class="verse">"Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort, who comforts us in all our affliction, so that we may be able to comfort those who are in any affliction, with the comfort with which we ourselves are comforted by God."</div>
+      <div class="note">Comfort — παράκλησις, one called alongside to help. It is not stored for private use. It comes in order to be passed on: the comfort received becomes the comfort given. Suffering walked through with God becomes equipment. Nothing received in affliction is private property.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The supply in place — now how a test actually works</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Mechanism — Testing That Proves and Produces</span>
+    </div>
+    <p class="phase-desc">A test is suffering with the purpose of proving. Two Greek words carry it. πειρασμός is the trial itself — the pressure applied. δοκιμή and δοκίμιον are the result — the approved, the tested, the genuine. Gold goes into the fire to find out what is gold. The test does not create faith. It brings out what is in the soul, exercises it, and hardens it. This is where the Word taken in over months becomes visible: the believer finds out whether what he has been receiving is working in him or only sitting in him. The sequence never changes — pressure, endurance, proven character, hope. This is where the faith-rest of <a href="20260417_014_faith_rest.html" style="color:var(--gold);text-decoration:none;">Lesson 014</a> gets used instead of admired.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">James 1:2–4</div>
+      <div class="verse">"Count it all joy, my brothers, when you meet trials of various kinds, for you know that the testing of your faith produces steadfastness. And let steadfastness have its full effect, that you may be perfect and complete, lacking in nothing."</div>
+      <div class="note">Trials of various kinds — πειρασμοῖς ποικίλοις, many-colored, no two alike. The testing of your faith, τὸ δοκίμιον, produces ὑπομονή — staying under the load (ὑπό + μένω), not gritting teeth. Let it have its full effect: the command is not to interrupt the process. Count it — ἡγήσασθε, a verdict of the mind, not a mood. The ground of the verdict is γινώσκοντες, knowing: the believer already knows what the testing produces. Knowing it before the trial is what makes the joy possible.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 5:3–5</div>
+      <div class="verse">"Not only that, but we rejoice in our sufferings, knowing that suffering produces endurance, and endurance produces character, and character produces hope, and hope does not put us to shame, because God's love has been poured into our hearts through the Holy Spirit who has been given to us."</div>
+      <div class="note">The chain: θλῖψις → ὑπομονή → δοκιμή → ἐλπίς. δοκιμή is proven character — the quality of having passed the assay. The hope at the end of the chain is not wishful, because the love of God has already been poured out in the heart through the Spirit. The chain runs forward only when the first link is not escaped.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 1:6–7</div>
+      <div class="verse">"In this you rejoice, though now for a little while, if necessary, you have been grieved by various trials, so that the tested genuineness of your faith—more precious than gold that though perishable is tested by fire—may be found to result in praise and glory and honor at the revelation of Jesus Christ."</div>
+      <div class="note">τὸ δοκίμιον ὑμῶν τῆς πίστεως — the genuineness of your faith, worth more than gold. Gold survives the fire and still perishes; tested faith is found to result in praise, glory, and honor at Christ's revelation. Two limits sit in the verse: if necessary (εἰ δέον) and a little while (ὀλίγον). God sets the intensity and the duration.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Deuteronomy 8:2, 5</div>
+      <div class="verse">"And you shall remember the whole way that the LORD your God has led you these forty years in the wilderness, that he might humble you, testing you to know what was in your heart, whether you would keep his commandments or not. … Know then in your heart that, as a man disciplines his son, the LORD your God disciplines you."</div>
+      <div class="note">Forty years of examination. The test did not put anything into Israel; it brought out what was already in the heart. Verse 5 gives the frame — a father with a son. Testing and chastisement share one household, which is where the lesson turns next.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Testing proves what is there — now the suffering that corrects what is wrong</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Operation — Chastisement: A Father Correcting a Son</span>
+    </div>
+    <p class="phase-desc">Some suffering is correction. The Greek is παιδεία — child-training, the whole work of raising a son, from instruction to the rod. Hebrews 12 treats it as proof of sonship, not loss of it. The believer under chastisement is in good standing as a son and in bad standing in his conduct. It is never condemnation, and it never touches the salvation already given. It escalates when ignored — the stages are laid out in <a href="20260418_017_personal_sin_and_divine_discipline.html" style="color:var(--gold);text-decoration:none;">Lesson 017</a> — and it stops where acknowledgment starts. It is also the one kind of suffering the believer can shorten himself, by judging himself before the Father has to. Not every hardship is chastisement; Job's friends proved that. But some is, and the believer must ask honestly which.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 12:5–6</div>
+      <div class="verse">"And have you forgotten the exhortation that addresses you as sons? 'My son, do not regard lightly the discipline of the Lord, nor be weary when reproved by him. For the Lord disciplines the one he loves, and chastises every son whom he receives.'"</div>
+      <div class="note">παιδεύει — trains; μαστιγοῖ — scourges. Hebrews follows the LXX of Proverbs 3:11–12, which has "scourges every son he receives"; the Hebrew has "as a father the son in whom he delights." Both are in view. Two errors are named: regarding it lightly (contempt) and growing weary under it (despair). The whole passage addresses sons.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 12:11</div>
+      <div class="verse">"For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</div>
+      <div class="note">The pain is stated plainly — λύπης, grief. The fruit comes later. And it comes to those γεγυμνασμένοις — exercised, trained the way an athlete is trained in the gym. Verse 8 supplies the reverse: without discipline you are νόθοι, illegitimate. Chastisement is evidence of family.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 11:30, 32</div>
+      <div class="verse">"That is why many of you are weak and ill, and some have died. … But when we are judged by the Lord, we are disciplined so that we may not be condemned along with the world."</div>
+      <div class="note">Weak, ill, and some κοιμῶνται — the word for believers' death, "sleep." Real bodily cost, in a congregation abusing the Lord's Supper. Yet verse 32 states the purpose: that they not be condemned (κατακριθῶμεν) with the world. Discipline and condemnation are opposites in this passage. Verse 31 gives the way out: judge yourselves.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Psalm 32:3–4</div>
+      <div class="verse">"For when I kept silent, my bones wasted away through my groaning all day long. For day and night your hand was heavy upon me; my strength was dried up as by the heat of summer."</div>
+      <div class="note">David's silence — sin kept hidden — had a physical cost: bones wasting, strength dried up, the hand heavy. Verse 5 is the turn: he acknowledged the sin and was forgiven. Chastisement ends where acknowledgment begins.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Revelation 3:19</div>
+      <div class="verse">"Those whom I love, I reprove and discipline, so be zealous and repent."</div>
+      <div class="note">The risen Christ to Laodicea, a church He is about to spit out and still loves. ἐλέγχω and παιδεύω — reprove and train. The command is ζήλευε καὶ μετανόησον — be zealous and change your mind. Chastisement aims at a change of mind, not a performance of sorrow (<a href="20260402_006_repentance.html" style="color:var(--gold);text-decoration:none;">Lesson 006</a>).</div>
+    </div>
+  </div>
+
+  <div class="bridge">Correction for what is wrong — now the suffering nobody earned</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Expression — Undeserved Suffering and Preventive Suffering</span>
+    </div>
+    <p class="phase-desc">Two kinds of suffering are not correction at all. Undeserved suffering is pain no sin explains. Job is the standing case: God Himself calls the man blameless and upright, then lets the pressure fall. Peter says it plainly — suffering for doing good, endured, is a gracious thing in God's sight. It carries an audience: the works of God displayed in front of people and beyond them. Preventive suffering is different. It lands on a believer who is doing well, because of something coming. Paul had received revelations no man had heard, and the thorn came so he would not exalt himself. The pain was an inoculation. Paul asked three times for removal and was answered with grace instead of removal — and he called that answer enough. In undeserved suffering the question is what God is displaying. In preventive suffering the question is what He is preventing.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Job 2:3</div>
+      <div class="verse">"And the LORD said to Satan, 'Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.'"</div>
+      <div class="note">The verdict comes before the suffering is finished. Without reason — חִנָּם: God says the pain was not earned. Job's friends spent most of the book assuming every pain has a matching sin; God's closing verdict is that they, not Job, had not spoken rightly of Him (42:7). Satan's reach was bounded at each step (1:12; 2:6). James 5:11 sums it up: the purpose of the Lord, compassionate and merciful.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">John 9:2–3</div>
+      <div class="verse">"And his disciples asked him, 'Rabbi, who sinned, this man or his parents, that he was born blind?' Jesus answered, 'It was not that this man sinned, or his parents, but that the works of God might be displayed in him.'"</div>
+      <div class="note">The disciples had one category: suffering equals sin. Jesus removes it. The man's blindness was not a debt. It was a stage for the works of God. Reading "which sin?" into every hardship is the same error Job's friends made.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Peter 2:19–20</div>
+      <div class="verse">"For this is a gracious thing, when, mindful of God, one endures sorrows while suffering unjustly. For what credit is it if, when you sin and are beaten for it, you endure? But if when you do good and suffer for it you endure, this is a gracious thing in the sight of God."</div>
+      <div class="note">χάρις — favor in God's sight. Mindful of God — διὰ συνείδησιν θεοῦ, conscious of Him. Suffering for sin earns no credit; suffering for good, endured, is grace-worthy. 4:15–16 sorts the two: do not suffer as an evildoer, and if as a Christian, do not be ashamed. 4:19 gives the instruction: entrust your souls to a faithful Creator while doing good.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Genesis 50:20</div>
+      <div class="verse">"As for you, you meant evil against me, but God meant it for good, to bring it about that many people should be kept alive, as they are today."</div>
+      <div class="note">One event, two intentions, one Hebrew verb: חֲשַׁבְתֶּם … חֲשָׁבָהּ — you intended, God intended. Joseph's suffering was done by others, undeserved, and purposed. God's purpose did not excuse his brothers' evil; it overruled it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 12:7–9</div>
+      <div class="verse">"So to keep me from becoming conceited because of the surpassingly great revelations, a thorn was given me in the flesh, a messenger of Satan to harass me, to keep me from becoming conceited. Three times I pleaded with the Lord about this, that it should leave me. But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'"</div>
+      <div class="note">σκόλοψ — a stake, a thorn; κολαφίζῃ — to strike with the fist. The purpose clause is ἵνα μὴ ὑπεραίρωμαι — so that I would not lift myself up. That is preventive: aimed at what had not happened yet. Scripture does not name the thorn; naming it is guessing. It names the purpose, the instrument (a messenger of Satan, acting under permission as in Job), and the answer. ἀρκεῖ σοι ἡ χάρις μου — My grace is enough for you; ἡ δύναμις ἐν ἀσθενείᾳ τελεῖται — power is brought to completion in weakness. The refusal was the grace.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Every road through suffering — now where each one arrives</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Culmination — Glory That Outweighs and Reigning With Him</span>
+    </div>
+    <p class="phase-desc">Every kind of suffering in this lesson ends at one place. The sufferings of the present time are weighed against glory, and the glory outweighs them by a margin the text will not put a number on. Endurance is tied to reigning: if we endure, we will also reign with Him. Tested faith results in praise, glory, and honor at Christ's revelation; the one who stands the test receives the crown of life. Peter closes with the promise that after a little while the God of all grace will Himself finish the work. Nothing endured under this plan is a loss on the ledger. It is paid in, and the Bema is where it is counted.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 8:17–18</div>
+      <div class="verse">"…and if children, then heirs—heirs of God and fellow heirs with Christ, provided we suffer with him in order that we may also be glorified with him. For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us."</div>
+      <div class="note">Suffer with, glorified with — συμπάσχομεν, συνδοξασθῶμεν. The same prefix on both sides. Sonship is settled in the clause before; sharing His glory is what the suffering-with is tied to. In verse 18 Paul does arithmetic — λογίζομαι, I calculate — and the scale is not close: the sufferings are not worth comparing.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 4:17</div>
+      <div class="verse">"For this light momentary affliction is preparing for us an eternal weight of glory beyond all comparison."</div>
+      <div class="note">Affliction is ἐλαφρόν, light, and παραυτίκα, for the moment — set beside a weight of glory (the Hebrew word for glory, כָּבוֹד, is built on the idea of weight). The verb κατεργάζεται means works out, produces. The affliction is not merely followed by glory; it is producing it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Timothy 2:12–13</div>
+      <div class="verse">"…if we endure, we will also reign with him; if we deny him, he also will deny us; if we are faithless, he remains faithful—for he cannot deny himself."</div>
+      <div class="note">ὑπομένομεν — we endure, the same root as James 1:3. συμβασιλεύσομεν — we will co-reign. Denial costs the reign; verse 13 keeps the relationship intact — He remains faithful, for He cannot deny Himself. Endurance in suffering is the road to reigning, which the Kingdom layer of this curriculum takes up.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 5:10</div>
+      <div class="verse">"And after you have suffered a little while, the God of all grace, who has called you to his eternal glory in Christ, will himself restore, confirm, strengthen, and establish you."</div>
+      <div class="note">ὀλίγον again — a little while. αὐτὸς — He Himself — καταρτίσει, στηρίξει, σθενώσει, θεμελιώσει. Four verbs, all future, all His action. The believer endures. God does the finishing.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">James 1:12</div>
+      <div class="verse">"Blessed is the man who remains steadfast under trial, for when he has stood the test he will receive the crown of life, which God has promised to those who love him."</div>
+      <div class="note">δόκιμος γενόμενος — having become approved. The test ends in approval, and the approval ends in a crown promised in advance to those who love Him.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Suffering — The Assignment, the Supply, the Outcome</div>
+    <div class="hinge-text">
+      Do not be surprised.<br>
+      It was granted, as faith was granted.<br>
+      The Son learned from what He suffered.<br><br>
+      A limit God measured.<br>
+      A Priest who has been there.<br>
+      A comfort built to be passed on.<br><br>
+      The test that proves what is there.<br>
+      The chastisement that corrects what is wrong —<br>
+      a Father, a son, and no condemnation.<br>
+      The suffering nobody earned,<br>
+      and the thorn that kept a man from falling.<br><br>
+      My grace is enough for you.<br>
+      A little while.<br>
+      Then glory that outweighs it,<br>
+      and the reign with Him.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8973a;"></div>
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  function docAction(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image…');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed.'); });
+    }
+  }
+  window.docAction = docAction;
+})();
+</script>
+</body>
+</html>

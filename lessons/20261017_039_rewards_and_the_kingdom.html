@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rewards and the Kingdom — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+/* ── Action buttons ── */
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0.6rem 1.5rem 0.6rem;
+  flex-wrap: wrap;
+  background: var(--bar-bg, var(--ink, #1a1410));
+}
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(184,151,58,0.4);
+  border-radius: 3px;
+  color: rgba(244,236,216,0.85);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.doc-btn:hover {
+  border-color: var(--gold, #b8973a);
+  color: var(--gold, #b8973a);
+  background: rgba(184,151,58,0.08);
+}
+.doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .doc-btn .btn-label { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 039</div>
+    <h1>Rewards and the Kingdom</h1>
+    <div class="subtitle">The Reserve, the Growth, and the Reign</div>
+  </header>
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4L72.5,104.28A56,56,0,0,1,149.31,102a8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,1,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,1,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142a8,8,0,0,0-10.64,12,56,56,0,0,0,76.81-2.26l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,2.34a8,8,0,0,0-11.32,0L136,20.69l-6.34-6.35a8,8,0,0,0-11.32,11.32L128,35.31l-96,96V224a8,8,0,0,0,8,8H232a8,8,0,0,0,8-8V131.31Zm-128,201,75.51-75.51,18.34,18.34L56,221.37ZM224,216H179.31l-30.62-30.63,18.34-18.34L224,224Zm0-42.63-82.34-82.34,16-16L224,151.37ZM152,69,51.31,169.66,40,158.34,140.69,57.66ZM165.66,56,144,77.66,139.31,73l21.66-21.65Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,200V172l52-52,44,44,28-28,52,52.07V200Zm84-104a12,12,0,1,1,12,12A12,12,0,0,1,124,96Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,88H152V40a8,8,0,0,0-8-8H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V96A8,8,0,0,0,216,88Zm-56,0V51.31L208.69,88ZM56,208V48h80V96a8,8,0,0,0,8,8h56V208Zm130.34-82.34a8,8,0,0,1,0,11.31L165.66,158l20.68,20.69a8,8,0,0,1-11.32,11.31l-26.34-26.34a8,8,0,0,1,0-11.32l26.34-26.34A8,8,0,0,1,186.34,125.66Zm-96,11.31L110.34,158,89.66,178.69A8,8,0,0,1,78.34,167.38L99,146.66,78.34,126a8,8,0,1,1,11.32-11.31Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+
+  <p class="intro">
+    A soul grows the way a person grows: born, fed, trained, matured. That is not a figure borrowed from biology. Scripture gives good reason to treat the natural world as the working copy of the spiritual one: the tabernacle was built from a heavenly pattern, and God's invisible things are perceived in what He made. It is a safe working assumption, and it is why Jesus teaches the Kingdom with seeds, wages, vineyards, and money. It is almost comical how long that has sat in plain sight. And here is what changes how a believer lives: before the foundation of the world, God reserved blessings for every believer, and growth is what brings them into the hand. Salvation is a gift. What follows salvation is paid in wages — treasure stored up in the heavenly places. That is a legitimate motive for growth. It is the same motive that sends a man to work in the morning.
+  </p>
+
+  <!-- SECTION I -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">I</span>
+      <span class="phase-title">The Pattern — The Natural Order Is the First Edition</span>
+    </div>
+    <p class="phase-desc">Start with the order God built. Work and provision did not begin with the curse — the man was put in the garden to work it before sin entered. Seed to harvest, labor to wages, infancy to adulthood: the pattern of the natural world is the earthly copy of how the Kingdom operates. Scripture says it three ways. The earthly tabernacle was a copy and shadow of the heavenly. The invisible things of God are perceived in what has been made. And the natural comes first, the spiritual after. The natural is not alien to the spiritual. It is the first edition. A believer who learns to read it learns the Kingdom, because what he does every day — in a field, a job, a household — is a working model of what he is meant to do in the soul.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Genesis 2:15</div>
+      <div class="verse">"The LORD God took the man and put him in the garden of Eden to work it and keep it."</div>
+      <div class="note">לְעָבְדָהּ וּלְשָׁמְרָהּ — to work it and to guard it. The first assignment given to man was labor, and it came before the fall. The thorns and sweat of 3:17–19 are the curse on the labor, not the labor itself. Work and provision for work are creation design, not a consequence of sin.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 8:5</div>
+      <div class="verse">"They serve a copy and shadow of the heavenly things. For when Moses was about to erect the tent, he was instructed by God, saying, 'See that you make everything according to the pattern that was shown you on the mountain.'"</div>
+      <div class="note">ὑποδείγματι καὶ σκιᾷ — a copy and a shadow. The pattern ran from heaven to earth, not the other way round: the earthly tent was built from a heavenly original. The earthly thing is derivative. Where the natural world shows a pattern, the safe working assumption is that it points to something in the spiritual one.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Romans 1:20</div>
+      <div class="verse">"For his invisible attributes, namely, his eternal power and divine nature, have been clearly perceived, ever since the creation of the world, in the things that have been made. So they are without excuse."</div>
+      <div class="note">τὰ ἀόρατα … τοῖς ποιήμασιν νοούμενα καθορᾶται — the invisible things are clearly seen, perceived by the mind, in the things made. Paul's point is judicial — no excuse — but the mechanism is general: the visible is evidence of the invisible. Creation is not silent about God to anyone who studies it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 15:46</div>
+      <div class="verse">"But it is not the spiritual that is first but the natural, and then the spiritual."</div>
+      <div class="note">πρῶτον τὸ ψυχικόν, ἔπειτα τὸ πνευματικόν. Paul says this about the resurrection body, but it states the order of the whole design: the natural comes first, as the training ground and the sign of the spiritual that follows. Growth in the soul follows the same sequence as growth in the body.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The pattern established — now what was set aside inside it</div>
+
+  <!-- SECTION II -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">II</span>
+      <span class="phase-title">The Provision — Blessing Laid Up Before the Foundation</span>
+    </div>
+    <p class="phase-desc">Before any believer had grown an inch, the blessings were already set aside. Paul says God has blessed us with every spiritual blessing in the heavenly places, and in the next breath dates the choosing to before the foundation of the world. Peter calls the inheritance kept in heaven for you. Paul says a crown is laid up. The words are ἀπόκειται (laid up, reserved), τετηρημένην (kept under guard), and ἡτοίμασεν (prepared). In plain English: held in escrow. The decree wrote the believer's account before the believer existed. Nothing is invented as he goes; nothing is withheld because God ran short. The blessings are there. The open question is how much of what was reserved a believer takes hold of.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 1:3–4</div>
+      <div class="verse">"Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places, even as he chose us in him before the foundation of the world, that we should be holy and blameless before him."</div>
+      <div class="note">ἐν τοῖς ἐπουρανίοις — in the heavenly places: the location of the account. Every (πάσῃ) spiritual blessing, and the participle is aorist, εὐλογήσας — already blessed, finished. The choosing is πρὸ καταβολῆς κόσμου, before the foundation of the world, which puts the whole supply inside the decree and not inside the believer's performance.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Peter 1:4</div>
+      <div class="verse">"…to an inheritance that is imperishable, undefiled, and unfading, kept in heaven for you,"</div>
+      <div class="note">τετηρημένην ἐν οὐρανοῖς εἰς ὑμᾶς — a perfect participle: kept, and still being kept. εἰς ὑμᾶς — for you, addressed to the reader personally. Three adjectives: ἄφθαρτον, ἀμίαντον, ἀμάραντον — it cannot rot, be stained, or fade. Everything an earthly account is not.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 2:9</div>
+      <div class="verse">"But, as it is written, 'What no eye has seen, nor ear heard, nor the heart of man imagined, what God has prepared for those who love him.'"</div>
+      <div class="note">ἡτοίμασεν ὁ θεός — God prepared, in advance, for those who love Him. The scale is beyond what imagination can price. Verse 10 adds the access: God has revealed these things to us through the Spirit. The account is hidden from the senses, but not from the Word.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 Timothy 4:8</div>
+      <div class="verse">"Henceforth there is laid up for me the crown of righteousness, which the Lord, the righteous judge, will award to me on that day, and not only to me but also to all who have loved his appearing."</div>
+      <div class="note">ἀπόκειταί μοι ὁ τῆς δικαιοσύνης στέφανος — laid up for me the crown of justice, awarded by the δίκαιος κριτής, the just judge. The reward is not sentimental or arbitrary; it comes from a judge whose justice is the standard. And the last clause matters: not only to me but to all who have loved His appearing. Paul's account is full, and the same kind of account is open to every believer.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The treasure reserved — now how growth brings it into the hand</div>
+
+  <!-- SECTION III -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">III</span>
+      <span class="phase-title">The Mechanism — Growth Calls the Reserve Into Reach</span>
+    </div>
+    <p class="phase-desc">Growth is how reserved blessing comes into the hand. Scripture describes the soul in the stages of a human life: the newborn on milk, the child learning, the young man who is strong, the father who knows. The Spirit supplies the growth, the Word is the food, and the believer's volition is the door he keeps opening. At each stage more is within reach — not because God hands out prizes for age, but because the believer has become able to receive and hold what was already reserved. Infants need to be fed by others and are tossed around by every wind of teaching. The strong have the Word abiding in them, and the victory every believer has by faith (1 John 5:4) shows in how they stand. The mature have senses trained to tell good from evil. Time in Christ without growth is the problem Scripture keeps naming.</p>
+
+    <div class="scripture-block">
+      <div class="ref">1 Peter 2:2</div>
+      <div class="verse">"Like newborn infants, long for the pure spiritual milk, that by it you may grow up into salvation—"</div>
+      <div class="note">ἀρτιγέννητα βρέφη — newly born babies. The infant's appetite is the model: it wants the milk without being taught to want it. The stated purpose is growth: ἵνα αὐξηθῆτε εἰς σωτηρίαν — grow up toward the full outworking of the salvation already possessed. Beginning is not the goal; it is the starting line.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 5:13–14</div>
+      <div class="verse">"…for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil."</div>
+      <div class="note">νήπιος — an infant, literally one who cannot yet speak. The test of growth is what a believer can digest (στερεὰ τροφή, solid food) and what he can discern: αἰσθητήρια γεγυμνασμένα — senses trained by exercise, the gym again. Verse 12 sets the clock: by now you ought to be teachers. Growth is expected on a schedule.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">1 John 2:14</div>
+      <div class="verse">"I write to you, children, because you know the Father. I write to you, fathers, because you know him who is from the beginning. I write to you, young men, because you are strong, and the word of God abides in you, and you have overcome the evil one."</div>
+      <div class="note">Three stages by name: παιδία (children), νεανίσκοι (young men), πατέρες (fathers). Children know the Father. Young men are strong, the Word abides in them, and they have overcome the evil one — but John does not confine conquest to this stage. He tells all the little children νενικήκατε αὐτούς (1 John 4:4) and says everything born of God overcomes the world (5:4). The young men are where it shows in use. Fathers know Him who is from the beginning — the same phrase John used before, deeper. Maturity is not new information. It is the same Person known further. John addresses three groups, but they stand within one church: the audiences are also stages, and the children of this letter are the young men and fathers of the next.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Ephesians 4:13–14</div>
+      <div class="verse">"…until we all attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ, so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine,"</div>
+      <div class="note">ἄνδρα τέλειον — a full-grown man; μέτρον ἡλικίας — the measure of stature (ἡλικία also means age). Paul sets the target as a complete adult and names the symptom of missing it: νήπιοι, tossed by waves and carried about by every wind of doctrine. Immaturity shows as instability.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Philippians 3:12–14</div>
+      <div class="verse">"Not that I have already obtained this or am already perfect, but I press on to make it my own, because Christ Jesus has made me his own. Brothers, I do not consider that I have made it my own. But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus."</div>
+      <div class="note">καταλάβω — to seize, to lay hold of, to make one's own; κατελήμφθην — I was laid hold of. Paul grabs for what Christ already grabbed him for: the thing is his in the decree and he is racing to take possession. βραβεῖον — the prize given to the winner at the games. He says he is not there yet, and says it in the same passage where he counts himself among the mature (3:15, τέλειοι). The mature still press on.</div>
+    </div>
+  </div>
+
+  <div class="bridge">Growth is the door — now how the account fills</div>
+
+  <!-- SECTION IV -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">IV</span>
+      <span class="phase-title">The Operation — Wages, Stewardship, and Two Guardrails</span>
+    </div>
+    <p class="phase-desc">How does the account fill? By work, faithfulness, and stewardship — the same operation the natural world runs on. A man works for a home, food, clothing, and a vehicle, and nobody calls the wage a bribe; it is the point of working. Jesus builds the Kingdom's economy on that pattern: lay up treasure, be faithful with what is another's, work as for the Lord, and the wage arrives from Him. Two guardrails keep it clean. First, salvation is not wages. It is a gift received by faith, and nothing in this lesson touches that. Wages are for what follows. Second, even the work is supplied: Paul labors harder than anyone and says it was the grace of God with him. God supplies the capacity and then pays for its use. Earthly work in the natural world is its rehearsal — and <a href="20260418_021_logistical_grace.html" style="color:var(--gold);text-decoration:none;">Lesson 021</a> covers the daily provision that makes the rehearsal possible.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">Matthew 6:19–21</div>
+      <div class="verse">"Do not lay up for yourselves treasures on earth, where moth and rust destroy and where thieves break in and steal, but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also."</div>
+      <div class="note">θησαυρίζετε — present imperative: keep on laying up. The command is not to stop storing; it is to change where the storage is. Earth has three predators — moth (σής), rust (βρῶσις, eating, corrosion), thieves. Heaven has none of them. And the heart follows the account: where the treasure sits, the believer's attention and effort go with it.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 16:11–12</div>
+      <div class="verse">"If then you have not been faithful in the unrighteous wealth, who will entrust to you the true riches? And if you have not been faithful in that which is another's, who will give you that which is your own?"</div>
+      <div class="note">ἀληθινόν — true, the real article as opposed to the copy. Earthly money is the training account for the real one. ἀλλότριον (another's) against ὑμέτερον (your own): everything on earth is on loan, and the faithfulness shown in managing the loan decides what is handed over as yours. The natural economy is the trial run.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Colossians 3:23–24</div>
+      <div class="verse">"Whatever you do, work heartily, as for the Lord and not for men, knowing that from the Lord you will receive the inheritance as your reward. You are serving the Lord Christ."</div>
+      <div class="note">ἀνταπόδοσις τῆς κληρονομίας — the repayment that is the inheritance. Paul fuses two ideas the world keeps apart: inheritance (what a family member is given) and wages (what a worker earns). In the Kingdom the child's inheritance is paid out in proportion to service. And the work in context is ordinary daily labor (3:22). Nothing about it requires a pulpit.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Hebrews 11:26</div>
+      <div class="verse">"He considered the reproach of Christ greater wealth than the treasures of Egypt, for he was looking to the reward."</div>
+      <div class="note">ἀπέβλεπεν εἰς τὴν μισθαποδοσίαν — he kept looking away from Egypt's treasure to the payment. Moses walked out of the palace on a calculation: the reproach of Christ was worth more than Egypt's stores because the payoff was real. Scripture commends the motive. Verse 6 states the principle: God is a μισθαποδότης, a rewarder, of those who seek Him. Seeking God and wanting the reward are not rivals.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Romans 4:4–5; Ephesians 2:8–9</div>
+      <div class="verse">"Now to the one who works, his wages are not counted as a gift but as his due. And to the one who does not work but believes in him who justifies the ungodly, his faith is counted as righteousness. … For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."</div>
+      <div class="note">Two words for two accounts: μισθός — wages, what is owed — and χάρις — gift. Salvation sits in the second account only. Wages belong to the believer's later service. Confusing the two ruins both: the believer who works for salvation insults the gift, and the believer who refuses to work for wages ignores what the Lord offered.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 15:10</div>
+      <div class="verse">"But by the grace of God I am what I am, and his grace toward me was not in vain. On the contrary, I worked harder than any of them, though it was not I, but the grace of God that is with me."</div>
+      <div class="note">Paul works harder than all of them and in the same sentence says it was not I but the grace of God with me. The capacity is supplied; the labor is still his. Luke 17:10 supplies the humility: when you have done all you were commanded, say, "We are unworthy servants" — no claim on God is created, and yet the wages are real. God pays what He chose to promise.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The account fills by faithful work — now what that looks like lived</div>
+
+  <!-- SECTION V -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">V</span>
+      <span class="phase-title">The Expression — What Stored Treasure Looks Like in a Life</span>
+    </div>
+    <p class="phase-desc">Stored treasure looks like ordinary faithfulness, done in a particular way. It is measured by quality and motive, not by size or visibility. Paul says each will receive his own wage according to his own labor, and the test is fire: what was built of gold, silver, and precious stones survives it; wood, hay, and straw burn. Jesus says the giving no one sees is the giving the Father repays. Hebrews says God does not forget. And what a believer can do differs by stage: an infant's faithful acts are infant-sized and are counted at that size. Growth does not only raise the amount stored; it raises the quality of what goes in. That is why growth is a main goal after salvation, not a side project.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">1 Corinthians 3:12–15</div>
+      <div class="verse">"Now if anyone builds on the foundation with gold, silver, precious stones, wood, hay, straw—each one's work will become manifest, for the Day will disclose it, because it will be revealed by fire, and the fire will test what sort of work each one has done. If the work that anyone has built on the foundation survives, he will receive a reward. If anyone's work is burned up, he will suffer loss, though he himself will be saved, but only as through fire."</div>
+      <div class="note">Three outcomes in one passage: μισθὸν λήμψεται — he will receive wages; ζημιωθήσεται — he will be fined, suffer loss; αὐτὸς δὲ σωθήσεται — he himself will be saved. Wages, loss, and a security that does not move. The fire tests ὁποῖον — what sort, the quality — not the quantity. Verse 8 gives the rule: each will receive his wages according to his own labor.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Matthew 6:3–4</div>
+      <div class="verse">"But when you give to the needy, do not let your left hand know what your right hand is doing, so that your giving may be in secret. And your Father who sees in secret will reward you."</div>
+      <div class="note">ἐν τῷ κρυπτῷ — in secret. The Father who sees ἐν τῷ κρυπτῷ ἀποδώσει σοι — will pay you back, the verb used for settling a debt. Hidden faithfulness is not unrecorded. The only audience whose ledger counts is the One who sees it.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Hebrews 6:10</div>
+      <div class="verse">"For God is not unjust so as to overlook your work and the love that you showed for his name in serving the saints, as you still do."</div>
+      <div class="note">ἄδικος — unjust. God would be unjust to forget. His memory is bound to His justice: overlooking service would break His own standard. Notice the examples: ἔργου καὶ ἀγάπης — work and love shown to the saints. The stored account includes ordinary service nobody applauds.</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">Ephesians 6:7–8</div>
+      <div class="verse">"…rendering service with a good will as to the Lord and not to man, knowing that whatever good anyone does, this he will receive back from the Lord, whether he is a bondservant or is free."</div>
+      <div class="note">κομίσεται παρὰ κυρίου — he will receive back from the Lord, the same verb as 2 Corinthians 5:10. Whether slave or free: the wage does not respect earthly rank. The believer at the bottom of every earthly ladder can be the richest in the account.</div>
+    </div>
+  </div>
+
+  <div class="bridge">The treasure stored — now the day it is counted and spent</div>
+
+  <!-- SECTION VI -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-number">VI</span>
+      <span class="phase-title">The Culmination — The Judgment Seat and the Reign</span>
+    </div>
+    <p class="phase-desc">The account is audited at the judgment seat of Christ and spent in the Kingdom. The Bema is not a trial for salvation — that was settled at the cross, and there is no condemnation for those in Christ. It is an award ceremony and an audit: each believer receives back what is due for what he did in the body. The fire tests the works. What survives is paid. What does not is lost, and the believer is saved anyway. Then the reward takes a shape: authority. Faithful in a little, over ten cities. The conqueror who keeps to the end seated with Christ on His throne. The saints judging the world and angels. Growth is training for a job. The infant who becomes a mature man is being prepared to carry weight in a Kingdom that runs on that weight (<a href="20260329_001_growth_beyond_salvation.html" style="color:var(--gold);text-decoration:none;">Lesson 001</a>, <a href="20260330_004_kingdom_reality.html" style="color:var(--gold);text-decoration:none;">Lesson 004</a>). Stored treasure and reigning are two sides of one economy: what is laid up becomes the capacity to rule.</p>
+
+    <div class="scripture-block key">
+      <div class="ref">2 Corinthians 5:10</div>
+      <div class="verse">"For we must all appear before the judgment seat of Christ, so that each one may receive what is due for what he has done in the body, whether good or evil."</div>
+      <div class="note">βῆμα — the raised platform where a judge sat, and where victors at the games were honored. κομίσηται — receive back, the Ephesians 6:8 verb. NA28 reads εἴτε ἀγαθὸν εἴτε φαῦλον — good or worthless, not κακόν. The word fits the fire test of 1 Corinthians 3: the question at the Bema is the value of the work, not the believer's standing (Romans 8:1).</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">2 John 8</div>
+      <div class="verse">"Watch yourselves, that you may not lose what we have worked for, but may win a full reward."</div>
+      <div class="note">μισθὸν πλήρη — a full wage, which implies a partial one exists. ἀπολέσητε — lose. A believer can lose reward; the same John says elsewhere that he cannot lose salvation. He writes this to believers about believers.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Luke 19:17</div>
+      <div class="verse">"And he said to him, 'Well done, good servant! Because you have been faithful in a very little, you shall have authority over ten cities.'"</div>
+      <div class="note">ἴσθι ἐξουσίαν ἔχων ἐπάνω δέκα πόλεων — have authority over ten cities. The reward for faithfulness is expanded responsibility, not rest. And the measure scales: the servant who gained five minas is given five cities (v. 19). The size of the reign matches the size of the faithfulness.</div>
+    </div>
+
+    <div class="scripture-block key">
+      <div class="ref">Revelation 3:21</div>
+      <div class="verse">"The one who conquers, I will grant him to sit with me on my throne, as I also conquered and sat down with my Father on his throne."</div>
+      <div class="note">ὁ νικῶν — the one who conquers, the same articular participle John defines in 1 John 5:5: the one who believes that Jesus is the Son of God. Every believer is a conqueror by standing, and that standing comes by faith, the one work of God (John 6:29). Revelation 2–3 attaches the reward to the conqueror who keeps going until the end (2:26) — the continuing, present-tense believing of John 6:54 (ὁ τρώγων), not a second kind of conquest. δώσω αὐτῷ καθίσαι μετ' ἐμοῦ ἐν τῷ θρόνῳ μου — I will give him to sit with me on my throne, as I also conquered. The pattern is the Son's own path: conquest first, then session. Believers follow the same order (see <a href="20261017_038_suffering.html" style="color:var(--gold);text-decoration:none;">Lesson 038</a> and 2 Timothy 2:12).</div>
+    </div>
+
+    <div class="scripture-block">
+      <div class="ref">1 Corinthians 6:2–3</div>
+      <div class="verse">"Or do you not know that the saints will judge the world? … Do you not know that we are to judge angels?"</div>
+      <div class="note">κρινοῦσιν — will judge: the saints take part in the administration of the Kingdom. Paul uses it as a rebuke: people destined to judge the world and angels are suing each other over small matters. The destiny is the argument. Eternal responsibility reaches back and changes small decisions now — which is the whole point of storing up.</div>
+    </div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">Rewards and the Kingdom — The Reserve, the Growth, the Reign</div>
+    <div class="hinge-text">
+      The natural world is the first edition.<br>
+      Work was given before the fall.<br>
+      Seed, harvest, wage, growth —<br>
+      all copies of how the Kingdom runs.<br><br>
+      Reserved before the foundation.<br>
+      Laid up. Kept. Prepared.<br>
+      Imperishable, undefiled, unfading.<br><br>
+      Infant. Child. Young man. Father.<br>
+      Each stage puts more within reach<br>
+      of what was already set aside.<br>
+      Press on to make it your own.<br><br>
+      Salvation is the gift.<br>
+      Wages are for the work.<br>
+      Even the work is supplied by grace.<br><br>
+      Gold, silver, precious stones —<br>
+      the fire tests what sort.<br>
+      Hidden faithfulness is not unrecorded.<br><br>
+      The judgment seat. A full reward.<br>
+      Ten cities. A throne.<br>
+      Faithful in a little, ruling over much.<br><br>
+      Growth is training for the reign.
+    </div>
+  </div>
+
+  <footer>
+    All Scripture quotations from the ESV. &nbsp;·&nbsp;
+    <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+    <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+    © 2026 John David Wilbourn
+  </footer>
+
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8973a;"></div>
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  function docAction(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image…');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed.'); });
+    }
+  }
+  window.docAction = docAction;
+})();
+</script>
+</body>
+</html>

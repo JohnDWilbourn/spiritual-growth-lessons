@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Integrity of God — Spiritual Growth Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --parchment: #f7f3ec;
+    --gold: #b8860b;
+    --rule: #c8b89a;
+    --muted: #6b5f52;
+    --accent-bg: #f0ebe0;
+    --bar-bg: #1a1410;
+    --bar-text: #f7f3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .top-bar {
+    background: var(--bar-bg);
+    color: var(--bar-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .top-bar-links { list-style: none; display: flex; gap: 1.75rem; }
+  .top-bar-links a {
+    color: var(--bar-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .top-bar-links a:hover { opacity: 1; color: var(--gold); }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  header {
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .phase-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .phase-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .scripture-block {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .scripture-block.key { border-left-color: var(--gold); }
+
+  .ref {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bridge {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  .bridge::before, .bridge::after {
+    content: "— ";
+    color: var(--gold);
+  }
+
+  .hinge-block {
+    background: var(--ink);
+    color: var(--bar-text);
+    padding: 1.75rem 2rem;
+    margin: 3rem 0;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .hinge-block .hinge-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hinge-block .hinge-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bar-text);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── Action buttons ── */
+  .doc-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 0.6rem 1.5rem;
+    flex-wrap: wrap;
+    background: var(--bar-bg, var(--ink, #1a1410));
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(184,151,58,0.4);
+    border-radius: 3px;
+    color: rgba(244,236,216,0.85);
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .doc-btn:hover {
+    border-color: var(--gold, #b8860b);
+    color: var(--gold, #b8860b);
+    background: rgba(184,151,58,0.08);
+  }
+  .doc-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .doc-btn .btn-label { display: none; }
+  }
+
+  @media print {
+    .top-bar, .doc-actions, #docToast { display: none !important; }
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0.5in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-bar">
+  <a class="top-bar-brand" href="../index.html">Spiritual Growth Lessons</a>
+  <ul class="top-bar-links">
+    <li><a href="../search.html">Search</a></li>
+    <li><a href="https://commentary.intelligencereport.info" target="_blank">Romans Road</a></li>
+  </ul>
+</nav>
+
+
+<div class="doc-actions">
+  <button class="doc-btn" onclick="docAction('pdf')" title="Export to PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,116V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v28a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v76a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg><span class="btn-label">PDF</span></button>
+  <button class="doc-btn" onclick="docAction('link')" title="Copy link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10a56,56,0,0,1-79.22-79.27l24.12-24.12a56,56,0,0,1,76.81-2.28,8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.29l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"/></svg><span class="btn-label">Link</span></button>
+  <button class="doc-btn" onclick="docAction('clipboard')" title="Copy text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96h112Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg><span class="btn-label">Copy</span></button>
+  <button class="doc-btn" onclick="docAction('image')" title="Download as image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,169.37V56ZM40,192V192l58.34-58.34,44,44,20-20L200,196.69,200.69,200H40Zm144-72a12,12,0,1,1,12-12A12,12,0,0,1,184,120Z"/></svg><span class="btn-label">Image</span></button>
+  <button class="doc-btn" onclick="docAction('html')" title="Copy as HTML"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">HTML</span></button>
+  <button class="doc-btn" onclick="docAction('embed')" title="Embed code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><span class="btn-label">Embed</span></button>
+</div>
+<div id="docToast" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#2a2118;color:#f4ecd8;padding:0.6rem 1.2rem;border-radius:4px;font-family:Cinzel,'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;z-index:9999;border:1px solid #b8860b;"></div>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Spiritual Growth Lessons &nbsp;·&nbsp; Lesson 040</div>
+  <h1>The Integrity of God</h1>
+  <div class="subtitle">Righteousness and Justice — What "Holy" Was Carrying</div>
+</header>
+
+<p class="intro">
+  Holy is one of the most repeated words in the church's vocabulary and one of the least examined. For most believers it names a feeling: hushed voices, dim light, a sense of distance. The Hebrew and Greek words do mean set apart. The question the church stopped asking is what God is set apart by. Scripture answers it. The Lord of hosts is exalted in justice, and the Holy God shows himself holy in righteousness. Righteousness is the standard He cannot lower. Justice is how that standard is carried out. Together they are His integrity, the thing that makes Him God and not a larger version of us. This lesson takes the word holy apart, shows what it was carrying all along, and gives the reader the vocabulary to see it that way.
+</p>
+
+<!-- SECTION I -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">I</span>
+    <span class="phase-title">What the Word Was Carrying</span>
+  </div>
+  <p class="phase-desc">The Hebrew word קָדוֹשׁ (qadosh) comes from a root that means to set apart. Brown-Driver-Briggs gives its first sense as of God, separate and apart, and so sacred, holy, and adds that it can mean separate from human infirmity, impurity, and sin. The New Testament word ἅγιος does the same work. Set apart is the container. It does not say what is inside. English kept the container and lost the contents, so the word drifted toward atmosphere. The Bible fills the container in its own text, and it does it in the same breath. The passages below do not define holy from a dictionary. They put holy beside righteousness and justice in a single sentence and let the reader see what the word is made of.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Isaiah 5:16</div>
+    <div class="verse">"But the LORD of hosts is exalted in justice, and the Holy God shows himself holy in righteousness."</div>
+    <div class="note">One thought in two halves. Exalted in justice: בַּמִּשְׁפָּט (mishpat). Shows himself holy in righteousness: בִּצְדָקָה (tsedaqah). The verb is נִקְדָּשׁ (niqdash), built on the same root as the word for holy, so the sentence says the Holy One is shown to be holy in the very place He is shown to be righteous. Holiness is not a separate glow added to righteousness. It is displayed in it. The Greek Old Testament reads the verse the same way: καὶ ὁ θεὸς ὁ ἅγιος δοξασθήσεται ἐν δικαιοσύνῃ, the Holy God will be glorified in righteousness, with δικαιοσύνη rendering צְדָקָה.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Leviticus 19:2, 15</div>
+    <div class="verse">"You shall be holy, for I the LORD your God am holy." / "You shall do no injustice in court. You shall not be partial to the poor or defer to the great, but in righteousness shall you judge your neighbor."</div>
+    <div class="note">The command to be holy opens a chapter whose commands deal with theft, lying, wages, courts, and weights. Verse 15 is where it lands: no injustice in court, no partiality either way, judgment in righteousness: בְּצֶדֶק (betzedeq). The chapter that commands holiness spends its length describing integrity between people, because that is what it means to be set apart to the God who has it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 99:4–5</div>
+    <div class="verse">"The King in his might loves justice. You have established equity; you have executed justice and righteousness in Jacob. Exalt the LORD our God; worship at his footstool! Holy is he!"</div>
+    <div class="note">The psalm's refrain, Holy is he, arrives right after a list of what the King does: loves justice, establishes equity, executes justice (מִשְׁפָּט) and righteousness (צְדָקָה). The worship is aimed at that record. The same pair stands under His throne in Psalm 89:14, quoted in Lesson 013.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 145:17</div>
+    <div class="verse">"The LORD is righteous in all his ways and kind in all his works."</div>
+    <div class="note">In all his ways, not in some. A standard that holds in every way and every work is what integrity means, and it is what the word holy was holding for the Hebrew reader. The rest of this lesson follows that single idea through the Greek word for it, the cross, the believer, and the end.</div>
+  </div>
+
+  <p class="bridge">The word is filled in — now what that integrity did about a creature who could not meet it</p>
+</div>
+
+<!-- SECTION II -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">II</span>
+    <span class="phase-title">What Integrity Provided</span>
+  </div>
+  <p class="phase-desc">A standard that cannot be lowered and a creature who cannot reach it make a closed case. Paul spends three chapters of Romans proving the case is closed on everyone. What opens it is not a lowered standard, and not a justice that looks away. It is a provision that satisfies both. God did not suspend His integrity to save sinners. He displayed it.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Romans 3:23–24</div>
+    <div class="verse">"…for all have sinned and fall short of the glory of God, and are justified by his grace as a gift, through the redemption that is in Christ Jesus…"</div>
+    <div class="note">Fall short is a standing condition, not a single miss. The standard did not move, and the creature did not reach it. Justified as a gift: δωρεάν, freely, with nothing paid by the one receiving. The gap is closed from God's side, by a payment He supplied.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Romans 3:25–26</div>
+    <div class="verse">"…whom God put forward as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins. It was to show his righteousness at the present time, so that he might be just and the justifier of the one who has faith in Jesus."</div>
+    <div class="note">The word for show is ἔνδειξις, a demonstration, and Paul uses it twice in two verses. The cross is presented as a display of God's righteousness, not an exception to it. Sins had been passed over for a time, which could look like a hole in justice. The cross closes the question. Then the phrase that carries the lesson: δίκαιον καὶ δικαιοῦντα, just and the justifier. Neither word is surrendered to get the other.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Corinthians 5:21</div>
+    <div class="verse">"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</div>
+    <div class="note">The standard was not lowered to fit the believer. It was met in Christ and credited to everyone who is in Him. The exchange is the integrity of God in its most concentrated form: the sin judged in full, the righteousness supplied in full.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 1:17</div>
+    <div class="verse">"For in it the righteousness of God is revealed from faith for faith, as it is written, 'The righteous shall live by faith.'"</div>
+    <div class="note">Revealed is present tense: ἀποκαλύπτεται, being uncovered now, in the gospel. God's righteousness is not kept in a record somewhere. It is on display wherever the gospel is told, and Paul quotes Habakkuk to say how a person lives in the light of it.</div>
+  </div>
+
+  <p class="bridge">The provision is made — now how the principle and the function work together</p>
+</div>
+
+<!-- SECTION III -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">III</span>
+    <span class="phase-title">Principle and Function</span>
+  </div>
+  <p class="phase-desc">Righteousness is the principle: the standard itself, fixed, unable to lower itself for any reason. Justice is the function: that standard carried out on persons. English splits them into two words. Greek, through most of its history, used one family of words for both, and the history shows why.</p>
+
+  <p class="phase-desc">The abstract noun δικαιοσύνη names a quality, and Herodotus uses it of a person's justness: Deioces, in his village, takes up δικαιοσύνη and practices it (1.96). Plato's Republic makes it a standing condition: justice in the city is each part doing its own work, and justice in the individual is each part of the soul doing its own (Republic 441 to 443). Aristotle, in Book V of the Nicomachean Ethics, separates a general justice, which he calls complete virtue exercised toward another, from a particular justice, which is not overreaching, πλεονεξία. By the time Paul writes, the word is abstract enough to name a whole standard and practical enough to name its application. Where a sentence is about the standard, this lesson reads δικαιοσύνη as righteousness. Where it is about the standard being carried out, it reads justice. Romans 3:25–26 does both within two verses.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Genesis 18:25</div>
+    <div class="verse">"Far be it from you to do such a thing, to put the righteous to death with the wicked, so that the righteous fare as the wicked! Far be that from you! Shall not the Judge of all the earth do what is just?"</div>
+    <div class="note">Abraham does not appeal over God's head to a rule outside Him. He appeals to what God is. The Judge of all the earth does what is just because of who He is, and Abraham is certain of it before the answer comes. Function follows principle.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Deuteronomy 32:4</div>
+    <div class="verse">"The Rock, his work is perfect, for all his ways are justice. A God of faithfulness and without iniquity, just and upright is he."</div>
+    <div class="note">All his ways are justice: the function is consistent, with no exceptions and no moods. Without iniquity is the principle behind it, a standard with nothing crooked in it. The verse puts both in a single sentence and calls the result a Rock.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Psalm 89:14</div>
+    <div class="verse">"Righteousness and justice are the foundation of your throne; steadfast love and faithfulness go before you."</div>
+    <div class="note">The foundation of the throne is not power. It is righteousness and justice, the principle and its function. Every act of the One who sits on it rests on them, which is why His rule is trustworthy before it is welcome.</div>
+  </div>
+
+  <p class="bridge">Principle and function are one standard — now how it runs toward a creature</p>
+</div>
+
+<!-- SECTION IV -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">IV</span>
+    <span class="phase-title">How Integrity Runs Toward a Creature</span>
+  </div>
+  <p class="phase-desc">Integrity does not change with the person it meets. The same standard applied to a creature standing on his own record condemns. The same standard applied to a creature standing on credited righteousness blesses. For the believer, even discipline is this integrity at work, aimed at making him like the One who disciplines. That is why Jesus can address the Father as holy and as righteous in one prayer, and why the Bible can name the Son with both words side by side.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Habakkuk 1:13</div>
+    <div class="verse">"You who are of purer eyes than to see evil and cannot look at wrong, why do you idly look at traitors and remain silent when the wicked swallows up the man more righteous than he?"</div>
+    <div class="note">The prophet's complaint rests on God's integrity. Because God is of purer eyes than to see evil, Habakkuk expects the standard to produce action. The answer he receives runs through Habakkuk 2:4, the verse Paul quotes in Romans 1:17.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Acts 3:14</div>
+    <div class="verse">"But you denied the Holy and Righteous One, and asked for a murderer to be granted to you…"</div>
+    <div class="note">Peter names the Son with both words: τὸν ἅγιον καὶ δίκαιον. They stand together as titles, not as two separate claims. The Holy One is the Righteous One, and the crowd traded Him for a man guilty of murder.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">John 17:11, 25</div>
+    <div class="verse">"Holy Father…" / "O righteous Father, even though the world does not know you…"</div>
+    <div class="note">Jesus uses both titles in one prayer, fourteen verses apart. He asks the Holy Father to keep His own. He calls the righteous Father the One the world does not know. The one God who sets apart is the one God who judges rightly.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Hebrews 12:10–11</div>
+    <div class="verse">"For they disciplined us for a short time as it seemed best to them, but he disciplines us for our good, that we may share his holiness. For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</div>
+    <div class="note">Both words in two verses. The aim of the Father's discipline is that we may share his holiness, μεταλαβεῖν τῆς ἁγιότητος αὐτοῦ. The harvest is the peaceful fruit of righteousness. Discipline is integrity working on the believer in love, so that the believer comes to carry it.</div>
+  </div>
+
+  <p class="bridge">The integrity runs one way — now the believer set apart to it</p>
+</div>
+
+<!-- SECTION V -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">V</span>
+    <span class="phase-title">Set Apart to the Same Standard</span>
+  </div>
+  <p class="phase-desc">Set apart is the container again, and now the believer is inside it. A believer is set apart from the world's standard to God's. What Peter calls holy conduct is conduct that carries the integrity God's own character carries. This lesson stops at the edge of that ground. How the believer is set apart, by position, in experience, and at the end, is Lesson 041.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">1 Peter 1:15–16</div>
+    <div class="verse">"…but as he who called you is holy, you also be holy in all your conduct, since it is written, 'You shall be holy, for I am holy.'"</div>
+    <div class="note">Peter quotes the verse that opens the commands of Leviticus 19, the chapter in Phase I that defines holy conduct in terms of courts, wages, weights, and honest dealing. The standard is imitation of God's character, and the field is all your conduct, not a religious corner of it.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Ephesians 4:24</div>
+    <div class="verse">"…and to put on the new self, created after the likeness of God in true righteousness and holiness."</div>
+    <div class="note">Paul puts the two words together as the likeness of God. The Greek behind holiness here is ὁσιότης, from the same word family as the ὅσιος of Revelation 16:5, not ἁγιότης. The new self is described by the same pair the lesson has been following: righteousness and holiness, the integrity of God reproduced in a creature.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Romans 6:19</div>
+    <div class="verse">"…so now present your members as slaves to righteousness leading to sanctification."</div>
+    <div class="note">Righteousness leads to sanctification, ἁγιασμός. The order matters. The standard comes first, and the setting apart follows from presenting yourself to it. This is the verse that hands the next lesson its subject.</div>
+  </div>
+
+  <p class="bridge">The believer is set apart to it — now where the standard finally ends up</p>
+</div>
+
+<!-- SECTION VI -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">VI</span>
+    <span class="phase-title">Where the Standard Ends Up</span>
+  </div>
+  <p class="phase-desc">Revelation closes on the same pairing Isaiah 5:16 opened with. The voices in heaven that call God holy are the same voices that call Him just. The last judgments are announced as His integrity in action, and the promise at the end is a world where the standard is no longer contested.</p>
+
+  <div class="scripture-block key">
+    <div class="ref">Revelation 15:3–4</div>
+    <div class="verse">"Just and true are your ways, O King of the nations!… For you alone are holy. All nations will come and worship you, for your righteous acts have been revealed."</div>
+    <div class="note">The song names Him just, then holy, then points to His righteous acts, δικαιώματα. Holy here is ὅσιος, not ἅγιος, and the proof offered for it is the record of what He has done. The worship follows the revealed acts.</div>
+  </div>
+
+  <div class="scripture-block key">
+    <div class="ref">Revelation 16:5</div>
+    <div class="verse">"Just are you, O Holy One, who is and who was, for you brought these judgments."</div>
+    <div class="note">Δίκαιος εἶ ὁ ὅσιος: just are you, the Holy One. The angel of the waters calls Him both in one breath and grounds the title in the judgment. Even the judgment of the last days is read as holiness shown by justice, the same thing Isaiah 5:16 said at the start.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">Revelation 19:1–2</div>
+    <div class="verse">"Hallelujah! Salvation and glory and power belong to our God, for his judgments are true and just…"</div>
+    <div class="note">Heaven's response to the judgment is praise, because the judgment is not a lapse in love or a change of mood. It is the integrity of God carried out, and everyone present can see it.</div>
+  </div>
+
+  <div class="scripture-block">
+    <div class="ref">2 Peter 3:13</div>
+    <div class="verse">"But according to his promise we are waiting for new heavens and a new earth in which righteousness dwells."</div>
+    <div class="note">Dwells: κατοικεῖ, at home. In the new heavens and earth the standard is not defended or argued. It lives there. What the word holy was carrying from the beginning is what the creation is finally built around.</div>
+  </div>
+
+  <div class="hinge-block">
+    <div class="hinge-label">The Integrity of God, Complete</div>
+    <div class="hinge-text">
+      Holy means set apart.<br>
+      The Bible says what God is set apart by.<br><br>
+      The LORD of hosts is exalted in justice.<br>
+      The Holy God shows himself holy in righteousness.<br><br>
+      Righteousness, the principle: the standard that cannot be lowered.<br>
+      Justice, the function: the standard carried out.<br>
+      Together, the integrity of God.<br><br>
+      The cross did not suspend it. The cross displayed it:<br>
+      just, and the justifier of the one who has faith in Jesus.<br><br>
+      The believer is set apart to the same standard.<br>
+      The next lesson takes up how.
+    </div>
+  </div>
+</div>
+
+<footer>
+  All Scripture quotations from the ESV. &nbsp;·&nbsp;
+  <a href="../index.html">Spiritual Growth Lessons</a> &nbsp;·&nbsp;
+  <a href="https://commentary.intelligencereport.info" target="_blank">Romans Road Commentary</a><br>
+  © 2026 John David Wilbourn
+</footer>
+
+</div>
+
+<script>
+(function() {
+  function flash(msg) {
+    var el = document.getElementById('docToast');
+    el.textContent = msg; el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 2200);
+  }
+  window.docAction = function(type) {
+    var body = document.body;
+    if (type === 'link') {
+      navigator.clipboard.writeText(window.location.href).then(function() { flash('Link copied!'); });
+    } else if (type === 'clipboard') {
+      navigator.clipboard.writeText(body ? body.innerText : '').then(function() { flash('Text copied!'); });
+    } else if (type === 'html') {
+      navigator.clipboard.writeText(body ? body.innerHTML : '').then(function() { flash('HTML copied!'); });
+    } else if (type === 'embed') {
+      navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="600" frameborder="0"></iframe>').then(function() { flash('Embed copied!'); });
+    } else if (type === 'pdf') {
+      window.print();
+    } else if (type === 'image') {
+      flash('Preparing image\u2026');
+      import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js')
+        .then(function(mod) { var h2c = mod.default || mod; return h2c(document.body, { backgroundColor: null, scale: 2, useCORS: true }); })
+        .then(function(canvas) {
+          var link = document.createElement('a');
+          link.download = document.title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+          link.href = canvas.toDataURL('image/png'); link.click();
+          flash('Image downloaded!');
+        })
+        .catch(function() { flash('Image export failed. Try PDF instead.'); });
+    }
+  };
+})();
+</script>
+</body>
+</html>
